@@ -3,6 +3,10 @@
   integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
 </script>
 
+<script src="./assets/js/script.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
 </body>
 
 </html>
