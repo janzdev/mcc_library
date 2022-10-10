@@ -1,3 +1,7 @@
+<?php 
+session_start();
+include('./admin/config/dbcon.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,22 +25,28 @@
       <div class="image-box">
         <img src="./assets/img/mcc-logo.png" alt="">
       </div>
-      <form action="#" class="wrapper">
+      <form action="logincode.php" method="POST" class="wrapper">
         <p>Welcome to</p>
         <div class="header">MCC <span>LIBRARY</span></div>
+
+        <?php include('message.php'); ?>
+
         <div class="input-box">
-          <input type="text" spellcheck="false" id="firstname" required />
-          <label for="firstname">Student ID No.</label>
+          <input type="text" name="student_id" spellcheck="false" id="student_id" required />
+          <label for="student_id">Student ID No.</label>
         </div>
+
         <div class="input-box">
-          <input type="password" spellcheck="false" class="inputvalue" id="password" required />
+          <input type="password" name="password" spellcheck="false" class="inputvalue" id="password" required />
           <label for="password">Password</label>
           <i class="uil uil-eye-slash toggle"></i>
         </div>
+
         <div class="input-box">
-          <button type="submit" class="btn" id="submit"><a href="index.php">SIGN IN</a></button>
+          <button type="submit" name="login_btn" class="btn" id="submit">SIGN IN</button>
           <p>Don't have an account? <a href="./signup.php">Sign up</a></p>
         </div>
+
       </form>
     </div>
   </div>
