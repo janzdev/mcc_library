@@ -1,3 +1,20 @@
+/* General Styling */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: url("../img/bg.png"),
+    -webkit-linear-gradient(bottom, #0250c5, #05c3dd);
+}
 .container {
   height: 90vh;
   width: 330px;

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <link rel="icon" href="./assets/img/mcc-logo.png">
+     <title>MCC LIBRARY</title>
+
+     <!-- Bootstrap CSS -->
+     <link href="assets/css/bootstrap5.min.css" rel="stylesheet" />
+     <!-- Bootstrap Icon -->
+     <link rel="stylesheet" href="assets/font/bootstrap-icons.css">
+
+     <!-- Iconscout cdn link -->
+     <link rel="stylesheet" href="line.css">
+     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+     <!-- Custom CSS Styling -->
+     <link rel="stylesheet" href="assets/css/login.css">
+
+
+</head>
+
+<body>

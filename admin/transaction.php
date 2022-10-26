@@ -1,4 +1,5 @@
 <?php include('includes/header.php') ?>
+<?php include('authentication.php') ?>
 <main id="main" class="main">
   <div class="pagetitle">
     <h1>Blank Page</h1>
