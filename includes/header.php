@@ -13,7 +13,7 @@
      <link rel="stylesheet" href="assets/font/bootstrap-icons.css">
 
      <!-- Iconscout cdn link -->
-     <link rel="stylesheet" href="line.css">
+     <link rel="stylesheet" href="assets/css/line.css">
      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
      <!-- Custom CSS Styling -->

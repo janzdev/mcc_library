@@ -25,7 +25,7 @@ if(isset($_POST['login_btn']))
       'stud_name'=>$student_name,
       'email'=>$student_email,
     ];
-
+      
     if($_SESSION['auth_role'] == 1)  // 1 = Admin
     {
       $_SESSION['message'] = "Welcome to Dashboard";
@@ -41,6 +41,7 @@ if(isset($_POST['login_btn']))
   }
   else
   {
+   
     $_SESSION['message'] = "Invalid Email or Password";
     header("Location:login.php");
     exit(0);

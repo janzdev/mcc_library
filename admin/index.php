@@ -110,7 +110,7 @@ include('includes/header.php');
                                                        <td>
                                                             <a href="#" class="text-primary">At praesentium minu</a>
                                                        </td>
-                                                       <td>$64</td>
+                                                       <td>$1</td>
                                                        <td>
                                                             <span class="badge bg-success">Approved</span>
                                                        </td>
@@ -122,7 +122,7 @@ include('includes/header.php');
                                                             <a href="#" class="text-primary">Blanditiis dolor omnis
                                                                  similique</a>
                                                        </td>
-                                                       <td>$47</td>
+                                                       <td>$2</td>
                                                        <td><span class="badge bg-warning">Pending</span></td>
                                                   </tr>
                                                   <tr>
@@ -132,7 +132,7 @@ include('includes/header.php');
                                                             <a href="#" class="text-primary">At recusandae
                                                                  consectetur</a>
                                                        </td>
-                                                       <td>$147</td>
+                                                       <td>$3</td>
                                                        <td>
                                                             <span class="badge bg-success">Approved</span>
                                                        </td>
@@ -144,7 +144,7 @@ include('includes/header.php');
                                                             <a href="#" class="text-primar">Ut voluptatem id earum
                                                                  et</a>
                                                        </td>
-                                                       <td>$67</td>
+                                                       <td>$4</td>
                                                        <td><span class="badge bg-danger">Rejected</span></td>
                                                   </tr>
                                                   <tr>
@@ -154,7 +154,7 @@ include('includes/header.php');
                                                             <a href="#" class="text-primary">Sunt similique
                                                                  distinctio</a>
                                                        </td>
-                                                       <td>$165</td>
+                                                       <td>$5</td>
                                                        <td>
                                                             <span class="badge bg-success">Approved</span>
                                                        </td>

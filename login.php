@@ -19,9 +19,10 @@ if(isset($_SESSION['auth']))
 
 
 include('./admin/config/dbcon.php');
+include('includes/header.php');
 ?>
 
-<?php include('includes/header.php'); ?>
+
 <section>
 
 </section>
@@ -62,7 +63,7 @@ include('./admin/config/dbcon.php');
                                    </div>
                               </div>
                               <div class="d-grid gap-2 md-3">
-                                   <button type="submit"
+                                   <button type="submit" name="login_btn"
                                         class="btn btn-info text-light font-weight-bolder btn-lg">Login</button>
                                    <div class="text-center mb-3">
                                         <p>
