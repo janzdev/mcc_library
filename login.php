@@ -37,10 +37,13 @@ include('includes/header.php');
                     </div>
                     <div class="col-sm-12 col-md-6 px-5 ">
                          <div class="mt-5 mb-4">
-                              <h4 class="m-0">Welcome to</h4>
+                              <h4 class="m-0">
+                                   Welcome to
+
+                              </h4>
                               <h1><strong>MCC <span class="text-info">LIBRARY</span></strong></h1>
                          </div>
-                         <?php include('message.php'); ?>
+
                          <form action="logincode.php" method="POST" class="needs-validation" novalidate>
                               <div class="col-md-12">
                                    <div class="form-floating mb-3">
@@ -68,7 +71,7 @@ include('includes/header.php');
                                    <div class="text-center mb-3">
                                         <p>
                                              Don't have an account?
-                                             <a href="./signup.php" class="text-info">Signup now</a>
+                                             <a href="./signup.php" class="text-info">Signup</a>
                                         </p>
                                    </div>
                               </div>
@@ -79,4 +82,21 @@ include('includes/header.php');
      </div>
      </div>
 </section>
-<?php include('includes/footer.php') ?>
+
+<?php include('includes/footer.php'); ?>
+
+<script>
+<?php 
+if(isset($_SESSION['message']))
+{
+  ?>
+alertify.set('notifier', 'position', 'top-center');
+alertify.error('<?= $_SESSION['message']; ?>');
+
+
+
+<?php
+unset($_SESSION['message']);
+}
+?>
+</script>

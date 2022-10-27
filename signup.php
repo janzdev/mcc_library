@@ -24,6 +24,12 @@ include('./admin/config/dbcon.php');
 <!-- Custom CSS links -->
 <link rel="stylesheet" href="./assets/css/signup.css">
 
+<!-- Alertify JS link -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+
+
+
 <body>
 
      <div class="container">
@@ -68,8 +74,6 @@ include('./admin/config/dbcon.php');
                     <div class="check fas fa-check"></div>
                </div>
           </div>
-
-          <div class="" style="background: #fff3cd; text-align:center;"><?php include('message.php'); ?></div>
 
 
           <!-- Multi Step Form end -->
@@ -229,7 +233,24 @@ include('./admin/config/dbcon.php');
      <!-- Font Awesome Link -->
      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
+     <!-- Alertify JS link -->
+     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
+     <script>
+     <?php 
+if(isset($_SESSION['message']))
+{
+  ?>
+     alertify.set('notifier', 'position', 'top-center');
+     alertify.error('<?= $_SESSION['message']; ?>');
+
+
+
+     <?php
+unset($_SESSION['message']);
+}
+?>
+     </script>
 </body>
 
 </html>

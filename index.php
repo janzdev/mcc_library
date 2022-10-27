@@ -3,8 +3,8 @@ session_start();
 include('includes/header.php'); 
 
 if(empty($_SESSION['auth'])){
-  
-  header('location:login.php');
+  $_SESSION['message'] = "Login first to access";
+  header('Location: login.php');
 }
 ?>
 
