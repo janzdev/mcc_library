@@ -7,7 +7,7 @@ if(isset($_POST['login_btn']))
   $student_id = mysqli_real_escape_string($con, $_POST['student_id']);
   $password = mysqli_real_escape_string($con, $_POST['password']);
 
-  $login_query = "SELECT * FROM student WHERE student_id_no='$student_id' AND password= md5('$password') LIMIT 1";
+  $login_query = "SELECT * FROM user WHERE student_id_no='$student_id' AND password= md5('$password')";
   $login_query_run = mysqli_query($con, $login_query);
 
   if(mysqli_num_rows($login_query_run) > 0)
@@ -26,24 +26,30 @@ if(isset($_POST['login_btn']))
       'email'=>$student_email,
     ];
       
-    if($_SESSION['auth_role'] == 1)  // 1 = Admin
+    
+    if($_SESSION['auth_role'] == 0)  // 1 = Admin
     {
-      $_SESSION['message'] = "Welcome to Dashboard";
-      
-      header("Location:admin/index.php");
-      exit(0);
-    }
-    elseif($_SESSION['auth_role'] == 0) //0 = User
-    {
-      $_SESSION['message'] = "You are logged In";
+      $_SESSION['message'] = "Welcome student!";
       header("Location:index.php");
       exit(0);
     }
+    // if($_SESSION['auth_role'] == 1)  // 1 = Admin
+    // {
+    //   $_SESSION['message'] = "<small>Welcome to Dashboard Admin!</small>";
+    //   header("Location:admin/index.php");
+    //   exit(0);
+    // }
+    // else if($_SESSION['auth_role'] == 0) //0 = User
+    // {
+    //   $_SESSION['message'] = "Welcome student!";
+    //   header("Location:index.php");
+    //   exit(0);
+    // }
+     
   }
   else
-  {
-   
-    $_SESSION['message'] = "Invalid school id no. <br> or password";
+  {  
+    $_SESSION['message'] = "<small>Invalid School ID no.  or Password</small>";
     header("Location:login.php");
     exit(0);
   }

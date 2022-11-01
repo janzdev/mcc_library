@@ -12,12 +12,12 @@ body {
 }
 
 a {
-  color: #4154f1;
+ 
   text-decoration: none;
 }
 
 a:hover {
-  color: #717ff5;
+  
   text-decoration: none;
 }
 
@@ -801,20 +801,23 @@ h6 {
   margin-left: 95px;
 }
 
-/* Recent Sales */
-.dashboard .recent-sales {
+/* Book */
+ .book {
   font-size: 14px;
 }
-.dashboard .recent-sales .table thead {
+ .book .table thead {
   background: #f6f6fe;
 }
-.dashboard .recent-sales .table thead th {
-  border: 0;
+ .book .table thead th {
+  padding: 0;
 }
-.dashboard .recent-sales .dataTable-top {
+ .book .table tbody td {
+  font-size: 15px !important;
+}
+ .book .dataTable-top {
   padding: 0 0 10px 0;
 }
-.dashboard .recent-sales .dataTable-bottom {
+ .book .dataTable-bottom {
   padding: 10px 0 0 0;
 }
 

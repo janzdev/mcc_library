@@ -1,7 +1,7 @@
 <?php 
 include('authentication.php');
 include('includes/header.php'); 
-
+include('./includes/sidebar.php'); 
 
 ?>
 
@@ -10,7 +10,7 @@ include('includes/header.php');
 
 <main id="main" class="main">
      <div class="pagetitle">
-          <?php include('../message.php'); ?>
+
           <h1>Dashboard</h1>
 
           <nav>
@@ -172,4 +172,12 @@ include('includes/header.php');
      </section>
 </main>
 
-<?php include('./includes/footer.php'); ?>
+
+
+<?php 
+include('./includes/footer.php');
+include('./includes/script.php');
+include('../message.php');
+
+    
+?>

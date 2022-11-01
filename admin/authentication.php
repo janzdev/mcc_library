@@ -5,17 +5,18 @@ include('config/dbcon.php');
 if(!isset($_SESSION['auth']))
 {
   $_SESSION['message'] ="Login to Access Dashboard";
-  header("Location:../Login.php");
+  header("Location:../admin_login.php");
   exit(0);
 }
 else  
 {
   if($_SESSION['auth_role'] != "1")
   {
-    $_SESSION['message'] = "You are not Authorized as ADMIN";
-    header("Location:../login.php");
+    $_SESSION['message'] = "<small>You are not authorized as ADMIN</small>";
+    header("Location:../index.php");
     exit(0);
   }
+  
 }
 
 

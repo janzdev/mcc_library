@@ -7,6 +7,10 @@
 <!-- Bootstrap Bundle js -->
 <script src="assets/js/bootstrap5.bundle.min.js"></script>
 
+<script src="assets/js/tooltip.js"></script>
+
+
+
 <!-- Alertify JS CDN Link -->
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 

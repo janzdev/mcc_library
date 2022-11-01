@@ -23,9 +23,7 @@ include('includes/header.php');
 ?>
 
 
-<section>
 
-</section>
 <section class="d-flex mt-5 flex-column  justify-content-center align-items-center">
      <div class="container-xl">
           <div class="col mx-auto rounded shadow bg-white">
@@ -73,8 +71,17 @@ include('includes/header.php');
                                              Don't have an account?
                                              <a href="./signup.php" class="text-info">Signup</a>
                                         </p>
+
+
+
+
+
                                    </div>
                               </div>
+                              <a href="admin_login.php" class="btn btn-primary mb-3 float-end" data-bs-toggle="tooltip"
+                                   data-bs-placement="top" title="Login as Admin">
+                                   <i class="bi bi-person-lines-fill"></i>
+                              </a>
                          </form>
                     </div>
                </div>
@@ -83,20 +90,7 @@ include('includes/header.php');
      </div>
 </section>
 
-<?php include('includes/footer.php'); ?>
-
-<script>
 <?php 
-if(isset($_SESSION['message']))
-{
-  ?>
-alertify.set('notifier', 'position', 'top-center');
-alertify.error('<?= $_SESSION['message']; ?>');
-
-
-
-<?php
-unset($_SESSION['message']);
-}
+include('includes/footer.php');
+include('message.php'); 
 ?>
-</script>

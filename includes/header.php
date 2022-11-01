@@ -8,7 +8,8 @@
      <title>MCC LIBRARY</title>
 
      <!-- Bootstrap CSS -->
-     <link href="assets/css/bootstrap5.min.css" rel="stylesheet" />
+     <link rel="stylesheet" href="assets/css/bootstrap5.min.css" />
+
      <!-- Bootstrap Icon -->
      <link rel="stylesheet" href="assets/font/bootstrap-icons.css">
 

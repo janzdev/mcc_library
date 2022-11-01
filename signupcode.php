@@ -35,7 +35,7 @@ if(isset($_POST['register_btn']))
             if($password == $cpassword)
             {
                 // Check Student School ID No.
-              $checkstudent_id_no ="SELECT student_id_no FROM student WHERE student_id_no ='$student_id_no'";
+              $checkstudent_id_no ="SELECT student_id_no FROM user WHERE student_id_no ='$student_id_no'";
               $checkstudent_id_no_run = mysqli_query($con, $checkstudent_id_no);
 
               if(mysqli_num_rows($checkstudent_id_no_run) > 0)
@@ -46,7 +46,7 @@ if(isset($_POST['register_btn']))
                 }
                 else
                 {
-                    $student_query = "INSERT INTO student(lastname, firstname, middlename, nickname, gender, course, address, cell_no, birthdate, email, year_level, student_id_no, contact_person, contact_person_no, password, cpassword) VALUES('$lastname', '$firstname', '$middlename', '$nickname', '$gender', '$course', '$address', '$cell_no', '$birthdate', '$email', '$year_level', '$student_id_no', '$contact_person', '$contact_person_no', md5('$password'), md5('$cpassword'))";
+                    $student_query = "INSERT INTO user(lastname, firstname, middlename, nickname, gender, course, address, cell_no, birthdate, email, year_level, student_id_no, contact_person, contact_person_no, password, cpassword) VALUES('$lastname', '$firstname', '$middlename', '$nickname', '$gender', '$course', '$address', '$cell_no', '$birthdate', '$email', '$year_level', '$student_id_no', '$contact_person', '$contact_person_no', md5('$password'), md5('$cpassword'))";
                     $student_query_run = mysqli_query($con, $student_query);
                     
                     if($student_query_run)
