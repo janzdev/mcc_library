@@ -1,5 +1,5 @@
 <script src="assets/js/validate.js"></script>
-<script src="assets/js/main.js"></script>
+
 
 
 <!-- Alertify JS link -->
@@ -18,15 +18,51 @@
 <script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
 
-<script>
+<script type="text/javascript">
 // JQuery DataTable 
 $(document).ready(function() {
-     $('#myDatatable').DataTable();
+     $('#myDataTable').DataTable({
+          'pagingType': 'full_numbers',
+          'lengthMenu': [
+               [10, 25, 50, -1],
+               [10, 25, 50, 'All']
+          ],
+          'responsive': 'true',
+          'language': {
+               search: "_INPUT_",
+               searchPlaceholder: "Search",
+
+          }
+
+     });
 });
+// $(document).ready(function() {
+//      $('#myDataTable').DataTable({
+//           "fnCreatedRow": function(nRow, aData, iDataIndex) {
+//                $(nRow).attr('book_id', aData[0]);
+//           },
+//           'serverSide': 'true',
+//           'processing': 'true',
+//           'paging': 'true',
+//           'order': [],
+//           'ajax': {
+//                'url': 'admin_code.php',
+//                'type': 'POST',
+//           },
+//           "aoColumnDefs": [{
+//                     "bSortable": false,
+//                     "aTargets": [7]
+//                },
+
+//           ]
+//      });
+// });
 </script>
 
 <!-- Tooltip link -->
 <script src="assets/js/tooltip.js"></script>
+
+<script src="assets/js/main.js"></script>
 
 </body>
 

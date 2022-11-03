@@ -1,6 +1,7 @@
 <?php
 include('authentication.php');
-include('includes/header.php')
+include('includes/header.php');
+include('includes/sidebar.php'); 
 ?>
 
 <main id="main" class="main">
@@ -175,5 +176,6 @@ include('includes/header.php')
      </section>
 </main>
 <?php
-include('includes/footer.php')
+include('includes/footer.php');
+include('./includes/script.php');
 ?>

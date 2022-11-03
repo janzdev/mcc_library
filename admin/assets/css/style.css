@@ -805,12 +805,12 @@ h6 {
  .book {
   font-size: 14px;
 }
- .book .table thead {
+ /* .book .table thead {
   background: #f6f6fe;
-}
- .book .table thead th {
+} */
+ /* .book .table thead th {
   padding: 0;
-}
+} */
  .book .table tbody td {
   font-size: 15px !important;
 }
