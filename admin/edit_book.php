@@ -1,27 +1,12 @@
-<?php 
-
-     include('config/dbcon.php');
-     $query = "SELECT * FROM  barcode ORDER BY mid_barcode DESC";
-     $query_run = mysqli_query($con, $query);
-
-     $fetch = mysqli_fetch_array($query_run);
-     $mid_barcode = $fetch['mid_barcode'];
-
-     $new_barcode = $mid_barcode + 1;
-     $pre_barcode = "MCC";
-     $suf_barcode = "LMS";
-     $generate_barcode = $pre_barcode.$new_barcode.$suf_barcode;
-
-?>
 <!-- Add Book Modal -->
-<div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
      <div class="modal-dialog modal-lg">
           <div class="modal-content">
                <div class="modal-header p-2 px-3">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">ADD BOOKS</h1>
                     <button type="button" class="btn bi bi-x-lg" data-bs-dismiss="modal" aria-label="Close">
                </div>
-               <form id="saveBook" action="admincode.php" method="POST" enctype="multipart/form-data">
+               <form action="admincode.php" method="POST" enctype="multipart/form-data">
                     <div class="modal-body">
 
                          <input type="hidden" name="new_barcode" value="<?= $new_barcode;?>">
@@ -131,7 +116,7 @@
                     </div>
                     <div class="modal-footer">
                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                         <button type="submit" class="btn btn-primary" name="addbook">Add Books</button>
+                         <button type="button" class="editBtn btn btn-primary" name="addbook">Add Books</button>
                     </div>
                </form>
           </div>

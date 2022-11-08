@@ -2,8 +2,8 @@
 
  
 session_start();
-include('./admin/config/dbcon.php');
-include('./includes/header.php');
+include('admin/config/dbcon.php');
+include('includes/header.php');
 
 
 if(isset($_POST['admin_login_btn']))
@@ -41,7 +41,7 @@ if(isset($_POST['admin_login_btn']))
   else
   {  
      
-    $_SESSION['message'] = "<small>Invalid email or password</small>";
+    $_SESSION['message'] = "Invalid email or password";
     header("Location: admin_login.php");
     exit(0);
   }
@@ -111,6 +111,6 @@ if(isset($_POST['admin_login_btn']))
      </div>
 </section>
 <?php
-include('./includes/footer.php');
+include('includes/footer.php');
 include('message.php'); 
 ?>

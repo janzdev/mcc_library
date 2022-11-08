@@ -4,6 +4,7 @@ include('includes/header.php');
 include('includes/sidebar.php'); 
 ?>
 
+
 <!-- Add  books Modal Start -->
 <div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
      <div class="modal-dialog modal-lg">
@@ -12,18 +13,22 @@ include('includes/sidebar.php');
                     <h1 class="modal-title fs-5" id="exampleModalLabel">ADD BOOKS</h1>
                     <button type="button" class="btn bi bi-x-lg" data-bs-dismiss="modal" aria-label="Close">
                </div>
-               <form id="saveBook">
+               <form id="saveBook" enctype="multipart/form-data">
                     <div class="modal-body">
 
                          <div class="row">
-                              <div class="col-md-6 col-sm-12 mb-3">
+                              <div class="col-md-4 col-sm-12 mb-3">
                                    <label for="book_barcode">Barcode</label>
                                    <input type="texbarcode=" name="book_barcode" class="form-control"
                                         autocomplete="off">
                               </div>
-                              <div class="col-md-6 col-sm-12 mb-3">
+                              <div class="col-md-4 col-sm-12 mb-3">
                                    <label for="book_title">Title</label>
                                    <input type="text" name="book_title" class="form-control" autocomplete="off">
+                              </div>
+                              <div class="col-md-4 col-sm-12 mb-3">
+                                   <label for="isbn">ISBN</label>
+                                   <input type="text" name="isbn" class="form-control" autocomplete="off">
                               </div>
 
                          </div>
@@ -64,37 +69,7 @@ include('includes/sidebar.php');
                                    <label for="publisher_name">Publisher</label>
                                    <input type="text" name="publisher_name" class="form-control" autocomplete="off">
                               </div>
-                              <div class="col-md-4 col-sm-12 mb-3">
-                                   <label for="isbn">ISBN</label>
-                                   <input type="text" name="isbn" class="form-control" autocomplete="off">
-                              </div>
-                         </div>
-                         <div class="row">
-                              <div class="col-md-4 col-sm-12 mb-3">
-                                   <label for="copyright_year">Copyright</label>
-                                   <input type="text" name="copyright_year" class="form-control" autocomplete="off">
-                              </div>
-                              <div class="col-md-4 col-sm-12 mb-3">
-                                   <label for="book_copies">Copies</label>
-                                   <input type="number" name="book_copies" class="form-control" min="1"
-                                        autocomplete="off">
-                              </div>
-                              <div class="col-md-4 col-sm-12 mb-3">
-                                   <label for="status">Status</label>
-                                   <select name="status" class="form-control">
-                                        <option value="">--Select Status--</option>
-                                        <option value="New">New</option>
-                                        <option value="Old">Old</option>
-                                        <option value="Lost">Lost</option>
-                                        <option value="Damaged">Damaged</option>
-                                        <option value="Replacement">Replacement</option>
-                                        <option value="Hardbound">Hardbound</option>
-
-                                   </select>
-                              </div>
-                         </div>
-                         <div class="row">
-                              <div class="col-md-6 col-sm-12">
+                              <div class="col-md-4 col-sm-12">
                                    <label for="category_id">Category</label>
                                    <select name="category_id" class="form-control">
                                         <option value="">--Select Category--</option>
@@ -110,12 +85,40 @@ include('includes/sidebar.php');
                                         <?php } ?>
                                    </select>
                               </div>
-                              <!-- <div class="col-md-6 col-sm-12">
+
+                         </div>
+                         <div class="row">
+                              <div class="col-md-4 col-sm-12 mb-3">
+                                   <label for="copyright_year">Copyright</label>
+                                   <input type="text" name="copyright_year" class="form-control" autocomplete="off">
+                              </div>
+                              <div class="col-md-4 col-sm-12 mb-3">
+                                   <label for="book_copies">Copies</label>
+                                   <input type="number" name="book_copies" class="form-control" min="1"
+                                        autocomplete="off">
+                              </div>
+                              <div class="col-md-4 col-sm-12 mb-3">
+                                   <label for="status">Status</label>
+                                   <select name="status" tabindex="-1" class="form-control">
+                                        <option value="">--Select Status--</option>
+                                        <option value="New">New</option>
+                                        <option value="Old">Old</option>
+                                        <option value="Lost">Lost</option>
+                                        <option value="Damaged">Damaged</option>
+                                        <option value="Replacement">Replacement</option>
+                                        <option value="Hardbound">Hardbound</option>
+
+                                   </select>
+                              </div>
+                         </div>
+                         <!-- <div class="row">
+
+                              <div class="col-md-6 col-sm-12">
                                    <label for="book_image">Book Image</label>
                                    <input type="file" name="book_image" class="form-control" style="height: 44px;"
                                         autocomplete="off">
-                              </div> -->
-                         </div>
+                              </div>
+                         </div> -->
 
 
                     </div>
@@ -418,7 +421,7 @@ include('includes/sidebar.php');
                          <table id="myDataTable" class="table table-bordered table-hover mytable">
                               <thead>
                                    <tr>
-                                        <!-- <th>BookImage</th> -->
+                                        <th>BookImage</th>
                                         <th>Barcode</th>
                                         <th>Title</th>
                                         <th>ISBN</th>
@@ -426,28 +429,28 @@ include('includes/sidebar.php');
                                         <th>Copies</th>
                                         <th>Category</th>
                                         <th>Status</th>
-                                        <!-- <th>Remarks</th> -->
+                                        <th>Remarks</th>
                                         <th>Action</th>
                                    </tr>
                               </thead>
                               <tbody>
                                    <?php 
-                              $query ="SELECT * FROM book";
-                              $query_run = mysqli_query($con, $query);
+                                        $query ="SELECT * FROM book";
+                                        $query_run = mysqli_query($con, $query);
 
-                              if(mysqli_num_rows($query_run) > 0)
-                              {
-                                   foreach($query_run as $book)
-                                   {
-                                          $categoryt = $book['category_id'];
+                                        if(mysqli_num_rows($query_run) > 0)
+                                        {
+                                             foreach($query_run as $book)
+                                             {
+                                                  $categoryt = $book['category_id'];
 
-                                          $query = "SELECT * FROM category WHERE category_id = '$categoryt'";
-                                          $query_run = mysqli_query($con, $query);
-                                          $category = mysqli_fetch_array($query_run);
-                              ?>
+                                                  $query = "SELECT * FROM category WHERE category_id = '$categoryt'";
+                                                  $query_run = mysqli_query($con, $query);
+                                                  $category = mysqli_fetch_array($query_run);
+                                   ?>
                                    <tr>
 
-
+                                        <td></td>
                                         <td><?= $book['book_barcode'] ?></td>
                                         <td><?= $book['book_title'] ?></td>
                                         <td><?= $book['isbn'] ?></td>
@@ -457,6 +460,9 @@ include('includes/sidebar.php');
                                         <td><?= $book['book_copies'] ?></td>
                                         <td><?= $category['classname'] ?></td>
                                         <td><?= $book['status'] ?></td>
+                                        <td><?= $book['remarks'] ?></td>
+
+
 
 
 
@@ -508,13 +514,17 @@ include('includes/script.php');
 
 ?>
 <script>
+/* A jQuery function that is used to initialize the DataTable. */
+// $(document).ready(function() {
+//      $('#myDataTable').DataTable();
+// });
 // Add Book
 $(document).on('submit', '#saveBook', function(e) {
      e.preventDefault();
 
      var formData = new FormData(this);
      formData.append("save_book", true);
-     $('#myDataTable').DataTable();
+
      $.ajax({
           type: "POST",
           url: "admincode.php",
@@ -537,7 +547,7 @@ $(document).on('submit', '#saveBook', function(e) {
                     alertify.set('notifier', 'position', 'top-center');
                     alertify.success(res.message);
 
-                    $('.mytable').load(location.href + "  .mytable");
+                    $('#myDataTable').load(location.href + " #myDataTable");
 
                }
 
@@ -609,7 +619,7 @@ $(document).on('submit', '#updateBook', function(e) {
                     alertify.error(res.message);
 
                } else if (res.status == 200) {
-                    $('#errorMessageUpdate').addClass('d-none');
+
                     $('#bookEditModal').modal('hide');
                     $('#updateBook')[0].reset();
 
@@ -681,11 +691,14 @@ $(document).on('click', '.deleteBookBtn', function(e) {
                     'book_id': book_id
                },
                success: function(response) {
-                    var res = jQuery.parseJSON(response);
-                    if (res.status == 500) {
-                         alert(res.message);
-                    } else if (res.status == 200) {
 
+                    var res = jQuery.parseJSON(response);
+
+                    if (res.status == 500) {
+
+                         alert(res.message);
+
+                    } else if (res.status == 200) {
 
                          alertify.set('notifier', 'position', 'top-center');
                          alertify.success(res.message);

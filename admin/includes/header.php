@@ -18,8 +18,8 @@
      <link rel="stylesheet" href="assets/font/bootstrap-icons.css">
 
      <!-- Alertify JS link -->
-     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
-     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+     <link rel="stylesheet" href="assets/css/alertify.min.css" />
+     <link rel="stylesheet" href="assets/css/alertify.bootstraptheme.min.css" />
      <!-- Datatables -->
      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
      <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">

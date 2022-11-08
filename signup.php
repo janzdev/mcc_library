@@ -21,13 +21,13 @@ include('./admin/config/dbcon.php');
      <title>MCC LIBRARY</title>
 </head>
 
-<!-- Custom CSS links -->
-<link rel="stylesheet" href="./assets/css/signup.css">
 
 <!-- Alertify JS link -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+<link rel="stylesheet" href="assets/css/alertify.min.css" />
+<link rel="stylesheet" href="assets/css/alertify.bootstraptheme.min.css" />
 
+<!-- Custom CSS links -->
+<link rel="stylesheet" href="./assets/css/signup.css">
 
 
 <body>
@@ -227,14 +227,16 @@ include('./admin/config/dbcon.php');
           </div>
      </div>
 
-     <!-- Custom JS link -->
-     <script src="./assets/js/script.js"></script>
 
      <!-- Font Awesome Link -->
-     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+     <script src="assets/js/kit.fontawesome.js"></script>
 
      <!-- Alertify JS link -->
-     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+     <script src="assets/js/alertify.min.js"></script>
+
+     <!-- Custom JS link -->
+     <script src="assets/js/script.js"></script>
+
 
      <?php include('message.php'); ?>
 </body>

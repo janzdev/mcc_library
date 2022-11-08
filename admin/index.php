@@ -15,7 +15,7 @@ include('./includes/sidebar.php');
 
           <nav>
                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
                </ol>
           </nav>
@@ -26,7 +26,7 @@ include('./includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="row">
                          <div class="col-xxl-4 col-md-4">
-                              <div class="card info-card sales-card">
+                              <div class="card info-card books-card">
 
                                    <div class="card-body">
                                         <h5 class="card-title">Books</h5>
@@ -45,7 +45,7 @@ include('./includes/sidebar.php');
                               </div>
                          </div>
                          <div class="col-xxl-4 col-md-4">
-                              <div class="card info-card revenue-card">
+                              <div class="card info-card students-card">
 
                                    <div class="card-body">
                                         <h5 class="card-title">
@@ -65,7 +65,7 @@ include('./includes/sidebar.php');
                               </div>
                          </div>
                          <div class="col-xxl-4 col-md-4">
-                              <div class="card info-card customers-card">
+                              <div class="card info-card borrowed-card">
 
                                    <div class="card-body">
                                         <h5 class="card-title">

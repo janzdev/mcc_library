@@ -219,7 +219,7 @@ h6 {
   border-color: #ebeef4;
   background-color: #fff;
   color: #798eb3;
-  padding: 15px;
+  /* padding: 15px; */
 }
 
 .card-title {
@@ -719,15 +719,15 @@ h6 {
   flex-shrink: 0;
   flex-grow: 0;
 }
-.dashboard .sales-card .card-icon {
+.dashboard .books-card .card-icon {
   color: #ff771d;
   background: #ffecdf;
 }
-.dashboard .revenue-card .card-icon {
+.dashboard .students-card .card-icon {
   color: #4154f1;
   background: #B8E8FC;
 }
-.dashboard .customers-card .card-icon {
+.dashboard .borrowed-card .card-icon {
   color: #2eca6a;
   background: #e0f8e9;
 }
@@ -805,9 +805,9 @@ h6 {
  .book {
   font-size: 14px;
 }
- /* .book .table thead {
+ .book .table thead {
   background: #f6f6fe;
-} */
+}
  /* .book .table thead th {
   padding: 0;
 } */
