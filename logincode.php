@@ -17,7 +17,7 @@ if(isset($_POST['login_btn']))
       $student_name = $data['firstname'].' '.$data['lastname'];  
       $student_email = $data['email'];
       $role_as = $data['role_as'];
-    }
+    } 
     $_SESSION['auth'] = true;
     $_SESSION['auth_role'] = "$role_as"; //1= Admin, 0 = User
     $_SESSION['auth_stud'] = [
