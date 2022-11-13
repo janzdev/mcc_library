@@ -21,7 +21,7 @@ include('includes/sidebar.php');
                     <div class="card">
                          <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
                               <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                              <h2>Jassa</h2>
+                              <h2>JanDev</h2>
                               <h3>Admin</h3>
 
                          </div>
@@ -46,27 +46,27 @@ include('includes/sidebar.php');
                                         <h5 class="card-title">Profile Details</h5>
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                                             <div class="col-lg-9 col-md-8">Jassa</div>
+                                             <div class="col-lg-9 col-md-8">Ordep</div>
                                         </div>
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label">Company</div>
-                                             <div class="col-lg-9 col-md-8">Therichpost</div>
+                                             <div class="col-lg-9 col-md-8">Devcon</div>
                                         </div>
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label">Job</div>
-                                             <div class="col-lg-9 col-md-8">Web Designer</div>
+                                             <div class="col-lg-9 col-md-8">Web Developer</div>
                                         </div>
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label">Country</div>
-                                             <div class="col-lg-9 col-md-8">USA</div>
+                                             <div class="col-lg-9 col-md-8">Philippines</div>
                                         </div>
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label">Address</div>
-                                             <div class="col-lg-9 col-md-8">Ludhiana, Punjab, India</div>
+                                             <div class="col-lg-9 col-md-8">Poblacion, Santa Fe, Cebu</div>
                                         </div>
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label">Phone</div>
-                                             <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                                             <div class="col-lg-9 col-md-8">(469) 963-211 x5100</div>
                                         </div>
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label">Email</div>

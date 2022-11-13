@@ -13,7 +13,7 @@ if(isset($_POST['login_btn']))
   if(mysqli_num_rows($login_query_run) > 0)
   {
     foreach($login_query_run as $data){
-      $stud_id = $data['stud_id'];  
+      $stud_id = $data['user_id'];  
       $student_name = $data['firstname'].' '.$data['lastname'];  
       $student_email = $data['email'];
       $role_as = $data['role_as'];

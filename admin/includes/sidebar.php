@@ -17,22 +17,22 @@
                </a>
           </li>
           <li class="nav-item">
-               <a class="nav-link collapsed" href="#">
+               <a class="nav-link collapsed" href="borrowed_books.php">
                     <i class="bi bi-box-arrow-up-right"></i><span>Borrowed Books</span>
                </a>
           </li>
           <li class="nav-item">
-               <a class="nav-link collapsed" href="#">
+               <a class="nav-link collapsed" href="returned_books.php">
                     <i class="bi bi-box-arrow-in-down-left"></i><span>Returned Books</span>
                </a>
           </li>
           <li class="nav-item">
-               <a class="nav-link collapsed" href="#">
+               <a class="nav-link collapsed" href="attendance.php">
                     <i class="bi bi-calendar2-check"></i><span>Attendance</span>
                </a>
           </li>
           <li class="nav-item">
-               <a class="nav-link collapsed" href="#">
+               <a class="nav-link collapsed" href="reports.php">
                     <i class="bi bi-info-square"></i><span>Reports</span>
                </a>
           </li>

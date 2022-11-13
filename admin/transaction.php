@@ -26,7 +26,7 @@ include('includes/sidebar.php');
                               <form action="admincode.php" method="POST" class="p-5">
                                    <div class="row d-flex justify-content-center mt-5">
                                         <div class="form-group col-md-4">
-                                             <select name="student_id_number" class="select2_single form-control mb-3 ">
+                                             <select name="student_id_number" class="select2_single form-control mb-3">
 
                                                   <option value="0">Student ID Number:</option>
                                                   <?php

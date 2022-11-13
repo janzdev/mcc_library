@@ -35,8 +35,13 @@ include('./includes/sidebar.php');
                                                   class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                                   <i class="bi bi-book"></i>
                                              </div>
+                                             <?php
+                                             $book_query = "SELECT * FROM book WHERE remarks='Available'";
+                                             $total_book_query = mysqli_query($con, $book_query);
+                                             $total_books = mysqli_num_rows($total_book_query);
+                                             ?>
                                              <div class="ps-3">
-                                                  <h6>3,264</h6>
+                                                  <h6><?=$total_books;?></h6>
                                                   <span class="text-danger small pt-2 fw-bold">Total books
                                                        available</span>
                                              </div>
@@ -56,8 +61,12 @@ include('./includes/sidebar.php');
                                                   class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                                   <i class="bi bi-people"></i>
                                              </div>
+                                             <?php
+                                             $result = mysqli_query($con,"SELECT * FROM user");
+                                             $num_rows = mysqli_num_rows($result);
+                                             ?>
                                              <div class="ps-3">
-                                                  <h6>3,264</h6>
+                                                  <h6><?=$num_rows;?></h6>
                                                   <span class="text-primary small pt-2 fw-bold">Total borrowers</span>
                                              </div>
                                         </div>
@@ -77,7 +86,11 @@ include('./includes/sidebar.php');
                                                   <i class="bi bi-box-arrow-up-right"></i>
                                              </div>
                                              <div class="ps-3">
-                                                  <h6>1244</h6>
+                                                  <?php
+                                                  $result = mysqli_query($con,"SELECT * FROM borrow_book");
+                                                  $num_rows = mysqli_num_rows($result);
+                                                  ?>
+                                                  <h6><?=$num_rows;?></h6>
                                                   <span class="text-success small pt-2 fw-bold">Total borrowed
                                                        books</span>
                                              </div>

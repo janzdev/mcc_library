@@ -7,8 +7,8 @@ include('includes/sidebar.php');
     
     $student_id_number = $_GET['student_id_number'];
 
-    
-    
+    $user_query = mysqli_query($con,"SELECT * FROM user WHERE student_id_no = '$student_id_number' ");
+    $user_row = mysqli_fetch_array($user_query);
     
 ?>
 <main id="main" class="main">
@@ -28,24 +28,26 @@ include('includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="card">
 
-                         <div class="card-header">
-                              <?php
-                            
-                           
-                            $query = "SELECT * FROM user WHERE student_id_no ='$student_id_number'";
-                            $query_run = mysqli_query($con, $query);
-                            
-                            if(mysqli_num_rows($query_run) > 0)
-                            {
-                                 $name_row = mysqli_fetch_array($query_run);
-                           
-                            ?>
+                         <div class="card-header my-3">
+                              <?php                
+                            $sql = mysqli_query($con,"SELECT * FROM user WHERE student_id_no = '$student_id_number' ");
 
+                            if(mysqli_num_rows($sql) > 0)
+                            {
+                               foreach($sql as $name_row)
+                               {
+                                   ?>
                               Borrower Name:
                               <span class="text-danger fw-semibold text-uppercase">
                                    <?php echo $name_row['firstname']." ".$name_row['middlename']." ".$name_row['lastname'];?>
                               </span>
-                              <?php } ?>
+                              <?php
+
+                               }
+                            }
+                                                     
+                         ?>
+
                          </div>
                          <div class="card-body ">
                               <div class="row">
@@ -56,10 +58,10 @@ include('includes/sidebar.php');
                                         </div>
                                    </form> -->
                                    <form method="post" class="d-flex justify-content-center">
-                                        <div class="col-xs-4 my-2 input-group-sm">
+                                        <div class="col-md-4 col-xs-4 my-2 input-group-sm">
                                              <input type="text" style="margin-bottom:10px; margin-left:-9px;"
-                                                  class="form-control" name="barcode"
-                                                  placeholder="Enter barcode here....." autofocus required />
+                                                  class="form-control " name="barcode"
+                                                  placeholder="Enter Book Barcode here....." autofocus required />
                                         </div>
                                    </form>
                                    <div class="table-responsive">
@@ -77,12 +79,20 @@ include('includes/sidebar.php');
                                                   <?php
                                                         if (isset($_POST['barcode']))
                                                         {
-                                                            
                                                             $barcode = $_POST['barcode'];
+
                                                             $book_query = mysqli_query($con,"SELECT * FROM book WHERE book_barcode = '$barcode' ");
                                                             $book_count = mysqli_num_rows($book_query);
-                                                            while($book_row = mysqli_fetch_array($book_query))
+                                                           ($book_query);
+                                                           
+                                                            if(mysqli_num_rows( $book_query) > 0)
                                                             {
+                                                                 foreach( $book_query as $book_row )
+                                                                 {
+                                                                      
+                                                                      
+                                                                
+                                                           
                                                                  
                                                             if ($book_row['book_barcode'] != $barcode){
                                                                  $_SESSION['message_error'] = 'No match for the barcode entered!';
@@ -103,6 +113,7 @@ include('includes/sidebar.php');
                                                                  //      </table>
                                                                  // ';
                                                             }else{
+                                                            }
                                                        ?>
 
 
@@ -137,13 +148,21 @@ include('includes/sidebar.php');
                                                                       class="fa fa-check"></i>
                                                                  Borrow</button></td>
                                                   </tr>
-                                                  <?php } } }?>
+                                                  <?php 
+                                                                 }
+                                                  }
+                                                  else
+                                                  {
+                                                       // $_SESSION['No match barcode'];
+                                                       // header("Location:borrow_book.php");
+                                                  }
+                                                  
+                                              } ?>
                                                   <?php
-                                                  $allowable_days_query = "SELECT * FROM allowed_days ORDER BY allowed_days_id DESC";
-                                                  $allowable_days_query_run = mysqli_query($con, $allowable_days_query);
+                                                  
 
-                                                  // $allowable_days_query= mysqli_query($con,"select * from allowed_days order by allowed_days_id DESC ") or die (mysqli_error());
-                                                  $allowable_days_row = mysqli_fetch_assoc($allowable_days_query_run);
+                                                  $allowable_days_query= mysqli_query($con,"select * from allowed_days order by allowed_days_id DESC ");
+                                                  $allowable_days_row = mysqli_fetch_assoc($allowable_days_query);
                                                   
                                                   $timezone = "Asia/Manila";
                                                   if(function_exists('date_default_timezone_set')) date_default_timezone_set($timezone);
@@ -152,7 +171,7 @@ include('includes/sidebar.php');
                                                   $due_date = strtotime($cur_date);
                                                   $due_date = strtotime("+".$allowable_days_row['no_of_days']." day", $due_date);
                                                   $due_date = date('Y-m-d H:i:s', $due_date);
-                                                  ///$checkout = date('m/d/Y', strtotime("+1 day", strtotime($due_date)));
+                                                 
                                                   ?>
                                                   <input type="hidden" name="due_date" class="new_text" id="sd"
                                                        value="<?php echo $due_date ?>" size="16" maxlength="10" />
@@ -166,8 +185,9 @@ include('includes/sidebar.php');
                                    </div>
                               </div>
                               <div class="row mt-4">
-                                   <div class="table-responsive">
-                                        <table class="table table-bordered table-sm mt-3">
+                                   <div class="text-muted">Book/s Borrowed</div>
+                                   <div class="table-responsive book ">
+                                        <table class="table table-bordered table-sm  mt-1">
                                              <thead>
                                                   <tr>
                                                        <th>Barcodde</th>
@@ -179,21 +199,22 @@ include('includes/sidebar.php');
                                                        <th>Penalty</th>
                                                        <th>Action</th>
                                                        <?php
-                                                      $query ="SELECT * FROM user WHERE student_id_no = '$student_id_number' ";
-                                                      $query_run = mysqli_query($con, $query);
-                                                  
-                                                      if(mysqli_num_rows($query_run) > 0) 
-                                                      {
-                                                       
-                                                       $user_row = mysqli_fetch_array($query_run);
-                                                      
                                                      
+                                                  
+                                                  //     if(mysqli_num_rows($query_run) > 0) 
+                                                  //     {
+                                                       
+                                                      
                                                       
                                                       $borrow_query = mysqli_query($con,"SELECT * FROM borrow_book
-									LEFT JOIN book ON borrow_book.book_id = book.book_id
-									WHERE user_id = '".$user_row['user_id']."' && borrowed_status = 'borrowed' ORDER BY borrow_book_id DESC");
-								              
-                                                       $borrow_count = mysqli_num_rows($borrow_query);
+                                                            LEFT JOIN book ON borrow_book.book_id = book.book_id
+                                                            WHERE user_id = '".$user_row['user_id']."' && borrowed_status = 'borrowed' ORDER BY borrow_book_id DESC");
+
+								                  $borrow_count = mysqli_num_rows($borrow_query);
+                                                  
+
+                                                  
+                                                                                                        
                                                        while($borrow_row = mysqli_fetch_array($borrow_query))
                                                        {
                                                            
@@ -207,8 +228,9 @@ include('includes/sidebar.php');
                                                             $date_returned = date("Y-m-d H:i:s");
 
 
-                                                            $penalty_amount_query = "SELECT * FROM penalty ORDER BY penalty_id DESC";
-                                                            $penalty_amount_query_run = mysqli_query($con, $penalty_amount_query);
+                                                            $penalty_amount_query= mysqli_query($con,"select * from penalty order by penalty_id DESC ");
+                                                            $penalty_amount = mysqli_fetch_assoc($penalty_amount_query);
+                                                            
 
                                                             if($date_returned > $due_date)
                                                             {
@@ -250,7 +272,7 @@ include('includes/sidebar.php');
                                                             }
                                                        ?>
                                                        <td>
-                                                            <form method="post" action="admincode.php">
+                                                            <form method=" post" action="admincode.php">
                                                                  <input type="hidden" name="date_returned"
                                                                       class="new_text" id="sd"
                                                                       value="<?=$date_returned ?>" size="16"
@@ -265,8 +287,7 @@ include('includes/sidebar.php');
                                                                       value="<?=$borrow_row['date_borrowed']; ?>">
                                                                  <input type="hidden" name="due_date"
                                                                       value="<?=$borrow_row['due_date']; ?>">
-                                                                 <button name="return" class="btn btn-danger btn-sm"><i
-                                                                           class="glyphicon glyphicon-remove"></i>
+                                                                 <button name="return" class="btn btn-danger btn-sm">
                                                                       Return</button>
                                                             </form>
                                                        </td>
@@ -274,18 +295,19 @@ include('includes/sidebar.php');
 
                                                   <?php
                                                   
-                                                  }
-                                                  if($borrow_count <= 0){
-                                                       
-                                                       echo '<table class="table table-sm" style="float:right;">
-                                                                      <tr>
-                                                                           <td style="padding:10px;" class="alert alert-danger text-center">No books borrowed</td>
-                                                                      </tr>
-                                                                 </table>
-                                                            ';
-                                                  } 
                                              }
-                                            
+                                             if($borrow_count <= 0)
+                                             {
+                                                  echo '
+									<table class="table" >
+										<tr>
+											<td style="padding:5px;" class="alert alert-danger text-center ">No books borrowed</td>
+										</tr>
+									</table>
+								';
+                                             }
+                                              
+                                        
                                                   
                                                   ?>
 
