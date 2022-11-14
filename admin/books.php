@@ -13,7 +13,7 @@ include('includes/sidebar.php');
           <div class="card book overflow-auto">
                <div class="card-header pt-3 pb-0 px-3">
                     <div class="pagetitle">
-                         <h1>Books List
+                         <h1>Book List
                               <!-- Add book Button trigger modal -->
                               <a href="books_add.php" class="btn btn-primary float-end">
                                    <i class="bi bi-journal-plus"></i>

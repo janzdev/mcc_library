@@ -99,7 +99,7 @@ include('./includes/sidebar.php');
                               </div>
                          </div>
 
-                         <div class="col-12">
+                         <!-- <div class="col-12">
                               <div class="card recent-sales overflow-auto">
 
                                    <div class="card-body">
@@ -176,7 +176,7 @@ include('./includes/sidebar.php');
                                         </table>
                                    </div>
                               </div>
-                         </div>
+                         </div> -->
 
                     </div>
                </div>

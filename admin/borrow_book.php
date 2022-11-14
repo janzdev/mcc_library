@@ -228,7 +228,7 @@ include('includes/sidebar.php');
                                                             $date_returned = date("Y-m-d H:i:s");
 
 
-                                                            $penalty_amount_query= mysqli_query($con,"select * from penalty order by penalty_id DESC ");
+                                                            $penalty_amount_query= mysqli_query($con,"SELECT * FROM penalty ORDER BY penalty_id DESC");
                                                             $penalty_amount = mysqli_fetch_assoc($penalty_amount_query);
                                                             
 
@@ -272,7 +272,7 @@ include('includes/sidebar.php');
                                                             }
                                                        ?>
                                                        <td>
-                                                            <form method=" post" action="admincode.php">
+                                                            <form method="POST" action="admincode.php">
                                                                  <input type="hidden" name="date_returned"
                                                                       class="new_text" id="sd"
                                                                       value="<?=$date_returned ?>" size="16"

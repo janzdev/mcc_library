@@ -6,11 +6,11 @@ include('includes/sidebar.php');
 
 <main id="main" class="main" style="height: 80vh;">
      <div class="pagetitle">
-          <h1>Borrowed Books</h1>
+          <h1>Student Attendance</h1>
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item">Borrowed Books</li>
+                    <li class="breadcrumb-item">Attendance</li>
                </ol>
           </nav>
      </div>
@@ -37,9 +37,9 @@ include('includes/sidebar.php');
                                         <tbody>
 
                                              <?php
-							$result= mysqli_query($con,"select * from user_log 
+							$result= mysqli_query($con,"SELECT * FROM user_log 
 							LEFT JOIN user ON user_log.user_id = user.user_id 
-							order by user_log.user_log_id DESC ") or die (mysqli_error());
+							ORDER BY user_log.user_log_id DESC ") or die (mysqli_connect_error());
 							while ($row= mysqli_fetch_array ($result) ){
 							$id=$row['user_log_id'];
 							$user_id=$row['user_id'];
@@ -55,7 +55,7 @@ include('includes/sidebar.php');
                                                             style="border:4px groove #CCCCCC; border-radius:5px;">
                                                        <?php endif; ?>
                                                   </td>
-                                                  <td><?php echo $row['school_number']; ?></td>
+                                                  <td><?php echo $row['student_id_no']; ?></td>
                                                   <td><?php echo $row['user_name']; ?></td>
                                                   <td><?php echo date("M d, Y h:i:s a", strtotime($row['date_log'])); ?>
                                                   </td>

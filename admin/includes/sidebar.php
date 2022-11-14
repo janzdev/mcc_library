@@ -32,7 +32,7 @@
                </a>
           </li>
           <li class="nav-item">
-               <a class="nav-link collapsed" href="reports.php">
+               <a class="nav-link collapsed" href="report.php">
                     <i class="bi bi-info-square"></i><span>Reports</span>
                </a>
           </li>

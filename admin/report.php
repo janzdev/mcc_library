@@ -6,11 +6,11 @@ include('includes/sidebar.php');
 
 <main id="main" class="main" style="height: 80vh;">
      <div class="pagetitle">
-          <h1>Borrowed Books</h1>
+          <h1>Reports</h1>
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item">Borrowed Books</li>
+                    <li class="breadcrumb-item">Report</li>
                </ol>
           </nav>
      </div>
@@ -38,11 +38,12 @@ include('includes/sidebar.php');
                                         <tbody>
 
                                              <?php
-							$result= mysqli_query($con,"select * from report 
+							$result= mysqli_query($con,"SELECT * from report 
 							LEFT JOIN book ON report.book_id = book.book_id 
 							LEFT JOIN user ON report.user_id = user.user_id 
-							order by report.report_id DESC ") or die (mysqli_error());
-							while ($row= mysqli_fetch_array ($result) ){
+							order by report.report_id DESC ") or die (mysqli_connect_error());
+							while ($row= mysqli_fetch_array ($result) )
+                                   {
 							$id=$row['report_id'];
 							$book_id=$row['book_id'];
 							$user_name=$row['firstname']." ".$row['middlename']." ".$row['lastname'];
