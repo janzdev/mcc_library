@@ -21,13 +21,13 @@ include('includes/sidebar.php');
                     <div class="card">
                          <div class="card-header">
                               <?php
-							$return_query= mysqli_query($con,"select * from return_book 
+							$return_query= mysqli_query($con,"SELECT * from return_book 
 							LEFT JOIN book ON return_book.book_id = book.book_id 
 							LEFT JOIN user ON return_book.user_id = user.user_id 
-							where return_book.return_book_id order by return_book.return_book_id DESC") or die (mysqli_error());
+							WHERE return_book.return_book_id ORDER BY return_book.return_book_id DESC") or die (mysqli_connect_error());
 								$return_count = mysqli_num_rows($return_query);
 								
-							$count_penalty = mysqli_query($con,"SELECT sum(book_penalty) FROM return_book ")or die(mysqli_error());
+							$count_penalty = mysqli_query($con,"SELECT sum(book_penalty) FROM return_book ")or die(mysqli_connect_error());
 							$count_penalty_row = mysqli_fetch_array($count_penalty);
 							
 							?>

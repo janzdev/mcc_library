@@ -53,13 +53,13 @@ if (isset($_POST['borrow'])){
    mysqli_query($con,"INSERT INTO borrow_book(user_id,book_id,date_borrowed,due_date,borrowed_status)
    VALUES('$user_id','$book_id','$date_borrowed','$due_date','borrowed')");
    
-   $report_history=mysqli_query($con,"select * from admin where admin_id = $id_session ");
-   $report_history_row=mysqli_fetch_array($report_history);
-   $admin_row=$report_history_row['firstname']." ".$report_history_row['middlename']." ".$report_history_row['lastname'];	
+   // $report_history=mysqli_query($con,"select * from admin where admin_id = $id_session ");
+   // $report_history_row=mysqli_fetch_array($report_history);
+   // $admin_row=$report_history_row['firstname']." ".$report_history_row['middlename']." ".$report_history_row['lastname'];	
    
-   mysqli_query($con,"INSERT INTO report 
-   (book_id, user_id, admin_name, detail_action, date_transaction)
-   VALUES ('$book_id','$user_id','$admin_row','Borrowed Book',NOW())");
+   // mysqli_query($con,"INSERT INTO report 
+   // (book_id, user_id, admin_name, detail_action, date_transaction)
+   // VALUES ('$book_id','$user_id','$admin_row','Borrowed Book',NOW())");
    
    }
    }
@@ -91,8 +91,8 @@ if (isset($_POST['return'])) {
       $remark = 'Available';
    }
    
-   mysqli_query($con,"UPDATE book SET book_copies = '$new_book_copies' where book_id = '$book_id'");
-   mysqli_query($con,"UPDATE book SET remarks = '$remark' where book_id = '$book_id' ");
+   mysqli_query($con,"UPDATE book SET book_copies = '$new_book_copies' WHERE book_id = '$book_id'");
+   mysqli_query($con,"UPDATE book SET remarks = '$remark' WHERE book_id = '$book_id' ");
 
    $timezone = "Asia/Manila";
    if(function_exists('date_default_timezone_set')) date_default_timezone_set($timezone);
@@ -103,7 +103,7 @@ if (isset($_POST['return'])) {
    //$due_date = date('F j, Y g:i a', $due_date);
    ///$checkout = date('m/d/Y', strtotime("+1 day", strtotime($due_date)));			
    
-   $penalty_amount_query= mysqli_query($con,"select * from penalty order by penalty_id DESC ");
+   $penalty_amount_query= mysqli_query($con,"SELECT * FROM penalty ORDER BY penalty_id DESC ");
    $penalty_amount = mysqli_fetch_assoc($penalty_amount_query);
    
    if ($date_returned > $due_date) {
@@ -114,18 +114,18 @@ if (isset($_POST['return'])) {
       $penalty = 'No Penalty';
    }
 
-   mysqli_query($con,"UPDATE borrow_book SET borrowed_status = 'returned', date_returned = '$date_returned_now', book_penalty = '$penalty' WHERE borrow_book_id= '$borrow_book_id' and user_id = '$user_id' and book_id = '$book_id' ");
+   mysqli_query($con,"UPDATE borrow_book SET borrowed_status = 'returned', date_returned = '$date_returned_now', book_penalty = '$penalty' WHERE borrow_book_id= '$borrow_book_id' AND user_id = '$user_id' AND book_id = '$book_id' ");
    
    mysqli_query($con,"INSERT INTO return_book (user_id, book_id, date_borrowed, due_date, date_returned, book_penalty)
    values ('$user_id', '$book_id', '$date_borrowed', '$due_date', '$date_returned', '$penalty')");
    
-   $report_history1=mysqli_query($con,"select * from admin where admin_id = $id_session ");
-   $report_history_row1=mysqli_fetch_array($report_history1);
-   $admin_row1=$report_history_row1['firstname']." ".$report_history_row1['middlename']." ".$report_history_row1['lastname'];	
+   // $report_history1=mysqli_query($con,"select * from admin where admin_id = $id_session ");
+   // $report_history_row1=mysqli_fetch_array($report_history1);
+   // $admin_row1=$report_history_row1['firstname']." ".$report_history_row1['middlename']." ".$report_history_row1['lastname'];	
    
-   mysqli_query($con,"INSERT INTO report 
-   (book_id, user_id, admin_name, detail_action, date_transaction)
-   VALUES ('$book_id','$user_id','$admin_row1','Returned Book',NOW())");
+   // mysqli_query($con,"INSERT INTO report 
+   // (book_id, user_id, admin_name, detail_action, date_transaction)
+   // VALUES ('$book_id','$user_id','$admin_row1','Returned Book',NOW())");
    
 ?>
 <script>

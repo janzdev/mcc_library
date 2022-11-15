@@ -23,7 +23,7 @@ if(isset($_POST['register_btn']))
             
             if(empty($lastname) || empty($firstname) || empty($middlename) || empty($nickname) || empty($gender) || empty( $birthdate) || empty( $address) || empty($cell_no) || empty($contact_person) || empty($contact_person_no) || empty( $email) || empty($year_level) || empty($course) || empty($student_id_no) || empty($password) || empty($cpassword) )
             {
-              $_SESSION['message'] = "Please fill up all fields";
+              $_SESSION['message_error'] = "Please fill up all fields";
               header("Location:signup.php");
               exit(0);
               
@@ -40,7 +40,7 @@ if(isset($_POST['register_btn']))
 
               if(mysqli_num_rows($checkstudent_id_no_run) > 0)
                 {
-                  $_SESSION['message'] = "School ID No. Already Exist";
+                  $_SESSION['message_error'] = "School ID No. Already Exist";
                   header("Location:signup.php");
                   exit(0);
                 }
@@ -51,14 +51,14 @@ if(isset($_POST['register_btn']))
                     
                     if($student_query_run)
                     {
-                      $_SESSION['message'] = "Register Successfully";
+                      $_SESSION['message_success'] = "Register Successfully";
                       header("Location:login.php");
                       exit(0);
                       
                     }
                     else
                     {
-                      $_SESSION['message'] = "Something Went Wrong";
+                      $_SESSION['message_error'] = "Something Went Wrong";
                       header("Location:signup.php");
                       exit(0);
                     }
@@ -66,7 +66,7 @@ if(isset($_POST['register_btn']))
             }
             else
             {
-              $_SESSION['message'] = "Password and Confirm Password does not match";
+              $_SESSION['message_error'] = "Password and Confirm Password does not match";
               header("Location:signup.php");
               exit(0);
             }

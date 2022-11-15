@@ -32,7 +32,7 @@ if(isset($_POST['admin_login_btn']))
       
     if($_SESSION['auth_role'] == 1)  // 1 = Admin
     {
-      $_SESSION['message'] = "<small>Welcome to Dashboard Admin!</small>";
+      $_SESSION['message_success'] = "<small>Welcome to Dashboard Admin!</small>";
       header("Location:admin/index.php");
       exit(0);
     }
@@ -41,7 +41,7 @@ if(isset($_POST['admin_login_btn']))
   else
   {  
      
-    $_SESSION['message'] = "Invalid email or password";
+    $_SESSION['message_error'] = "Invalid email or password";
     header("Location: admin_login.php");
     exit(0);
   }

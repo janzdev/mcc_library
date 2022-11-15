@@ -7,6 +7,11 @@
                </a>
           </li>
           <li class="nav-item">
+               <a class="nav-link collapsed" href="user.php">
+                    <i class="bi bi-people"></i></i><span>Borrowers</span>
+               </a>
+          </li>
+          <li class="nav-item">
                <a class="nav-link collapsed" href="books.php">
                     <i class="bi bi-book"></i><span>Books</span>
                </a>

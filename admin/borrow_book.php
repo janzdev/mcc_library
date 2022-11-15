@@ -29,24 +29,13 @@ include('includes/sidebar.php');
                     <div class="card">
 
                          <div class="card-header my-3">
-                              <?php                
-                            $sql = mysqli_query($con,"SELECT * FROM user WHERE student_id_no = '$student_id_number' ");
-
-                            if(mysqli_num_rows($sql) > 0)
-                            {
-                               foreach($sql as $name_row)
-                               {
-                                   ?>
-                              Borrower Name:
-                              <span class="text-danger fw-semibold text-uppercase">
-                                   <?php echo $name_row['firstname']." ".$name_row['middlename']." ".$name_row['lastname'];?>
-                              </span>
-                              <?php
-
-                               }
-                            }
-                                                     
-                         ?>
+                              <form method="post" class="d-flex justify-content-center">
+                                   <div class="col-md-4 col-xs-4 my-2 input-group-sm">
+                                        <input type="text" style="margin-bottom:10px; margin-left:-9px;"
+                                             class="form-control " name="barcode"
+                                             placeholder="Enter Book Barcode here....." autofocus required />
+                                   </div>
+                              </form>
 
                          </div>
                          <div class="card-body ">
@@ -57,13 +46,7 @@ include('includes/sidebar.php');
                                                   placeholder="Barcode">
                                         </div>
                                    </form> -->
-                                   <form method="post" class="d-flex justify-content-center">
-                                        <div class="col-md-4 col-xs-4 my-2 input-group-sm">
-                                             <input type="text" style="margin-bottom:10px; margin-left:-9px;"
-                                                  class="form-control " name="barcode"
-                                                  placeholder="Enter Book Barcode here....." autofocus required />
-                                        </div>
-                                   </form>
+
                                    <div class="table-responsive">
                                         <table class="table  table-sm">
 
@@ -74,6 +57,7 @@ include('includes/sidebar.php');
                                                   <th>Title</th>
                                                   <th>Author</th>
                                                   <th>ISBN</th>
+                                                  <th>Copies</th>
                                                   <th>Status</th>
                                                   <th>Action</th>
                                                   <?php
@@ -143,6 +127,7 @@ include('includes/sidebar.php');
                                                        <td style="text-transform: capitalize">
                                                             <?=$book_row['author'] ?></td>
                                                        <td><?=$book_row['isbn'] ?></td>
+                                                       <td><?=$book_row['book_copies'] ?></td>
                                                        <td><?=$book_row['status'] ?></td>
                                                        <td><button name="borrow" class="btn btn-primary btn-sm"><i
                                                                       class="fa fa-check"></i>
@@ -185,6 +170,26 @@ include('includes/sidebar.php');
                                    </div>
                               </div>
                               <div class="row mt-4">
+
+                                   <div class="text-muted mb-2"> <?php                
+                            $sql = mysqli_query($con,"SELECT * FROM user WHERE student_id_no = '$student_id_number' ");
+
+                            if(mysqli_num_rows($sql) > 0)
+                            {
+                               foreach($sql as $name_row)
+                               {
+                                   ?>
+                                        Borrower Name:
+                                        <span class="text-danger fw-semibold text-uppercase">
+                                             <?php echo $name_row['firstname']." ".$name_row['middlename']." ".$name_row['lastname'];?>
+                                        </span>
+                                        <?php
+
+                               }
+                            }
+                                                     
+                         ?>
+                                   </div>
                                    <div class="text-muted">Book/s Borrowed</div>
                                    <div class="table-responsive book ">
                                         <table class="table table-bordered table-sm  mt-1">

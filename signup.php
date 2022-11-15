@@ -3,7 +3,7 @@ session_start();
 
 if(isset($_SESSION['auth']))
 {
-  $_SESSION['message'] = "You are already logged in";
+  $_SESSION['message_error'] = "You are already logged in";
   header("Location: index.php");
   exit(0);
 }
@@ -142,7 +142,7 @@ include('./admin/config/dbcon.php');
 
                          <div class="field">
                               <div class="label">Year Level</div>
-                              <input type="number" name="year_level" />
+                              <input type="number" name="year_level" min="1" max="4" />
                          </div>
 
                          <div class="field">

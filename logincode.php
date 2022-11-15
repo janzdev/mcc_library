@@ -29,7 +29,7 @@ if(isset($_POST['login_btn']))
     
     if($_SESSION['auth_role'] == 0)  // 1 = Admin
     {
-      $_SESSION['message'] = "Welcome student!";
+      $_SESSION['message_success'] = "Welcome student!";
       header("Location:index.php");
       exit(0);
     }
@@ -49,14 +49,14 @@ if(isset($_POST['login_btn']))
   }
   else
   {  
-    $_SESSION['message'] = "<small>Invalid School ID no.  or Password</small>";
+    $_SESSION['message_error'] = "<small>Invalid School ID no.  or Password</small>";
     header("Location:login.php");
     exit(0);
   }
 }
 else
 {
-  $_SESSION['message'] = "You are not allowed to access this file";
+  $_SESSION['message_error'] = "You are not allowed to access this file";
   header("Location:login.php");
   exit(0);
 }

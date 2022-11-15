@@ -3,7 +3,7 @@ session_start();
 include('includes/header.php'); 
 
 if(empty($_SESSION['auth'])){
-  $_SESSION['message'] = "<small>Login your Credentials to Access</small>";
+  $_SESSION['message_error'] = "<small>Login your Credentials to Access</small>";
   header('Location: login.php');
   exit(0);
 }
