@@ -1008,6 +1008,7 @@ url("./fonts/bootstrap-icons.woff?8d200481aa7f02a2d63a331fc782cfaf") format("wof
 .bi-person-dash::before { content: "\f4d9"; }
 .bi-person-fill::before { content: "\f4da"; }
 .bi-person-lines-fill::before { content: "\f4db"; }
+.bi-person-lock::before { content: "\f8a8"; }
 .bi-person-plus-fill::before { content: "\f4dc"; }
 .bi-person-plus::before { content: "\f4dd"; }
 .bi-person-square::before { content: "\f4de"; }

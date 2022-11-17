@@ -69,7 +69,8 @@ if(isset($_POST['admin_login_btn']))
                                    Welcome to
 
                               </h4>
-                              <h1><strong>MCC <span class="text-info">LIBRARY</span></strong></h1>
+                              <h1 class="m-0"><strong>MCC</strong></h1>
+                              <p class="fs-4 fw-semibold text-info">Learning Resource Center</p>
                               <p class="m-0">Admin Login</p>
                          </div>
 

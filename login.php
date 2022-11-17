@@ -39,9 +39,11 @@ include('includes/header.php');
                                    Welcome to
 
                               </h4>
-                              <h1><strong>MCC <span class="text-info">LIBRARY</span></strong></h1>
-                         </div>
+                              <h1 class="m-0"><strong>MCC</strong></h1>
+                              <p class="fs-4 fw-semibold text-info">Learning Resource Center</p>
 
+                         </div>
+                         <p class="m-0">Student Login</p>
                          <form action="logincode.php" method="POST" class="needs-validation" novalidate>
                               <div class="col-md-12">
                                    <div class="form-floating mb-3">

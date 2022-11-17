@@ -3,42 +3,27 @@
           <li class="nav-item">
                <a class="nav-link active" href="index.php">
                     <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
+                    <span>Statistic</span>
                </a>
           </li>
           <li class="nav-item">
-               <a class="nav-link collapsed" href="user.php">
-                    <i class="bi bi-people"></i></i><span>Borrowers</span>
+               <a class="nav-link collapsed" href="web_opac.php">
+                    <i class="bi bi-book"></i><span>Web OPAC</span>
                </a>
           </li>
           <li class="nav-item">
-               <a class="nav-link collapsed" href="books.php">
-                    <i class="bi bi-book"></i><span>Books</span>
+               <a class="nav-link collapsed" href="users.php">
+                    <i class="bi bi-people"></i><span>Users</span>
                </a>
           </li>
           <li class="nav-item">
-               <a class="nav-link collapsed" href="transaction.php">
-                    <i class="bi bi-people"></i><span>Transaction</span>
-               </a>
-          </li>
-          <li class="nav-item">
-               <a class="nav-link collapsed" href="borrowed_books.php">
-                    <i class="bi bi-box-arrow-up-right"></i><span>Borrowed Books</span>
-               </a>
-          </li>
-          <li class="nav-item">
-               <a class="nav-link collapsed" href="returned_books.php">
-                    <i class="bi bi-box-arrow-in-down-left"></i><span>Returned Books</span>
-               </a>
-          </li>
-          <li class="nav-item">
-               <a class="nav-link collapsed" href="attendance.php">
-                    <i class="bi bi-calendar2-check"></i><span>Attendance</span>
+               <a class="nav-link collapsed" href="circulation.php">
+                    <i class="bi bi-journal-album"></i><span>Circulation</span>
                </a>
           </li>
           <li class="nav-item">
                <a class="nav-link collapsed" href="report.php">
-                    <i class="bi bi-info-square"></i><span>Reports</span>
+                    <i class="bi bi-file-earmark"></i><span>Report</span>
                </a>
           </li>
      </ul>

@@ -5,7 +5,7 @@
      <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1" />
      <link rel="icon" href="./assets/img/mcc-logo.png">
-     <title>MCC LIBRARY</title>
+     <title>MCC Learning Resource Center</title>
 
      <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="assets/css/bootstrap5.min.css" />
@@ -23,6 +23,9 @@
      <!-- Alertify JS cdn link -->
      <link rel="stylesheet" href="assets/css/alertify.min.css" />
      <link rel="stylesheet" href="assets/css/alertify.bootstraptheme.min.css" />
+
+     <!-- Fontawesome Link -->
+     <link rel="stylesheet" href="assets/icon/all.min.css">
 </head>
 
 <body>

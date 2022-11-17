@@ -48,18 +48,7 @@ include('includes/sidebar.php');
                                              <div class="col-lg-3 col-md-4 label ">Full Name</div>
                                              <div class="col-lg-9 col-md-8">Ordep</div>
                                         </div>
-                                        <div class="row">
-                                             <div class="col-lg-3 col-md-4 label">Company</div>
-                                             <div class="col-lg-9 col-md-8">Devcon</div>
-                                        </div>
-                                        <div class="row">
-                                             <div class="col-lg-3 col-md-4 label">Job</div>
-                                             <div class="col-lg-9 col-md-8">Web Developer</div>
-                                        </div>
-                                        <div class="row">
-                                             <div class="col-lg-3 col-md-4 label">Country</div>
-                                             <div class="col-lg-9 col-md-8">Philippines</div>
-                                        </div>
+
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label">Address</div>
                                              <div class="col-lg-9 col-md-8">Poblacion, Santa Fe, Cebu</div>

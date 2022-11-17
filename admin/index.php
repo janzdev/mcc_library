@@ -11,12 +11,12 @@ include('./includes/sidebar.php');
 <main id="main" class="main">
      <div class="pagetitle">
 
-          <h1>Dashboard</h1>
+          <h1>Statistic</h1>
 
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item active">Statistic</li>
                </ol>
           </nav>
      </div>
@@ -35,13 +35,9 @@ include('./includes/sidebar.php');
                                                   class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                                   <i class="bi bi-book"></i>
                                              </div>
-                                             <?php
-                                             $book_query = "SELECT * FROM book WHERE remarks='Available'";
-                                             $total_book_query = mysqli_query($con, $book_query);
-                                             $total_books = mysqli_num_rows($total_book_query);
-                                             ?>
+
                                              <div class="ps-3">
-                                                  <h6><?=$total_books;?></h6>
+                                                  <h6>6</h6>
                                                   <span class="text-danger small pt-2 fw-bold">Total books
                                                        available</span>
                                              </div>
@@ -61,12 +57,8 @@ include('./includes/sidebar.php');
                                                   class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                                   <i class="bi bi-people"></i>
                                              </div>
-                                             <?php
-                                             $result = mysqli_query($con,"SELECT * FROM user");
-                                             $num_rows = mysqli_num_rows($result);
-                                             ?>
                                              <div class="ps-3">
-                                                  <h6><?=$num_rows;?></h6>
+                                                  <h6>10</h6>
                                                   <span class="text-primary small pt-2 fw-bold">Total borrowers</span>
                                              </div>
                                         </div>
@@ -86,11 +78,7 @@ include('./includes/sidebar.php');
                                                   <i class="bi bi-box-arrow-up-right"></i>
                                              </div>
                                              <div class="ps-3">
-                                                  <?php
-                                                  $result = mysqli_query($con,"SELECT * FROM borrow_book");
-                                                  $num_rows = mysqli_num_rows($result);
-                                                  ?>
-                                                  <h6><?=$num_rows;?></h6>
+                                                  <h6>20</h6>
                                                   <span class="text-success small pt-2 fw-bold">Total borrowed
                                                        books</span>
                                              </div>
@@ -99,84 +87,37 @@ include('./includes/sidebar.php');
                               </div>
                          </div>
 
-                         <!-- <div class="col-12">
+                         <div class="col-12">
                               <div class="card recent-sales overflow-auto">
 
                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                             Recent Transactions
-                                        </h5>
-                                        <table class="table table-borderless datatable">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                             <h5 class="card-title">
+                                                  Student Attendance
+                                             </h5>
+                                             <div>
+                                                  <a href="#" class="btn btn-danger btn-sm">EXPORT</a>
+                                             </div>
+
+                                        </div>
+
+                                        <table id="myDataTable" class="table table-borderless datatable">
                                              <thead>
                                                   <tr>
-                                                       <th scope="col">#</th>
+                                                       <th scope="col">Student ID No.</th>
                                                        <th scope="col">Students</th>
-                                                       <th scope="col">Books</th>
-                                                       <th scope="col">Price</th>
-                                                       <th scope="col">Status</th>
+                                                       <th scope="col">Time In</th>
+                                                       <th scope="col">Time Out</th>
+                                                       <th scope="col">Date</th>
                                                   </tr>
                                              </thead>
                                              <tbody>
-                                                  <tr>
-                                                       <th scope="row"><a href="#">#2457</a></th>
-                                                       <td>Brandon Jacob</td>
-                                                       <td>
-                                                            <a href="#" class="text-primary">At praesentium minu</a>
-                                                       </td>
-                                                       <td>$1</td>
-                                                       <td>
-                                                            <span class="badge bg-success">Approved</span>
-                                                       </td>
-                                                  </tr>
-                                                  <tr>
-                                                       <th scope="row"><a href="#">#2147</a></th>
-                                                       <td>Bridie Kessler</td>
-                                                       <td>
-                                                            <a href="#" class="text-primary">Blanditiis dolor omnis
-                                                                 similique</a>
-                                                       </td>
-                                                       <td>$2</td>
-                                                       <td><span class="badge bg-warning">Pending</span></td>
-                                                  </tr>
-                                                  <tr>
-                                                       <th scope="row"><a href="#">#2049</a></th>
-                                                       <td>Ashleigh Langosh</td>
-                                                       <td>
-                                                            <a href="#" class="text-primary">At recusandae
-                                                                 consectetur</a>
-                                                       </td>
-                                                       <td>$3</td>
-                                                       <td>
-                                                            <span class="badge bg-success">Approved</span>
-                                                       </td>
-                                                  </tr>
-                                                  <tr>
-                                                       <th scope="row"><a href="#">#2644</a></th>
-                                                       <td>Angus Grady</td>
-                                                       <td>
-                                                            <a href="#" class="text-primar">Ut voluptatem id earum
-                                                                 et</a>
-                                                       </td>
-                                                       <td>$4</td>
-                                                       <td><span class="badge bg-danger">Rejected</span></td>
-                                                  </tr>
-                                                  <tr>
-                                                       <th scope="row"><a href="#">#2644</a></th>
-                                                       <td>Raheem Lehner</td>
-                                                       <td>
-                                                            <a href="#" class="text-primary">Sunt similique
-                                                                 distinctio</a>
-                                                       </td>
-                                                       <td>$5</td>
-                                                       <td>
-                                                            <span class="badge bg-success">Approved</span>
-                                                       </td>
-                                                  </tr>
+
                                              </tbody>
                                         </table>
                                    </div>
                               </div>
-                         </div> -->
+                         </div>
 
                     </div>
                </div>

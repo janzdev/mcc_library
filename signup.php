@@ -115,6 +115,7 @@ include('./admin/config/dbcon.php');
                          <div class="field">
                               <div class="label" for="gender">Gender</div>
                               <select name="gender" id="gender">
+                                   <option value="">--Select Gender--</option>
                                    <option value="Male">Male</option>
                                    <option value="Female">Female</option>
                               </select>
@@ -148,10 +149,12 @@ include('./admin/config/dbcon.php');
                          <div class="field">
                               <div class="label" for="course">Course</div>
                               <select name="course" id="course">
+                                   <option value="">--Select Course--</option>
                                    <option value="BSIT">BSIT</option>
                                    <option value="BSED">BSED</option>
                                    <option value="BEED">BEED</option>
                                    <option value="BSBA">BSBA</option>
+                                   <option value="BSHM">BSHM</option>
                               </select>
                          </div>
 

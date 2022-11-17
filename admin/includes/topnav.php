@@ -3,7 +3,8 @@
      <div class="d-flex align-items-center">
           <a href="index.php" class="logo d-flex align-items-center">
                <img src="assets/img/mcc-logo.png" alt="logo" class=" mx-2" />
-               <span class="d-none d-lg-block mx-2 ">MCC <span class="text-info">LIBRARY</span></span>
+               <span class="d-none d-lg-block mx-2 ">MCC <span class="text-info d-block fs-6">Learning Resource
+                         Center</span></span>
           </a>
           <i class="bi bi-list toggle-sidebar-btn"></i>
      </div>
