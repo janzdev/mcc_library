@@ -10,8 +10,8 @@ include('./includes/sidebar.php');
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="web_opac.php">Users</a></li>
-                    <li class="breadcrumb-item">Add User</li>
+                    <li class="breadcrumb-item"><a href="users.php">Users</a></li>
+                    <li class="breadcrumb-item">Add Student</li>
                </ol>
           </nav>
      </div>
@@ -123,7 +123,7 @@ include('./includes/sidebar.php');
                          </div>
                          <div class="card-footer d-flex justify-content-end">
                               <div>
-                                   <a href="web_opac.php" class="btn btn-secondary">Cancel</a>
+                                   <a href="user_student.php" class="btn btn-secondary">Cancel</a>
                                    <button type="submit" name="add_book" class="btn btn-primary">Add User</button>
                               </div>
                          </div>

@@ -6,12 +6,12 @@ include('./includes/sidebar.php');
 ?>
 <main id="main" class="main">
      <div class="pagetitle">
-          <h1>Add Student</h1>
+          <h1>View Student</h1>
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="web_opac.php">Users</a></li>
-                    <li class="breadcrumb-item">Add User</li>
+                    <li class="breadcrumb-item"><a href="users.php">Users</a></li>
+                    <li class="breadcrumb-item">View Student</li>
                </ol>
           </nav>
      </div>
@@ -20,7 +20,10 @@ include('./includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="card">
                          <div class="card-header d-flex justify-content-end">
+                              <div>
+                                   <a href="user_student.php" class="btn btn-primary">Back</a>
 
+                              </div>
                          </div>
                          <div class="card-body">
 
@@ -122,10 +125,7 @@ include('./includes/sidebar.php');
                                    </div>
                          </div>
                          <div class="card-footer d-flex justify-content-end">
-                              <div>
-                                   <a href="web_opac.php" class="btn btn-secondary">Cancel</a>
-                                   <button type="submit" name="add_book" class="btn btn-primary">Add User</button>
-                              </div>
+
                          </div>
                          </form>
                          <div class="card-footer"></div>

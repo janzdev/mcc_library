@@ -28,16 +28,20 @@ include('./includes/sidebar.php');
 
                                    <div class="col-12 col-md-6 ">
                                         <a href="user_student.php">
-                                             <div class="card bg-primary text-white p-3">
-                                                  <h4>Students</h4>
+                                             <div
+                                                  class="card bg-primary text-white p-3 d-flex flex-row justify-content-between">
+                                                  <h4 class="">Students</h4>
+                                                  <i class="bi bi-people-fill fs-2"></i>
                                              </div>
                                         </a>
                                    </div>
 
                                    <div class="col-12 col-md-6 ">
                                         <a href="user_faculty.php">
-                                             <div class="card bg-danger text-white p-3">
+                                             <div
+                                                  class="card bg-primary text-white p-3 d-flex flex-row justify-content-between">
                                                   <h4>Faculty & Staff</h4>
+                                                  <i class="bi bi-people fs-2"></i>
                                              </div>
                                         </a>
                                    </div>

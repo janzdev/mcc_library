@@ -23,7 +23,7 @@ include('./includes/sidebar.php');
                     <div class="card">
                          <div class="card-header d-flex justify-content-between">
                               <h3>Students</h3>
-                              <a href="user_student_add.php" class="btn btn-primary"><i class="bi bi-journal-plus"></i>
+                              <a href="user_student_add.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i>
                                    Add
                                    Student</a>
                          </div>
@@ -61,29 +61,29 @@ include('./includes/sidebar.php');
 
                                                   <td class=" justify-content-center">
                                                        <div class="btn-group" style="background: #DFF6FF;  ">
-                                                            <!-- View Book Action-->
-                                                            <a href="user_student_view.php?id=<?=$book['book_id']; ?>"
+                                                            <!-- View Student Action-->
+                                                            <a href="user_student_view.php?id=<?=$user['user_id']; ?>"
                                                                  name=""
                                                                  class="viewBookBtn btn btn-sm  border text-primary"
                                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                                 title="View Book">
+                                                                 title="View Student">
                                                                  <i class="bi bi-eye-fill"></i>
                                                             </a>
-                                                            <!-- Edit Book Action-->
-                                                            <a href="user_student_edit.php?id=<?= $book['book_id']; ?>"
+                                                            <!-- Edit Student Action-->
+                                                            <a href="user_student_edit.php?id=<?= $user['user_id']; ?>"
                                                                  name="update_book"
                                                                  class="btn btn-sm  border text-success"
                                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                                 title="Edit Book">
+                                                                 title="Edit Student">
                                                                  <i class="bi bi-pencil-fill"></i>
                                                             </a>
-                                                            <!-- Delete Book Action-->
+                                                            <!-- Delete Student Action-->
                                                             <form action="user_student_code.php" method="POST">
                                                                  <button type="submit" name="delete_book"
-                                                                      value="<?=$book['book_id'];?>"
+                                                                      value="<?=$user['user_id'];?>"
                                                                       class="btn btn-sm  border text-danger"
                                                                       data-bs-toggle="tooltip"
-                                                                      data-bs-placement="bottom" title="Delete Book">
+                                                                      data-bs-placement="bottom" title="Delete Student">
                                                                       <i class="bi bi-trash-fill"></i>
                                                                  </button>
                                                             </form>

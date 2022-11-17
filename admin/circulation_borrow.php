@@ -25,9 +25,17 @@ include('./includes/sidebar.php');
 
                          </div>
                          <div class="card-body">
-
+                              <div class="col-12 col-md-6 mt-2">
+                                   <div class="input-group mb-3 input-group-sm">
+                                        <span class="input-group-text bg-primary text-white"
+                                             id="basic-addon1">BARCODE</span>
+                                        <input type="text" class="form-control" placeholder="" aria-label="Username"
+                                             aria-describedby="basic-addon1">
+                                   </div>
+                              </div>
                          </div>
                          <div class="card-footer">
+
 
                          </div>
                     </div>
