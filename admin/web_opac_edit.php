@@ -11,7 +11,7 @@ include('./includes/sidebar.php');
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item"><a href="web_opac.php">WEB OPAC</a></li>
-                    <li class="breadcrumb-item">Edit Book</li>
+                    <li class="breadcrumb-item active">Edit Book</li>
                </ol>
           </nav>
      </div>

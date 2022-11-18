@@ -2,35 +2,7 @@
 include('authentication.php');
 
 
-if(isset($_GET['book_id']))
-{
-     $book_id = mysqli_real_escape_string($con, $_GET['book_id']);
 
-     $query ="SELECT * FROM book WHERE book_id= '$book_id'";
-     $query_run = mysqli_query($con, $query);
-
-     if(mysqli_num_rows($query_run) == 1)
-     {
-          $book = mysqli_fetch_array($query_run);
-
-          $res = [
-               'status' => 200,
-               'message' => 'Book Fetch Success by id',
-               'data' => $book
-          ];
-          echo json_encode($res);
-          return false;
-     }
-     else
-     {
-          $res = [
-               'status' => 404,
-               'message' => 'Book fetch Error'
-          ];
-          echo json_encode($res);
-          return false;
-     }
-}
 
 if(isset($_POST['delete_book']))
 {
@@ -95,9 +67,14 @@ if(isset($_POST['add_book']))
      $copyright_date = mysqli_real_escape_string($con, $_POST['copyright_date']);
      $publisher = mysqli_real_escape_string($con, $_POST['publisher']);
      $copy = mysqli_real_escape_string($con, $_POST['copy']);
-     $barcode = mysqli_real_escape_string($con, $_POST['barcode']);
+    
 
-     $query = "INSERT INTO book (call_number, accessial_number, title, author, copyright_date, publisher, copy, barcode, date_added) VALUES ('$call_number', '$accessial_number', '$title', '$author', '$copyright_date', '$publisher', '$copy', '$barcode', NOW())";
+     $pre = "MCC";
+     $mid = $_POST['new_barcode'];
+     $suf = "LRC";
+     $gen = $pre.$mid.$suf;
+
+     $query = "INSERT INTO book (call_number, accessial_number, title, author, copyright_date, publisher, copy, barcode, date_added) VALUES ('$call_number', '$accessial_number', '$title', '$author', '$copyright_date', '$publisher', '$copy', '$gen', NOW())";
      $query_run = mysqli_query($con, $query);
 
      if($query_run)

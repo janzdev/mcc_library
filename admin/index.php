@@ -110,7 +110,7 @@ include('./includes/sidebar.php');
                          </div>
 
                          <div class="col-12">
-                              <div class="card recent-sales overflow-auto  border-3 border-top border-primary">
+                              <div class="card recent-sales overflow-auto  border-3 border-top border-info">
 
                                    <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-center">

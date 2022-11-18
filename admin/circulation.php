@@ -12,7 +12,7 @@ include('./includes/sidebar.php');
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item">Circulation</li>
+                    <li class="breadcrumb-item active">Circulation</li>
                </ol>
           </nav>
      </div>
@@ -26,7 +26,7 @@ include('./includes/sidebar.php');
                          <div class="card-body">
                               <div class="row">
 
-                                   <div class="col-12 col-md-6 ">
+                                   <div class="col-12 col-md-6 mt-3">
                                         <a href="circulation_borrow.php">
                                              <div
                                                   class="card bg-primary text-white p-3 d-flex flex-row justify-content-between">
@@ -36,7 +36,7 @@ include('./includes/sidebar.php');
                                         </a>
                                    </div>
 
-                                   <div class="col-12 col-md-6 ">
+                                   <div class="col-12 col-md-6 mt-3">
                                         <a href="circulation_return.php">
                                              <div
                                                   class="card bg-primary text-white p-3 d-flex flex-row justify-content-between">

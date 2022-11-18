@@ -12,7 +12,7 @@ include('./includes/sidebar.php');
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item">WEB OPAC</li>
+                    <li class="breadcrumb-item active">Web OPAC</li>
                </ol>
           </nav>
      </div>

@@ -14,6 +14,12 @@
      <!-- Bootstrap CSS -->
      <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
+     <!-- Boxicons Icon -->
+     <link href="assets/css/boxicons.min.css" rel="stylesheet" />
+
+     <!-- Remixicon Icon -->
+     <link href="assets/css/remixicon.css" rel="stylesheet" />
+
      <!-- Bootstrap Icon -->
      <link rel="stylesheet" href="assets/font/bootstrap-icons.css">
 
@@ -27,9 +33,6 @@
      <!-- Custom CSS -->
      <link href="assets/css/style.css" rel="stylesheet" />
 
-
-     <link rel="stylesheet" href="assets/icon/all.min.css">
-     <link rel="stylesheet" href="fontawesome.min.css">
 
 
 

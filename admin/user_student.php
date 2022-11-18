@@ -13,7 +13,7 @@ include('./includes/sidebar.php');
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item"><a href="users.php">Users</a></li>
-                    <li class="breadcrumb-item">Students</li>
+                    <li class="breadcrumb-item active">Students</li>
                </ol>
           </nav>
      </div>
@@ -21,8 +21,8 @@ include('./includes/sidebar.php');
           <div class="row">
                <div class="col-lg-12">
                     <div class="card">
-                         <div class="card-header d-flex justify-content-between">
-                              <h3>Students</h3>
+                         <div class="card-header d-flex justify-content-between align-items-center">
+                              <h5 class="m-0 fw-semibold">Students</h5>
                               <a href="user_student_add.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i>
                                    Add
                                    Student</a>
@@ -79,7 +79,7 @@ include('./includes/sidebar.php');
                                                             </a>
                                                             <!-- Delete Student Action-->
                                                             <form action="user_student_code.php" method="POST">
-                                                                 <button type="submit" name="delete_book"
+                                                                 <button type="submit" name="delete_student"
                                                                       value="<?=$user['user_id'];?>"
                                                                       class="btn btn-sm  border text-danger"
                                                                       data-bs-toggle="tooltip"

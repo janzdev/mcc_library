@@ -13,6 +13,8 @@
 <!-- Boostrap 5 Datatables -->
 <script src="assets/js/dataTables.bootstrap5.min.js"></script>
 
+<!-- Dselect JS -->
+<script src="assets/js/dselect.js"></script>
 
 <script type="text/javascript">
 // JQuery DataTable 
@@ -32,20 +34,6 @@ $(document).ready(function() {
 
      });
 });
-// $(document).ready(function() {
-//      $('#myDataTable').DataTable({
-//           'responsive': 'true',
-//           'serverSide': 'true',
-//           'processing': 'true',
-//           'paging': 'true',
-//           'order': [],
-//           'ajax': {
-//                'url': 'admincode.php',
-//                'type': 'POST',
-//           },
-
-//      });
-// });
 </script>
 
 <!-- Tooltip link -->
