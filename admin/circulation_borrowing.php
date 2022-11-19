@@ -197,13 +197,13 @@ $user_row = mysqli_fetch_array($user_query);
 									mysqli_query($con,"INSERT INTO borrow_book(user_id,book_id,date_borrowed,due_date,borrowed_status)
 									VALUES('$user_id','$book_id','$date_borrowed','$due_date','borrowed')") or die (mysqli_error());
 									
-									// $report_history=mysqli_query($con,"select * from admin where admin_id = $id_session ") or die (mysqli_error());
-									// $report_history_row=mysqli_fetch_array($report_history);
-									// $admin_row=$report_history_row['firstname']." ".$report_history_row['middlename']." ".$report_history_row['lastname'];	
+									$report_history=mysqli_query($con,"select * from admin where admin_id = $id_session ") or die (mysqli_error());
+									$report_history_row=mysqli_fetch_array($report_history);
+									$admin_row=$report_history_row['firstname']." ".$report_history_row['middlename']." ".$report_history_row['lastname'];	
 									
-									// mysqli_query($con,"INSERT INTO report 
-									// (book_id, user_id, admin_name, detail_action, date_transaction)
-									// VALUES ('$book_id','$user_id','$admin_row','Borrowed Book',NOW())") or die(mysqli_error());
+									mysqli_query($con,"INSERT INTO report 
+									(book_id, user_id, admin_name, detail_action, date_transaction)
+									VALUES ('$book_id','$user_id','$admin_row','Borrowed Book',NOW())") or die(mysqli_error());
 									
                                              $_SESSION['message_success'] = 'Book Borrowed Successfully';
                                              header("Location: circulation_borrow..php");

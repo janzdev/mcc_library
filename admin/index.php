@@ -99,8 +99,19 @@ include('./includes/sidebar.php');
                                                   class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                                   <i class="bi bi-box-arrow-up-right"></i>
                                              </div>
+                                             <?php
+                                             $query = "SELECT * FROM borrow_book WHERE barrowed_status = borrowed ";
+                                             $query_run = mysqli_query($con, $query); 
+
+                                             if($total_borrowed = mysqli_num_rows($query_run))
+                                             {
+                                                  ?>
                                              <div class="ps-3">
-                                                  <h6>20</h6>
+                                                  <h6><?=$total_borrowed;?></h6>
+                                                  <?php
+
+                                                  }
+                                                  ?>
                                                   <span class="text-success small pt-2 fw-bold">Total borrowed
                                                        books</span>
                                              </div>

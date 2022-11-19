@@ -46,6 +46,87 @@ include('./includes/sidebar.php');
                                         </a>
                                    </div>
                               </div>
+                              <!-- <div class="row">
+                                   <div class="col-12 col-md-6">
+                                        <div class="card border-3 border-top border-info">
+                                             <div class="card-header">
+                                                  <i class="bi bi-book"></i>&nbsp;Recent Borrrowed Transaction
+                                             </div>
+                                             <div class="card-body">
+                                                  <div class="table-responsive">
+                                                       <table id="myDataTable" class="table table-sm">
+                                                            <thead>
+                                                                 <tr>
+                                                                      <th>Title</th>
+                                                                      <th>Borrower</th>
+                                                                      <th>Date</th>
+                                                                 </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                 <tr>
+                                                                      <td>Mark</td>
+                                                                      <td>Otto</td>
+                                                                      <td>@mdo</td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <td>Jacob</td>
+                                                                      <td>Thornton</td>
+                                                                      <td>@fat</td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <td>Larry the Bird</td>
+                                                                      <td>@twitter</td>
+                                                                 </tr>
+                                                            </tbody>
+                                                       </table>
+                                                  </div>
+                                             </div>
+                                             <div class="card-footer">
+
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div class="col-12 col-md-6">
+                                        <div class="card border-3 border-top border-info">
+                                             <div class="card-header">
+                                                  <i class="bi bi-book"></i>&nbsp;Recent Returned Transaction
+                                             </div>
+                                             <div class="card-body">
+                                                  <div class="table-responsive">
+                                                       <table id="myDataTable" class="table table-sm">
+                                                            <thead>
+                                                                 <tr>
+                                                                      <th>Title</th>
+                                                                      <th>Borrower</th>
+                                                                      <th>Date</th>
+                                                                 </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                 <tr>
+                                                                      <td>Mark</td>
+                                                                      <td>Otto</td>
+                                                                      <td>@mdo</td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <td>Jacob</td>
+                                                                      <td>Thornton</td>
+                                                                      <td>@fat</td>
+                                                                 </tr>
+                                                                 <tr>
+
+                                                                      <td>Larry the Bird</td>
+                                                                      <td>@twitter</td>
+                                                                 </tr>
+                                                            </tbody>
+                                                       </table>
+                                                  </div>
+                                             </div>
+                                             <div class="card-footer">
+
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div> -->
                          </div>
                          <div class="card-footer"></div>
                     </div>

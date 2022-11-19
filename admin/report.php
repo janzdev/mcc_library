@@ -30,7 +30,7 @@ include('./includes/sidebar.php');
 
                                         <thead>
                                              <tr>
-                                                  <th>Members Name</th>
+                                                  <th>Student Name</th>
                                                   <th>Book Title</th>
                                                   <th>Task</th>
                                                   <th>Person In Charge</th>
