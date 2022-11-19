@@ -3,7 +3,7 @@ include('authentication.php');
 
 
 
-
+// Delete Admin
 if(isset($_POST['delete_book']))
 {
      $book_id = mysqli_real_escape_string($con, $_POST['delete_book']);
@@ -76,6 +76,8 @@ if(isset($_POST['add_book']))
 
      $query = "INSERT INTO book (call_number, accessial_number, title, author, copyright_date, publisher, copy, barcode, date_added) VALUES ('$call_number', '$accessial_number', '$title', '$author', '$copyright_date', '$publisher', '$copy', '$gen', NOW())";
      $query_run = mysqli_query($con, $query);
+
+     mysqli_query($con,"insert into barcode (pre_barcode,mid_barcode,suf_barcode) values ('$pre', '$mid', '$suf') ") or die (mysqli_error());
 
      if($query_run)
      {

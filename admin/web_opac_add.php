@@ -49,7 +49,7 @@ $query_run = mysqli_query($con, $query);
                               <form action="web_opac_code.php" method="POST">
 
                                    <div class="row  mt-4">
-                                        <input type="hidden" name="new_barcode" value="<?=$new_barcode; ?>">
+                                        <input type="hidden" name="new_barcode" value="<?=$new_barcode ?>">
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3">
                                                   <label for="">Call Number</label>
@@ -103,7 +103,7 @@ $query_run = mysqli_query($con, $query);
                                         <div class="col-12 col-md-4">
                                              <div class=" mt-2">
                                                   <label for="">Copy</label>
-                                                  <input type="text" name="copy" class="form-control">
+                                                  <input type="number" name="copy" class="form-control" min="1">
                                              </div>
                                         </div>
 
@@ -119,7 +119,6 @@ $query_run = mysqli_query($con, $query);
                          </div>
                          <div class="card-footer d-flex justify-content-end">
                               <div>
-                                   <a href="web_opac.php" class="btn btn-secondary">Cancel</a>
                                    <button type="submit" name="add_book" class="btn btn-primary">Add Book</button>
                               </div>
                          </div>

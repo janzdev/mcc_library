@@ -100,7 +100,7 @@ include('./includes/sidebar.php');
                                                   <i class="bi bi-box-arrow-up-right"></i>
                                              </div>
                                              <?php
-                                             $query = "SELECT * FROM borrow_book WHERE barrowed_status = borrowed ";
+                                             $query = "SELECT * FROM borrow_book WHERE borrowed_status = 'borrowed' ";
                                              $query_run = mysqli_query($con, $query); 
 
                                              if($total_borrowed = mysqli_num_rows($query_run))

@@ -29,7 +29,7 @@ include('./includes/sidebar.php');
                                    <div class="col-md-3 mt-3">
                                         <form action="" method="POST">
                                              <select name="student_id_no" class="form-select " id="select_box">
-                                                  <option class="w-100" value="">--Select Student ID--</option>
+                                                  <option class="w-100" value="">--Search Student ID--</option>
                                                   <?php
                                              $query ="SELECT * FROM user";
                                              $query_run = mysqli_query($con, $query);

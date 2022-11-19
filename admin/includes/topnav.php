@@ -57,7 +57,7 @@
                               <hr class="dropdown-divider" />
                          </li>
                          <li>
-                              <a class="dropdown-item d-flex align-items-center" href="#">
+                              <a class="dropdown-item d-flex align-items-center" href="admin.php">
                                    <i class="bi bi-person-workspace"></i><span>Admin</span>
                               </a>
                          </li>
