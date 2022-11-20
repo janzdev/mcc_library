@@ -1,8 +1,7 @@
 <?php 
 include('authentication.php');
 include('includes/header.php'); 
-include('./includes/sidebar.php'); 
-
+include('./includes/sidebar.php');
 ?>
 
 
@@ -23,11 +22,15 @@ include('./includes/sidebar.php');
                     <div class="card">
                          <div class="card-header d-flex justify-content-between align-items-center">
                               <h5 class="m-0 fw-semibold">Students</h5>
-                              <form action="" method="POST"></form>
-                              <button class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top"
-                                   title="Export to PDF">
+                              <form action="" method="POST">
+                                   <input type="submit" name="create_pdf" value="Create PDF"
+                                        class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Export to PDF">
                                    <i class="bi bi-filetype-pdf "></i>
-                              </button>
+                                   </input>
+                              </form>
+                              <form action="" method="POST"></form>
+
                               <a href="user_student_add.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i>
                                    Add
                                    Student</a>

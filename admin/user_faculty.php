@@ -31,7 +31,7 @@ include('./includes/sidebar.php');
                                    <table id="myDataTable" class="table table-bordered table-striped table-sm">
                                         <thead>
                                              <tr>
-                                                  <th>Member Full Name</th>
+                                                  <th>Full Name</th>
                                                   <th>Position</th>
                                                   <th>Action</th>
                                              </tr>

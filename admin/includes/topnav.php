@@ -65,6 +65,14 @@
                               <hr class="dropdown-divider" />
                          </li>
                          <li>
+                              <a class="dropdown-item d-flex align-items-center" href="circulation_settings.php">
+                                   <i class="bi bi-journal-album"></i><span>Circulation Settings</span>
+                              </a>
+                         </li>
+                         <li>
+                              <hr class="dropdown-divider" />
+                         </li>
+                         <li>
                               <form action="../allcode.php" method="POST">
 
                                    <button class="dropdown-item d-flex align-items-center" name="logout_btn"

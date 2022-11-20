@@ -19,7 +19,8 @@ include('./includes/sidebar.php');
           <div class="row">
                <div class="col-lg-12">
                     <div class="card">
-                         <div class="card-header d-flex justify-content-end">
+                         <div class="card-header d-flex justify-content-between align-items-center">
+                              <h5>Student Profile Detail</h5>
                               <div>
                                    <a href="user_student.php" class="btn btn-primary">Back</a>
 

@@ -11,14 +11,14 @@ if(isset($_POST['delete_admin']))
 
      if($query_run)
      {
-          $_SESSION['message_success'] = 'Admin deleted successfully';
-          header("Location: web_opac.php");
+          $_SESSION['message_success'] = 'Admin Deleted Successfully';
+          header("Location: admin.php");
           exit(0);
      }
      else
      {
-          $_SESSION['message_error'] = 'Admin not deleted';
-          header("Location: web_opac.php");
+          $_SESSION['message_error'] = 'Admin Not Deleted';
+          header("Location: admin.php");
           exit(0);
      }
 }
