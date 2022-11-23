@@ -14,16 +14,9 @@ if(isset($_SESSION['auth']))
  
 }
 
-
-
-
-
 include('./admin/config/dbcon.php');
 include('includes/header.php');
 ?>
-
-
-
 <section class="d-flex mt-5 flex-column  justify-content-center align-items-center">
      <div class="container-xl">
           <div class="col mx-auto rounded shadow bg-white">
@@ -90,9 +83,17 @@ include('includes/header.php');
           </div>
      </div>
      </div>
+
 </section>
 
-<?php 
-include('includes/footer.php');
-include('message.php'); 
-?>
+<!-- Alertify JS link -->
+<script src="assets/js/alertify.min.js"></script>
+
+<!-- Custom JS link -->
+<script src="assets/js/script.js"></script>
+
+
+<?php
+
+ include('message.php'); 
+ ?>

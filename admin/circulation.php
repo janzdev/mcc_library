@@ -6,7 +6,7 @@ include('./includes/sidebar.php');
 ?>
 
 
-<main id="main" class="main">
+<main id="main" class="main ">
      <div class="pagetitle">
           <h1>Circulation</h1>
           <nav>
@@ -16,10 +16,10 @@ include('./includes/sidebar.php');
                </ol>
           </nav>
      </div>
-     <section class="section">
+     <section class="section ">
           <div class="row">
                <div class="col-lg-12">
-                    <div class="card">
+                    <div class="card " style="height:58vh;">
                          <div class="card-header d-flex justify-content-end">
 
                          </div>

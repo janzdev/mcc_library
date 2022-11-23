@@ -13,13 +13,13 @@ if(isset($_POST['delete_student']))
 
      if($query_run)
      {
-          $_SESSION['message_success'] = 'Book deleted successfully';
+          $_SESSION['message_success'] = 'Student deleted successfully';
           header("Location: user_student.php");
           exit(0);
      }
      else
      {
-          $_SESSION['message_error'] = 'Book not deleted';
+          $_SESSION['message_error'] = 'Student not deleted';
           header("Location: user_student.php");
           exit(0);
      }

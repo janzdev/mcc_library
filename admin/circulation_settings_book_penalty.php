@@ -15,7 +15,7 @@
                               <td><?php echo '₱&nbsp;'.' '.$row33['penalty_amount']."".'.00'; ?></td>
                               <td style="width: 10px;">
                                    <!-- Modal Button Trigger -->
-                                   <span data-bs-toggle="tooltip" data-bs-placement="left" title="Edit Penalty">
+                                   <span data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Penalty">
                                         <a href="#penalty_edit<?php echo $penalty_id;?>" type="button"
                                              class="btn btn-info text-white" data-bs-toggle="modal"
                                              data-bs-target="#penalty_edit<?php echo $penalty_id;?>">

@@ -24,8 +24,7 @@
      <link rel="stylesheet" href="assets/css/alertify.min.css" />
      <link rel="stylesheet" href="assets/css/alertify.bootstraptheme.min.css" />
 
-     <!-- Fontawesome Link -->
-     <link rel="stylesheet" href="assets/icon/all.min.css">
+
 </head>
 
 <body>

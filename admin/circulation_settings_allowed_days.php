@@ -15,7 +15,7 @@
                               <td><?php echo $row33['no_of_days']; ?>&nbsp;day/s</td>
                               <td style="width: 10px;">
                                    <!-- Modal Button Trigger -->
-                                   <span data-bs-toggle="tooltip" data-bs-placement="left" title="Edit Day/s">
+                                   <span data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Day/s">
                                         <a href="#days_edit<?php echo $allowed_days_id;?>" type="button"
                                              class="btn btn-info text-white" data-bs-toggle="modal"
                                              data-bs-target="#days_edit<?php echo $allowed_days_id;?>">

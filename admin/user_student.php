@@ -5,16 +5,25 @@ include('./includes/sidebar.php');
 ?>
 
 
+
 <main id="main" class="main">
-     <div class="pagetitle">
-          <h1>Manage Users</h1>
-          <nav>
-               <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="users.php">Users</a></li>
-                    <li class="breadcrumb-item active">Students</li>
-               </ol>
-          </nav>
+     <div class="pagetitle d-flex justify-content-between">
+          <div>
+               <h1>Manage Users</h1>
+               <nav>
+                    <ol class="breadcrumb">
+                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                         <li class="breadcrumb-item"><a href="users.php">Users</a></li>
+                         <li class="breadcrumb-item active">Students</li>
+                    </ol>
+               </nav>
+          </div>
+          <form action="" method="POST">
+               <a href="user_student_prints.php" target="_blank" name="create_pdf" class="btn btn-danger mx-4"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print Students">
+                    <i class="bi bi-printer-fill"></i>
+               </a>
+          </form>
      </div>
      <section class="section">
           <div class="row">
@@ -22,13 +31,7 @@ include('./includes/sidebar.php');
                     <div class="card">
                          <div class="card-header d-flex justify-content-between align-items-center">
                               <h5 class="m-0 fw-semibold">Students</h5>
-                              <form action="" method="POST">
-                                   <input type="submit" name="create_pdf" value="Create PDF"
-                                        class="btn btn-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Export to PDF">
-                                   <i class="bi bi-filetype-pdf "></i>
-                                   </input>
-                              </form>
+
                               <form action="" method="POST"></form>
 
                               <a href="user_student_add.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i>
@@ -41,7 +44,7 @@ include('./includes/sidebar.php');
                                         <thead>
                                              <tr>
 
-                                                  <th>School ID</th>
+                                                  <th>Student ID</th>
                                                   <th>Full Name</th>
                                                   <th>Course</th>
                                                   <th>Level</th>

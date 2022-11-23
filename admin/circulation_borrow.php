@@ -164,7 +164,7 @@ include('./includes/sidebar.php');
 								echo '
 									<table style="float:right;">
 										<tr>
-											<td style="padding:10px;" class="alert alert-danger">No Books returned at this moment</td>
+											<td style="padding:10px;" class="alert alert-danger">No Books Borrowed at this Moment</td>
 										</tr>
 									</table>
 								';

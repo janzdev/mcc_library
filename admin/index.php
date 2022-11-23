@@ -2,11 +2,7 @@
 include('authentication.php');
 include('includes/header.php'); 
 include('./includes/sidebar.php'); 
-
 ?>
-
-
-
 
 <main id="main" class="main">
      <div class="pagetitle">
@@ -129,7 +125,14 @@ include('./includes/sidebar.php');
                                                   Student Attendance
                                              </h5>
                                              <div>
-                                                  <a href="#" class="btn btn-danger btn-sm">EXPORT</a>
+                                                  <form action="" method="POST">
+                                                       <a href="statistic_attendance.php" target="_blank" type="submit"
+                                                            name="create_pdf" class="btn btn-danger mx-4"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Print Students Attendance">
+                                                            <i class="bi bi-printer-fill"></i>
+                                                       </a>
+                                                  </form>
                                              </div>
 
                                         </div>
@@ -137,15 +140,28 @@ include('./includes/sidebar.php');
                                              <table id="myDataTable" class="table table-borderless table-striped ">
                                                   <thead>
                                                        <tr>
-                                                            <th scope="col">Student ID No.</th>
-                                                            <th scope="col">Students</th>
-                                                            <th scope="col">Time In</th>
-                                                            <th scope="col">Time Out</th>
-                                                            <th scope="col">Date</th>
+                                                            <th scope="col">Student ID</th>
+                                                            <th scope="col">Student Name</th>
+                                                            <th scope="col">Date & Time In</th>
                                                        </tr>
                                                   </thead>
                                                   <tbody>
-
+                                                       <?php
+                                                       $result= mysqli_query($con,"select * from user_log 
+                                                       LEFT JOIN user ON user_log.user_id = user.user_id 
+                                                       order by user_log.user_log_id DESC ") or die (mysqli_error());
+                                                       while ($row= mysqli_fetch_array ($result) ){
+                                                       $id=$row['user_log_id'];
+                                                       $user_id=$row['user_id'];
+                                                       ?>
+                                                       <tr>
+                                                            <td><?php echo $row['student_id_no']; ?></td>
+                                                            <td><?php echo $row['firstname'].' '.$row['middlename'].' '.$row['lastname']; ?>
+                                                            </td>
+                                                            <td><?php echo date("M d, Y h:i:s a", strtotime($row['date_log'])); ?>
+                                                            </td>
+                                                       </tr>
+                                                       <?php } ?>
                                                   </tbody>
                                              </table>
                                         </div>

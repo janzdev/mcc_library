@@ -16,7 +16,7 @@
 
                               <td style="width: 10px;">
                                    <!-- Modal Button Trigger -->
-                                   <span data-bs-toggle="tooltip" data-bs-placement="left" title="Edit Book/s">
+                                   <span data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Book/s">
                                         <a href="#book_qntty<?php echo $id;?>" type="button"
                                              class="btn btn-info text-white" data-bs-toggle="modal"
                                              data-bs-target="#book_qntty<?php echo $id;?>">
