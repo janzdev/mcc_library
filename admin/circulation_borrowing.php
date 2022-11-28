@@ -3,6 +3,8 @@ include('authentication.php');
 include('includes/header.php'); 
 include('./includes/sidebar.php'); 
 
+error_reporting(0);
+
 if (isset($_SESSION['auth_admin']['admin_id']))
 {
      $id_session=$_SESSION['auth_admin']['admin_id'];
@@ -205,8 +207,10 @@ $user_row = mysqli_fetch_array($user_query);
 									(book_id, user_id, admin_name, detail_action, date_transaction)
 									VALUES ('$book_id','$user_id','$admin_row','Borrowed Book',NOW())") or die(mysqli_error());
 									
-                                             $_SESSION['message_success'] = 'Book Borrowed Successfully';
-                                             header("Location: circulation_borrow..php");
+                                             // $_SESSION['message_success'] = 'Book Borrowed Successfully';
+                                             // echo "<script>location='circulation_borrowing.php?student_id=".$student_id."'</script>";
+
+                                             echo "<script>alert('Book Borroowed Successfully'); window.location='circulation_borrowing.php?student_id=".$student_id."'</script>";
 									}
 									}
 							?>
@@ -234,5 +238,5 @@ $user_row = mysqli_fetch_array($user_query);
 <?php 
 include('./includes/footer.php');
 include('./includes/script.php');
-include('../message.php');   
+include('message.php');   
 ?>

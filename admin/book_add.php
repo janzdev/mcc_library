@@ -32,7 +32,7 @@ $query_run = mysqli_query($con, $query);
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="web_opac.php">WEB OPAC</a></li>
+                    <li class="breadcrumb-item"><a href="books.php">Collection of Books</a></li>
                     <li class="breadcrumb-item active">Add Book</li>
                </ol>
           </nav>
@@ -46,7 +46,7 @@ $query_run = mysqli_query($con, $query);
                          </div>
                          <div class="card-body">
 
-                              <form action="web_opac_code.php" method="POST">
+                              <form action="books_code.php" method="POST">
 
                                    <div class="row  mt-4">
                                         <input type="hidden" name="new_barcode" value="<?=$new_barcode ?>">
@@ -119,6 +119,7 @@ $query_run = mysqli_query($con, $query);
                          </div>
                          <div class="card-footer d-flex justify-content-end">
                               <div>
+                                   <a href="books.php" class="btn btn-secondary">Cancel</a>
                                    <button type="submit" name="add_book" class="btn btn-primary">Add Book</button>
                               </div>
                          </div>

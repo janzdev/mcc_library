@@ -10,7 +10,7 @@
      </div>
 
      <!-- Search -->
-     <div class="search-bar ">
+     <!-- <div class="search-bar ">
           <form class="search-form d-flex align-items-center" method="POST" action="#">
                <input type="text" class="d-flex align-items-center align-middle" name="query" placeholder="Search"
                     title="Enter search keyword" />
@@ -18,7 +18,7 @@
                     <i class="bi bi-search"></i>
                </button>
           </form>
-     </div>
+     </div> -->
      <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center">
                <li class="nav-item d-block d-lg-none">

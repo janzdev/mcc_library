@@ -6,9 +6,10 @@
                     <span>Statistic</span>
                </a>
           </li>
+
           <li class="nav-item">
-               <a class="nav-link collapsed" href="web_opac.php">
-                    <i class="bi bi-book"></i><span>Web OPAC</span>
+               <a class="nav-link collapsed" href="books.php">
+                    <i class="bi bi-book"></i><span>Book Collection</span>
                </a>
           </li>
           <li class="nav-item">
@@ -24,6 +25,11 @@
           <li class="nav-item">
                <a class="nav-link collapsed" href="report.php">
                     <i class="bi bi-file-earmark"></i><span>Report</span>
+               </a>
+          </li>
+          <li class="nav-item">
+               <a class="nav-link collapsed" href="web_opac.php">
+                    <i class="bi bi-book"></i><span>Web OPAC</span>
                </a>
           </li>
      </ul>

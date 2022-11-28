@@ -20,7 +20,7 @@ include('./includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="card">
                          <div class="card-header d-flex justify-content-end">
-                              <a href="web_opac.php" class="btn btn-primary">
+                              <a href="books.php" class="btn btn-primary">
                                    Back
                               </a>
                          </div>

@@ -14,13 +14,13 @@ if(isset($_POST['delete_book']))
      if($query_run)
      {
           $_SESSION['message_success'] = 'Book deleted successfully';
-          header("Location: web_opac.php");
+          header("Location: books.php");
           exit(0);
      }
      else
      {
           $_SESSION['message_error'] = 'Book not deleted';
-          header("Location: web_opac.php");
+          header("Location: books.php");
           exit(0);
      }
 }
@@ -45,13 +45,13 @@ if(isset($_POST['update_book']))
      if($query_run)
      {
           $_SESSION['message_success'] = 'Book updated successfully';
-          header("Location: web_opac.php");
+          header("Location: books.php");
           exit(0);
      }
      else
      {
           $_SESSION['message_error'] = 'Book not updated';
-          header("Location: web_opac.php");
+          header("Location: books.php");
           exit(0);
      }
      
@@ -82,13 +82,13 @@ if(isset($_POST['add_book']))
      if($query_run)
      {
           $_SESSION['message_success'] = 'Book Added successfully';
-          header("Location: web_opac.php");
+          header("Location: books.php");
           exit(0);
      }
      else
      {
           $_SESSION['message_error'] = 'Book not Added';
-          header("Location: web_opac.php");
+          header("Location: books.php");
           exit(0);
      }
      

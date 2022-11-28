@@ -1,3 +1,4 @@
+/* The above code is a PHP code that is used to return a book. */
 <?php 
 include('authentication.php');
 include('includes/header.php'); 
@@ -33,14 +34,7 @@ $user_row = mysqli_fetch_array($user_query);
                     <div class="card">
                          <div class="card-header d-flex justify-content-between">
                               <div class="col-12 col-md-6 mt-2">
-                                   <!-- <form action="" method="POST">
-                                        <div class="input-group mb-3 input-group-sm">
-                                             <span class="input-group-text bg-primary text-white"
-                                                  id="basic-addon1">BARCODE</span>
-                                             <input type="text" name="barcode" class="form-control" placeholder=""
-                                                  aria-label="Username" aria-describedby="basic-addon1" required>
-                                        </div>
-                                   </form> -->
+
                               </div>
                          </div>
                          <div class="card-body">
@@ -202,22 +196,54 @@ $user_row = mysqli_fetch_array($user_query);
 									$penalty_amount_query= mysqli_query($con,"select * from penalty order by penalty_id DESC ") or die (mysqli_error());
 									$penalty_amount = mysqli_fetch_assoc($penalty_amount_query);
 									
+                                             
 									if ($date_returned > $due_date) {
 										$penalty = round((float)(strtotime($date_returned) - strtotime($due_date)) / (60 * 60 *24) * ($penalty_amount['penalty_amount']));
+
+                                                 
+                                                
 									} elseif ($date_returned < $due_date) {
 										$penalty = 'No Penalty';
 									} else {
 										$penalty = 'No Penalty';
 									}
+                                             
+                                            
 								
 									mysqli_query($con,"UPDATE borrow_book SET borrowed_status = 'returned', date_returned = '$date_returned_now', book_penalty = '$penalty' WHERE borrow_book_id= '$borrow_book_id' and user_id = '$user_id' and book_id = '$book_id' ") or die (mysqli_error());
 									
 									mysqli_query($con,"INSERT INTO return_book (user_id, book_id, date_borrowed, due_date, date_returned, book_penalty)
 									values ('$user_id', '$book_id', '$date_borrowed', '$due_date', '$date_returned', '$penalty')") or die (mysqli_error());
 									
-                                             
+                                             if($penalty === 'No Penalty')
+                                                  {
+                                                       
+                                                  //    echo "<script>alert('Congrats');</script>";
+                                                  //     echo '<script> location.href="circulation_returning.php?student_id='.$student_id.'";</script'; 
+                                                  // $_SESSION['message_success'] = 'Book Return Successfully';
+                                                       echo '<script> location.href="circulation_returning.php?student_id='.$student_id.'";</script'; 
+                                                  // header("Location: circulation_returning.php");
+     
+                                                  }
+                                                  else
+                                                  {
+                                                            // echo "<script>alert('You have Penalty of');</script>";
+     
+                                                       // echo "<script>alert('".'You have penalty of'." ".$penalty." '); window.location='circulation_returning.php?student_id=".$student_id."'</script>";
+
+                                                       echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script'; 
+                                                       
+                                                       // echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script';
+     
+                                                       // echo '<script type="text/javascript">
+                                                       // $(document).ready(function(){
+                                                       //      $("#checkModal").modal("show");
+                                                       // });
+                                                       // </script>';
+                                                  }
+                                                  
                                                 
-                                                  $report_history1=mysqli_query($con,"SELECT * FROM admin where admin_id = '$id_session' ") or die (mysqli_error());
+                                             $report_history1=mysqli_query($con,"SELECT * FROM admin where admin_id = '$id_session' ") or die (mysqli_error());
 									$report_history_row1=mysqli_fetch_array($report_history1);
 									$admin_row1=$report_history_row1['firstname']." ".$report_history_row1['middlename']." ".$report_history_row1['lastname'];
 										
@@ -225,6 +251,8 @@ $user_row = mysqli_fetch_array($user_query);
 									mysqli_query($con,"INSERT INTO report 
 									(book_id, user_id, admin_name, detail_action, date_transaction)
 									VALUES ('$book_id','$user_id','$admin_row1','Returned Book',NOW())") or die(mysqli_error());
+
+                                            
 									
 							?>
                                              <script>
@@ -251,8 +279,10 @@ $user_row = mysqli_fetch_array($user_query);
      </section>
 </main>
 
+
+
 <?php 
 include('./includes/footer.php');
 include('./includes/script.php');
-include('../message.php');   
+include('./message.php');   
 ?>

@@ -146,8 +146,6 @@ $header = array('Barcode', 'Borrower Name', 'Title', 'Borrowed Books', 'Due Date
 // data loading
 $data = $pdf->LoadData();
 
-// print colored table
-$pdf->ColoredTable($header, $data);
 
 // ---------------------------------------------------------
 

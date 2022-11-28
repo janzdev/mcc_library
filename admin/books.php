@@ -12,7 +12,7 @@ include('./includes/sidebar.php');
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item active">Web OPAC</li>
+                    <li class="breadcrumb-item active">Collection of Books</li>
                </ol>
           </nav>
      </div>
@@ -21,7 +21,7 @@ include('./includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="card">
                          <div class="card-header d-flex justify-content-end">
-                              <a href="web_opac_add.php" class="btn btn-primary"><i class="bi bi-journal-plus"></i> Add
+                              <a href="book_add.php" class="btn btn-primary"><i class="bi bi-journal-plus"></i> Add
                                    Book</a>
                          </div>
                          <div class="card-body">
@@ -63,15 +63,14 @@ include('./includes/sidebar.php');
                                                   <td class=" justify-content-center">
                                                        <div class="btn-group" style="background: #DFF6FF;  ">
                                                             <!-- View Book Action-->
-                                                            <a href="web_opac_view.php?id=<?=$book['book_id']; ?>"
-                                                                 name=""
+                                                            <a href="book_view.php?id=<?=$book['book_id']; ?>" name=""
                                                                  class="viewBookBtn btn btn-sm  border text-primary"
                                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                                  title="View Book">
                                                                  <i class="bi bi-eye-fill"></i>
                                                             </a>
                                                             <!-- Edit Book Action-->
-                                                            <a href="web_opac_edit.php?id=<?= $book['book_id']; ?>"
+                                                            <a href=book_edit.php?id=<?= $book['book_id']; ?>"
                                                                  name="update_book"
                                                                  class="btn btn-sm  border text-success"
                                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -79,7 +78,7 @@ include('./includes/sidebar.php');
                                                                  <i class="bi bi-pencil-fill"></i>
                                                             </a>
                                                             <!-- Delete Book Action-->
-                                                            <form action="web_opac_code.php" method="POST">
+                                                            <form action="books_code.php" method="POST">
                                                                  <button type="submit" name="delete_book"
                                                                       value="<?=$book['book_id'];?>"
                                                                       class="btn btn-sm  border text-danger"

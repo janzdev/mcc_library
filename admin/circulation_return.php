@@ -26,69 +26,55 @@ include('./includes/sidebar.php');
                          </div>
                          <div class="card-body">
                               <div class="row d-flex justify-content-center">
-                                   <div class="col-md-3 mt-3">
-                                        <form action="" method="POST">
-                                             <select name="student_id_no" class="form-select " id="select_box">
-                                                  <option class="w-100" value="">--Search Student ID--</option>
-                                                  <?php
-                                             $query ="SELECT * FROM user";
-                                             $query_run = mysqli_query($con, $query);
+                                   <div class="col-12 col-md-4 mt-4">
+                                        <form action="" method="GET">
+                                             <div class="input-group mb-3 input-group-sm">
 
-                                             if(mysqli_num_rows($query_run) > 0)
-                                             {
-                                                  foreach($query_run as $student_id)
-                                                  {
-                                                       ?>
-                                                  <option value="<?=$student_id['student_id_no'];?>">
-                                                       <?=$student_id['student_id_no'].' - '.$student_id['firstname'];?>
-                                                  </option>
-                                                  <?php
-                                                  }
-                                             }
-                                             else
-                                             {
-                                                  $_SESSION['message_error'] = 'No Record Found';
-                                                  header("Location: circulation_return.php");
-                                                  exit(0);
-                                             }
-                                             ?>
+                                                  <!-- <span class="input-group-text bg-primary text-white"
+                                                  id="basic-addon1">SEARCH ID</span> -->
+                                                  <input type="text" name="student_id_no"
+                                                       value="<?php if(isset($_GET['student_id_no'])){echo $_GET['student_id_no'];}?>"
+                                                       class="form-control" placeholder="Enter Student ID"
+                                                       aria-label="Username" aria-describedby="basic-addon1" autofocus
+                                                       required>
+                                                  <button class="input-group-text bg-primary text-white"
+                                                       id="basic-addon1">Search Student ID</button>
+                                             </div>
 
-
-                                             </select>
-
-
-
+                                             <!-- <div class="col-md-3 mt-3">
+                                             <button type="submit" name="submit_borrower"
+                                                  class="btn btn-primary">Submit</button>
+                                        </div> -->
+                                        </form>
                                    </div>
-                                   <div class="col-md-3 mt-3">
-                                        <button type="submit" name="submit_return"
-                                             class="btn btn-primary">Submit</button>
-                                   </div>
-                                   </form>
-
 
                                    <?php
-                                   if (isset($_POST['submit_return'])) {
+                                  if(isset($_GET['student_id_no']))
+                                  {
+                                   $student_id_no = $_GET['student_id_no'];
 
-                                        $student_id = $_POST['student_id_no'];
-                                   
-                                        $sql = mysqli_query($con,"SELECT * FROM user WHERE student_id_no = '$student_id'");
-                                        // $count = mysqli_num_rows($sql);
-                                      
-                                   
-                                             if(mysqli_num_rows($sql) > 0)
-                                             {
-                                                  $row = mysqli_fetch_array($sql);
-                                                 
-                                                  $student_id = $_POST['student_id_no'];
+                                   $query = "SELECT * FROM user WHERE student_id_no='$student_id_no'";
+                                   $query_run = mysqli_query($con, $query);
+
+                                   if(mysqli_num_rows($query_run) > 0)
+                                   {
+                                        foreach($query_run as $row)
+                                        {
+                                             // echo $row['student_id_no'];
+                                             $student_id = $_GET['student_id_no'];
                                                   echo ('<script> location.href="circulation_returning.php?student_id='.$student_id.'";</script');
-                                                  
-                                             }else{
-                                                 
-                                                   $_SESSION['message_error'] ='No Match Found';
-                                                  header("Location: circulation_return.php");
-                                                
-                                             }
+                                             
                                         }
+                                   }
+                                   else
+                                   {
+                                        $_SESSION['message_error'] = 'No ID Found';
+                                        // echo ('<script> location.href="circulation_borrow.php";</script');
+                                        
+                                        
+                                        
+                                   }
+                                  }
 
 
 
