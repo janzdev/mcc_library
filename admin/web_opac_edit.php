@@ -16,7 +16,7 @@ include('./includes/sidebar.php');
           </nav>
      </div>
      <section class="section">
-          <div class="row">
+          <div class="row ">
                <div class="col-lg-12">
                     <div class="card">
                          <div class="card-header d-flex justify-content-end">
@@ -35,18 +35,10 @@ include('./includes/sidebar.php');
                                    {
                                        $book = mysqli_fetch_array($query_run);
                                         ?>
-                              <form action="web_opac_code.php" method="POST">
+                              <form action="web_opac_code.php" method="POST" enctype="multipart/form-data" class="">
 
-                                   <div class="row">
-                                       
-
-                                        <div class="col-12 col-md-4">
-                                             <div class="mb-3 mt-2">
-                                                  <label for="">Image</label>
-                                                  <input type="text" name="opac_image"
-                                                       value="<?=$book['opac_image'];?>" class="form-control">
-                                             </div>
-                                        </div>
+                                   <div class="row d-flex justify-content-center mt-3">
+                                        <input type="hidden" name="web_opac_id" value="<?=$book['web_opac_id'];?>">
 
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
@@ -64,11 +56,11 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
+
+
                                    </div>
 
-                                   <div class="row">
-
-                                       
+                                   <div class="row d-flex justify-content-center">
 
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
@@ -86,9 +78,30 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
+
+
+                                   </div>
+                                   <div class="row d-flex justify-content-center">
+                                        <div class="col-12 col-md-4">
+                                             <div class="mb-3 mt-2">
+                                                  <label for="">EBook</label>
+                                                  <input type="hidden" name="old_ebook" value="<?=$book['ebook'];?>">
+                                                  <input type="file" name="ebook" class="form-control">
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-4">
+                                             <div class="mb-3 mt-2">
+                                                  <label for="">Image Display</label>
+                                                  <input type="hidden" name="old_opac_image"
+                                                       value="<?=$book['opac_image'];?>">
+                                                  <input type="file" name="opac_image" class="form-control">
+                                             </div>
+                                        </div>
                                    </div>
 
-                                  
+
+
 
                          </div>
                          <div class="card-footer d-flex justify-content-end">

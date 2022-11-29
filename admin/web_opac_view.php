@@ -40,38 +40,46 @@ include('./includes/sidebar.php');
 
 
                               <div class="row">
+                                   <div class="d-flex justify-content-around p-3">
+                                        <div class="text-center">
+                                             <div class="mb-3 mt-2">
+                                                  <span class="fw-bolder text-center">Image
+                                                  </span>
 
 
-                                   <div class="mb-3 mt-2">
-                                        <span class="fw-bolder">Image &emsp;&emsp;&emsp;&nbsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['opac_image'];?></p>
+                                             </div>
+                                             <img src="../uploads/ebook_img/<?=$book['opac_image'];?>" alt=""
+                                                  width="100px" height="100px" class="border border-info">
+                                             <h6 class="mt-3"><?=$book['opac_image'];?></h6>
+                                        </div>
+                                        <div class="mt-4">
+                                             <div class="mb-3">
+                                                  <span class="fw-bolder">Title
+                                                       &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</span>
+                                                  <p class="d-inline">:&nbsp;<?=$book['title'];?></p>
+                                             </div>
+
+
+                                             <div class="mb-3">
+                                                  <span
+                                                       class="fw-bolder">Author&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</span>
+                                                  <p class="d-inline">:&nbsp;<?=$book['author'];?></p>
+                                             </div>
+
+
+                                             <div class="mb-3">
+                                                  <span class="fw-bolder">Copyright Date
+                                                       &emsp;</span>
+                                                  <p class="d-inline">:&nbsp;<?=$book['copyright_date'];?></p>
+                                             </div>
+
+                                             <div class="mb-3">
+                                                  <span class="fw-bolder">Publisher &emsp;&emsp;&emsp;&emsp;</span>
+                                                  <p class="d-inline">:&nbsp;<?=$book['publisher'];?></p>
+                                             </div>
+                                        </div>
+
                                    </div>
-
-
-
-                                   <div class="mb-3">
-                                        <span class="fw-bolder">Title &ensp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['title'];?></p>
-                                   </div>
-
-
-                                   <div class="mb-3">
-                                        <span
-                                             class="fw-bolder">Author&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['author'];?></p>
-                                   </div>
-
-
-                                   <div class="mb-3">
-                                        <span class="fw-bolder">Copyright Date &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['copyright_date'];?></p>
-                                   </div>
-
-                                   <div class="mb-3">
-                                        <span class="fw-bolder">Publisher &emsp;&emsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['publisher'];?></p>
-                                   </div>
-
                               </div>
 
                          </div>

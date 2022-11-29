@@ -46,16 +46,9 @@ $query_run = mysqli_query($con, $query);
                          </div>
                          <div class="card-body">
 
-                              <form action="web_opac_code.php" method="POST">
+                              <form action="web_opac_code.php" method="POST" enctype="multipart/form-data">
 
-                                   <div class="row  mt-4">
-
-                                        <div class="col-12 col-md-4">
-                                             <div class="mb-3 mt-2">
-                                                  <label for="">Image</label>
-                                                  <input type="text" name="opac_image" class="form-control">
-                                             </div>
-                                        </div>
+                                   <div class="row d-flex justify-content-center mt-4">
 
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
@@ -71,11 +64,12 @@ $query_run = mysqli_query($con, $query);
                                              </div>
                                         </div>
 
+
+
                                    </div>
 
-                                   <div class="row">
+                                   <div class="row d-flex justify-content-center">
 
-                                       
 
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
@@ -92,14 +86,28 @@ $query_run = mysqli_query($con, $query);
                                         </div>
 
                                    </div>
+                                   <div class="row d-flex justify-content-center">
+                                        <div class="col-12 col-md-4">
+                                             <div class="mb-3 mt-2">
+                                                  <label for="">EBook</label>
+                                                  <input type="file" name="ebook" class="form-control">
+                                             </div>
+                                        </div>
 
-                                   
+                                        <div class="col-12 col-md-4">
+                                             <div class="mb-3 mt-2">
+                                                  <label for="">Image</label>
+                                                  <input type="file" name="opac_image" class="form-control">
+                                             </div>
+                                        </div>
+                                   </div>
+
 
                          </div>
                          <div class="card-footer d-flex justify-content-end">
                               <div>
                                    <a href="web_opac.php" class="btn btn-secondary">Cancel</a>
-                                   <button type="submit" name="add_book" class="btn btn-primary">Add Book</button>
+                                   <button type="submit" name="upload_book" class="btn btn-primary">Upload Book</button>
                               </div>
                          </div>
                          </form>

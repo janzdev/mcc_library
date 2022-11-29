@@ -22,8 +22,8 @@ include('./includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="card">
                          <div class="card-header d-flex justify-content-between align-items-center">
-                              <h5 class="m-0 fw-semibold">Faculty</h5>
-                              <a href="web_opac_add.php" class="btn btn-primary"><i class="bi bi-journal-plus"></i> Add
+                              <h5 class="m-0 text-dark fw-semibold">Faculty</h5>
+                              <a href="faculties_add.php" class="btn btn-primary"><i class="bi bi-journal-plus"></i> Add
                                    Faculties Staff</a>
                          </div>
                          <div class="card-body">

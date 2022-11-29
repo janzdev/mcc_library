@@ -30,7 +30,7 @@ include('./includes/sidebar.php');
                               </div>
                          </div>
                          <div class="card-body">
-                              <h4>All Transaction</h4>
+                              <h4 class="m-3">All Transaction</h4>
                               <div class="table-responsive mt-3">
                                    <table id="myDataTable" cellpadding="0" cellspacing="0" border="0"
                                         class="table table-striped table-bordered">

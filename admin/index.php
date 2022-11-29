@@ -128,12 +128,12 @@ include('./includes/sidebar.php');
                                    <div class="card-body">
                                         <div class="d-flex justify-content-between align-items-center">
                                              <h5 class="card-title">
-                                                  Student Attendance
+                                                  Students Attendance
                                              </h5>
                                              <div>
                                                   <form action="" method="POST">
                                                        <a href="statistic_attendance.php" target="_blank" type="submit"
-                                                            name="create_pdf" class="btn btn-danger mx-4"
+                                                            name="create_pdf" class="btn btn-info text-white mx-4"
                                                             data-bs-toggle="tooltip" data-bs-placement="top"
                                                             title="Print Students Attendance">
                                                             <i class="bi bi-printer-fill"></i>

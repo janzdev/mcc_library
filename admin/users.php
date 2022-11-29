@@ -29,9 +29,9 @@ include('./includes/sidebar.php');
                                    <div class="col-12 col-md-6 mt-3">
                                         <a href="user_student.php">
                                              <div
-                                                  class="card bg-primary text-white p-3 d-flex flex-row justify-content-between">
-                                                  <h4 class="">Students</h4>
-                                                  <i class="bi bi-people-fill fs-2"></i>
+                                                  class="card bg-primary text-white p-5 d-flex flex-row justify-content-between">
+                                                  <h2 class="">Students</h2>
+                                                  <i class="bi bi-people-fill fs-1"></i>
                                              </div>
                                         </a>
                                    </div>
@@ -39,9 +39,9 @@ include('./includes/sidebar.php');
                                    <div class="col-12 col-md-6 mt-3">
                                         <a href="user_faculty.php">
                                              <div
-                                                  class="card bg-primary text-white p-3 d-flex flex-row justify-content-between">
-                                                  <h4>Faculty & Staff</h4>
-                                                  <i class="bi bi-people fs-2"></i>
+                                                  class="card bg-primary text-white p-5 d-flex flex-row justify-content-between">
+                                                  <h2>Faculty & Staff</h2>
+                                                  <i class="bi bi-people fs-1"></i>
                                              </div>
                                         </a>
                                    </div>

@@ -37,7 +37,7 @@ include('./includes/sidebar.php');
                                         ?>
                               <form action="books_code.php" method="POST">
 
-                                   <div class="row">
+                                   <div class="row d-flex justify-content-center">
                                         <input type="hidden" name="book_id" value="<?=$book['book_id']?>">
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
@@ -55,6 +55,10 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
+                                   </div>
+
+                                   <div class="row d-flex justify-content-center">
+
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Title</label>
@@ -63,10 +67,6 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                   </div>
-
-                                   <div class="row">
-
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Author</label>
@@ -74,6 +74,10 @@ include('./includes/sidebar.php');
                                                        form-control">
                                              </div>
                                         </div>
+
+                                   </div>
+
+                                   <div class="row d-flex justify-content-center">
 
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
@@ -92,9 +96,7 @@ include('./includes/sidebar.php');
                                         </div>
 
                                    </div>
-
-                                   <div class="row">
-
+                                   <div class="row d-flex justify-content-center">
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Copy</label>
@@ -110,7 +112,6 @@ include('./includes/sidebar.php');
                                                        class=" form-control">
                                              </div>
                                         </div>
-
                                    </div>
 
                          </div>

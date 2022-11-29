@@ -29,9 +29,9 @@ include('./includes/sidebar.php');
                                    <div class="col-12 col-md-6 mt-3">
                                         <a href="circulation_borrow.php">
                                              <div
-                                                  class="card bg-primary text-white p-3 d-flex flex-row justify-content-between">
-                                                  <h4>Borrow Book</h4>
-                                                  <i class="bi bi-book fs-2"></i>
+                                                  class="card bg-primary text-white p-5 d-flex flex-row justify-content-between">
+                                                  <h2>Borrow Book</h2>
+                                                  <i class="bi bi-book fs-1"></i>
                                              </div>
                                         </a>
                                    </div>
@@ -39,94 +39,13 @@ include('./includes/sidebar.php');
                                    <div class="col-12 col-md-6 mt-3">
                                         <a href="circulation_return.php">
                                              <div
-                                                  class="card bg-primary text-white p-3 d-flex flex-row justify-content-between">
-                                                  <h4>Return Book</h4>
-                                                  <i class="bi bi-book fs-2"></i>
+                                                  class="card bg-primary text-white p-5 d-flex flex-row justify-content-between">
+                                                  <h2>Return Book</h2>
+                                                  <i class="bi bi-book fs-1"></i>
                                              </div>
                                         </a>
                                    </div>
                               </div>
-                              <!-- <div class="row">
-                                   <div class="col-12 col-md-6">
-                                        <div class="card border-3 border-top border-info">
-                                             <div class="card-header">
-                                                  <i class="bi bi-book"></i>&nbsp;Recent Borrrowed Transaction
-                                             </div>
-                                             <div class="card-body">
-                                                  <div class="table-responsive">
-                                                       <table id="myDataTable" class="table table-sm">
-                                                            <thead>
-                                                                 <tr>
-                                                                      <th>Title</th>
-                                                                      <th>Borrower</th>
-                                                                      <th>Date</th>
-                                                                 </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                 <tr>
-                                                                      <td>Mark</td>
-                                                                      <td>Otto</td>
-                                                                      <td>@mdo</td>
-                                                                 </tr>
-                                                                 <tr>
-                                                                      <td>Jacob</td>
-                                                                      <td>Thornton</td>
-                                                                      <td>@fat</td>
-                                                                 </tr>
-                                                                 <tr>
-                                                                      <td>Larry the Bird</td>
-                                                                      <td>@twitter</td>
-                                                                 </tr>
-                                                            </tbody>
-                                                       </table>
-                                                  </div>
-                                             </div>
-                                             <div class="card-footer">
-
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="col-12 col-md-6">
-                                        <div class="card border-3 border-top border-info">
-                                             <div class="card-header">
-                                                  <i class="bi bi-book"></i>&nbsp;Recent Returned Transaction
-                                             </div>
-                                             <div class="card-body">
-                                                  <div class="table-responsive">
-                                                       <table id="myDataTable" class="table table-sm">
-                                                            <thead>
-                                                                 <tr>
-                                                                      <th>Title</th>
-                                                                      <th>Borrower</th>
-                                                                      <th>Date</th>
-                                                                 </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                 <tr>
-                                                                      <td>Mark</td>
-                                                                      <td>Otto</td>
-                                                                      <td>@mdo</td>
-                                                                 </tr>
-                                                                 <tr>
-                                                                      <td>Jacob</td>
-                                                                      <td>Thornton</td>
-                                                                      <td>@fat</td>
-                                                                 </tr>
-                                                                 <tr>
-
-                                                                      <td>Larry the Bird</td>
-                                                                      <td>@twitter</td>
-                                                                 </tr>
-                                                            </tbody>
-                                                       </table>
-                                                  </div>
-                                             </div>
-                                             <div class="card-footer">
-
-                                             </div>
-                                        </div>
-                                   </div>
-                              </div> -->
                          </div>
                          <div class="card-footer"></div>
                     </div>

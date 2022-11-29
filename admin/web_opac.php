@@ -48,8 +48,12 @@ include('./includes/sidebar.php');
                                                   {
                                                        ?>
                                              <tr>
-
-                                                  <td><?=$book['opac_image'];?></td>
+                                                  <td>
+                                                       <center>
+                                                            <img src="../uploads/ebook_img/<?=$book['opac_image'];?>"
+                                                                 alt="" width="60px" height="60px">
+                                                       </center>
+                                                  </td>
                                                   <td><?=$book['title'];?></td>
                                                   <td><?=$book['author'];?></td>
                                                   <td><?=$book['copyright_date'];?></td>
@@ -89,10 +93,7 @@ include('./includes/sidebar.php');
                                              <?php
                                                   }
                                              }
-                                             else
-                                             {
-                                                  echo "No records found";
-                                             }                                           
+                                                                                      
                                              ?>
                                         </tbody>
                                    </table>
