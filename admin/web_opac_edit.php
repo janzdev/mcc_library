@@ -37,10 +37,10 @@ include('./includes/sidebar.php');
                                         ?>
                               <form action="web_opac_code.php" method="POST" enctype="multipart/form-data" class="">
 
-                                   <div class="row d-flex justify-content-center mt-3">
+                                   <div class="row d-flex justify-content-center mt-5">
                                         <input type="hidden" name="web_opac_id" value="<?=$book['web_opac_id'];?>">
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Title</label>
                                                   <input type="text" name="title" value="<?=$book['title'];?>" class="
@@ -48,7 +48,7 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Author</label>
                                                   <input type="text" name="author" value="<?=$book['author'];?>" class="
@@ -62,7 +62,7 @@ include('./includes/sidebar.php');
 
                                    <div class="row d-flex justify-content-center">
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Copyright Date</label>
                                                   <input type="text" name="copyright_date"
@@ -70,7 +70,7 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Publisher</label>
                                                   <input type="text" name="publisher" value="<?=$book['publisher'];?>"
@@ -82,7 +82,7 @@ include('./includes/sidebar.php');
 
                                    </div>
                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">EBook</label>
                                                   <input type="hidden" name="old_ebook" value="<?=$book['ebook'];?>">
@@ -90,7 +90,7 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Image Display</label>
                                                   <input type="hidden" name="old_opac_image"

@@ -35,7 +35,7 @@ if(isset($_POST['update_student']))
      $gender = mysqli_real_escape_string($con, $_POST['gender']);
      $course = mysqli_real_escape_string($con, $_POST['course']);
      $address = mysqli_real_escape_string($con, $_POST['address']);
-     $cellphone_number = mysqli_real_escape_string($con, $_POST['cellphone_number']);
+     $cellphone_number = trim($con, $_POST['cellphone_number']);
      $birthdate = mysqli_real_escape_string($con, $_POST['birthdate']);
      $email = mysqli_real_escape_string($con, $_POST['email']);
      $year_level = mysqli_real_escape_string($con, $_POST['year_level']);
@@ -43,6 +43,17 @@ if(isset($_POST['update_student']))
      $contact_person = mysqli_real_escape_string($con, $_POST['contact_person']);
      $contact_person_no = mysqli_real_escape_string($con, $_POST['contact_person_number']);
      $username = mysqli_real_escape_string($con, $_POST['username']);
+
+     $phc = '/^[0-9]{10, 10}$/';
+     if(preg_match($phc, $cellphone_number))
+     {
+          echo "Hello";
+     }
+     else
+     {
+          echo "Good bye";
+     }
+     
 
      $query = "INSERT INTO user (lastname, firstname, middlename, nickname, gender, course, address, cell_no, birthdate, email, year_level, student_id_no, contact_person, contact_person_no, username, user_added) VALUES ('$lastname', '$firstname', '$middlename', '$nickname', '$gender', '$course', '$address', '$cellphone_number', '$birthdate', '$email', '$year_level', '$student_id_no', '$contact_person', '$contact_person_no', '$username', NOW())";
      $query_run = mysqli_query($con, $query);

@@ -25,109 +25,174 @@ include('./includes/sidebar.php');
 
                               <form action="user_student_code.php" method="POST">
 
-                                   <div class="mb-2 row mt-3">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">STUDENT ID</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="student_id_no" class="form-control"
-                                                  id="inputPassword">
+                                   <div class="row d-flex justify-content-center mt-2">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 mt-2 input-group-sm">
+                                                  <label for="">Lastname</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" id="" name="lastname" class="form-control "
+                                                       required autocomplete="off">
+                                             </div>
                                         </div>
-                                   </div>
-                                   <div class="mb-2 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Lastname</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="lastname" class="form-control" id="inputPassword">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 mt-2 input-group-sm">
+                                                  <label for="">Firstname</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="firstname" class="form-control"
+                                                       autocomplete="off" required>
+                                             </div>
                                         </div>
-                                   </div>
-                                   <div class="mb-2 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Firstname</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="firstname" class="form-control"
-                                                  id="inputPassword">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 mt-2 input-group-sm">
+                                                  <label for="">Middlename</label>
+                                                  <input type="text" name="middlename" class="form-control"
+                                                       autocomplete="off">
+                                             </div>
                                         </div>
+
                                    </div>
 
-                                   <div class="mb-2 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Middlename</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="middlename" class="form-control"
-                                                  id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-2 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Nickname</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="nickname" class="form-control" id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-2 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Gender</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="gender" class="form-control" id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-2 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Course</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="course" class="form-control" id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-2 row">
-                                        <div class="row">
-                                             <label for="inputPassword" class="col-sm-2 col-form-label">Address</label>
-                                             <div class="col-sm-4 input-group-sm">
-                                                  <input type="text" name="address" class="form-control"
-                                                       id="inputPassword">
-                                             </div>
-                                             <label for="inputPassword" class="col-sm-2 col-form-label">/Cell
-                                                  No:</label>
-                                             <div class="col-sm-4 input-group-sm">
-                                                  <input type="text" name="cellphone_number" class="form-control"
-                                                       id="inputPassword">
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Nickname</label>
+                                                  <input type="text" name="nickname" class="form-control"
+                                                       autocomplete="off">
                                              </div>
                                         </div>
-                                   </div>
-                                   <div class="mb-2 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Birthdate</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="birthdate" class="form-control"
-                                                  id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-2 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Year Level</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="year_level" class="form-control"
-                                                  id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-2 row">
-                                        <div class="row">
-                                             <label for="inputPassword" class="col-sm-2 col-form-label">Contact
-                                                  Person</label>
-                                             <div class="col-sm-4 input-group-sm">
-                                                  <input type="text" name="contact_person" class="form-control"
-                                                       id="inputPassword">
-                                             </div>
-                                             <label for="inputPassword" class="col-sm-2 col-form-label">/Cell
-                                                  No:</label>
-                                             <div class="col-sm-4 input-group-sm">
-                                                  <input type="text" name="contact_person_number" class="form-control"
-                                                       id="inputPassword">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Gender</label>
+                                                  <span class="text-danger">*</span>
+                                                  <select name="gender" id="" class="form-control" autocomplete="off"
+                                                       required>
+                                                       <option value="">--Select Gender--</option>
+                                                       <option value="Female">Female</option>
+                                                       <option value="Male">Male</option>
+                                                  </select>
                                              </div>
                                         </div>
-                                   </div>
-                                   <div class="mb-2 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Email Address</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="email" class="form-control" id="inputPassword">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Birthdate</label>
+                                                  <input type="date" name="birthdate" class="form-control"
+                                                       autocomplete="off">
+                                             </div>
                                         </div>
+
                                    </div>
-                                   <div class="mb-2 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">User Name</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" name="username" class="form-control" id="inputPassword">
+
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-6">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Address</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="address" autocomplete="off"
+                                                       class="form-control" required>
+                                             </div>
                                         </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Cell No.</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="cellphone_number" autocomplete="off"
+                                                       class="form-control" required>
+                                             </div>
+                                        </div>
+
                                    </div>
+
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Course</label>
+                                                  <span class="text-danger">*</span>
+                                                  <select name="course" id="" class="form-control" required>
+                                                       <option value="">--Select Course--</option>
+                                                       <option value="BSIT">BSIT</option>
+                                                       <option value="BSED">BSED</option>
+                                                       <option value="BEED">BEED</option>
+                                                       <option value="BSBA">BSBA</option>
+                                                       <option value="BSHM">BSHM</option>
+                                                  </select>
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Year Level</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="number" name="year_level" class="form-control"
+                                                       autocomplete="off" required min="1" max="4">
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Student ID</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="student_id_no" class="form-control" required
+                                                       autocomplete="off">
+                                             </div>
+                                        </div>
+
+                                   </div>
+
+
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-6">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Contact Person</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="contact_person" class="form-control" required
+                                                       autocomplete="off">
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Cell No.</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="number" name="contact_person_number" class="form-control"
+                                                       autocomplete="off" required>
+                                             </div>
+                                        </div>
+
+                                   </div>
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-6">
+                                             <div class=" input-group-sm">
+                                                  <label for="">Email Address</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="email" class="form-control"
+                                                       autocomplete="off" required>
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class=" input-group-sm">
+                                                  <label for="">Username</label>
+                                                  <input type="text" name="username" class="form-control"
+                                                       autocomplete="off">
+                                             </div>
+                                        </div>
+
+                                   </div>
+
+
+
+
                          </div>
                          <div class="card-footer d-flex justify-content-end">
                               <div>

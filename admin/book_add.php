@@ -48,41 +48,47 @@ $query_run = mysqli_query($con, $query);
 
                               <form action="books_code.php" method="POST">
 
-                                   <div class="row  mt-4">
+                                   <div class="row d-flex justify-content-center mt-5">
                                         <input type="hidden" name="new_barcode" value="<?=$new_barcode ?>">
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3">
                                                   <label for="">Call Number</label>
                                                   <input type="text" name="call_number" class="form-control">
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
-                                             <div class="mb-3 mt-2">
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-3">
                                                   <label for="">Accessial Number</label>
                                                   <input type="text" name="accessial_number" class="form-control">
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                   </div>
+
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Title</label>
                                                   <input type="text" name="title" class="form-control">
                                              </div>
                                         </div>
 
-                                   </div>
-
-                                   <div class="row">
-
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Author</label>
                                                   <input type="text" name="author" class="form-control">
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+
+
+                                   </div>
+
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Copyright Date</label>
                                                   <input type="text" name="copyright_date" class="form-control">
@@ -96,11 +102,7 @@ $query_run = mysqli_query($con, $query);
                                              </div>
                                         </div>
 
-                                   </div>
-
-                                   <div class="row">
-
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-3">
                                              <div class=" mt-2">
                                                   <label for="">Copy</label>
                                                   <input type="number" name="copy" class="form-control" min="1">

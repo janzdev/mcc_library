@@ -37,9 +37,9 @@ include('./includes/sidebar.php');
                                         ?>
                               <form action="books_code.php" method="POST">
 
-                                   <div class="row d-flex justify-content-center">
+                                   <div class="row d-flex justify-content-center mt-4">
                                         <input type="hidden" name="book_id" value="<?=$book['book_id']?>">
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Call Number</label>
                                                   <input type="text" name="call_number"
@@ -47,7 +47,7 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Accessial Number</label>
                                                   <input type="text" name="accessial_number"
@@ -59,7 +59,7 @@ include('./includes/sidebar.php');
 
                                    <div class="row d-flex justify-content-center">
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Title</label>
                                                   <input type="text" name="title" value="<?=$book['title'];?>" class="
@@ -67,7 +67,7 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Author</label>
                                                   <input type="text" name="author" value="<?=$book['author'];?>" class="
@@ -79,7 +79,7 @@ include('./includes/sidebar.php');
 
                                    <div class="row d-flex justify-content-center">
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Copyright Date</label>
                                                   <input type="text" name="copyright_date"
@@ -95,9 +95,7 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                   </div>
-                                   <div class="row d-flex justify-content-center">
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Copy</label>
                                                   <input type="text" name="copy" value="<?=$book['copy'];?>" class="
@@ -105,14 +103,9 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
-                                             <div class="mb-3 mt-2">
-                                                  <label for="">Barcode</label>
-                                                  <input type="text" name="barcode" value="<?=$book['barcode'];?>"
-                                                       class=" form-control">
-                                             </div>
-                                        </div>
+
                                    </div>
+
 
                          </div>
                          <div class="card-footer d-flex justify-content-end">

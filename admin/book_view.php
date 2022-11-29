@@ -19,7 +19,8 @@ include('./includes/sidebar.php');
           <div class="row">
                <div class="col-lg-12">
                     <div class="card">
-                         <div class="card-header d-flex justify-content-end">
+                         <div class="card-header d-flex align-items-center justify-content-between">
+                              <h5 class="m-0 text-dark fw-bold">Book Details</h5>
                               <a href="books.php" class="btn btn-primary">
                                    Back
                               </a>
@@ -43,46 +44,46 @@ include('./includes/sidebar.php');
 
 
                                    <div class="mb-3 mt-2">
-                                        <span class="fw-bolder">Call Number &emsp;&emsp;&emsp;&nbsp;</span>
+                                        <span class="fw-semibold">Call Number &emsp;&emsp;&emsp;&nbsp;</span>
                                         <p class="d-inline">:&nbsp;<?=$book['call_number'];?></p>
                                    </div>
 
 
 
                                    <div class="mb-3">
-                                        <span class="fw-bolder">Accessial Number &ensp;</span>
+                                        <span class="fw-semibold">Accessial Number &ensp;</span>
                                         <p class="d-inline">:&nbsp;<?=$book['accessial_number'];?></p>
                                    </div>
 
 
                                    <div class="mb-3">
                                         <span
-                                             class="fw-bolder">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</span>
+                                             class="fw-semibold">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</span>
                                         <p class="d-inline">:&nbsp;<?=$book['title'];?></p>
                                    </div>
 
 
                                    <div class="mb-3">
-                                        <span class="fw-bolder">Author &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+                                        <span class="fw-semibold">Author &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
                                         <p class="d-inline">:&nbsp;<?=$book['author'];?></p>
                                    </div>
 
                                    <div class="mb-3">
-                                        <span class="fw-bolder">Copyright Date &emsp;&emsp;</span>
+                                        <span class="fw-semibold">Copyright Date &emsp;&emsp;</span>
                                         <p class="d-inline">:&nbsp;<?=$book['copyright_date'];?></p>
                                    </div>
 
                                    <div class="mb-3">
-                                        <span class="fw-bolder">Publisher &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;</span>
+                                        <span class="fw-semibold">Publisher &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;</span>
                                         <p class="d-inline">:&nbsp;<?=$book['publisher'];?></p>
                                    </div>
                                    <div class="mb-3">
-                                        <span class="fw-bolder">Copy
+                                        <span class="fw-semibold">Copy
                                              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
                                         <p class="d-inline">:&nbsp;<?=$book['copy'];?></p>
                                    </div>
                                    <div class="">
-                                        <span class="fw-bolder">Barcode
+                                        <span class="fw-semibold">Barcode
                                              &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</span>
                                         <p class="d-inline">:&nbsp;<?=$book['barcode'];?></p>
                                    </div>

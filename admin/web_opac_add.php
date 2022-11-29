@@ -50,35 +50,32 @@ $query_run = mysqli_query($con, $query);
 
                                    <div class="row d-flex justify-content-center mt-4">
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Title</label>
                                                   <input type="text" name="title" class="form-control">
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Author</label>
                                                   <input type="text" name="author" class="form-control">
                                              </div>
                                         </div>
 
-
-
                                    </div>
 
                                    <div class="row d-flex justify-content-center">
 
-
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Copyright Date</label>
                                                   <input type="text" name="copyright_date" class="form-control">
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Publisher</label>
                                                   <input type="text" name="publisher" class="form-control">
@@ -86,20 +83,23 @@ $query_run = mysqli_query($con, $query);
                                         </div>
 
                                    </div>
+
                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-12 col-md-4">
+
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">EBook</label>
                                                   <input type="file" name="ebook" class="form-control">
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Image</label>
                                                   <input type="file" name="opac_image" class="form-control">
                                              </div>
                                         </div>
+
                                    </div>
 
 

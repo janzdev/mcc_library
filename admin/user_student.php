@@ -38,13 +38,14 @@ include('./includes/sidebar.php');
                                    <table id="myDataTable" class="table table-bordered table-striped table-sm">
                                         <thead>
                                              <tr>
-
                                                   <th>Student ID</th>
                                                   <th>Full Name</th>
                                                   <th>Course</th>
-                                                  <th>Level</th>
+                                                  <th>Year Level</th>
+                                                  <th>Address</th>
+                                                  <th>Contact No.</th>
+                                                  <th>Email Adress</th>
                                                   <th>Action</th>
-
                                              </tr>
                                         </thead>
                                         <tbody>
@@ -64,6 +65,9 @@ include('./includes/sidebar.php');
                                                   </td>
                                                   <td><?=$user['course'];?></td>
                                                   <td><?=$user['year_level'];?></td>
+                                                  <td><?=$user['address'];?></td>
+                                                  <td><?=$user['cell_no'];?></td>
+                                                  <td><?=$user['email'];?></td>
 
                                                   <td class=" justify-content-center">
                                                        <div class="btn-group" style="background: #DFF6FF;  ">
