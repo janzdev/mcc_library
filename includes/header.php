@@ -18,7 +18,7 @@
      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
      <!-- Custom CSS Styling -->
-     <link rel="stylesheet" href="assets/css/login.css">
+     <!-- <link rel="stylesheet" href="assets/css/login.css"> -->
 
      <!-- Alertify JS cdn link -->
      <link rel="stylesheet" href="assets/css/alertify.min.css" />

@@ -17,7 +17,6 @@ $pdf->setPrintFooter(false);
 // ---------------------------------------------------------
 
 
-
 // Add a page
 // This method has several options, check the source code documentation for more information.
 $pdf->AddPage();
@@ -64,7 +63,7 @@ $user_row = mysqli_fetch_array($user_query);
 
 
 $borrower = $user_row['firstname'].' '.$user_row['middlename'].' '.$user_row['lastname'];
-$penalty = 'Php'.$return_row['book_penalty'];
+$penalty = 'Php '.$return_row['book_penalty'];
 
 
 $title = $return_row['title'];
@@ -146,7 +145,7 @@ $pdf->Cell(180, 15, 'Signature       ', 0, 1, 'R', 0, '', 0, false, 'M', 'M');
 
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-$pdf->Output('example_001.pdf', 'I');
+$pdf->Output('penalty_receipt.pdf', 'I');
 
 //============================================================+
 // END OF FILE

@@ -18,7 +18,7 @@ $user_row = mysqli_fetch_array($user_query);
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item"><a href="circulation.php">Circulation</a></li>
-                    <li class="breadcrumb-item"><a href="circulation_return.php">Return Book</a></li>
+                    <li class="breadcrumb-item active"><a href="circulation_return.php">Return Book</a></li>
                </ol>
           </nav>
      </div>
@@ -32,6 +32,7 @@ $user_row = mysqli_fetch_array($user_query);
                          </div>
 
                          <div class="card-body">
+                              
                               <?php 
                               
                                   $return_query= mysqli_query($con,"select * from return_book 
@@ -51,14 +52,16 @@ $user_row = mysqli_fetch_array($user_query);
                                         class="text-dark fw-bold">
                                         <?php echo $user_row['firstname'].' '.$user_row['middlename'].' '.$user_row['lastname']?></span>
                                    <h6 class="text-center fs-5 mb-4"> has paid the amount of Php<span
-                                             class="text-dark fw-bold"> <?php echo $return_row['book_penalty'] ?></span> for the penalty.
+                                             class="text-dark fw-bold"> <?php echo $return_row['book_penalty'] ?></span>
+                                        for the penalty.
                                    </h6>
 
-                                   
+
 
                               </h6>
                               <h6 class="my-3 text-dark fw-bold ">Borrowed Books Details</h6>
                               <div class="table-responsive">
+                                   <form></form>
                                    <table class="table table-bordered table-striped table-sm">
                                         <thead>
                                              <tr>
@@ -130,16 +133,51 @@ $user_row = mysqli_fetch_array($user_query);
 
                          </div>
                          <div class="btn-group m-2">
-
-                              <a href="acknowledgement_receipt_print.php?student_id=<?php echo $student_id ?>" target="_blank" class="btn btn-primary">Accept</a>
+                              
+                              <a href="acknowledgement_receipt_print.php?student_id=<?php echo $student_id ?>"
+                                   target="_blank" class="btn btn-primary" name="accept">Accept</a>
                               <a href="circulation_returning.php?student_id=<?php echo $student_id ?>"
                                    class="btn btn-secondary">Cancel</a>
-
+                                  
                          </div>
                     </div>
                </div>
      </section>
 </main>
+<?php
+ if(isset($_POST['accept']))
+ {
+     mysqli_query($con,"UPDATE borrow_book SET borrowed_status = 'returned', date_returned = '$date_returned_now', book_penalty = '$penalty' WHERE borrow_book_id= '$borrow_book_id' and user_id = '$user_id' and book_id = '$book_id' ") or die (mysqli_error());
+									
+     mysqli_query($con,"INSERT INTO return_book (user_id, book_id, date_borrowed, due_date, date_returned, book_penalty)
+     values ('$user_id', '$book_id', '$date_borrowed', '$due_date', '$date_returned', '$penalty')") or die (mysqli_error());
+
+     $report_history1=mysqli_query($con,"SELECT * FROM admin where admin_id = '$id_session' ") or die (mysqli_error());
+     $report_history_row1=mysqli_fetch_array($report_history1);
+     $admin_row1=$report_history_row1['firstname']." ".$report_history_row1['middlename']." ".$report_history_row1['lastname'];
+          
+
+     mysqli_query($con,"INSERT INTO report 
+     (book_id, user_id, admin_name, detail_action, date_transaction)
+     VALUES ('$book_id','$user_id','$admin_row1','Returned Book',NOW())") or die(mysqli_error());
+ }
+else
+ {
+     echo '<script> location.href="circulation_returning.php";</script';
+ }
+
+
+?>
+<script>
+window.location =
+     "circulation_returning.php?student_id=<?php echo $student_id ?>";
+</script>
+<?php 
+                        
+?>
+<?php
+ 
+?>
 <?php 
 include('./includes/footer.php');
 include('./includes/script.php');

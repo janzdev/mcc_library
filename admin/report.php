@@ -1,37 +1,36 @@
-<?php
+<?php 
 include('authentication.php');
-include('includes/header.php');
-include('includes/sidebar.php'); 
+include('includes/header.php'); 
+include('./includes/sidebar.php'); 
+
 ?>
+
 
 <main id="main" class="main">
      <div class="pagetitle">
           <h1>Report</h1>
           <nav>
                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item active">Report</li>
                </ol>
           </nav>
      </div>
-     <section class="section profile">
+     <section class="section">
           <div class="row">
-               
-               <div class="col-xl-12">
+               <div class="col-lg-12">
                     <div class="card">
-                         <div class="card-body pt-3">
-                              <ul class="nav nav-tabs nav-tabs-bordered">
+                         <div class="card-header">
+                              <div class="btn-group gap-1">
+                                   <a href="report.php" class="btn btn-primary " aria-current="page">
+                                        All Transaction
+                                   </a>
+                                   <a href="report_penalty.php" class="btn btn-primary">Penalty Report</a>
 
-                                   <li class="nav-item"> <button class="nav-link active" data-bs-toggle="tab"
-                                             data-bs-target="#profile-edit">All Transaction</button></li>
-
-                                   <li class="nav-item"> <button class="nav-link" data-bs-toggle="tab"
-                                             data-bs-target="#profile-change-password">Penalty Report</button></li>
-                              </ul>
-                              <div class="tab-content pt-2">
-
-                                   <div class="tab-pane fade show active profile-edit pt-3" id="profile-edit">
-                                   <div class="table-responsive mt-3">
+                              </div>
+                         </div>
+                         <div class="card-body">
+                              <div class="table-responsive mt-3">
                                    <table id="myDataTable" cellpadding="0" cellspacing="0" border="0"
                                         class="table table-striped table-bordered">
 
@@ -55,6 +54,7 @@ include('includes/sidebar.php');
 							$id=$row['report_id'];
 							$book_id=$row['book_id'];
 							$user_name=$row['firstname']." ".$row['middlename']." ".$row['lastname'];
+                                   $admin =$row['admin_name'];
 							
 							?>
                                              <tr>
@@ -69,44 +69,15 @@ include('includes/sidebar.php');
                                         </tbody>
                                    </table>
                               </div>
-                                   </div>
-
-                                   <div class="tab-pane fade pt-3" id="profile-change-password">
-                                        <h5>Penalty Report</h5>
-                                   <div class="table-responsive mt-3">
-                                   <table id="myDataTable" cellpadding="0" cellspacing="0" border="0"
-                                        class="table table-striped table-bordered">
-
-                                        <thead>
-                                             <tr>
-                                                  <th>Penalty Amount</th>
-                                                  <th>Received From</th>
-                                                  <th>Person In Charge</th>
-                                                  <th>Date Transaction</th>
-                                             </tr>
-                                        </thead>
-                                        <tbody>
-
-                                             <tr>
-                                                  <td>10</td>
-                                                  <td>Julito Ducay</td>
-                                                  <td>admin admin admin</td>
-                                                  <td>Date Transaction</td>
-                                                 
-                                             </tr>
-                                             
-                                        </tbody>
-                                   </table>
-                              </div>
-                                   </div>
-                              </div>
                          </div>
+                         <div class="card-footer"></div>
                     </div>
                </div>
           </div>
      </section>
 </main>
-<?php
-include('includes/footer.php');
+<?php 
+include('./includes/footer.php');
 include('./includes/script.php');
+include('../message.php');   
 ?>

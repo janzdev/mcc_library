@@ -3,7 +3,7 @@
  
 session_start();
 include('admin/config/dbcon.php');
-include('includes/header.php');
+
 
 
 if(isset($_POST['admin_login_btn']))
@@ -53,7 +53,39 @@ if(isset($_POST['admin_login_btn']))
 //   exit(0);
 // }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="./assets/img/mcc-logo.png">
+     <title>MCC LIBRARY</title>
+</head>
+
+
+<!-- Alertify JS link -->
+<link rel="stylesheet" href="assets/css/alertify.min.css" />
+<link rel="stylesheet" href="assets/css/alertify.bootstraptheme.min.css" />
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap5.min.css" />
+
+<!-- Bootstrap Icon -->
+<link rel="stylesheet" href="assets/font/bootstrap-icons.css">
+
+   <!-- Iconscout cdn link -->
+   <link rel="stylesheet" href="assets/css/line.css">
+     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+     <!-- Custom CSS Styling -->
+     <link rel="stylesheet" href="assets/css/login.css">
+
+
+
+
+<body>
 <section class="d-flex mt-5 flex-column  justify-content-center align-items-center">
      <div class="container-xl">
           <div class="col mx-auto rounded shadow bg-white">

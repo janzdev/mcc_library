@@ -241,6 +241,7 @@ $user_row = mysqli_fetch_array($user_query);
                                                        // });
                                                        // </script>';
                                                   }
+                                                 
                                                   
                                                 
                                              $report_history1=mysqli_query($con,"SELECT * FROM admin where admin_id = '$id_session' ") or die (mysqli_error());

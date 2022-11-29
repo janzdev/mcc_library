@@ -93,17 +93,7 @@ include('./includes/sidebar.php');
                     <div class="card">
                          <div class="card-header d-flex justify-content-between align-item-center">
                               <span class="text-dark fw-semibold">Recent Returned Books</span>
-                              <form action="" method="POST">
-                                   <a href="circulation_return_print.php" target="_blank" type="submit"
-                                        name="create_pdf" class="btn btn-danger btn-sm" data-bs-toggle="tooltip"
-                                        data-bs-placement="top" title="Print Returned Books">
-                                        <i class="bi bi-printer"></i>
-                                   </a>
-                                   <a href="" type="submit" name="create_pdf" class="btn btn-danger btn-sm mx-4"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Print students Penalty">
-                                        <i class="bi bi-printer-fill"></i>
-                                   </a>
-                              </form>
+                              
                          </div>
                          <div class="card-body">
                               <div class="table-responsive">
