@@ -70,7 +70,7 @@ include('./includes/sidebar.php');
                                                                  <i class="bi bi-eye-fill"></i>
                                                             </a>
                                                             <!-- Edit Book Action-->
-                                                            <a href=book_edit.php?id=<?= $book['book_id']; ?>"
+                                                            <a href="book_edit.php?id=<?= $book['book_id']; ?>"
                                                                  name="update_book"
                                                                  class="btn btn-sm  border text-success"
                                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"

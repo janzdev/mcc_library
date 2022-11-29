@@ -40,6 +40,7 @@ include('./includes/sidebar.php');
                                              <tr>
                                                   <th>Student ID</th>
                                                   <th>Full Name</th>
+                                                  <th>Gender</th>
                                                   <th>Course</th>
                                                   <th>Year Level</th>
                                                   <th>Address</th>
@@ -63,6 +64,7 @@ include('./includes/sidebar.php');
                                                   <td>
                                                        <?=$user['firstname'].' '.$user['middlename'].' '.$user['lastname']?>
                                                   </td>
+                                                  <td><?=$user['gender'];?></td>
                                                   <td><?=$user['course'];?></td>
                                                   <td><?=$user['year_level'];?></td>
                                                   <td><?=$user['address'];?></td>
@@ -81,7 +83,7 @@ include('./includes/sidebar.php');
                                                             </a>
                                                             <!-- Edit Student Action-->
                                                             <a href="user_student_edit.php?id=<?= $user['user_id']; ?>"
-                                                                 name="update_book"
+                                                                 name="update_student"
                                                                  class="btn btn-sm  border text-success"
                                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                                  title="Edit Student">

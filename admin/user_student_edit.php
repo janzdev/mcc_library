@@ -23,113 +23,213 @@ include('./includes/sidebar.php');
 
                          </div>
                          <div class="card-body">
+                              <?php
+                              if(isset($_GET['id']))
+                              {
+                                   $user_id = mysqli_real_escape_string($con, $_GET['id']);
 
-                              <form action="web_opac_code.php" method="POST">
+                                   $query = "SELECT * FROM user WHERE user_id ='$user_id'"; 
+                                   $query_run = mysqli_query($con, $query);
 
-                                   <div class="mb-3 row mt-3">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">STUDENT ID</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
+                                   if(mysqli_num_rows($query_run) > 0)
+                                   {
+                                       $user = mysqli_fetch_array($query_run);
+                                        ?>
+                              <form action="user_student_code.php" method="POST">
+
+                                   <div class="row d-flex justify-content-center mt-2">
+                                        <input type="hidden" name="user_id" value="<?=$user['user_id']?>">
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 mt-2 input-group-sm">
+                                                  <label for="">Lastname</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" id="" name="lastname"
+                                                       value="<?=$user['lastname'];?>" class="form-control " required
+                                                       autocomplete="off">
+                                             </div>
                                         </div>
-                                   </div>
-                                   <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Lastname</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 mt-2 input-group-sm">
+                                                  <label for="">Firstname</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="firstname" value="<?=$user['firstname'];?>"
+                                                       class="form-control" autocomplete="off" required>
+                                             </div>
                                         </div>
-                                   </div>
-                                   <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Firstname</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 mt-2 input-group-sm">
+                                                  <label for="">Middlename</label>
+                                                  <input type="text" name="middlename" value="<?=$user['middlename'];?>"
+                                                       class="form-control" autocomplete="off">
+                                             </div>
                                         </div>
+
                                    </div>
 
-                                   <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Middlename</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Nickname</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Gender</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Course</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-3 row">
-                                        <div class="row">
-                                             <label for="inputPassword" class="col-sm-2 col-form-label">Address</label>
-                                             <div class="col-sm-4 input-group-sm">
-                                                  <input type="text" class="form-control" id="inputPassword">
-                                             </div>
-                                             <label for="inputPassword" class="col-sm-2 col-form-label">/Cell
-                                                  No:</label>
-                                             <div class="col-sm-4 input-group-sm">
-                                                  <input type="text" class="form-control" id="inputPassword">
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Nickname</label>
+                                                  <input type="text" name="nickname" value="<?=$user['nickname'];?>"
+                                                       class="form-control" autocomplete="off">
                                              </div>
                                         </div>
-                                   </div>
-                                   <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Birthdate</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Year Level</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
-                                        </div>
-                                   </div>
-                                   <div class="mb-3 row">
-                                        <div class="row">
-                                             <label for="inputPassword" class="col-sm-2 col-form-label">Contact
-                                                  Person</label>
-                                             <div class="col-sm-4 input-group-sm">
-                                                  <input type="text" class="form-control" id="inputPassword">
-                                             </div>
-                                             <label for="inputPassword" class="col-sm-2 col-form-label">/Cell
-                                                  No:</label>
-                                             <div class="col-sm-4 input-group-sm">
-                                                  <input type="text" class="form-control" id="inputPassword">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Gender</label>
+                                                  <span class="text-danger">*</span>
+                                                  <select name="gender" id="" value="<?=$user['gender'];?>"
+                                                       class="form-control" autocomplete="off" required>
+                                                       <option value="<?=$user['gender'];?>">
+                                                            <?=$user['gender'];?>
+                                                       </option>
+                                                       <option value="Female">Female</option>
+                                                       <option value="Male">Male</option>
+                                                  </select>
                                              </div>
                                         </div>
-                                   </div>
-                                   <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">Email Address</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Birthdate</label>
+                                                  <input type="date" name="birthdate" value="<?=$user['birthdate'];?>"
+                                                       class="form-control" autocomplete="off">
+                                             </div>
                                         </div>
+
                                    </div>
-                                   <div class="mb-3 row">
-                                        <label for="inputPassword" class="col-sm-2 col-form-label">User Name</label>
-                                        <div class="col-sm-10 input-group-sm">
-                                             <input type="text" class="form-control" id="inputPassword">
+
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-6">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Address</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="address" value="<?=$user['address'];?>"
+                                                       autocomplete="off" class="form-control" required>
+                                             </div>
                                         </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Cell No.</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="cellphone_number"
+                                                       value="<?=$user['cell_no'];?>" autocomplete="off"
+                                                       class="form-control" required>
+                                             </div>
+                                        </div>
+
+                                   </div>
+
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Course</label>
+                                                  <span class="text-danger">*</span>
+                                                  <select name="course" id="" value="<?=$user['course'];?>"
+                                                       class="form-control" required>
+                                                       <option value="<?=$user['course'];?>"><?=$user['course'];?>
+                                                       </option>
+                                                       <option value="BSIT">BSIT</option>
+                                                       <option value="BSED">BSED</option>
+                                                       <option value="BEED">BEED</option>
+                                                       <option value="BSBA">BSBA</option>
+                                                       <option value="BSHM">BSHM</option>
+                                                  </select>
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Year Level</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="number" name="year_level"
+                                                       value="<?=$user['year_level'];?>" class="form-control"
+                                                       autocomplete="off" required min="1" max="4">
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Student ID</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="student_id_no"
+                                                       value="<?=$user['student_id_no'];?>" class="form-control"
+                                                       required autocomplete="off">
+                                             </div>
+                                        </div>
+
+                                   </div>
+
+
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-6">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Contact Person</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="contact_person"
+                                                       value="<?=$user['contact_person'];?>" class="form-control"
+                                                       required autocomplete="off">
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Cell No.</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="number" name="contact_person_number"
+                                                       value="<?=$user['contact_person_no'];?>" class="form-control"
+                                                       autocomplete="off" required>
+                                             </div>
+                                        </div>
+
+                                   </div>
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-6">
+                                             <div class=" input-group-sm">
+                                                  <label for="">Email Address</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="email" value="<?=$user['email'];?>"
+                                                       class="form-control" autocomplete="off" required>
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class=" input-group-sm">
+                                                  <label for="">Username</label>
+                                                  <input type="text" name="username" value="<?=$user['username'];?>"
+                                                       class="form-control" autocomplete="off">
+                                             </div>
+                                        </div>
+
                                    </div>
                          </div>
                          <div class="card-footer d-flex justify-content-end">
                               <div>
                                    <a href="user_student.php" class="btn btn-secondary">Cancel</a>
-                                   <button type="submit" name="add_book" class="btn btn-primary">Update Student</button>
+                                   <button type="submit" name="update_student" class="btn btn-primary">Update
+                                        Student</button>
                               </div>
                          </div>
                          </form>
                          <div class="card-footer"></div>
+                         <?php
+                              }
+                              else
+                              {
+                                   echo "No such ID found";
+                              }
 
+                         }  
+                         ?>
                     </div>
                </div>
           </div>
