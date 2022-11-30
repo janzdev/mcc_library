@@ -11,4 +11,9 @@ if(!$con)
   echo "Connection failed";
   die();
 }
+// else
+// {
+//   echo "Connected Successfully";
+//   die();
+// }
 ?>
