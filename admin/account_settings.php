@@ -42,7 +42,7 @@ include('includes/sidebar.php');
                               <div class="tab-content pt-2">
 
                                    <div class="tab-pane fade show active profile-edit pt-3" id="profile-edit">
-                                        <form>
+                                        <form action="" method="POST">
                                              <div class="row mb-3">
                                                   <label for="profileImage"
                                                        class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
@@ -57,58 +57,52 @@ include('includes/sidebar.php');
                                                   </div>
                                              </div>
                                              <div class="row mb-3">
-                                                  <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full
-                                                       Name</label>
-                                                  <div class="col-md-8 col-lg-9"> <input name="fullName" type="text"
-                                                            class="form-control" id="fullName" value="Jassa"></div>
+                                                  <label for="firstname"
+                                                       class="col-md-4 col-lg-3 col-form-label">Firtsname</label>
+                                                  <div class="col-md-8 col-lg-9"> <input name="firstname" type="text"
+                                                            class="form-control" id="firstname" value=""></div>
                                              </div>
-                                             <div class="row mb-3">
+                                             <!-- <div class="row mb-3">
                                                   <label for="about"
                                                        class="col-md-4 col-lg-3 col-form-label">About</label>
                                                   <div class="col-md-8 col-lg-9"><textarea name="about"
                                                             class="form-control" id="about"
                                                             style="height: 100px">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
                                                   </div>
+                                             </div> -->
+                                             <div class="row mb-3">
+                                                  <label for="middlename"
+                                                       class="col-md-4 col-lg-3 col-form-label">Middlename</label>
+                                                  <div class="col-md-8 col-lg-9"> <input name="middlename" type="text"
+                                                            class="form-control" value=""></div>
                                              </div>
                                              <div class="row mb-3">
-                                                  <label for="company"
-                                                       class="col-md-4 col-lg-3 col-form-label">Company</label>
-                                                  <div class="col-md-8 col-lg-9"> <input name="company" type="text"
-                                                            class="form-control" id="company" value="Therichpost"></div>
+                                                  <label for="lastname"
+                                                       class="col-md-4 col-lg-3 col-form-label">Lastname</label>
+                                                  <div class="col-md-8 col-lg-9"> <input name="lastname" type="text"
+                                                            class="form-control" id="lastname" value="">
+                                                  </div>
                                              </div>
-                                             <div class="row mb-3">
-                                                  <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
-                                                  <div class="col-md-8 col-lg-9"> <input name="job" type="text"
-                                                            class="form-control" id="Job" value="Web Designer"></div>
-                                             </div>
-                                             <div class="row mb-3">
-                                                  <label for="Country"
-                                                       class="col-md-4 col-lg-3 col-form-label">Country</label>
-                                                  <div class="col-md-8 col-lg-9"> <input name="country" type="text"
-                                                            class="form-control" id="Country" value="USA"></div>
-                                             </div>
+
                                              <div class="row mb-3">
                                                   <label for="Address"
                                                        class="col-md-4 col-lg-3 col-form-label">Address</label>
                                                   <div class="col-md-8 col-lg-9"> <input name="address" type="text"
-                                                            class="form-control" id="Address"
-                                                            value="Ludhiana, Punjab, India"></div>
+                                                            class="form-control" id="Address" value=""></div>
                                              </div>
                                              <div class="row mb-3">
                                                   <label for="Phone"
                                                        class="col-md-4 col-lg-3 col-form-label">Phone</label>
                                                   <div class="col-md-8 col-lg-9"> <input name="phone" type="text"
-                                                            class="form-control" id="Phone"
-                                                            value="(436) 486-3538 x29071"></div>
+                                                            class="form-control" id="Phone" value=""></div>
                                              </div>
                                              <div class="row mb-3">
                                                   <label for="Email"
                                                        class="col-md-4 col-lg-3 col-form-label">Email</label>
                                                   <div class="col-md-8 col-lg-9"> <input name="email" type="email"
-                                                            class="form-control" id="Email"
-                                                            value="k.anderson@example.com"></div>
+                                                            class="form-control" id="Email" value=""></div>
                                              </div>
-                                             <div class="row mb-3">
+                                             <!-- <div class="row mb-3">
                                                   <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter
                                                        Profile</label>
                                                   <div class="col-md-8 col-lg-9"> <input name="twitter" type="text"
@@ -136,19 +130,20 @@ include('includes/sidebar.php');
                                                   <div class="col-md-8 col-lg-9"> <input name="linkedin" type="text"
                                                             class="form-control" id="Linkedin"
                                                             value="https://linkedin.com/#"></div>
-                                             </div>
+                                             </div> -->
                                              <div class="text-center"> <button type="submit"
                                                        class="btn btn-primary">Save Changes</button></div>
                                         </form>
                                    </div>
 
                                    <div class="tab-pane fade pt-3" id="profile-change-password">
-                                        <form>
+                                        <form action="account_settings_code.php" method="POST">
                                              <div class="row mb-3">
                                                   <label for="currentPassword"
                                                        class="col-md-4 col-lg-3 col-form-label">Current Password</label>
-                                                  <div class="col-md-8 col-lg-9"> <input name="password" type="password"
-                                                            class="form-control" id="currentPassword"></div>
+                                                  <div class="col-md-8 col-lg-9"> <input name="current_password"
+                                                            type="password" class="form-control" id="currentPassword">
+                                                  </div>
                                              </div>
                                              <div class="row mb-3">
                                                   <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New
@@ -164,7 +159,7 @@ include('includes/sidebar.php');
                                                             type="password" class="form-control" id="renewPassword">
                                                   </div>
                                              </div>
-                                             <div class="text-center"> <button type="submit"
+                                             <div class="text-center"> <button type="submit" name="change_password"
                                                        class="btn btn-primary">Change Password</button></div>
                                         </form>
                                    </div>
@@ -178,4 +173,6 @@ include('includes/sidebar.php');
 <?php
 include('includes/footer.php');
 include('./includes/script.php');
+include('message.php');
+
 ?>

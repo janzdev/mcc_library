@@ -45,12 +45,10 @@ include('./includes/sidebar.php');
                                              <div class="mb-3 mt-2">
                                                   <span class="fw-bolder text-center">Image
                                                   </span>
-
-
                                              </div>
                                              <img src="../uploads/ebook_img/<?=$book['opac_image'];?>" alt=""
                                                   width="100px" height="100px" class="border border-info">
-                                             <h6 class="mt-3"><?=$book['opac_image'];?></h6>
+                                             <p class="mt-3"><?=$book['opac_image'];?></p>
                                         </div>
                                         <div class="mt-4">
                                              <div class="mb-3">

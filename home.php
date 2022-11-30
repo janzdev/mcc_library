@@ -29,11 +29,11 @@ include('includes/navbar.php');
                                                        class="card-img-top" alt="Hollywood Sign on The Hill" />
                                                   <div class="card-body">
                                                        <h5 class="card-title fw-semibold">The Psychology of Money</h5>
-                                                       <p class="card-text">
+                                                       <!-- <p class="card-text">
                                                             This is a longer card with supporting text below as a
                                                             natural lead-in to
                                                             additional content. This content is a little bit longer.
-                                                       </p>
+                                                       </p> -->
                                                        <a href="#" class="btn text-white text-bg-info">Read
                                                             Book</a>
                                                   </div>
@@ -45,10 +45,10 @@ include('includes/navbar.php');
                                                        class="card-img-top" alt="Palm Springs Road" />
                                                   <div class="card-body">
                                                        <h5 class="card-title fw-semibold">Mere Christianity</h5>
-                                                       <p class="card-text"> This is a longer card with supporting text
+                                                       <!-- <p class="card-text"> This is a longer card with supporting text
                                                             below as a
                                                             natural lead-in to
-                                                            additional content. This content is a little bit longer.</p>
+                                                            additional content. This content is a little bit longer.</p> -->
                                                        <a href="#" class="btn text-white text-bg-info">Read Book</a>
                                                   </div>
                                              </div>
@@ -61,9 +61,9 @@ include('includes/navbar.php');
                                                        <h5 class="card-title fw-semibold">101 ESSAY that will CHANGE the
                                                             way YOU
                                                             THINK</h5>
-                                                       <p class="card-text">This is a longer card with supporting text
+                                                       <!-- <p class="card-text">This is a longer card with supporting text
                                                             below as a
-                                                            natural lead-in to additional content.</p>
+                                                            natural lead-in to additional content.</p> -->
                                                        <a href="#" class="btn text-white text-bg-info">Read Book</a>
                                                   </div>
                                              </div>
@@ -79,11 +79,11 @@ include('includes/navbar.php');
                                                        class="card-img-top" alt="Hollywood Sign on The Hill" />
                                                   <div class="card-body">
                                                        <h5 class="card-title fw-semibold">HOW INNOVATION WORKS</h5>
-                                                       <p class="card-text">
+                                                       <!-- <p class="card-text">
                                                             This is a longer card with supporting text below as a
                                                             natural lead-in to
                                                             additional content. This content is a little bit longer.
-                                                       </p>
+                                                       </p> -->
                                                        <a href="#" class="btn text-white text-bg-info">Read Book</a>
                                                   </div>
                                              </div>
@@ -94,10 +94,10 @@ include('includes/navbar.php');
                                                        class="card-img-top" alt="Palm Springs Road" />
                                                   <div class="card-body">
                                                        <h5 class="card-title fw-semibold">BEAUTIFUL RESISTANCE</h5>
-                                                       <p class="card-text">This is a longer card with supporting text
+                                                       <!-- <p class="card-text">This is a longer card with supporting text
                                                             below as a
                                                             natural lead-in to
-                                                            additional content. This content is a little bit longer.</p>
+                                                            additional content. This content is a little bit longer.</p> -->
                                                        <a href="#" class="btn text-white text-bg-info">Read Book</a>
                                                   </div>
                                              </div>
@@ -108,9 +108,9 @@ include('includes/navbar.php');
                                                        class="card-img-top" alt="Los Angeles Skyscrapers" />
                                                   <div class="card-body">
                                                        <h5 class="card-title fw-semibold">MAU COMECO</h5>
-                                                       <p class="card-text">This is a longer card with supporting text
+                                                       <!-- <p class="card-text">This is a longer card with supporting text
                                                             below as a
-                                                            natural lead-in to additional content.</p>
+                                                            natural lead-in to additional content.</p> -->
                                                        <a href="#" class="btn text-white text-bg-info">Read Book</a>
                                                   </div>
                                              </div>
@@ -126,11 +126,11 @@ include('includes/navbar.php');
                                                        class="card-img-top" alt="Hollywood Sign on The Hill" />
                                                   <div class="card-body">
                                                        <h5 class="card-title fw-semibold">DRAWING NEAR</h5>
-                                                       <p class="card-text">
+                                                       <!-- <p class="card-text">
                                                             This is a longer card with supporting text below as a
                                                             natural lead-in to
                                                             additional content. This content is a little bit longer.
-                                                       </p>
+                                                       </p> -->
                                                        <a href="#" class="btn text-white text-bg-info">Read Book</a>
                                                   </div>
                                              </div>
@@ -142,10 +142,10 @@ include('includes/navbar.php');
                                                   <div class="card-body">
                                                        <h5 class="card-title fw-semibold">THE CONTENT FUEL FRAMEWORK
                                                        </h5>
-                                                       <p class="card-text">This is a longer card with supporting text
+                                                       <!-- <p class="card-text">This is a longer card with supporting text
                                                             below as a
                                                             natural lead-in to
-                                                            additional content. This content is a little bit longer.</p>
+                                                            additional content. This content is a little bit longer.</p> -->
                                                        <a href="#" class="btn text-white text-bg-info">Read Book</a>
                                                   </div>
                                              </div>
@@ -157,9 +157,9 @@ include('includes/navbar.php');
                                                   <div class="card-body">
                                                        <h5 class="card-title fw-semibold">A STORYTELLING WORKBOOK FOR
                                                             BEGINNERS</h5>
-                                                       <p class="card-text">This is a longer card with supporting text
+                                                       <!-- <p class="card-text">This is a longer card with supporting text
                                                             below as a
-                                                            natural lead-in to additional content.</p>
+                                                            natural lead-in to additional content.</p> -->
                                                        <a href="#" class="btn text-white text-bg-info">Read Book</a>
                                                   </div>
                                              </div>

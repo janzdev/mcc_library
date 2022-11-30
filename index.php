@@ -4,7 +4,7 @@ include('includes/header.php');
 
 if(empty($_SESSION['auth'])){
   $_SESSION['message_error'] = "<small>Login your Credentials to Access</small>";
-  header('Location: login.php');
+  header('Location: home.php');
   exit(0);
 }
 if($_SESSION['auth_role'] != "0")

@@ -47,7 +47,12 @@ include('includes/sidebar.php');
                                                   {
                                                        ?>
                                              <tr>
-                                                  <td><?=$admin['admin_image'];?></td>
+                                                  <td>
+                                                       <center>
+                                                            <img src="../uploads/admin_profile/<?=$admin['admin_image'];?>"
+                                                                 alt="" width="60px" height="60px">
+                                                       </center>
+                                                  </td>
                                                   <td>
                                                        <?=$admin['firstname'].' '.$admin['middlename'].' '.$admin['lastname'];?>
                                                   </td>

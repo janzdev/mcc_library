@@ -8,7 +8,13 @@
           </a>
           <i class="bi bi-list toggle-sidebar-btn"></i>
      </div>
+     <?php 
+if (isset($_SESSION['auth_admin']['admin_id']))
+{
+     $id_session=$_SESSION['auth_admin']['admin_id'];
 
+ }
+ ?>
      <!-- Search -->
      <!-- <div class="search-bar ">
           <form class="search-form d-flex align-items-center" method="POST" action="#">
@@ -26,10 +32,21 @@
                          <i class="bi bi-search"></i>
                     </a>
                </li>
-
+               <?php
+               $query = "SELECT * FROM admin WHERE admin_id = '$id_session'";
+               $query_run = mysqli_query($con, $query);
+               $row = mysqli_fetch_array($query_run);
+                
+               ?>
                <li class="nav-item dropdown pe-3">
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                         <img src="assets/img/admin.png" alt="Profile" class="rounded-circle" />
+
+                         <?php if($row['admin_image'] != ""): ?>
+                         <img src="../uploads/admin_profile/<?php echo $row['admin_image']; ?>" alt="" width="30px"
+                              height="30px" class="rounded-circle">
+                         <?php else: ?>
+                         <img src="../assets/admin_profile/admin.png" alt="" width="60px" height="60px">
+                         <?php endif; ?>
                          <span
                               class="d-none d-md-block dropdown-toggle ps-2"><?= $_SESSION['auth_admin']['admin_name']; ?></span>
                     </a>
@@ -40,7 +57,7 @@
                          <li>
                               <hr class="dropdown-divider" />
                          </li>
-                         <!-- <li>
+                         <li>
                               <a class="dropdown-item d-flex align-items-center" href="admin_profile.php">
                                    <i class="bi bi-person"></i> <span>My Profile</span>
                               </a>
@@ -55,7 +72,7 @@
                          </li>
                          <li>
                               <hr class="dropdown-divider" />
-                         </li> -->
+                         </li>
                          <li>
                               <a class="dropdown-item d-flex align-items-center" href="admin.php">
                                    <i class="bi bi-person-workspace"></i><span>Admin</span>

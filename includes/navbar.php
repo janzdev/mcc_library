@@ -14,7 +14,7 @@
                          <a class="nav-link active text-white fw-semibold" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                         <a class="nav-link active text-white fw-semibold" aria-current="page" href="#">About Us</a>
+                         <a class="nav-link active text-white fw-semibold" aria-current="page" href="#">About</a>
                     </li>
                     <?php if(isset($_SESSION['auth_stud'])) :?>
                     <li class="nav-item dropdown">

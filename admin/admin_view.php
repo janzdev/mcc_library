@@ -20,7 +20,7 @@ include('./includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="card">
                          <div class="card-header d-flex justify-content-between align-items-center">
-                              <h5 class="m-0">Admin Profile Details</h5>
+                              <h5 class="m-0 text-dark fw-semibold">Admin Profile Details</h5>
                               <a href="admin.php" class="btn btn-primary">
                                    Back
                               </a>
@@ -41,47 +41,57 @@ include('./includes/sidebar.php');
 
 
                               <div class="row">
+                                   <div class="d-flex justify-content-around p-3">
+                                        <div class="text-center">
+                                             <div class="mb-3 mt-2">
+                                                  <span class="fw-semibold text-center">Profile Image
+                                                  </span>
+
+                                             </div>
+                                             <img src="../uploads/admin_profile/<?=$admin['admin_image'];?>" alt=""
+                                                  width="100px" height="100px" class="border border-info">
+                                             <p class="mt-3"><?=$admin['admin_image'];?></p>
+                                        </div>
+                                        <div>
+                                             <div class="mb-3 mt-2">
+                                                  <span class="fw-semibold">Firstname &emsp;&emsp;&emsp;&nbsp;</span>
+                                                  <p class="d-inline">:&nbsp;<?=$admin['firstname'];?></p>
+                                             </div>
 
 
-                                   <div class="mb-3 mt-2">
-                                        <span class="fw-bolder">Firstname &emsp;&emsp;&emsp;&nbsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$admin['firstname'];?></p>
+
+                                             <div class="mb-3">
+                                                  <span class="fw-semibold">Middlename &emsp;&emsp;</span>
+                                                  <p class="d-inline">:&nbsp;<?=$admin['middlename'];?></p>
+                                             </div>
+
+
+                                             <div class="mb-3">
+                                                  <span
+                                                       class="fw-semibold">Lastname&emsp;&emsp;&emsp;&ensp;&nbsp;</span>
+                                                  <p class="d-inline">:&nbsp;<?=$admin['lastname'];?></p>
+                                             </div>
+
+
+                                             <div class="mb-3">
+                                                  <span class="fw-semibold">Email
+                                                       &ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</span>
+                                                  <p class="d-inline">:&nbsp;<?=$admin['email'];?></p>
+                                             </div>
+
+                                             <div class="mb-3">
+                                                  <span class="fw-semibold">Address
+                                                       &emsp;&emsp;&emsp;&emsp;&ensp;</span>
+                                                  <p class="d-inline">:&nbsp;<?=$admin['address'];?></p>
+                                             </div>
+
+                                             <div class="mb-3">
+                                                  <span class="fw-semibold">Phone Number &emsp;</span>
+                                                  <p class="d-inline">:&nbsp;<?=$admin['phone_number'];?></p>
+                                             </div>
+
+                                        </div>
                                    </div>
-
-
-
-                                   <div class="mb-3">
-                                        <span class="fw-bolder">Middlename &emsp;&emsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$admin['middlename'];?></p>
-                                   </div>
-
-
-                                   <div class="mb-3">
-                                        <span class="fw-bolder">Lastname&emsp;&emsp;&emsp;&ensp;&nbsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$admin['lastname'];?></p>
-                                   </div>
-
-
-                                   <div class="mb-3">
-                                        <span class="fw-bolder">Email &ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$admin['email'];?></p>
-                                   </div>
-
-                                   <div class="mb-3">
-                                        <span class="fw-bolder">Address &emsp;&emsp;&emsp;&emsp;&ensp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$admin['address'];?></p>
-                                   </div>
-
-                                   <div class="mb-3">
-                                        <span class="fw-bolder">Phone Number &emsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$admin['phone_number'];?></p>
-                                   </div>
-                                   <div class="mb-3">
-                                        <span class="fw-bolder">Profile Image
-                                             &emsp;&emsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$admin['admin_image'];?></p>
-                                   </div>
-
                               </div>
 
                          </div>

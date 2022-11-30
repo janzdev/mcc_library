@@ -3,7 +3,13 @@ include('authentication.php');
 include('includes/header.php');
 include('includes/sidebar.php'); 
 ?>
+<?php 
+if (isset($_SESSION['auth_admin']['admin_id']))
+{
+     $id_session=$_SESSION['auth_admin']['admin_id'];
 
+ }
+ ?>
 <main id="main" class="main">
      <div class="pagetitle">
           <h1>Profile</h1>
@@ -17,11 +23,22 @@ include('includes/sidebar.php');
      </div>
      <section class="section profile">
           <div class="row">
+               <?php
+               $query = "SELECT * FROM admin WHERE admin_id = '$id_session'";
+               $query_run = mysqli_query($con, $query);
+               $row = mysqli_fetch_array($query_run);
+                
+               ?>
                <div class="col-xl-4">
                     <div class="card">
                          <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                              <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                              <h2>JanDev</h2>
+                              <?php if($row['admin_image'] != ""): ?>
+                              <img src="../uploads/admin_profile/<?php echo $row['admin_image']; ?>" alt=""
+                                   class="rounded-circle">
+                              <?php else: ?>
+                              <img src="../assets/admin_profile/admin.png" alt="" class="rounded-circle">
+                              <?php endif; ?>
+                              <h2><?= $_SESSION['auth_admin']['admin_name']; ?></h2>
                               <h3>Admin</h3>
 
                          </div>
@@ -37,31 +54,28 @@ include('includes/sidebar.php');
                               </ul>
                               <div class="tab-content pt-2">
                                    <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                                        <h5 class="card-title">About</h5>
-                                        <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam
-                                             maiores cumque temporibus.
-                                             Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae
-                                             quisquam autem eveniet
-                                             perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
+
                                         <h5 class="card-title">Profile Details</h5>
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                                             <div class="col-lg-9 col-md-8">Ordep</div>
+                                             <div class="col-lg-9 col-md-8">
+                                                  <?=$row['firstname'].' '.$row['middlename'].' '.$row['lastname'];?>
+                                             </div>
                                         </div>
 
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label">Address</div>
-                                             <div class="col-lg-9 col-md-8">Poblacion, Santa Fe, Cebu</div>
+                                             <div class="col-lg-9 col-md-8"><?=$row['address'];?></div>
                                         </div>
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label">Phone</div>
-                                             <div class="col-lg-9 col-md-8">(469) 963-211 x5100</div>
+                                             <div class="col-lg-9 col-md-8"><?=$row['phone_number'];?></div>
                                         </div>
                                         <div class="row">
                                              <div class="col-lg-3 col-md-4 label">Email</div>
                                              <div class="col-lg-9 col-md-8"><a href="/cdn-cgi/l/email-protection"
                                                        class="__cf_email__"
-                                                       data-cfemail="e982c788878d8c9b9a8687a98c91888499858cc78a8684">[email&#160;protected]</a>
+                                                       data-cfemail="e982c788878d8c9b9a8687a98c91888499858cc78a8684"><?=$row['email'];?></a>
                                              </div>
                                         </div>
                                    </div>
@@ -74,8 +88,8 @@ include('includes/sidebar.php');
                </div>
           </div>
      </section>
-
-     <?php
+</main>
+<?php
 include('includes/footer.php');
 include('./includes/script.php');
 ?>

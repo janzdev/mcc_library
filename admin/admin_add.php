@@ -23,11 +23,11 @@ include('./includes/sidebar.php');
                          </div>
                          <div class="card-body">
 
-                              <form action="admin_code.php" method="POST">
+                              <form action="admin_code.php" method="POST" enctype="multipart/form-data">
 
-                                   <div class="row  mt-4">
+                                   <div class="row d-flex justify-content-center mt-5">
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Firstname</label>
                                                   <span class="text-danger">*</span>
@@ -35,14 +35,14 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Middlename</label>
                                                   <input type="text" name="middlename" class="form-control">
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Lastname</label>
                                                   <span class="text-danger">*</span>
@@ -52,22 +52,13 @@ include('./includes/sidebar.php');
 
                                    </div>
 
-                                   <div class="row">
+                                   <div class="row d-flex justify-content-center">
 
-
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Email</label>
                                                   <span class="text-danger">*</span>
                                                   <input type="email" name="email" class="form-control">
-                                             </div>
-                                        </div>
-
-                                        <div class="col-12 col-md-4">
-                                             <div class="mb-3 mt-2">
-                                                  <label for="">Address</label>
-                                                  <span class="text-danger">*</span>
-                                                  <input type="text" name="address" class="form-control">
                                              </div>
                                         </div>
 
@@ -79,17 +70,24 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-
-
                                    </div>
 
-                                   <div class="row">
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-3 mt-2">
+                                                  <label for="">Address</label>
+                                                  <span class="text-danger">*</span>
+                                                  <input type="text" name="address" class="form-control">
+                                             </div>
+                                        </div>
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Profile Image</label>
                                                   <input type="file" name="admin_image" class="form-control">
                                              </div>
                                         </div>
+
                                    </div>
 
 
