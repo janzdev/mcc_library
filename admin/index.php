@@ -31,18 +31,19 @@ include('./includes/sidebar.php');
                                                   class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                                   <i class="bi bi-book"></i>
                                              </div>
-                                             <?php
+                                             <div class="ps-3">
+                                                  <?php
                                              $query = "SELECT * FROM book";
                                              $query_run = mysqli_query($con, $query); 
                                              
                                              if($total_books = mysqli_num_rows($query_run))
                                              {
-                                             ?>
-
-                                             <div class="ps-3">
-                                                  <h6><?=$total_books;?></h6>
-                                                  <?php
-
+                                                  
+                                                  echo '<h6>'.$total_books.'</h6>';
+                                             }
+                                             else
+                                             {
+                                                  echo '<h6>0</h6>';
                                              }
                                              ?>
                                                   <span class="text-danger small pt-2 fw-bold">Total books
@@ -64,18 +65,20 @@ include('./includes/sidebar.php');
                                                   class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                                   <i class="bi bi-people"></i>
                                              </div>
-                                             <?php
+
+                                             <div class="ps-3">
+                                                  <?php
                                              $query = "SELECT * FROM user";
                                              $query_run = mysqli_query($con, $query); 
 
                                              if($total_borrowers = mysqli_num_rows($query_run))
+                                             { 
+                                                  echo '<h6>'.$total_borrowers.'</h6>';
+                                             }
+                                             else
                                              {
-                                                  ?>
-                                             <div class="ps-3">
-                                                  <h6><?=$total_borrowers;?></h6>
-                                                  <?php
-
-                                                  }
+                                                  echo '<h6>0</h6>';
+                                             }
                                                   ?>
                                                   <span class="text-primary small pt-2 fw-bold">Total borrowers</span>
                                              </div>
@@ -95,18 +98,21 @@ include('./includes/sidebar.php');
                                                   class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                                   <i class="bi bi-box-arrow-up-right"></i>
                                              </div>
-                                             <?php
+
+                                             <div class="ps-3">
+                                                  <?php
                                              $query = "SELECT * FROM borrow_book WHERE borrowed_status = 'borrowed' ";
                                              $query_run = mysqli_query($con, $query); 
 
                                              if($total_borrowed = mysqli_num_rows($query_run))
                                              {
-                                                  ?>
-                                             <div class="ps-3">
-                                                  <h6><?=$total_borrowed;?></h6>
-                                                  <?php
+                                                  echo '<h6>'.$total_borrowed.'</h6>';
 
-                                                  }
+                                             }
+                                             else
+                                             {
+                                                  echo '<h6>0</h6>';
+                                             }
                                                   ?>
                                                   <span class="text-success small pt-2 fw-bold">Total borrowed
                                                        books</span>

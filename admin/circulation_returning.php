@@ -193,6 +193,8 @@ $user_row = mysqli_fetch_array($user_query);
 									//$due_date = date('F j, Y g:i a', $due_date);
 									///$checkout = date('m/d/Y', strtotime("+1 day", strtotime($due_date)));			
 									
+                                            
+                                            
 									$penalty_amount_query= mysqli_query($con,"select * from penalty order by penalty_id DESC ") or die (mysqli_error());
 									$penalty_amount = mysqli_fetch_assoc($penalty_amount_query);
 									
@@ -208,40 +210,39 @@ $user_row = mysqli_fetch_array($user_query);
 										$penalty = 'No Penalty';
 									}
                                              
-                                            
-								
-									mysqli_query($con,"UPDATE borrow_book SET borrowed_status = 'returned', date_returned = '$date_returned_now', book_penalty = '$penalty' WHERE borrow_book_id= '$borrow_book_id' and user_id = '$user_id' and book_id = '$book_id' ") or die (mysqli_error());
-									
-									mysqli_query($con,"INSERT INTO return_book (user_id, book_id, date_borrowed, due_date, date_returned, book_penalty)
-									values ('$user_id', '$book_id', '$date_borrowed', '$due_date', '$date_returned', '$penalty')") or die (mysqli_error());
-									
+                                             mysqli_query($con,"UPDATE borrow_book SET borrowed_status = 'returned', date_returned = '$date_returned_now', book_penalty = '$penalty' WHERE borrow_book_id= '$borrow_book_id' and user_id = '$user_id' and book_id = '$book_id' ") or die (mysqli_error());
+                                        
+                                                  mysqli_query($con,"INSERT INTO return_book (user_id, book_id, date_borrowed, due_date, date_returned, book_penalty)
+                                                  values ('$user_id', '$book_id', '$date_borrowed', '$due_date', '$date_returned', '$penalty')") or die (mysqli_error());
+                                                  
                                              if($penalty === 'No Penalty')
-                                                  {
-                                                       
-                                                  //    echo "<script>alert('Congrats');</script>";
-                                                  //     echo '<script> location.href="circulation_returning.php?student_id='.$student_id.'";</script'; 
-                                                  // $_SESSION['message_success'] = 'Book Return Successfully';
-                                                       echo '<script> location.href="circulation_returning.php?student_id='.$student_id.'";</script'; 
-                                                  // header("Location: circulation_returning.php");
-     
-                                                  }
-                                                  else
-                                                  {
-                                                            // echo "<script>alert('You have Penalty of');</script>";
-     
-                                                       // echo "<script>alert('".'You have penalty of'." ".$penalty." '); window.location='circulation_returning.php?student_id=".$student_id."'</script>";
+                                             {
+                                                  
+                                             
+                                                  echo '<script> location.href="circulation_returning.php?student_id='.$student_id.'";</script>'; 
 
-                                                       echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script'; 
+                                                  
+                                             
+
+                                             }
+                                             else
+                                             {
                                                        
-                                                       // echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script';
-     
-                                                       // echo '<script type="text/javascript">
-                                                       // $(document).ready(function(){
-                                                       //      $("#checkModal").modal("show");
-                                                       // });
-                                                       // </script>';
-                                                  }
-                                                 
+
+                                                  echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script>'; 
+                                                  
+                                                  // echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script';
+
+                                                  // echo '<script type="text/javascript">
+                                                  // $(document).ready(function(){
+                                                  //      $("#checkModal").modal("show");
+                                                  // });
+                                                  // </script>';
+                                             }
+								
+								
+									
+                                            
                                                   
                                                 
                                              $report_history1=mysqli_query($con,"SELECT * FROM admin where admin_id = '$id_session' ") or die (mysqli_error());

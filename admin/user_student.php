@@ -18,12 +18,7 @@ include('./includes/sidebar.php');
                     </ol>
                </nav>
           </div>
-          <form action="" method="POST">
-               <a href="user_student_prints.php" target="_blank" name="create_pdf" class="btn btn-danger mx-4"
-                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print Students">
-                    <i class="bi bi-printer-fill"></i>
-               </a>
-          </form>
+          
      </div>
      <section class="section">
           <div class="row">
