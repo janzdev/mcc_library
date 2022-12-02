@@ -3,7 +3,7 @@ include('authentication.php');
 
 
 
-// Delete Admin
+// Delete Book
 if(isset($_POST['delete_book']))
 {
      $book_id = mysqli_real_escape_string($con, $_POST['delete_book']);

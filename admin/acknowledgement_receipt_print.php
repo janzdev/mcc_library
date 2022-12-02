@@ -1,6 +1,6 @@
 <?php
 // error_reporting(E_ALL ^ E_NOTICE);
-ob_start();
+
  // Include the main TCPDF library (search for installation path).
  require('config/dbcon.php');
 require_once('tcpdf/tcpdf.php');
@@ -50,10 +50,10 @@ $student_id = $_GET['student_id'];
 $user_query = mysqli_query($con,"SELECT * FROM user WHERE student_id_no = '$student_id' ");
 $user_row = mysqli_fetch_array($user_query);
 
-    $return_query= mysqli_query($con,"select * from return_book 
+    $return_query= mysqli_query($con,"SELECT * FROM return_book 
         LEFT JOIN book ON return_book.book_id = book.book_id 
         LEFT JOIN user ON return_book.user_id = user.user_id 
-        where return_book.return_book_id order by return_book.return_book_id DESC") or die (mysqli_error());
+        WHERE return_book.return_book_id order by return_book.return_book_id DESC") or die (mysqli_error());
         if($return_query)
         {
 
@@ -62,19 +62,19 @@ $user_row = mysqli_fetch_array($user_query);
 
 
 
-$borrower = $user_row['firstname'].' '.$user_row['middlename'].' '.$user_row['lastname'];
-$penalty = 'Php '.$return_row['book_penalty'];
+        $borrower = $user_row['firstname'].' '.$user_row['middlename'].' '.$user_row['lastname'];
+        $penalty = 'Php '.$return_row['book_penalty'];
 
 
-$title = $return_row['title'];
-$author = $return_row['author'];
-$date_borrowed = date("M d, Y h:m:s a",strtotime($return_row['date_borrowed']));
-$due_date = date("M d, Y h:m:s a",strtotime($return_row['due_date']));
-$date_returned = date("M d, Y h:m:s a",strtotime($return_row['date_returned']));
+        $title = $return_row['title'];
+        $author = $return_row['author'];
+        $date_borrowed = date("M d, Y h:m:s a",strtotime($return_row['date_borrowed']));
+        $due_date = date("M d, Y h:m:s a",strtotime($return_row['due_date']));
+        $date_returned = date("M d, Y h:m:s a",strtotime($return_row['date_returned']));
 
-$pdf->setFont('Helvetica', '', '12');
-$pdf->Cell(0, 10, 'This to acknowledge that '.$borrower, 0, 1, 'C', 0, '', false, 'M', 'M' );
-$pdf->Cell(0, 10, 'has paid the amount of '.$penalty.' for the penalty.', 0, 1, 'C', 0, '', false, 'M', 'M');
+        $pdf->setFont('Helvetica', '', '12');
+        $pdf->Cell(0, 10, 'This to acknowledge that '.$borrower, 0, 1, 'C', 0, '', false, 'M', 'M' );
+        $pdf->Cell(0, 10, 'has paid the amount of '.$penalty.' for the penalty.', 0, 1, 'C', 0, '', false, 'M', 'M');
 
 
 $pdf->Ln(15);

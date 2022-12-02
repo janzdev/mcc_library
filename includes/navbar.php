@@ -15,10 +15,11 @@
                     <li class="nav-item">
                          <a class="nav-link active text-white fw-semibold" aria-current="page" href="#">About Us</a>
                     </li>
+                    <?php if(isset($_SESSION['auth_stud'])):?>
                     <li class="nav-item dropdown">
                          <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" role="button"
                               data-bs-toggle="dropdown" aria-expanded="false">
-                              JanDev
+                             <span><?= $_SESSION['auth_stud']['email']; ?></span>
                          </a>
                          <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="#">My Profile</a></li>
@@ -29,13 +30,15 @@
                               <li><a class="dropdown-item" href="#">Logout</a></li>
                          </ul>
                     </li>
+                    <?php else:?>
                     <li class="nav-item">
                          <a href="login.php" class="nav-link text-white fw-semibold">Login</a>
                     </li>
                     <li class="nav-item">
                          <a href="signup.php"
-                              class="nav-link text-white bg-info px-3 fw-semibold rounded-pill">Register</a>
+                              class="nav-link text-white bg-info px-3 fw-semibold rounded-pill">Signup</a>
                     </li>
+                    <?php endif;?>
                </ul>
           </div>
      </div>

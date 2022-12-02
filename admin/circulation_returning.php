@@ -1,4 +1,3 @@
-/* The above code is a PHP code that is used to return a book. */
 <?php 
 include('authentication.php');
 include('includes/header.php'); 
@@ -188,7 +187,8 @@ $user_row = mysqli_fetch_array($user_query);
 									$timezone = "Asia/Manila";
 									if(function_exists('date_default_timezone_set')) date_default_timezone_set($timezone);
 									$cur_date = date("Y-m-d H:i:s");
-									$date_returned_now = date("Y-m-d H:i:s");
+									$date_returned_now = date("Y-m-d H:i:s");    
+                                             
 									//$due_date = strtotime($cur_date);
 									//$due_date = strtotime("+3 day", $due_date);
 									//$due_date = date('F j, Y g:i a', $due_date);
@@ -201,31 +201,33 @@ $user_row = mysqli_fetch_array($user_query);
 									
                                              
 									if ($date_returned > $due_date) {
-										$penalty = round((float)(strtotime($date_returned) - strtotime($due_date)) / (60 * 60 *24) * ($penalty_amount['penalty_amount']));
+										$penalty = round((float)(strtotime($date_returned) - strtotime($due_date)) / (60 * 60 * 24) * ($penalty_amount['penalty_amount']));
 
-                                                 
-                                                
-									} elseif ($date_returned < $due_date) {
+									}
+                                              elseif ($date_returned < $due_date) 
+                                             {
 										$penalty = 'No Penalty';
-									} else {
+									}
+                                              else 
+                                             {
 										$penalty = 'No Penalty';
 									}
                                              
                                              mysqli_query($con,"UPDATE borrow_book SET borrowed_status = 'returned', date_returned = '$date_returned_now', book_penalty = '$penalty' WHERE borrow_book_id= '$borrow_book_id' AND user_id = '$user_id' AND book_id = '$book_id' ") or die (mysqli_error());
-                                        
+                                                  
                                              mysqli_query($con,"INSERT INTO return_book (user_id, book_id, date_borrowed, due_date, date_returned, book_penalty)
                                              VALUES ('$user_id', '$book_id', '$date_borrowed', '$due_date', '$date_returned', '$penalty')") or die (mysqli_error());
+
                                                   
-                                             if($penalty === 'No Penalty')
-                                             {
-                                             
-                                                  echo '<script> location.href="circulation_returning.php?student_id='.$student_id.'";</script>'; 
-                                             }
-                                             else
-                                             {
-                                                  echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script>'; 
-                                                  
-                                             }
+                                                  if($penalty === 'No Penalty')
+                                                  {
+                                                       echo '<script> location.href="circulation_returning.php?student_id='.$student_id.'";</script>'; 
+                                                  }
+                                                  else
+                                                  {
+                                                       echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script>';      
+                                                  }
+
                                              $report_history1 = mysqli_query($con,"SELECT * FROM admin WHERE admin_id = '$id_session' ") or die (mysqli_error());
 									$report_history_row1=mysqli_fetch_array($report_history1);
 									$admin_row1=$report_history_row1['firstname']." ".$report_history_row1['middlename']." ".$report_history_row1['lastname'];
@@ -235,13 +237,8 @@ $user_row = mysqli_fetch_array($user_query);
 									(book_id, user_id, admin_name, detail_action, date_transaction)
 									VALUES ('$book_id','$user_id','$admin_row1','Returned Book', NOW())") or die(mysqli_error());
 
-                                            
-									
 							?>
-                                             <script>
-                                             window.location =
-                                                  "circulation_returning.php?student_id=<?php echo $student_id ?>";
-                                             </script>
+                                           
                                              <?php 
 							}
 							?>
@@ -253,8 +250,6 @@ $user_row = mysqli_fetch_array($user_query);
                               </div>
                          </div>
                          <div class="card-footer">
-
-
                          </div>
                     </div>
                </div>
