@@ -1,3 +1,4 @@
+<?php  $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], "/")+ 1); ?>
 <?php 
 include('authentication.php');
 include('includes/header.php'); 
@@ -28,7 +29,7 @@ $query_run = mysqli_query($con, $query);
 ?>
 <main id="main" class="main">
      <div class="pagetitle">
-          <h1>Add Book</h1>
+          <h1>Add Book </h1>
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
@@ -109,14 +110,10 @@ $query_run = mysqli_query($con, $query);
                                              </div>
                                         </div>
 
-                                        <!-- <div class="col-12 col-md-4">
-                                             <div class="mt-2">
-                                                  <label for="">Barcode</label>
-                                                  <input type="text" name="barcode" class="form-control">
-                                             </div>
-                                        </div> -->
+
 
                                    </div>
+
 
                          </div>
                          <div class="card-footer d-flex justify-content-end">

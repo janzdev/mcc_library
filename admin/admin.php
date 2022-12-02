@@ -31,6 +31,7 @@ include('includes/sidebar.php');
                                              <tr>
                                                   <th>Image</th>
                                                   <th>Full Name</th>
+                                                  <th>Phone Number</th>
                                                   <th>Email</th>
                                                   <th>Address</th>
                                                   <th>Action</th>
@@ -56,6 +57,7 @@ include('includes/sidebar.php');
                                                   <td>
                                                        <?=$admin['firstname'].' '.$admin['middlename'].' '.$admin['lastname'];?>
                                                   </td>
+                                                  <td><?=$admin['phone_number'];?></td>
                                                   <td><?=$admin['email'];?></td>
                                                   <td><?=$admin['address'];?></td>
                                                   <td class=" justify-content-center">

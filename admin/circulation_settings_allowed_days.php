@@ -1,7 +1,7 @@
 <div class="col-12 col-md-4 mt-5">
      <div class="card">
           <div class="card-header text-dark  fw-semibold ">
-               Allowed Days
+               Allowed Days <span class="text-muted small">(per book)</span>
           </div>
           <div class="card-body">
                <table class="table table-striped mt-3">

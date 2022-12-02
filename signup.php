@@ -142,8 +142,14 @@ include('./admin/config/dbcon.php');
                     <div class="page">
 
                          <div class="field">
-                              <div class="label">Year Level</div>
-                              <input type="number" name="year_level" min="1" max="4" />
+                              <div class="label" for="course">Year Level</div>
+                              <select name="year_level" id="year_level">
+                                   <option value="">--Select Year Level--</option>
+                                   <option value="4th year">4th year</option>
+                                   <option value="3rd year">3rd year</option>
+                                   <option value="2nd year">2nd year</option>
+                                   <option value="1st year">1st year</option>
+                              </select>
                          </div>
 
                          <div class="field">

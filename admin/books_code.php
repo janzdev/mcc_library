@@ -37,10 +37,14 @@ if(isset($_POST['update_book']))
      $copyright_date = mysqli_real_escape_string($con, $_POST['copyright_date']);
      $publisher = mysqli_real_escape_string($con, $_POST['publisher']);
      $copy = mysqli_real_escape_string($con, $_POST['copy']);
-     $barcode = mysqli_real_escape_string($con, $_POST['barcode']);
-
-     $query = "UPDATE book SET call_number='$call_number', accessial_number='$accessial_number', title='$title', author='$author', copyright_date='$copyright_date', publisher='$publisher', copy='$copy', barcode='$barcode' WHERE book_id = '$book_id'";
+     $gen = mysqli_real_escape_string($con, $_POST['barcode']);
+     
+    
+     
+     $query = "UPDATE book SET call_number='$call_number', accessial_number='$accessial_number', title='$title', author='$author', copyright_date='$copyright_date', publisher='$publisher', copy='$copy', barcode='$gen' WHERE book_id = '$book_id'";
      $query_run = mysqli_query($con, $query);
+     
+     
 
      if($query_run)
      {

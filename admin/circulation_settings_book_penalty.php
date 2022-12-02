@@ -1,7 +1,7 @@
 <div class="col-12 col-md-4 mt-5">
      <div class="card">
           <div class="card-header text-dark  fw-semibold">
-               Book Penalty
+               Book Penalty <span class="text-muted small">(per day)</span>
           </div>
           <div class="card-body">
                <table class="table table-striped mt-3">

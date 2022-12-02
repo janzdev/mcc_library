@@ -1,7 +1,7 @@
 <div class="col-12 col-md-4  mt-5">
      <div class="card">
           <div class="card-header text-dark  fw-semibold">
-               Allowed Books
+               Allowed Books <span class="text-muted small">(per user)</span>
           </div>
           <div class="card-body">
                <table class="table table-striped mt-3">
@@ -31,7 +31,8 @@
                                    <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                              <div class="modal-header">
-                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Allowed Books
+                                                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                                       Allowed Books
                                                   </h1>
                                                   <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                        aria-label="Close"></button>

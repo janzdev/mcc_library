@@ -13,6 +13,7 @@
 
 <script src="assets/js/login.js"></script>
 
+<script src="assets/js/jquery-3.6.1.min.js"></script>
 
 <!-- Alertify JS CDN Link -->
 <script src="assets/js/alertify.min.js"></script>

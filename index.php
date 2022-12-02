@@ -1,47 +1,111 @@
 <?php 
-session_start();
-include('includes/header.php'); 
+include('includes/header.php');
+include('includes/navbar.php');
+include('admin/config/dbcon.php');
 
 if(empty($_SESSION['auth'])){
-  $_SESSION['message_error'] = "<small>Login your Credentials to Access</small>";
+//   $_SESSION['message_error'] = "<small>Login your Credentials to Access</small>";
   header('Location: home.php');
   exit(0);
 }
 if($_SESSION['auth_role'] != "0")
 {
-  header("Location: ./admin/index.php");
+  header("Location:index.php");
   exit(0);
 }
 ?>
 
 
 
+<div class="container">
+     <div class="col-12">
+          <div class="d-flex  align-items-center justify-content-around mt-4">
+               <div class="mx-2">
+                    <img src="assets/img/mcc-logo.png" class="" style="height: 100px; width: 100px;" alt="">
+               </div>
 
-<div class="py-5">
-     <div class="container">
-          <div class="row bg-white rounded p-5">
-               <div class="col-md-12">
-
-                    <h1>Thank you <span class="text-info"><?= $_SESSION['auth_stud']['stud_name'];?></span> you are now
-                         login </h1>
-                    <form action="allcode.php" method="POST" class="d-flex justify-content-center">
-
-                         <button class="btn btn-primary my-3" name="logout_btn" type="submit">
-                              <i class="bi bi-box-arrow-right"></i>
-                              <span>Log Out</span>
-                         </button>
-
+               <div class="col-10  mt-2">
+                    <h3 class="fw-semibold">Madridejos Community College Library</h3>
+                    <form class="d-flex " method="POST">
+                         <input class="form-control " type="text" id="live_search" placeholder="Search Book">
+                         <button class="btn text-white btn-info mx-3 col-md-3 fw-semibold" type="submit"
+                              name="search">Search</button>
                     </form>
                </div>
+
           </div>
+          <div id="searchresult" class="text-center"></div>
+          <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+
+               <?php
+                                   $query = "SELECT * FROM web_opac";
+                                   $query_run = mysqli_query($con, $query);
+                                   
+                                   if(mysqli_num_rows($query_run) > 0)
+                                   {
+                                        foreach($query_run as $ebook)
+                                        {
+                                             ?>
+
+               <div class="col-md-3">
+                    <div class="card h-100 text-center">
+                         <img src="uploads/ebook_img/<?=$ebook['opac_image'];?>" height="150px" width="150px"
+                              class="card-img-top" alt="...">
+                         <div class="card-body">
+                              <h5 class="card-title fw-semibold text-uppercase"><?=$ebook['title'];?></h5>
+                              <p class="card-text"><?=$ebook['author'];?></p>
+
+                         </div>
+                         <div class="card-footer">
+                              <form action="home_code.php" method="post">
+                                   <a href="web_opac_view_pdf.php?id=<?=$ebook['web_opac_id']; ?>" name="viewpdf"
+                                        class="btn text-white btn-info">Read
+                                        Book</a>
+                              </form>
+                         </div>
+                    </div>
+               </div>
+
+
+
+               <?php
+                                        }
+                                   }
+                                   ?>
+
+
+          </div>
+
      </div>
 </div>
+</div>
 
+</div>
 
-
-
-
-<?php 
+<?php
 include('includes/footer.php');
 include('message.php'); 
 ?>
+<script>
+$(document).ready(function() {
+     $("#live_search").keyup(function() {
+          var input = $(this).val();
+          // alert(input);
+          if (input != "") {
+               $.ajax({
+                    url: "home_code.php",
+                    method: "POST",
+                    data: {
+                         input: input
+                    },
+
+                    success: function(data) {
+                         $("#searchresult").html(data);
+                    }
+               });
+          } else {
+               $("#searchresult").css("display", "none");
+          }
+     });
+});
+</script>

@@ -522,7 +522,8 @@ h6 {
   line-height: 0;
 }
 .header-nav .profile .dropdown-item:hover {
-  background-color: #f6f9ff;
+  background-color: #f2f2f2;
+  color: #05c3dd;
 }
 
 /*--------------------------------------------------------------
@@ -605,7 +606,8 @@ h6 {
   font-weight: 600;
   color: #05c3dd;
   transition: 0.3;
-  background: #f6f9ff;
+  /* background: #f6f9ff; */
+  background: #f2f2f2;
   padding: 10px 15px;
   border-radius: 4px;
 }
@@ -624,6 +626,7 @@ h6 {
 .sidebar-nav .nav-link:hover {
   color: #05c3dd;
   background: #f6f9ff;
+ 
 }
 .sidebar-nav .nav-link:hover i {
   color: #05c3dd;
@@ -773,33 +776,6 @@ h6 {
   padding-bottom: 0;
 }
 
-/* News & Updates */
-.dashboard .news .post-item + .post-item {
-  margin-top: 15px;
-}
-.dashboard .news img {
-  width: 80px;
-  float: left;
-  border-radius: 5px;
-}
-.dashboard .news h4 {
-  font-size: 15px;
-  margin-left: 95px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-.dashboard .news h4 a {
-  color: #012970;
-  transition: 0.3s;
-}
-.dashboard .news h4 a:hover {
-  color: #4154f1;
-}
-.dashboard .news p {
-  font-size: 14px;
-  color: #777777;
-  margin-left: 95px;
-}
 
 /* Book */
  .book {
@@ -938,7 +914,7 @@ h6 {
 .contact .info-box i {
   font-size: 38px;
   line-height: 0;
-  color: #4154f1;
+  color: #05c3dd;
 }
 .contact .info-box h3 {
   font-size: 20px;
@@ -998,7 +974,7 @@ h6 {
 }
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  border-color: #4154f1;
+  border-color: #05c3dd;
 }
 .contact .php-email-form input {
   padding: 10px 15px;

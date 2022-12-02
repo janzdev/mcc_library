@@ -11,7 +11,7 @@ if(isset($_POST['logout_btn']))
   
 
   $_SESSION['message_success'] ="Logout Successfully";
-  header("Location: login.php");
+  header("Location: home.php");
   exit(0);
 }
 

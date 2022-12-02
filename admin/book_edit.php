@@ -4,6 +4,7 @@ include('includes/header.php');
 include('./includes/sidebar.php'); 
 
 ?>
+
 <main id="main" class="main">
      <div class="pagetitle">
           <h1>Edit Book</h1>
@@ -79,7 +80,7 @@ include('./includes/sidebar.php');
 
                                    <div class="row d-flex justify-content-center">
 
-                                        <div class="col-12 col-md-3">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Copyright Date</label>
                                                   <input type="text" name="copyright_date"
@@ -87,7 +88,7 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Publisher</label>
                                                   <input type="text" name="publisher" value="<?=$book['publisher'];?>"
@@ -95,7 +96,18 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-3">
+
+
+                                        <!-- <div class="col-12 col-md-4">
+                                             <div class="mt-2">
+                                                  <label for="">Barcode</label>
+                                                  <input type="text" name="barcode" class="form-control">
+                                             </div>
+                                        </div> -->
+
+                                   </div>
+                                   <div class="row d-flex justify-content-center">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Copy</label>
                                                   <input type="text" name="copy" value="<?=$book['copy'];?>" class="
@@ -103,7 +115,13 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-
+                                        <div class="col-12 col-md-5">
+                                             <div class="mt-2">
+                                                  <label for="">Barcode</label>
+                                                  <input type="text" value="<?=$book['barcode'];?>" name="barcode"
+                                                       class="form-control">
+                                             </div>
+                                        </div>
                                    </div>
 
 
