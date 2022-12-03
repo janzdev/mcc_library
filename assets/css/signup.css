@@ -16,15 +16,15 @@ body {
     -webkit-linear-gradient(bottom, #0250c5, #05c3dd);
 }
 .container {
-  height: 100vh;
+  height: 90vh;
   width: 330px;
   background: #fff;
   text-align: center;
   border-radius: 5px;
-  /* padding: 10px 35px 10px 35px; */
+  padding: 20px 35px 10px 35px;
 }
 .container header h5 {
-  font-size: 20px;
+  font-size: 24px;
 }
 .container header span {
   color: #05c3dd;
@@ -35,7 +35,7 @@ body {
   position: relative;
 }
 .option p {
-  padding-top: -20px;
+  padding-top: -30px;
   position: absolute;
   bottom: -25px;
   left: 35px;
@@ -61,16 +61,16 @@ body {
   font-weight: 500;
 }
 .form-outer form .page .field {
-  width: 300px;
-  height: 30px;
-  margin: 10px 0;
+  width: 330px;
+  height: 40px;
+  margin: 40px 0;
   display: flex;
   position: relative;
 }
 
 form .page .field .label {
   position: absolute;
-  top: -20px;
+  top: -30px;
   font-weight: 500;
   font-size: 16px;
 }

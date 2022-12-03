@@ -27,7 +27,7 @@ include('./admin/config/dbcon.php');
 <link rel="stylesheet" href="assets/css/alertify.bootstraptheme.min.css" />
 
 <!-- Custom CSS links -->
-<link rel="stylesheet" href="./assets/css/signup.css">
+<link rel="stylesheet" href="assets/css/signup.css">
 
 
 <body>

@@ -6,7 +6,7 @@ if(isset($_POST['input']))
      
   
      $input = $_POST['input'];
-     $query = "SELECT * FROM web_opac WHERE title LIKE '{$input}%' OR author LIKE '{$input}%'";
+     $query = "SELECT * FROM web_opac WHERE title LIKE '{$input}%'";
      $query_run = mysqli_query($con, $query);
 
      if(mysqli_num_rows($query_run) > 0)
@@ -16,7 +16,7 @@ if(isset($_POST['input']))
      <tbody>
           <?php
                     
-                    while($row = mysqli_fetch_array($query_run))
+                    while($row = mysqli_fetch_assoc($query_run))
                     {
                          $title = $row['title'];
                          ?>

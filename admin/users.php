@@ -19,7 +19,7 @@ include('./includes/sidebar.php');
      <section class="section">
           <div class="row">
                <div class="col-lg-12">
-                    <div class="card" style="height:58vh;">
+                    <div class="card">
                          <div class="card-header d-flex justify-content-end">
 
                          </div>
@@ -45,6 +45,47 @@ include('./includes/sidebar.php');
                                              </div>
                                         </a>
                                    </div>
+
+                                   <!-- <div class="col-12 col-md-4 mt-3 ">
+                                        <a href="#">
+                                             <div
+                                                  class="card bg-info fw-bolder h-100 text-white d-flex align-items-center justify-content-center">
+                                                  <h2>BSIT</h2>
+                                             </div>
+                                        </a>
+                                   </div>
+                                   <div class="col-12 col-md-4 mt-3 ">
+                                        <a href="#">
+                                             <div
+                                                  class="card bg-info fw-bolder h-100 text-white d-flex align-items-center justify-content-center ">
+                                                  <h2>BSBA</h2>
+                                             </div>
+                                        </a>
+                                   </div>
+                                   <div class="col-12 col-md-4 mt-3 ">
+                                        <a href="#">
+                                             <div
+                                                  class="card bg-info fw-bolder h-100 text-white d-flex align-items-center justify-content-center">
+                                                  <h2>BSHM</h2>
+                                             </div>
+                                        </a>
+                                   </div>
+                                   <div class="col-12 col-md-6 mt-3 ">
+                                        <a href="#">
+                                             <div
+                                                  class="card bg-info fw-bolder h-100 text-white d-flex align-items-center justify-content-center">
+                                                  <h2>BSED</h2>
+                                             </div>
+                                        </a>
+                                   </div>
+                                   <div class="col-12 col-md-6 mt-3 ">
+                                        <a href="#">
+                                             <div
+                                                  class="card bg-info fw-bolder h-100 text-white d-flex align-items-center justify-content-center">
+                                                  <h2>BEED</h2>
+                                             </div>
+                                        </a>
+                                   </div> -->
                               </div>
                          </div>
                          <div class="card-footer"></div>

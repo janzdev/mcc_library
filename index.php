@@ -24,13 +24,15 @@ if($_SESSION['auth_role'] != "0")
                     <img src="assets/img/mcc-logo.png" class="" style="height: 100px; width: 100px;" alt="">
                </div>
 
-               <div class="col-10  mt-2">
+               <div class="col-10  mt-2 ">
                     <h3 class="fw-semibold">Madridejos Community College Library</h3>
-                    <form class="d-flex " method="POST">
+                    <!-- <form class="d-flex " method="POST"> -->
+                    <div class="d-flex">
                          <input class="form-control " type="text" id="live_search" placeholder="Search Book">
                          <button class="btn text-white btn-info mx-3 col-md-3 fw-semibold" type="submit"
                               name="search">Search</button>
-                    </form>
+                    </div>
+                    <!-- </form> -->
                </div>
 
           </div>

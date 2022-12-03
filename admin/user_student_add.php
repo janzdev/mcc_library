@@ -30,7 +30,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 mt-2 input-group-sm">
                                                   <label for="">Lastname</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" id="" name="lastname" class="form-control "
                                                        required autocomplete="off">
                                              </div>
@@ -39,7 +38,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 mt-2 input-group-sm">
                                                   <label for="">Firstname</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" name="firstname" class="form-control"
                                                        autocomplete="off" required>
                                              </div>
@@ -68,7 +66,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Gender</label>
-                                                  <span class="text-danger">*</span>
                                                   <select name="gender" id="" class="form-control" autocomplete="off"
                                                        required>
                                                        <option value="">--Select Gender--</option>
@@ -93,7 +90,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-6">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Address</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" name="address" autocomplete="off"
                                                        class="form-control" required>
                                              </div>
@@ -102,7 +98,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Cell No.</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" name="cellphone_number" autocomplete="off"
                                                        class="form-control" required>
                                              </div>
@@ -115,7 +110,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Course</label>
-                                                  <span class="text-danger">*</span>
                                                   <select name="course" id="" class="form-control" required>
                                                        <option value="">--Select Course--</option>
                                                        <option value="BSIT">BSIT</option>
@@ -130,16 +124,19 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Year Level</label>
-                                                  <span class="text-danger">*</span>
-                                                  <input type="number" name="year_level" class="form-control"
-                                                       autocomplete="off" required min="1" max="4">
+                                                  <select name="year_level" id="" class="form-control" required>
+                                                       <option value="">--Select Year Level--</option>
+                                                       <option value="4th year">4th year</option>
+                                                       <option value="3rd">3rd</option>
+                                                       <option value="2nd">2nd</option>
+                                                       <option value="1st">1st</option>
+                                                  </select>
                                              </div>
                                         </div>
 
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Student ID</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" name="student_id_no" class="form-control" required
                                                        autocomplete="off">
                                              </div>
@@ -153,7 +150,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-6">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Contact Person</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" name="contact_person" class="form-control" required
                                                        autocomplete="off">
                                              </div>
@@ -162,8 +158,7 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Cell No.</label>
-                                                  <span class="text-danger">*</span>
-                                                  <input type="number" name="contact_person_number" class="form-control"
+                                                  <input type="text" name="contact_person_number" class="form-control"
                                                        autocomplete="off" required>
                                              </div>
                                         </div>
@@ -174,8 +169,7 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-6">
                                              <div class=" input-group-sm">
                                                   <label for="">Email Address</label>
-                                                  <span class="text-danger">*</span>
-                                                  <input type="text" name="email" class="form-control"
+                                                  <input type="email" name="email" class="form-control"
                                                        autocomplete="off" required>
                                              </div>
                                         </div>
