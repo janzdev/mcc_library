@@ -93,7 +93,7 @@ include('./includes/sidebar.php');
                     <div class="card">
                          <div class="card-header d-flex justify-content-between align-item-center">
                               <span class="text-dark fw-semibold">Recent Returned Books</span>
-                              
+
                          </div>
                          <div class="card-body">
                               <div class="table-responsive">
@@ -111,15 +111,18 @@ include('./includes/sidebar.php');
                                    <table id="myDataTable" cellpadding="0" cellspacing="0" border="0"
                                         class="table table-striped table-bordered">
 
-                                        <div class="pull-left">
+                                        <!-- <div class="pull-left">
                                              <div class="span">
                                                   <div class="alert alert-info mt-2 p-1"><i
                                                             class="icon-credit-card icon-large"></i>&nbsp;Total Amount
                                                        of
-                                                       Penalty:&nbsp;<?php echo "Php ".$count_penalty_row['sum(book_penalty)'].".00"; ?>
+                                                       Penalty:&nbsp;
+                                                       <?php 
+                                                       // echo "Php ".$count_penalty_row['sum(book_penalty)'].".00";
+                                                        ?>
                                                   </div>
                                              </div>
-                                        </div>
+                                        </div> -->
 
                                         <thead>
                                              <tr>

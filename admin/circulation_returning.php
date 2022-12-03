@@ -165,7 +165,8 @@ $user_row = mysqli_fetch_array($user_query);
 							} 							
 							?>
                                              <?php
-								if (isset($_POST['return'])) {
+								if (isset($_POST['return'])) 
+                                        {
 									$user_id= $_POST['user_id'];
 									$borrow_book_id= $_POST['borrow_book_id'];
 									$book_id= $_POST['book_id'];
@@ -173,7 +174,7 @@ $user_row = mysqli_fetch_array($user_query);
 									$due_date= $_POST['due_date'];
 									$date_returned = $_POST['date_returned'];
 
-									$update_copies = mysqli_query($con,"SELECT * from book where book_id = '$book_id' ") or die (mysqli_error());
+									$update_copies = mysqli_query($con,"SELECT * FROM book WHERE book_id = '$book_id' ") or die (mysqli_error());
 									$copies_row= mysqli_fetch_assoc($update_copies);
 									
 									$book_copies = $copies_row['copy'];
@@ -181,7 +182,7 @@ $user_row = mysqli_fetch_array($user_query);
 									
 									
 									
-									mysqli_query($con,"UPDATE book SET copy = '$new_book_copies' where book_id = '$book_id'") or die (mysqli_error());
+									mysqli_query($con,"UPDATE book SET copy = '$new_book_copies' WHERE book_id = '$book_id'") or die (mysqli_error());
 									
 								
 									$timezone = "Asia/Manila";
@@ -195,7 +196,7 @@ $user_row = mysqli_fetch_array($user_query);
 									
                                             
                                             
-									$penalty_amount_query= mysqli_query($con,"select * from penalty order by penalty_id DESC ") or die (mysqli_error());
+									$penalty_amount_query= mysqli_query($con,"SELECT * FROM penalty ORDER BY penalty_id DESC ") or die (mysqli_error());
 									$penalty_amount = mysqli_fetch_assoc($penalty_amount_query);
 									
                                              
@@ -210,49 +211,29 @@ $user_row = mysqli_fetch_array($user_query);
 										$penalty = 'No Penalty';
 									}
                                              
-                                             mysqli_query($con,"UPDATE borrow_book SET borrowed_status = 'returned', date_returned = '$date_returned_now', book_penalty = '$penalty' WHERE borrow_book_id= '$borrow_book_id' and user_id = '$user_id' and book_id = '$book_id' ") or die (mysqli_error());
+                                             mysqli_query($con,"UPDATE borrow_book SET borrowed_status = 'returned', date_returned = '$date_returned_now', book_penalty = '$penalty' WHERE borrow_book_id= '$borrow_book_id' AND user_id = '$user_id' AND book_id = '$book_id' ") or die (mysqli_error());
                                         
-                                                  mysqli_query($con,"INSERT INTO return_book (user_id, book_id, date_borrowed, due_date, date_returned, book_penalty)
-                                                  values ('$user_id', '$book_id', '$date_borrowed', '$due_date', '$date_returned', '$penalty')") or die (mysqli_error());
+                                             mysqli_query($con,"INSERT INTO return_book (user_id, book_id, date_borrowed, due_date, date_returned, book_penalty)
+                                             VALUES ('$user_id', '$book_id', '$date_borrowed', '$due_date', '$date_returned', '$penalty')") or die (mysqli_error());
                                                   
                                              if($penalty === 'No Penalty')
                                              {
-                                                  
                                              
                                                   echo '<script> location.href="circulation_returning.php?student_id='.$student_id.'";</script>'; 
-
-                                                  
-                                             
-
                                              }
                                              else
                                              {
-                                                       
-
                                                   echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script>'; 
                                                   
-                                                  // echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script';
-
-                                                  // echo '<script type="text/javascript">
-                                                  // $(document).ready(function(){
-                                                  //      $("#checkModal").modal("show");
-                                                  // });
-                                                  // </script>';
                                              }
-								
-								
-									
-                                            
-                                                  
-                                                
-                                             $report_history1=mysqli_query($con,"SELECT * FROM admin where admin_id = '$id_session' ") or die (mysqli_error());
+                                             $report_history1 = mysqli_query($con,"SELECT * FROM admin WHERE admin_id = '$id_session' ") or die (mysqli_error());
 									$report_history_row1=mysqli_fetch_array($report_history1);
 									$admin_row1=$report_history_row1['firstname']." ".$report_history_row1['middlename']." ".$report_history_row1['lastname'];
 										
 									
 									mysqli_query($con,"INSERT INTO report 
 									(book_id, user_id, admin_name, detail_action, date_transaction)
-									VALUES ('$book_id','$user_id','$admin_row1','Returned Book',NOW())") or die(mysqli_error());
+									VALUES ('$book_id','$user_id','$admin_row1','Returned Book', NOW())") or die(mysqli_error());
 
                                             
 									
@@ -262,7 +243,7 @@ $user_row = mysqli_fetch_array($user_query);
                                                   "circulation_returning.php?student_id=<?php echo $student_id ?>";
                                              </script>
                                              <?php 
-																}
+							}
 							?>
                                         </tbody>
 
