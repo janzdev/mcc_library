@@ -21,22 +21,20 @@ include('./includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="card">
                          <div class="card-header d-flex justify-content-end">
-                              <a href="web_opac_add.php" class="btn btn-primary"><i class="bi bi-journal-plus"></i> Add
-                                   Book</a>
+                              <a href="web_opac_add.php" class="btn btn-primary"><i class="bi bi-journal-plus"></i>
+                                   Upload Book</a>
                          </div>
                          <div class="card-body">
                               <div class="table-responsive mt-3">
                                    <table id="myDataTable" class="table table-bordered table-striped table-sm">
                                         <thead>
                                              <tr>
-                                                 
                                                   <th>Book Image</th>
                                                   <th>Title</th>
                                                   <th>Author</th>
                                                   <th>Copyright Date</th>
                                                   <th>Publisher</th>
                                                   <th>Action</th>
-
                                              </tr>
                                         </thead>
                                         <tbody>
@@ -50,16 +48,17 @@ include('./includes/sidebar.php');
                                                   {
                                                        ?>
                                              <tr>
-                                                  
-                                                  <td><?=$book['opac_image'];?></td> 
-                                                  <td><?=$book['title'];?></td> 
+
+                                                  <td><?=$book['opac_image'];?></td>
+                                                  <td><?=$book['title'];?></td>
                                                   <td><?=$book['author'];?></td>
                                                   <td><?=$book['copyright_date'];?></td>
                                                   <td><?=$book['publisher'];?></td>
                                                   <td class=" justify-content-center">
                                                        <div class="btn-group" style="background: #DFF6FF;  ">
                                                             <!-- View Book Action-->
-                                                            <a href="web_opac_view.php?id=<?=$book['web_opac_id']; ?>" name="view_book"
+                                                            <a href="web_opac_view.php?id=<?=$book['web_opac_id']; ?>"
+                                                                 name="view_book"
                                                                  class="viewweb_opacBtn btn btn-sm  border text-primary"
                                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                                  title="View Book">

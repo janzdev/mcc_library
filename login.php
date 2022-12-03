@@ -24,7 +24,7 @@ include('./admin/config/dbcon.php');
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="icon" href="./assets/img/mcc-logo.png">
-     <title>MCC LIBRARY</title>
+     <title>MCC Learning Resource Center</title>
 </head>
 
 
@@ -32,19 +32,19 @@ include('./admin/config/dbcon.php');
 <link rel="stylesheet" href="assets/css/alertify.min.css" />
 <link rel="stylesheet" href="assets/css/alertify.bootstraptheme.min.css" />
 
- <!-- Iconscout cdn link -->
- <link rel="stylesheet" href="assets/css/line.css">
-     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+<!-- Iconscout cdn link -->
+<link rel="stylesheet" href="assets/css/line.css">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="assets/css/bootstrap5.min.css" />
 
 <!-- Bootstrap Icon -->
 <link rel="stylesheet" href="assets/font/bootstrap-icons.css">
 
-  
 
-     <!-- Custom CSS Styling -->
-     <link rel="stylesheet" href="assets/css/login.css">
+
+<!-- Custom CSS Styling -->
+<link rel="stylesheet" href="assets/css/login.css">
 
 
 

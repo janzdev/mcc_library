@@ -23,8 +23,6 @@
      <!-- Alertify JS cdn link -->
      <link rel="stylesheet" href="assets/css/alertify.min.css" />
      <link rel="stylesheet" href="assets/css/alertify.bootstraptheme.min.css" />
-
-
 </head>
 
 <body>

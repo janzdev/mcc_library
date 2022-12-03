@@ -148,23 +148,24 @@ include('./includes/sidebar.php');
                                                        <tr>
                                                             <th scope="col">Student ID</th>
                                                             <th scope="col">Student Name</th>
-                                                            <th scope="col">Date & Time In</th>
+                                                            <th scope="col">Time In</th>
+                                                            <th scope="col">Date</th>
                                                        </tr>
                                                   </thead>
                                                   <tbody>
                                                        <?php
-                                                       $result= mysqli_query($con,"select * from user_log 
-                                                       LEFT JOIN user ON user_log.user_id = user.user_id 
-                                                       order by user_log.user_log_id DESC ") or die (mysqli_error());
+                                                       $result= mysqli_query($con,"SELECT * from time 
+                                                  ") or die (mysqli_error());
                                                        while ($row= mysqli_fetch_array ($result) ){
-                                                       $id=$row['user_log_id'];
-                                                       $user_id=$row['user_id'];
+                                                      
                                                        ?>
                                                        <tr>
                                                             <td><?php echo $row['student_id_no']; ?></td>
-                                                            <td><?php echo $row['firstname'].' '.$row['middlename'].' '.$row['lastname']; ?>
+                                                            <td><?php echo $row['student_name']; ?>
                                                             </td>
-                                                            <td><?php echo date("M d, Y h:i:s a", strtotime($row['date_log'])); ?>
+                                                            <td><?php echo date(" h:i:s a", strtotime($row['time'])); ?>
+                                                            </td>
+                                                            <td><?php echo date("M d, Y", strtotime($row['date'])); ?>
                                                             </td>
                                                        </tr>
                                                        <?php } ?>

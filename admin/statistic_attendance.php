@@ -50,9 +50,8 @@ class MYPDF extends TCPDF {
 
 
 
-                                   $query= mysqli_query($con,"select * from user_log 
-							LEFT JOIN user ON user_log.user_id = user.user_id 
-							order by user_log.user_log_id DESC ") or die (mysqli_error());
+                                   $query= mysqli_query($con,"select * from time 
+							") or die (mysqli_error());
                                    return $query;
     }
 
@@ -72,7 +71,7 @@ class MYPDF extends TCPDF {
         $this->SetFont('helvetica', '', 14);
         $this->Cell(0, 15, 'STUDENTS ATTENDANCE', 0,1, 'C', 0, '', false, 'M', 'M');
         // Header
-        $w = array(60, 60, 60);
+        $w = array(50, 50, 50, 50);
         $num_headers = count($header);
         for($i = 0; $i < $num_headers; ++$i) {
             $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C', 1);
@@ -89,8 +88,9 @@ class MYPDF extends TCPDF {
         foreach($data as $row) {
            
             $this->Cell($w[0], 6, $row['student_id_no'], 'LR', 0, 'L');
-            $this->Cell($w[1], 6, $row['firstname'].' '.$row['middlename'].' '.$row['lastname'], 'LR', 0, 'L');
-            $this->Cell($w[2], 6, $row['date_log'], 'LR', 0, 'L');
+            $this->Cell($w[1], 6, $row['student_name'], 'LR', 0, 'L');
+            $this->Cell($w[2], 6, $row['time'], 'LR', 0, 'L');
+            $this->Cell($w[3], 6, $row['date'], 'LR', 0, 'L');
             $this->Ln();
            
         }
@@ -144,7 +144,7 @@ $pdf->SetFont('helvetica', '', 12);
 $pdf->AddPage();
 
 // column titles
-$header = array('Student ID', 'Student Name', 'Date Log In');
+$header = array('Student ID', 'Student Name', 'Time', 'Date');
 
 // data loading
 $data = $pdf->LoadData();

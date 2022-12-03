@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <nav class="navbar navbar-expand-lg" style="background: #0096FF;">
      <div class="container-fluid mx-5">
 
@@ -15,22 +16,28 @@
                     <li class="nav-item">
                          <a class="nav-link active text-white fw-semibold" aria-current="page" href="#">About Us</a>
                     </li>
-                    <?php if(isset($_SESSION['auth_stud'])):?>
+                    <?php if(isset($_SESSION['auth_stud'])) :?>
                     <li class="nav-item dropdown">
                          <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" role="button"
                               data-bs-toggle="dropdown" aria-expanded="false">
-                             <span><?= $_SESSION['auth_stud']['email']; ?></span>
+                              <span><?= $_SESSION['auth_stud']['stud_name']; ?></span>
                          </a>
                          <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">My Profile</a></li>
-                              <li><a class="dropdown-item" href="#">Settings</a></li>
+                              <li><a class="dropdown-item" href="#">
+                                        <i class="bi bi-person"></i> My Profile</a></li>
+                              <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li>
                               <li>
                                    <hr class="dropdown-divider">
                               </li>
-                              <li><a class="dropdown-item" href="#">Logout</a></li>
+                              <li>
+                                   <form action="allcode.php" method="POST">
+                                        <button type="submit" name="logout_btn" class="dropdown-item"><i
+                                                  class="bi bi-box-arrow-right"></i> Logout</button>
+                                   </form>
+                              </li>
                          </ul>
                     </li>
-                    <?php else:?>
+                    <?php else :?>
                     <li class="nav-item">
                          <a href="login.php" class="nav-link text-white fw-semibold">Login</a>
                     </li>
@@ -38,7 +45,7 @@
                          <a href="signup.php"
                               class="nav-link text-white bg-info px-3 fw-semibold rounded-pill">Signup</a>
                     </li>
-                    <?php endif;?>
+                    <?php endif; ?>
                </ul>
           </div>
      </div>

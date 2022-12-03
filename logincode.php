@@ -30,7 +30,7 @@ if(isset($_POST['login_btn']))
     if($_SESSION['auth_role'] == 0)  // 1 = Admin
     {
       $_SESSION['message_success'] = "Welcome student!";
-      header("Location:index.php");
+      header("Location:home.php");
       exit(0);
     }
     // if($_SESSION['auth_role'] == 1)  // 1 = Admin

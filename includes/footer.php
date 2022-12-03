@@ -9,6 +9,9 @@
 
 <script src="assets/js/tooltip.js"></script>
 
+<script src="assets/js/attendance_login.js"></script>
+
+<script src="assets/js/login.js"></script>
 
 
 <!-- Alertify JS CDN Link -->
