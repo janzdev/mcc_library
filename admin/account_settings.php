@@ -47,10 +47,10 @@ if (isset($_SESSION['auth_admin']['admin_id']))
                <div class="col-xl-8">
                     <div class="card">
                          <div class="card-body pt-3">
-                              <ul class="nav nav-tabs nav-tabs-bordered">
+                              <ul class="nav nav-tabs nav-tabs-bordered  ">
 
-                                   <li class="nav-item"> <button class="nav-link active text-info border-info"
-                                             data-bs-toggle="tab" data-bs-target="#profile-edit">Edit
+                                   <li class="nav-item"> <button class="nav-link active " data-bs-toggle="tab"
+                                             data-bs-target="#profile-edit">Edit
                                              Profile</button></li>
 
                                    <li class="nav-item"> <button class="nav-link " data-bs-toggle="tab"
@@ -76,18 +76,14 @@ if (isset($_SESSION['auth_admin']['admin_id']))
                                                        class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                                                   <div class="col-md-8 col-lg-9">
                                                        <!-- <img src="assets/img/profile-img.jpg" alt="Profile"> -->
-                                                       <?php if($row['admin_image'] != ""): ?>
-                                                       <img src="../uploads/admin_profile/<?php echo $row['admin_image']; ?>"
-                                                            alt="">
-                                                       <?php else: ?>
-                                                       <img src="../assets/admin_profile/admin.png" alt="">
-                                                       <?php endif; ?>
-                                                       <div class="pt-2"> <a href="#" class="btn btn-primary btn-sm"
-                                                                 title="Upload new profile image"><i
-                                                                      class="bi bi-upload"></i></a> <a href="#"
-                                                                 class="btn btn-danger btn-sm"
-                                                                 title="Remove my profile image"><i
-                                                                      class="bi bi-trash"></i></a></div>
+
+                                                       <div class="pt-2">
+                                                            <input type="hidden" name="old_admin_image"
+                                                                 value="<?=$admin['admin_image'];?>">
+                                                            <input type="file" name="admin_image" class="form-control"
+                                                                 autocomplete="off">
+
+                                                       </div>
                                                   </div>
                                              </div>
                                              <div class="row mb-3">

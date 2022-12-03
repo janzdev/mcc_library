@@ -53,14 +53,14 @@ $query_run = mysqli_query($con, $query);
                                         <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Title</label>
-                                                  <input type="text" name="title" class="form-control">
+                                                  <input type="text" name="title" class="form-control" required>
                                              </div>
                                         </div>
 
                                         <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Author</label>
-                                                  <input type="text" name="author" class="form-control">
+                                                  <input type="text" name="author" class="form-control" required>
                                              </div>
                                         </div>
 
@@ -71,14 +71,15 @@ $query_run = mysqli_query($con, $query);
                                         <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Copyright Date</label>
-                                                  <input type="text" name="copyright_date" class="form-control">
+                                                  <input type="text" name="copyright_date" class="form-control"
+                                                       required>
                                              </div>
                                         </div>
 
                                         <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Publisher</label>
-                                                  <input type="text" name="publisher" class="form-control">
+                                                  <input type="text" name="publisher" class="form-control" required>
                                              </div>
                                         </div>
 

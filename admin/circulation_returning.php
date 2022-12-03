@@ -238,7 +238,7 @@ $user_row = mysqli_fetch_array($user_query);
 									VALUES ('$book_id','$user_id','$admin_row1','Returned Book', NOW())") or die(mysqli_error());
 
 							?>
-                                           
+
                                              <?php 
 							}
 							?>

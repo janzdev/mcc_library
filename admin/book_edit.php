@@ -36,7 +36,7 @@ include('./includes/sidebar.php');
                                    {
                                        $book = mysqli_fetch_array($query_run);
                                         ?>
-                              <form action="books_code.php" method="POST">
+                              <form action="books_code.php" method="POST" enctype="multipart/form-data">
 
                                    <div class="row d-flex justify-content-center mt-4">
                                         <input type="hidden" name="book_id" value="<?=$book['book_id']?>">
@@ -107,7 +107,7 @@ include('./includes/sidebar.php');
 
                                    </div>
                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-12 col-md-5">
+                                        <div class="col-12 col-md-2">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Copy</label>
                                                   <input type="text" name="copy" value="<?=$book['copy'];?>" class="
@@ -115,11 +115,21 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-5">
+                                        <div class="col-12 col-md-3">
                                              <div class="mt-2">
                                                   <label for="">Barcode</label>
                                                   <input type="text" value="<?=$book['barcode'];?>" name="barcode"
                                                        class="form-control">
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-5">
+                                             <div class="mt-2">
+                                                  <label for="">Image</label>
+                                                  <input type="hidden" name="old_book_image"
+                                                       value="<?=$book['book_image'];?>">
+                                                  <input type="file" name="book_image" class="form-control"
+                                                       autocomplete="off">
                                              </div>
                                         </div>
                                    </div>

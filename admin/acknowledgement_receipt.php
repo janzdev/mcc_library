@@ -136,10 +136,10 @@ $user_row = mysqli_fetch_array($user_query);
                          <form action="" method="POST" class="btn-group m-2">
                               <button type="submit" name="accept" class="btn btn-primary"
                                    value="<?php echo $student_id ?>">Accept</button>
-                                   
+
                               <a href="circulation_returning.php?student_id=<?php echo $student_id ?>"
                                    class="btn btn-secondary">Cancel</a>
-                                   </form>
+                         </form>
 
                     </div>
                </div>

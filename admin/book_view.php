@@ -42,52 +42,69 @@ include('./includes/sidebar.php');
 
                               <div class="row">
 
+                                   <div class="col-12 col-md-5 d-flex align-items-center justify-content-center my-4">
 
-                                   <div class="mb-3 mt-2">
-                                        <span class="fw-semibold">Call Number &emsp;&emsp;&emsp;&nbsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['call_number'];?></p>
+                                        <?php if($book['book_image'] != ""): ?>
+                                        <img src="../uploads/books_img/<?php echo $book['book_image']; ?>" alt=""
+                                             width="250px" height="250px">
+                                        <?php else: ?>
+                                        <img src="../uploads/books_img/book_image.jpg" alt="" width="250px"
+                                             height="250px">
+                                        <?php endif; ?>
+
                                    </div>
+                                   <div class="col-12 col-md-7 my-4">
+
+                                        <div class="mb-3">
+                                             <span
+                                                  class="fw-semibold">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['title'];?></p>
+                                        </div>
+
+
+                                        <div class="mb-3">
+                                             <span class="fw-semibold">Author
+                                                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['author'];?></p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                             <span class="fw-semibold">Copyright Date &emsp;&emsp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['copyright_date'];?></p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                             <span class="fw-semibold">Publisher
+                                                  &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['publisher'];?></p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                             <span class="fw-semibold">Accessial Number &ensp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['accessial_number'];?></p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                             <span class="fw-semibold">Copy
+                                                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['copy'];?></p>
+                                        </div>
+
+                                        <div class="mb-3 mt-2">
+                                             <span class="fw-semibold">Call Number &emsp;&emsp;&emsp;&nbsp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['call_number'];?></p>
+                                        </div>
 
 
 
-                                   <div class="mb-3">
-                                        <span class="fw-semibold">Accessial Number &ensp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['accessial_number'];?></p>
+
+
+                                        <div class="">
+                                             <span class="fw-semibold">Barcode
+                                                  &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['barcode'];?></p>
+                                        </div>
                                    </div>
-
-
-                                   <div class="mb-3">
-                                        <span
-                                             class="fw-semibold">Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['title'];?></p>
-                                   </div>
-
-
-                                   <div class="mb-3">
-                                        <span class="fw-semibold">Author &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['author'];?></p>
-                                   </div>
-
-                                   <div class="mb-3">
-                                        <span class="fw-semibold">Copyright Date &emsp;&emsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['copyright_date'];?></p>
-                                   </div>
-
-                                   <div class="mb-3">
-                                        <span class="fw-semibold">Publisher &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['publisher'];?></p>
-                                   </div>
-                                   <div class="mb-3">
-                                        <span class="fw-semibold">Copy
-                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['copy'];?></p>
-                                   </div>
-                                   <div class="">
-                                        <span class="fw-semibold">Barcode
-                                             &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;</span>
-                                        <p class="d-inline">:&nbsp;<?=$book['barcode'];?></p>
-                                   </div>
-
                               </div>
 
                          </div>

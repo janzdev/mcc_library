@@ -39,13 +39,14 @@ if (isset($_SESSION['auth_admin']['admin_id']))
                 
                ?>
                <li class="nav-item dropdown pe-3">
-                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="javascript:;"
+                         data-bs-toggle="dropdown">
 
                          <?php if($row['admin_image'] != ""): ?>
                          <img src="../uploads/admin_profile/<?php echo $row['admin_image']; ?>" alt="" width="30px"
                               height="30px" class="rounded-circle">
                          <?php else: ?>
-                         <img src="../assets/admin_profile/admin.png" alt="" width="60px" height="60px">
+                         <img src="assets/img/admin.png" alt="" class="rounded-circle" width="30px" height="30px">
                          <?php endif; ?>
                          <span
                               class="d-none d-md-block dropdown-toggle ps-2"><?= $_SESSION['auth_admin']['admin_name']; ?></span>

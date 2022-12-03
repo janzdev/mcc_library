@@ -113,37 +113,65 @@ if(isset($_POST['upload_book']))
      $author = mysqli_real_escape_string($con, $_POST['author']);
      $copyright_date = mysqli_real_escape_string($con, $_POST['copyright_date']);
      $publisher = mysqli_real_escape_string($con, $_POST['publisher']);
-     
      $opac_image = $_FILES['opac_image']['name'];
      $ebook = $_FILES['ebook']['name'];
-     // Rename the Image
-     $ebook_extension = pathinfo($ebook, PATHINFO_EXTENSION);
-     $ebook_filename = time().'.'.$ebook_extension;
 
-     $opac_extension = pathinfo($opac_image, PATHINFO_EXTENSION);
-     $opac_filename = time().'.'.$opac_extension;
 
-    
-
-     $query = "INSERT INTO web_opac (opac_image, ebook, title, author, copyright_date, publisher, added_at) VALUES ('$opac_filename', '$ebook_filename', '$title', '$author', '$copyright_date', '$publisher',  NOW())";
-     $query_run = mysqli_query($con, $query);
-
-    
-     if($query_run)
+     if($opac_image != "" || $ebook != "")
      {
-          move_uploaded_file($_FILES['opac_image']['tmp_name'], '../uploads/ebook_img/'.$opac_filename);
-          move_uploaded_file($_FILES['ebook']['tmp_name'], '../uploads/ebook/'.$ebook_filename);
-
-          $_SESSION['message_success'] = 'Book Added successfully';
-          header("Location: web_opac.php");
-          exit(0);
+          
+          // Rename the Image
+          $ebook_extension = pathinfo($ebook, PATHINFO_EXTENSION);
+          $ebook_filename = time().'.'.$ebook_extension;
+     
+          $opac_extension = pathinfo($opac_image, PATHINFO_EXTENSION);
+          $opac_filename = time().'.'.$opac_extension;
+     
+         
+     
+          $query = "INSERT INTO web_opac (opac_image, ebook, title, author, copyright_date, publisher, added_at) VALUES ('$opac_filename', '$ebook_filename', '$title', '$author', '$copyright_date', '$publisher',  NOW())";
+          $query_run = mysqli_query($con, $query);
+     
+         
+          if($query_run)
+          {
+               move_uploaded_file($_FILES['opac_image']['tmp_name'], '../uploads/ebook_img/'.$opac_filename);
+               move_uploaded_file($_FILES['ebook']['tmp_name'], '../uploads/ebook/'.$ebook_filename);
+     
+               $_SESSION['message_success'] = 'Book Added successfully';
+               header("Location: web_opac.php");
+               exit(0);
+          }
+          else
+          {
+               $_SESSION['message_error'] = 'Book not Added';
+               header("Location: web_opac.php");
+               exit(0);
+          }
      }
      else
      {
-          $_SESSION['message_error'] = 'Book not Added';
-          header("Location: web_opac.php");
-          exit(0);
+          $query = "INSERT INTO web_opac (opac_image, ebook, title, author, copyright_date, publisher, added_at) VALUES ('$opac_image', '$ebook', '$title', '$author', '$copyright_date', '$publisher',  NOW())";
+          $query_run = mysqli_query($con, $query);
+     
+         
+          if($query_run)
+          {
+               move_uploaded_file($_FILES['opac_image']['tmp_name'], '../uploads/ebook_img/'.$_FILES['opac_image']['name']);
+               move_uploaded_file($_FILES['ebook']['tmp_name'], '../uploads/ebook/'.$_FILES['ebook']['name']);
+     
+               $_SESSION['message_success'] = 'Book Added successfully';
+               header("Location: web_opac.php");
+               exit(0);
+          }
+          else
+          {
+               $_SESSION['message_error'] = 'Book not Added';
+               header("Location: web_opac.php");
+               exit(0);
+          }
      }
+    
      
 }
 ?>

@@ -50,8 +50,14 @@ include('./includes/sidebar.php');
                                              <tr>
                                                   <td>
                                                        <center>
+
+                                                            <?php if($book['opac_image'] != ""): ?>
                                                             <img src="../uploads/ebook_img/<?=$book['opac_image'];?>"
                                                                  alt="" width="60px" height="60px">
+                                                            <?php else: ?>
+                                                            <img src="../uploads/ebook_img/book_image.jpg" alt=""
+                                                                 width="60px" height="60px">
+                                                            <?php endif; ?>
                                                        </center>
                                                   </td>
                                                   <td><?=$book['title'];?></td>

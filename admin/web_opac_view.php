@@ -38,43 +38,48 @@ include('./includes/sidebar.php');
                                        $book = mysqli_fetch_array($query_run);
                                         ?>
 
+                              <div class="col-12">
+                                   <div class="row mt-4">
+                                        <div class="col-md-5 d-flex align-items-center justify-content-center my-4">
 
-                              <div class="row">
-                                   <div class="d-flex justify-content-around p-3">
-                                        <div class="text-center">
-                                             <div class="mb-3 mt-2">
-                                                  <span class="fw-bolder text-center">Image
-                                                  </span>
-                                             </div>
+
+                                             <?php if($book['opac_image'] != ""): ?>
                                              <img src="../uploads/ebook_img/<?=$book['opac_image'];?>" alt=""
-                                                  width="100px" height="100px" class="border border-info">
-                                             <p class="mt-3"><?=$book['opac_image'];?></p>
+                                                  width="250px" height="250px">
+                                             <?php else: ?>
+                                             <img src="../uploads/ebooks_img/book_image.jpg" alt="" width="200px"
+                                                  height="200px">
+                                             <?php endif; ?>
+
+
                                         </div>
-                                        <div class="mt-4">
-                                             <div class="mb-3">
-                                                  <span class="fw-bolder">Title
-                                                       &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</span>
-                                                  <p class="d-inline">:&nbsp;<?=$book['title'];?></p>
+                                        <div class="col-md-7 mt-3">
+                                             <div class="col">
+                                                  <span class=" fw-semibold">Title
+                                                  </span>
+                                                  <p class="">:&nbsp;<?=$book['title'];?></p>
                                              </div>
 
 
-                                             <div class="mb-3">
-                                                  <span
-                                                       class="fw-bolder">Author&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;</span>
-                                                  <p class="d-inline">:&nbsp;<?=$book['author'];?></p>
+                                             <div class="col">
+                                                  <span class="fw-semibold">Author</span>
+                                                  <p>:&nbsp;<?=$book['author'];?></p>
                                              </div>
 
 
-                                             <div class="mb-3">
-                                                  <span class="fw-bolder">Copyright Date
-                                                       &emsp;</span>
-                                                  <p class="d-inline">:&nbsp;<?=$book['copyright_date'];?></p>
+
+                                             <div class="col">
+                                                  <span class="fw-semibold">Copyright Date
+                                                  </span>
+                                                  <p class="">:&nbsp;<?=$book['copyright_date'];?>
+                                                  </p>
                                              </div>
 
-                                             <div class="mb-3">
-                                                  <span class="fw-bolder">Publisher &emsp;&emsp;&emsp;&emsp;</span>
-                                                  <p class="d-inline">:&nbsp;<?=$book['publisher'];?></p>
+                                             <div class="col">
+                                                  <span class="fw-semibold">Publisher </span>
+                                                  <p class="">:&nbsp;<?=$book['publisher'];?></p>
                                              </div>
+
                                         </div>
 
                                    </div>
