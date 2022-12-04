@@ -113,9 +113,9 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Cell No.</label>
-                                                  <input type="text" name="cellphone_number"
+                                                  <input onkeydown="studentFormatEdit()" name="cellphone_number"
                                                        value="<?=$user['cell_no'];?>" autocomplete="off"
-                                                       class="form-control" required>
+                                                       class="form-control student_number" required>
                                              </div>
                                         </div>
 
@@ -179,9 +179,10 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Cell No.</label>
-                                                  <input type="number" name="contact_person_number"
-                                                       value="<?=$user['contact_person_no'];?>" class="form-control"
-                                                       autocomplete="off" required>
+                                                  <input onkeydown="ContactFormatEdit()" name="contact_person_number"
+                                                       value="<?=$user['contact_person_no'];?>"
+                                                       class="form-control contact_person_number" autocomplete="off"
+                                                       required>
                                              </div>
                                         </div>
 
@@ -229,8 +230,9 @@ include('./includes/sidebar.php');
           </div>
      </section>
 </main>
+
 <?php 
-include('./includes/footer.php');
-include('./includes/script.php');
+include('includes/footer.php');
+include('includes/script.php');
 include('../message.php');
 ?>

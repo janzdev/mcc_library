@@ -185,7 +185,8 @@ include('./admin/config/dbcon.php');
 
                          <div class="field">
                               <div class="label">Cellphone No.</div>
-                              <input type="number" name="cell_no" />
+                              <input onkeydown="phoneNumberFormatter()" name="cell_no" class="phone-number"
+                                   placeholder="639xxxxxxxxx" />
                          </div>
 
                          <div class="field">
@@ -195,7 +196,8 @@ include('./admin/config/dbcon.php');
 
                          <div class="field">
                               <div class="label">Contact Person No.</div>
-                              <input type="number" name="contact_person_no" />
+                              <input onkeydown="phoneNumberFormatter1()" name="contact_person_no" class="phone-number1"
+                                   placeholder="639xxxxxxxxx" />
                          </div>
 
                          <div class="field btns">
@@ -236,7 +238,8 @@ include('./admin/config/dbcon.php');
           </div>
      </div>
 
-
+     <!-- Format Number  -->
+     <script src="assets/js/format_number.js"></script>
      <!-- Font Awesome Link -->
      <script src="assets/js/kit.fontawesome.js"></script>
 

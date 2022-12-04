@@ -1,6 +1,9 @@
 <!-- Alertify JS link -->
 <script src="assets/js/alertify.min.js"></script>
 
+<!-- Format_number -->
+<script src="assets/js/format_number.js"></script>
+
 <!-- Bootstrap JS  -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 

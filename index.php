@@ -86,6 +86,7 @@ if($_SESSION['auth_role'] != "0")
 
 <?php
 include('includes/footer.php');
+include('includes/script.php');
 include('message.php'); 
 ?>
 <script>

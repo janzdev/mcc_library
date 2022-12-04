@@ -88,3 +88,5 @@ prevBtnFifth.addEventListener("click", function (event) {
   progressText[current - 2].classList.remove("active");
   current -= 1;
 });
+
+

@@ -4,9 +4,8 @@ include('includes/header.php');
 include('./includes/sidebar.php'); 
 
 ?>
-
-
 <main id="main" class="main">
+
      <div class="pagetitle">
           <h1>Report</h1>
           <nav>
@@ -22,10 +21,11 @@ include('./includes/sidebar.php');
                     <div class="card">
                          <div class="card-header">
                               <div class="btn-group gap-1">
-                                   <a href="report.php" class="btn btn-primary " aria-current="page">
+                                   <a class=" btn btn-primary" href="report.php" aria-current="page">
                                         All Transaction
                                    </a>
-                                   <a href="report_penalty.php" class="btn btn-primary">Penalty Report</a>
+                                   <a class=" btn btn-primary" href="report_penalty.php">Penalty
+                                        Report</a>
 
                               </div>
                          </div>

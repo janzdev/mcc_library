@@ -145,6 +145,6 @@ if(isset($_POST['admin_login_btn']))
           </div>
      </section>
      <?php
-include('includes/footer.php');
+include('includes/script.php');
 include('message.php'); 
 ?>

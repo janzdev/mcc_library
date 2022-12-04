@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <nav class="navbar navbar-expand-lg" style="background: #0096FF;">
      <div class="container-fluid mx-5">
-
+          <img src="assets/img/mcc-logo.png" alt="logo" class=" mx-2" height="40px" width="40px" />
           <a class="navbar-brand text-white fw-bold fs-5" href="#">MCC</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

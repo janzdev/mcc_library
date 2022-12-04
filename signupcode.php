@@ -46,7 +46,7 @@ if(isset($_POST['register_btn']))
                 }
                 else
                 {
-                    $student_query = "INSERT INTO user(lastname, firstname, middlename, nickname, gender, course, address, cell_no, birthdate, email, year_level, student_id_no, contact_person, contact_person_no, password, cpassword) VALUES('$lastname', '$firstname', '$middlename', '$nickname', '$gender', '$course', '$address', '$cell_no', '$birthdate', '$email', '$year_level', '$student_id_no', '$contact_person', '$contact_person_no', md5('$password'), md5('$cpassword'))";
+                    $student_query = "INSERT INTO user(lastname, firstname, middlename, nickname, gender, course, address, cell_no, birthdate, email, year_level, student_id_no, contact_person, contact_person_no, password, cpassword, user_added) VALUES('$lastname', '$firstname', '$middlename', '$nickname', '$gender', '$course', '$address', '$cell_no', '$birthdate', '$email', '$year_level', '$student_id_no', '$contact_person', '$contact_person_no', md5('$password'), md5('$cpassword'), NOW())";
                     $student_query_run = mysqli_query($con, $student_query);
                     
                     if($student_query_run)
