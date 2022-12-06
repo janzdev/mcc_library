@@ -30,14 +30,16 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Firstname</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" name="firstname" class="form-control">
                                              </div>
                                         </div>
 
                                         <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
-                                                  <label for="">Middlename</label>
+                                                  <div class="d-flex justify-content-between">
+                                                       <label for="">Middlename</label>
+                                                       <span class=" text-muted"><small>(Optional)</small></span>
+                                                  </div>
                                                   <input type="text" name="middlename" class="form-control">
                                              </div>
                                         </div>
@@ -45,7 +47,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Lastname</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" name="lastname" class="form-control">
                                              </div>
                                         </div>
@@ -57,7 +58,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Email</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="email" name="email" class="form-control">
                                              </div>
                                         </div>
@@ -65,8 +65,9 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Phone Number</label>
-                                                  <span class="text-danger">*</span>
-                                                  <input type="number" name="phone_number" class="form-control">
+                                                  <input onkeydown="adminPhoneNumberAdd()" name="phone_number"
+                                                       placeholder="639xxxxxxxxx"
+                                                       class="form-control adminadd_contact_number">
                                              </div>
                                         </div>
 
@@ -77,13 +78,15 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Address</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" name="address" class="form-control">
                                              </div>
                                         </div>
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
-                                                  <label for="">Profile Image</label>
+                                                  <div class="d-flex justify-content-between">
+                                                       <label for="">Profile Image</label>
+                                                       <span class=" text-muted"><small>(Optional)</small></span>
+                                                  </div>
                                                   <input type="file" name="admin_image" class="form-control">
                                              </div>
                                         </div>
@@ -108,6 +111,6 @@ include('./includes/sidebar.php');
 </main>
 <?php 
 include('./includes/footer.php');
-include('./includes/script.php');
+include('includes/script.php');
 include('../message.php');
 ?>

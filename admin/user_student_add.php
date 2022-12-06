@@ -45,7 +45,10 @@ include('./includes/sidebar.php');
 
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 mt-2 input-group-sm">
-                                                  <label for="">Middlename</label>
+                                                  <div class="d-flex justify-content-between">
+                                                       <label for="">Middlename</label>
+                                                       <span class=" text-muted"><small>(Optional)</small></span>
+                                                  </div>
                                                   <input type="text" name="middlename" class="form-control"
                                                        autocomplete="off">
                                              </div>
@@ -57,7 +60,10 @@ include('./includes/sidebar.php');
 
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
-                                                  <label for="">Nickname</label>
+                                                  <div class="d-flex justify-content-between">
+                                                       <label for="">Nickname</label>
+                                                       <span class=" text-muted"><small>(Optional)</small></span>
+                                                  </div>
                                                   <input type="text" name="nickname" class="form-control"
                                                        autocomplete="off">
                                              </div>
@@ -98,8 +104,9 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Cell No.</label>
-                                                  <input type="text" name="cellphone_number" autocomplete="off"
-                                                       class="form-control" required>
+                                                  <input onkeydown="StudentFormatAdd()" name="cellphone_number"
+                                                       placeholder="639xxxxxxxxx" autocomplete="off"
+                                                       class="form-control student_add" required>
                                              </div>
                                         </div>
 
@@ -158,8 +165,10 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Cell No.</label>
-                                                  <input type="text" name="contact_person_number" class="form-control"
-                                                       autocomplete="off" required>
+                                                  <input onkeydown="contactFormatAdd()" name="contact_person_number"
+                                                       placeholder="639xxxxxxxxx"
+                                                       class="form-control contact_person_number" autocomplete="off"
+                                                       required>
                                              </div>
                                         </div>
 

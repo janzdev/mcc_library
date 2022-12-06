@@ -37,7 +37,7 @@ if($_SESSION['auth_role'] != "0")
 
           </div>
           <div id="searchresult" class="text-center"></div>
-          <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+          <div class="row row-cols-1 row-cols-md-3 g-2 mt-3">
 
                <?php
                                    $query = "SELECT * FROM web_opac";

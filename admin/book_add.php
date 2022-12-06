@@ -49,49 +49,29 @@ $query_run = mysqli_query($con, $query);
 
                               <form action="books_code.php" method="POST" enctype="multipart/form-data">
 
+
                                    <div class="row d-flex justify-content-center mt-5">
-                                        <input type="hidden" name="new_barcode" value="<?=$new_barcode ?>">
-                                        <div class="col-12 col-md-5">
-                                             <div class="mb-3">
-                                                  <label for="">Call Number</label>
-                                                  <input type="text" name="call_number" class="form-control" required>
-                                             </div>
-                                        </div>
 
                                         <div class="col-12 col-md-5">
-                                             <div class="mb-3">
-                                                  <label for="">Accessial Number</label>
-                                                  <input type="text" name="accessial_number" class="form-control"
-                                                       required>
-                                             </div>
-                                        </div>
-
-                                   </div>
-
-                                   <div class="row d-flex justify-content-center">
-
-                                        <div class="col-12 col-md-5">
-                                             <div class="mb-3 mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Title</label>
                                                   <input type="text" name="title" class="form-control" required>
                                              </div>
                                         </div>
 
                                         <div class="col-12 col-md-5">
-                                             <div class="mb-3 mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Author</label>
                                                   <input type="text" name="author" class="form-control" required>
                                              </div>
                                         </div>
-
-
 
                                    </div>
 
                                    <div class="row d-flex justify-content-center">
 
                                         <div class="col-12 col-md-5">
-                                             <div class="mb-3 mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Copyright Date</label>
                                                   <input type="text" name="copyright_date" class="form-control"
                                                        required>
@@ -99,7 +79,7 @@ $query_run = mysqli_query($con, $query);
                                         </div>
 
                                         <div class="col-12 col-md-5">
-                                             <div class="mb-3 mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Publisher</label>
                                                   <input type="text" name="publisher" class="form-control" required>
                                              </div>
@@ -109,7 +89,48 @@ $query_run = mysqli_query($con, $query);
                                    <div class="row d-flex justify-content-center">
 
                                         <div class="col-12 col-md-5">
-                                             <div class=" mt-2">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">ISBN</label>
+                                                  <input type="text" name="isbn" class="form-control" required>
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Place of Publication</label>
+                                                  <input type="text" name="place_publication" class="form-control"
+                                                       required>
+                                             </div>
+                                        </div>
+
+                                   </div>
+
+                                   <div class="row d-flex justify-content-center">
+                                        <input type="hidden" name="new_barcode" value="<?=$new_barcode ?>">
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Call Number</label>
+                                                  <input onkeydown="bookCallNumberAdd()" name="call_number"
+                                                       id="book_call_number" class="form-control"
+                                                       placeholder="639xxxxxxxxx" required>
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Accession Number</label>
+                                                  <input type="text" name="accession_number" class="form-control"
+                                                       required>
+                                             </div>
+                                        </div>
+
+                                   </div>
+
+
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Copy</label>
                                                   <input type="number" name="copy" class="form-control" min="1"
                                                        required>
@@ -117,8 +138,11 @@ $query_run = mysqli_query($con, $query);
                                         </div>
 
                                         <div class="col-12 col-md-5">
-                                             <div class=" mt-2">
-                                                  <label for="">Book Image</label>
+                                             <div class="mb-2 input-group-sm">
+                                                  <div class="d-flex justify-content-between">
+                                                       <label for="">Book Image</label>
+                                                       <span class=" text-muted"><small>(Optional)</small></span>
+                                                  </div>
                                                   <input type="file" name="book_image" class="form-control">
                                              </div>
                                         </div>

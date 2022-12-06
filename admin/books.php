@@ -37,7 +37,7 @@ include('./includes/sidebar.php');
                                                   <th>Publisher</th>
                                                   <th>Copy</th>
                                                   <th>Call Number</th>
-                                                  <th>Accessial Number</th>
+                                                  <th>Accession Number</th>
                                                   <th>Barcode</th>
                                                   <th>Action</th>
 
@@ -71,7 +71,7 @@ include('./includes/sidebar.php');
                                                   <td><?=$book['publisher'];?></td>
                                                   <td><?=$book['copy'];?></td>
                                                   <td><?=$book['call_number'];?></td>
-                                                  <td><?=$book['accessial_number'];?></td>
+                                                  <td><?=$book['accession_number'];?></td>
                                                   <td><?=$book['barcode'];?></td>
                                                   <td class=" justify-content-center">
                                                        <div class="btn-group" style="background: #DFF6FF;  ">

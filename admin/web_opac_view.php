@@ -4,6 +4,7 @@ include('includes/header.php');
 include('./includes/sidebar.php'); 
 
 ?>
+
 <main id="main" class="main">
      <div class="pagetitle">
           <h1>View Book</h1>
@@ -59,7 +60,6 @@ include('./includes/sidebar.php');
                                                   </span>
                                                   <p class="">:&nbsp;<?=$book['title'];?></p>
                                              </div>
-
 
                                              <div class="col">
                                                   <span class="fw-semibold">Author</span>

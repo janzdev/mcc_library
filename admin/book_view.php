@@ -78,10 +78,20 @@ include('./includes/sidebar.php');
                                                   &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;</span>
                                              <p class="d-inline">:&nbsp;<?=$book['publisher'];?></p>
                                         </div>
+                                        <div class="mb-3">
+                                             <span class="fw-semibold">ISBN
+                                                  &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['isbn'];?></p>
+                                        </div>
+                                        <div class="mb-3">
+                                             <span class="fw-semibold">Place of Publication
+                                                  &ensp;&nbsp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['place_publication'];?></p>
+                                        </div>
 
                                         <div class="mb-3">
-                                             <span class="fw-semibold">Accessial Number &ensp;</span>
-                                             <p class="d-inline">:&nbsp;<?=$book['accessial_number'];?></p>
+                                             <span class="fw-semibold">Accession Number &ensp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['accession_number'];?></p>
                                         </div>
 
                                         <div class="mb-3">

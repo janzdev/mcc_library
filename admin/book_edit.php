@@ -38,30 +38,12 @@ include('./includes/sidebar.php');
                                         ?>
                               <form action="books_code.php" method="POST" enctype="multipart/form-data">
 
-                                   <div class="row d-flex justify-content-center mt-4">
-                                        <input type="hidden" name="book_id" value="<?=$book['book_id']?>">
-                                        <div class="col-12 col-md-5">
-                                             <div class="mb-3 mt-2">
-                                                  <label for="">Call Number</label>
-                                                  <input type="text" name="call_number"
-                                                       value="<?=$book['call_number'];?>" class="form-control">
-                                             </div>
-                                        </div>
+
+
+                                   <div class="row d-flex justify-content-center mt-5">
 
                                         <div class="col-12 col-md-5">
-                                             <div class="mb-3 mt-2">
-                                                  <label for="">Accessial Number</label>
-                                                  <input type="text" name="accessial_number"
-                                                       value="<?=$book['accessial_number'];?>" class="form-control">
-                                             </div>
-                                        </div>
-
-                                   </div>
-
-                                   <div class="row d-flex justify-content-center">
-
-                                        <div class="col-12 col-md-5">
-                                             <div class="mb-3 mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Title</label>
                                                   <input type="text" name="title" value="<?=$book['title'];?>" class="
                                                        form-control">
@@ -69,7 +51,7 @@ include('./includes/sidebar.php');
                                         </div>
 
                                         <div class="col-12 col-md-5">
-                                             <div class="mb-3 mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Author</label>
                                                   <input type="text" name="author" value="<?=$book['author'];?>" class="
                                                        form-control">
@@ -81,7 +63,7 @@ include('./includes/sidebar.php');
                                    <div class="row d-flex justify-content-center">
 
                                         <div class="col-12 col-md-5">
-                                             <div class="mb-3 mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Copyright Date</label>
                                                   <input type="text" name="copyright_date"
                                                        value="<?=$book['copyright_date'];?>" class=" form-control">
@@ -89,26 +71,58 @@ include('./includes/sidebar.php');
                                         </div>
 
                                         <div class="col-12 col-md-5">
-                                             <div class="mb-3 mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Publisher</label>
                                                   <input type="text" name="publisher" value="<?=$book['publisher'];?>"
                                                        class=" form-control">
                                              </div>
                                         </div>
 
-
-
-                                        <!-- <div class="col-12 col-md-4">
-                                             <div class="mt-2">
-                                                  <label for="">Barcode</label>
-                                                  <input type="text" name="barcode" class="form-control">
-                                             </div>
-                                        </div> -->
-
                                    </div>
                                    <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">ISBN</label>
+                                                  <input type="text" name="copyright_date" value="<?=$book['isbn'];?>"
+                                                       class=" form-control">
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Place of Publication</label>
+                                                  <input type="text" name="publisher"
+                                                       value="<?=$book['place_publication'];?>" class=" form-control">
+                                             </div>
+                                        </div>
+
+                                   </div>
+
+                                   <div class="row d-flex justify-content-center ">
+                                        <input type="hidden" name="book_id" value="<?=$book['book_id']?>">
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Call Number</label>
+                                                  <input onkeydown="bookCallNumberEdit()" name="call_number"
+                                                       id="book_call_number_edit" value="<?=$book['call_number'];?>"
+                                                       class="form-control">
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Accessial Number</label>
+                                                  <input type="text" name="accession_number"
+                                                       value="<?=$book['accession_number'];?>" class="form-control">
+                                             </div>
+                                        </div>
+
+                                   </div>
+
+                                   <div class="row d-flex justify-content-center">
                                         <div class="col-12 col-md-2">
-                                             <div class="mb-3 mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Copy</label>
                                                   <input type="text" name="copy" value="<?=$book['copy'];?>" class="
                                                        form-control">
@@ -116,7 +130,7 @@ include('./includes/sidebar.php');
                                         </div>
 
                                         <div class="col-12 col-md-3">
-                                             <div class="mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Barcode</label>
                                                   <input type="text" value="<?=$book['barcode'];?>" name="barcode"
                                                        class="form-control">
@@ -124,7 +138,7 @@ include('./includes/sidebar.php');
                                         </div>
 
                                         <div class="col-12 col-md-5">
-                                             <div class="mt-2">
+                                             <div class="mb-2 input-group-sm">
                                                   <label for="">Image</label>
                                                   <input type="hidden" name="old_book_image"
                                                        value="<?=$book['book_image'];?>">

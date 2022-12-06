@@ -43,9 +43,9 @@ include('./includes/sidebar.php');
                                                   <th>Gender</th>
                                                   <th>Course</th>
                                                   <th>Year Level</th>
-                                                  <th>Address</th>
+                                                  <!-- <th>Address</th>
                                                   <th>Contact No.</th>
-                                                  <th>Email Adress</th>
+                                                  <th>Email Adress</th> -->
                                                   <th>Action</th>
                                              </tr>
                                         </thead>
@@ -67,9 +67,9 @@ include('./includes/sidebar.php');
                                                   <td><?=$user['gender'];?></td>
                                                   <td><?=$user['course'];?></td>
                                                   <td><?=$user['year_level'];?></td>
-                                                  <td><?=$user['address'];?></td>
+                                                  <!-- <td><?=$user['address'];?></td>
                                                   <td><?=$user['cell_no'];?></td>
-                                                  <td><?=$user['email'];?></td>
+                                                  <td><?=$user['email'];?></td> -->
 
                                                   <td class=" justify-content-center">
                                                        <div class="btn-group" style="background: #DFF6FF;  ">

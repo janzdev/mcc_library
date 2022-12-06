@@ -42,7 +42,7 @@ if(isset($_POST['update_book']))
      $book_id =mysqli_real_escape_string($con, $_POST['book_id']);
 
      $call_number = mysqli_real_escape_string($con, $_POST['call_number']);
-     $accessial_number = mysqli_real_escape_string($con, $_POST['accessial_number']);
+     $accession_number = mysqli_real_escape_string($con, $_POST['accession_number']);
      $title = mysqli_real_escape_string($con, $_POST['title']);
      $author = mysqli_real_escape_string($con, $_POST['author']);
      $copyright_date = mysqli_real_escape_string($con, $_POST['copyright_date']);
@@ -69,7 +69,7 @@ if(isset($_POST['update_book']))
           $update_book_filename = $old_book_filename;
      }
      
-     $query = "UPDATE book SET call_number='$call_number', accessial_number='$accessial_number', title='$title', author='$author', copyright_date='$copyright_date', publisher='$publisher', copy='$copy', barcode='$gen', book_image='$update_book_filename' WHERE book_id = '$book_id'";
+     $query = "UPDATE book SET call_number='$call_number', accession_number='$accession_number', title='$title', author='$author', copyright_date='$copyright_date', publisher='$publisher', copy='$copy', barcode='$gen', book_image='$update_book_filename' WHERE book_id = '$book_id'";
      $query_run = mysqli_query($con, $query);
      
      
@@ -101,12 +101,15 @@ if(isset($_POST['update_book']))
 // Add Book
 if(isset($_POST['add_book']))
 {
-     $call_number = mysqli_real_escape_string($con, $_POST['call_number']);
-     $accessial_number = mysqli_real_escape_string($con, $_POST['accessial_number']);
+     
      $title = mysqli_real_escape_string($con, $_POST['title']);
      $author = mysqli_real_escape_string($con, $_POST['author']);
      $copyright_date = mysqli_real_escape_string($con, $_POST['copyright_date']);
      $publisher = mysqli_real_escape_string($con, $_POST['publisher']);
+     $isbn = mysqli_real_escape_string($con, $_POST['isbn']);
+     $place_publication = mysqli_real_escape_string($con, $_POST['place_publication']);
+     $call_number = mysqli_real_escape_string($con, $_POST['call_number']);
+     $accession_number = mysqli_real_escape_string($con, $_POST['accession_number']);
      $copy = mysqli_real_escape_string($con, $_POST['copy']);
      $book_image = $_FILES['book_image']['name'];
     
@@ -120,7 +123,7 @@ if(isset($_POST['add_book']))
           $suf = "LRC";
           $gen = $pre.$mid.$suf;
 
-          $query = "INSERT INTO book (call_number, accessial_number, title, author, copyright_date, publisher, copy, barcode, book_image, date_added) VALUES ('$call_number', '$accessial_number', '$title', '$author', '$copyright_date', '$publisher', '$copy', '$gen', '$book_filename', NOW())";
+          $query = "INSERT INTO book (title, author, copyright_date, publisher, isbn, place_publication, call_number, accession_number, copy, barcode, book_image, date_added) VALUES ('$title', '$author', '$copyright_date', '$publisher', '$isbn', '$place_publication', '$call_number', '$accession_number',  '$copy', '$gen', '$book_filename', NOW())";
           $query_run = mysqli_query($con, $query);
 
           mysqli_query($con,"insert into barcode (pre_barcode,mid_barcode,suf_barcode) values ('$pre', '$mid', '$suf') ");
@@ -146,7 +149,7 @@ if(isset($_POST['add_book']))
           $suf = "LRC";
           $gen = $pre.$mid.$suf;
 
-          $query = "INSERT INTO book (call_number, accessial_number, title, author, copyright_date, publisher, copy, barcode, book_image, date_added) VALUES ('$call_number', '$accessial_number', '$title', '$author', '$copyright_date', '$publisher', '$copy', '$gen', '$book_image', NOW())";
+          $query = "INSERT INTO book (title, author, copyright_date, publisher, isbn, place_publication, call_number, accession_number, copy, barcode, book_image, date_added) VALUES ('$title', '$author', '$copyright_date', '$publisher', '$isbn', '$place_publication', '$call_number', '$accession_number', '$copy', '$gen', '$book_image', NOW())";
           $query_run = mysqli_query($con, $query);
 
           mysqli_query($con,"insert into barcode (pre_barcode,mid_barcode,suf_barcode) values ('$pre', '$mid', '$suf') ");

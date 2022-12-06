@@ -42,7 +42,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Firstname</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" value="<?=$admin['firstname'];?>" name="firstname"
                                                        class="form-control" autocomplete="off">
                                              </div>
@@ -59,7 +58,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Lastname</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" value="<?=$admin['lastname'];?>" name="lastname"
                                                        class="form-control" autocomplete="off">
                                              </div>
@@ -72,7 +70,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Address</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="text" value="<?=$admin['address'];?>" name="address"
                                                        class="form-control" autocomplete="off">
                                              </div>
@@ -81,9 +78,10 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Phone Number</label>
-                                                  <span class="text-danger">*</span>
-                                                  <input type="number" value="<?=$admin['phone_number'];?>"
-                                                       name="phone_number" class="form-control" autocomplete="off">
+                                                  <input onkeydown="adminPhoneNumberEdit()"
+                                                       value="<?=$admin['phone_number'];?>" name="phone_number"
+                                                       placeholder="639xxxxxxxxx" id="admin_format_edit_number"
+                                                       class="form-control" autocomplete="off">
                                              </div>
                                         </div>
 
@@ -94,7 +92,6 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Email</label>
-                                                  <span class="text-danger">*</span>
                                                   <input type="email" value="<?=$admin['email'];?>" name="email"
                                                        class="form-control" autocomplete="off">
                                              </div>

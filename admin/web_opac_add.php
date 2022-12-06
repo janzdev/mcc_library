@@ -89,14 +89,17 @@ $query_run = mysqli_query($con, $query);
 
                                         <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
-                                                  <label for="">EBook</label>
+                                                  <label for="">Book File</label>
                                                   <input type="file" name="ebook" class="form-control">
                                              </div>
                                         </div>
 
                                         <div class="col-12 col-md-5">
                                              <div class="mb-3 mt-2">
-                                                  <label for="">Image</label>
+                                                  <div class="d-flex justify-content-between">
+                                                       <label for="">Book Image</label>
+                                                       <span class=" text-muted"><small>(Optional)</small></span>
+                                                  </div>
                                                   <input type="file" name="opac_image" class="form-control">
                                              </div>
                                         </div>
