@@ -6,18 +6,18 @@ include('includes/sidebar.php');
 <main id="main" class="main">
      <div class="pagetitle d-flex align-items-center justify-content-between">
           <div class="">
-               <h1>View Student</h1>
+               <h1>View Faculty and Staff</h1>
                <nav>
                     <ol class="breadcrumb">
                          <li class="breadcrumb-item"><a href="users.php">Users</a></li>
-                         <li class="breadcrumb-item"><a href="user_student.php">Students</a></li>
-                         <li class="breadcrumb-item active">View Student</li>
+                         <li class="breadcrumb-item"><a href="user_faculty.php">Faculty & Staff</a></li>
+                         <li class="breadcrumb-item active">View Faculty & Staff</li>
                     </ol>
 
                </nav>
           </div>
           <div>
-               <a href="user_student.php" class="btn btn-primary">Back</a>
+               <a href="user_faculty.php" class="btn btn-primary">Back</a>
           </div>
 
      </div>
@@ -28,7 +28,7 @@ include('includes/sidebar.php');
                {
                     $user_id = mysqli_real_escape_string($con, $_GET['id']);
 
-               $query = "SELECT * FROM user WHERE user_id = '$user_id'";
+               $query = "SELECT * FROM faculty WHERE faculty_id = '$user_id'";
                $query_run = mysqli_query($con, $query);
                 
                if(mysqli_num_rows($query_run) > 0)
@@ -44,25 +44,20 @@ include('includes/sidebar.php');
                               <img src="assets/img/admin.png" alt="" class="rounded-circle">
 
                               <h2><?=$user['firstname'].' '.$user['lastname'];?></h2>
-                              <p><?=$user['student_id_no'];?></p>
-                              <h3>Student</h3>
+                              <p><?=$user['employee_id_no'];?></p>
+                              <h3>Employee</h3>
 
                          </div>
                     </div>
                     <div class="card">
                          <div class="card-body profile-card pt-3 d-flex flex-column ">
                               <hr class="text-info">
-                              <div class="label"><span>Student ID</span>
-                                   &nbsp;&emsp;<?=$user['student_id_no'];?></div>
-                              <div class="label"><span>Course</span>
-                                   &nbsp;&nbsp;&nbsp;&emsp;&emsp;<?=$user['course'];?></div>
-                              <div><span>Year Level</span>
-                                   &nbsp;&nbsp;&emsp;<?=$user['year_level'];?></div>
+                              <div class="label"><span>Employee ID</span>
+                                   &nbsp;&emsp;&emsp;<?=$user['employee_id_no'];?></div>
+                              <div class="label"><span>Department</span>
+                                   &nbsp;&nbsp;&nbsp;&emsp;&emsp;<?=$user['department'];?></div>
+
                               <hr class="text-info">
-                              <!-- <div><span>Username</span>
-                                   &nbsp;&nbsp;&emsp;<?=$user['username'];?></div>
-                              <div><span>Password</span>
-                                   &nbsp;&nbsp;&emsp;<?=$user[('password')];?></div> -->
                          </div>
                     </div>
                </div>

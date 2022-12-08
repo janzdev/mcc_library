@@ -9,8 +9,7 @@ include('./includes/sidebar.php');
           <h1>View Book</h1>
           <nav>
                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="web_opac_add.php">Web OPAC</a></li>
+                    <li class="breadcrumb-item"><a href="books.php">Book Collection</a></li>
                     <li class="breadcrumb-item active">View Book</li>
                </ol>
           </nav>

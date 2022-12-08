@@ -29,5 +29,19 @@ alertify.error('<?= $_SESSION['message_error']; ?>');
 unset($_SESSION['message_error']);
 }
 
+if(isset($_SESSION['status']))
+{
+  ?>
+swal({
+     title: "<?php echo $_SESSION['status']; ?>",
+     text: "<?php echo $_SESSION['status_text']; ?>",
+     icon: "<?php echo $_SESSION['status_code']; ?>",
+});
+<?php
+unset($_SESSION['status']);
+}
+
+
+
 ?>
 </script>

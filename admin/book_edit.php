@@ -10,8 +10,7 @@ include('./includes/sidebar.php');
           <h1>Edit Book</h1>
           <nav>
                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="web_opac.php">WEB OPAC</a></li>
+                    <li class="breadcrumb-item"><a href="books.php">Book Collection</a></li>
                     <li class="breadcrumb-item active">Edit Book</li>
                </ol>
           </nav>
@@ -84,7 +83,7 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-5">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">ISBN</label>
-                                                  <input type="text" name="copyright_date" value="<?=$book['isbn'];?>"
+                                                  <input type="text" name="isbn" value="<?=$book['isbn'];?>"
                                                        class=" form-control">
                                              </div>
                                         </div>
@@ -92,7 +91,7 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-5">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Place of Publication</label>
-                                                  <input type="text" name="publisher"
+                                                  <input type="text" name="place_publication"
                                                        value="<?=$book['place_publication'];?>" class=" form-control">
                                              </div>
                                         </div>
@@ -112,7 +111,7 @@ include('./includes/sidebar.php');
 
                                         <div class="col-12 col-md-5">
                                              <div class="mb-2 input-group-sm">
-                                                  <label for="">Accessial Number</label>
+                                                  <label for="">Accession Number</label>
                                                   <input type="text" name="accession_number"
                                                        value="<?=$book['accession_number'];?>" class="form-control">
                                              </div>

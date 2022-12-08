@@ -1,16 +1,15 @@
 <?php 
 include('authentication.php');
 include('includes/header.php'); 
-include('./includes/sidebar.php'); 
+include('includes/sidebar.php'); 
 ?>
 <main id="main" class="main">
      <div class="pagetitle">
-          <h1>Add Student</h1>
+          <h1>Add Faculty and Staff</h1>
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="users.php">Users</a></li>
-                    <li class="breadcrumb-item"><a href="user_student.php">Students</a></li>
-                    <li class="breadcrumb-item active">Add Student</li>
+                    <li class="breadcrumb-item active">Add Faculty & Staff</li>
                </ol>
           </nav>
      </div>
@@ -23,7 +22,7 @@ include('./includes/sidebar.php');
                          </div>
                          <div class="card-body">
 
-                              <form action="user_student_code.php" method="POST">
+                              <form action="user_faculty_code.php" method="POST">
 
                                    <div class="row d-flex justify-content-center mt-2">
 
@@ -116,17 +115,25 @@ include('./includes/sidebar.php');
 
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
-                                                  <label for="">Student ID</label>
-                                                  <input type="text" name="student_id_no" class="form-control" required
+                                                  <label for="">Employee ID</label>
+                                                  <input type="text" name="employee_id_no" class="form-control" required
                                                        autocomplete="off">
                                              </div>
                                         </div>
 
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
-                                                  <label for="">Course</label>
-                                                  <select name="course" id="" class="form-control" required>
-                                                       <option value="">--Select Course--</option>
+                                                  <label for="">Employment Status</label>
+                                                  <input type="text" name="employment_status" class="form-control"
+                                                       required autocomplete="off">
+                                             </div>
+                                        </div>
+
+                                        <div class="col-12 col-md-3">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">Department</label>
+                                                  <select name="dapartment" id="" class="form-control" required>
+                                                       <option value="">--Select Department--</option>
                                                        <option value="BSIT">BSIT</option>
                                                        <option value="BSED">BSED</option>
                                                        <option value="BEED">BEED</option>
@@ -136,25 +143,11 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-3">
-                                             <div class="mb-2 input-group-sm">
-                                                  <label for="">Year Level</label>
-                                                  <select name="year_level" id="" class="form-control" required>
-                                                       <option value="">--Select Year Level--</option>
-                                                       <option value="4th year">4th year</option>
-                                                       <option value="3rd">3rd</option>
-                                                       <option value="2nd">2nd</option>
-                                                       <option value="1st">1st</option>
-                                                  </select>
-                                             </div>
-                                        </div>
-
-
-
                                    </div>
 
 
                                    <div class="row d-flex justify-content-center">
+
 
                                         <div class="col-12 col-md-6">
                                              <div class="mb-2 input-group-sm">
@@ -200,8 +193,8 @@ include('./includes/sidebar.php');
                          </div>
                          <div class="card-footer d-flex justify-content-end">
                               <div>
-                                   <a href="user_student.php" class="btn btn-secondary">Cancel</a>
-                                   <button type="submit" name="add_student" class="btn btn-primary">Add Student</button>
+                                   <a href="user_faculty.php" class="btn btn-secondary">Cancel</a>
+                                   <button type="submit" name="add_faculty" class="btn btn-primary">Add Student</button>
                               </div>
                          </div>
                          </form>

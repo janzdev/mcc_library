@@ -60,7 +60,7 @@ $user_row = mysqli_fetch_array($user_query);
                               <div class="text-muted">
                                    Course&emsp;&emsp;&emsp;&ensp;&nbsp;:&ensp;<span
                                         class="text-dark"><?=$row['course'];?></span></div>
-                              <div class="text-muted mb-2">Year Level&emsp;&emsp;&nbsp;:&ensp;<span
+                              <div class="text-muted mb-5">Year Level&emsp;&emsp;&nbsp;:&ensp;<span
                                         class="text-dark"><?=$row['year_level'];?></span></div>
                               <?php
 
@@ -77,6 +77,7 @@ $user_row = mysqli_fetch_array($user_query);
                                              <thead class="border-top  border-dark border-opacity-25">
                                                   <tr>
 
+                                                       <th>Image</th>
                                                        <th>Title</th>
                                                        <th>Author</th>
                                                        <th>Copyright Date</th>
@@ -122,7 +123,17 @@ $user_row = mysqli_fetch_array($user_query);
                                                        <input type="hidden" name="book_id"
                                                             value="<?php echo $book_row['book_id'] ?>">
 
-
+                                                       <td>
+                                                            <center>
+                                                                 <?php if($book_row['book_image'] != ""): ?>
+                                                                 <img src="../uploads/books_img/<?php echo $book_row['book_image']; ?>"
+                                                                      alt="" width="80px" height="80px">
+                                                                 <?php else: ?>
+                                                                 <img src="../uploads/books_img/book_image.jpg" alt=""
+                                                                      width="80px" height="80px">
+                                                                 <?php endif; ?>
+                                                            </center>
+                                                       </td>
                                                        <td><?php echo $book_row['title'] ?></td>
                                                        <td><?php echo $book_row['author'] ?></td>
                                                        <td><?php echo $book_row['copyright_date'] ?></td>

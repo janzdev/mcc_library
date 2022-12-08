@@ -101,6 +101,7 @@ include('./includes/sidebar.php');
 
                                         <thead>
                                              <tr>
+                                                  <th>Image</th>
                                                   <th>Barcode</th>
                                                   <th>Borrower Name</th>
                                                   <th>Title</th>
@@ -125,15 +126,27 @@ include('./includes/sidebar.php');
 									$user_id = $borrow_row ['user_id'];
 							?>
                                              <tr>
+
+                                                  <td>
+                                                       <center>
+                                                            <?php if($borrow_row['book_image'] != ""): ?>
+                                                            <img src="../uploads/books_img/<?php echo $borrow_row['book_image']; ?>"
+                                                                 alt="" width="80px" height="80px">
+                                                            <?php else: ?>
+                                                            <img src="../uploads/books_img/book_image.jpg" alt=""
+                                                                 width="80px" height="80px">
+                                                            <?php endif; ?>
+                                                       </center>
+                                                  </td>
                                                   <td><?php echo $borrow_row['barcode']; ?></td>
                                                   <td style="text-transform: capitalize">
                                                        <?php echo $borrow_row['firstname']." ".$borrow_row['lastname']; ?>
                                                   </td>
                                                   <td style="text-transform: capitalize">
                                                        <?php echo $borrow_row['title']; ?></td>
-                                                  <td><?php echo date("M d, Y h:m:s a",strtotime($borrow_row['date_borrowed'])); ?>
+                                                  <td><?php echo date("M d, Y h:i:s a",strtotime($borrow_row['date_borrowed'])); ?>
                                                   </td>
-                                                  <td><?php echo date("M d, Y h:m:s a",strtotime($borrow_row['due_date'])); ?>
+                                                  <td><?php echo date("M d, Y h:i:s a",strtotime($borrow_row['due_date'])); ?>
                                                   </td>
                                                   <td><?php echo ($borrow_row['date_returned'] == "0000-00-00 00:00:00") ? "Pending" : date("M d, Y h:m:s a",strtotime($borrow_row['date_returned'])); ?>
                                                   </td>

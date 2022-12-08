@@ -101,10 +101,10 @@ include('./includes/sidebar.php');
 							$return_query= mysqli_query($con,"select * from return_book 
 							LEFT JOIN book ON return_book.book_id = book.book_id 
 							LEFT JOIN user ON return_book.user_id = user.user_id 
-							where return_book.return_book_id order by return_book.return_book_id DESC") or die (mysqli_error());
+							where return_book.return_book_id order by return_book.return_book_id DESC");
 								$return_count = mysqli_num_rows($return_query);
 								
-							$count_penalty = mysqli_query($con,"SELECT sum(book_penalty) FROM return_book ")or die(mysqli_error());
+							$count_penalty = mysqli_query($con,"SELECT sum(book_penalty) FROM return_book ");
 							$count_penalty_row = mysqli_fetch_array($count_penalty);
 							
 							?>
@@ -126,6 +126,7 @@ include('./includes/sidebar.php');
 
                                         <thead>
                                              <tr>
+                                                  <th>Image</th>
                                                   <th>Barcode</th>
                                                   <th>Borrower Name</th>
                                                   <th>Title</th>
@@ -143,6 +144,17 @@ include('./includes/sidebar.php');
 							$id=$return_row['return_book_id'];
 ?>
                                              <tr>
+                                                  <td>
+                                                       <center>
+                                                            <?php if($return_row['book_image'] != ""): ?>
+                                                            <img src="../uploads/books_img/<?php echo $return_row['book_image']; ?>"
+                                                                 alt="" width="80px" height="80px">
+                                                            <?php else: ?>
+                                                            <img src="../uploads/books_img/book_image.jpg" alt=""
+                                                                 width="80px" height="80px">
+                                                            <?php endif; ?>
+                                                       </center>
+                                                  </td>
                                                   <td><?php echo $return_row['barcode']; ?></td>
                                                   <td style="text-transform: capitalize">
                                                        <?php echo $return_row['firstname']." ".$return_row['middlename']." ".$return_row['lastname']; ?>
@@ -151,21 +163,21 @@ include('./includes/sidebar.php');
                                                        <?php echo $return_row['title']; ?></td>
                                                   <!---	<td style="text-transform: capitalize"><?php // echo $return_row['author']; ?></td>
 								<td><?php // echo $return_row['isbn']; ?></td>	-->
-                                                  <td><?php echo date("M d, Y h:m:s a",strtotime($return_row['date_borrowed'])); ?>
+                                                  <td><?php echo date("M d, Y h:i:s a",strtotime($return_row['date_borrowed'])); ?>
                                                   </td>
                                                   <?php
 								 if ($return_row['book_penalty'] != 'No Penalty'){
-									 echo "<td class='' style='width:100px;'>".date("M d, Y h:m:s a",strtotime($return_row['due_date']))."</td>";
+									 echo "<td class='' style='width:100px;'>".date("M d, Y h:i:s a",strtotime($return_row['due_date']))."</td>";
 								 }else {
-									 echo "<td>".date("M d, Y h:m:s a",strtotime($return_row['due_date']))."</td>";
+									 echo "<td>".date("M d, Y h:i:s a",strtotime($return_row['due_date']))."</td>";
 								 }
 								
 								?>
                                                   <?php
 								 if ($return_row['book_penalty'] != 'No Penalty'){
-									 echo "<td class='' style='width:100px;'>".date("M d, Y h:m:s a",strtotime($return_row['date_returned']))."</td>";
+									 echo "<td class='' style='width:100px;'>".date("M d, Y h:i:s a",strtotime($return_row['date_returned']))."</td>";
 								 }else {
-									 echo "<td>".date("M d, Y h:m:s a",strtotime($return_row['date_returned']))."</td>";
+									 echo "<td>".date("M d, Y h:i:s a",strtotime($return_row['date_returned']))."</td>";
 								 }
 								
 								?>

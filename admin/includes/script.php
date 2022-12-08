@@ -19,23 +19,54 @@
 <!-- Dselect JS -->
 <script src="assets/js/dselect.js"></script>
 
+
+
+<!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
+<!-- <script src="assets/js/jquery-3.6.0.min.js"></script> -->
+<script src="assets/js/datatables.min.js"></script>
+<script src="assets/js/pdfmake.min.js"></script>
+<script src="assets/js/vfs_fonts.js"></script>
+<script src="assets/js/custom.js"></script>
+
+
+
+
 <script type="text/javascript">
 // JQuery DataTable 
 $(document).ready(function() {
      $('#myDataTable').DataTable({
-          // 'pagingType': 'full_numbers',
-          // 'lengthMenu': [
-          //      [10, 25, 50, -1],
-          //      [10, 25, 50, 'All']
-          // ],
-          // 'responsive': 'true',
-          // 'language': {
-          //      search: "_INPUT_",
-          //      searchPlaceholder: "Search",
-
-          // }
 
      });
+});
+// $(document).ready(function() {
+//      $('#example').DataTable({
+
+//           dom: 'Bfrtip',
+//           buttons: [
+//                'copy', 'csv', 'excel', 'pdf', 'print'
+//           ]
+
+//      });
+// var table = $('#example').DataTable({
+//      buttons: [
+//           'copy', 'csv', 'excel', 'pdf', 'print'
+//      ]
+// })
+
+// table.buttons().container().appenndTo('#example_wrapper .col-md-6:eq(0)');
+// });
+$(document).ready(function() {
+
+     var table = $('#example').DataTable({
+
+          buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+
+     });
+
+
+     table.buttons().container()
+          .appendTo('#example_wrapper .col-md-6:eq(0)');
+
 });
 </script>
 

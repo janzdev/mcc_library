@@ -151,6 +151,7 @@ $user_row = mysqli_fetch_array($user_query);
      echo '<script> location.href="acknowledgement_receipt_print.php?student_id='.$student_id.'";</script>';  
  }
  
+ 
 
 
 ?>

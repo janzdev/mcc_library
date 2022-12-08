@@ -9,8 +9,8 @@ include('./includes/sidebar.php');
           <h1>Edit Student</h1>
           <nav>
                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item"><a href="users.php">Users</a></li>
+                    <li class="breadcrumb-item"><a href="user_student.php">Students</a></li>
                     <li class="breadcrumb-item active">Edit Student</li>
                </ol>
           </nav>
@@ -113,9 +113,9 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Cell No.</label>
-                                                  <input onkeydown="studentFormatEdit()" name="cellphone_number"
+                                                  <input onkeydown="phoneFormatNumber()" name="cellphone_number"
                                                        value="<?=$user['cell_no'];?>" autocomplete="off"
-                                                       class="form-control student_number" required>
+                                                       class="form-control format_number" required>
                                              </div>
                                         </div>
 
@@ -146,9 +146,9 @@ include('./includes/sidebar.php');
                                                        <option value="<?=$user['year_level'];?>">
                                                             <?=$user['year_level'];?></option>
                                                        <option value="4th year">4th year</option>
-                                                       <option value="3rd">3rd</option>
-                                                       <option value="2nd">2nd</option>
-                                                       <option value="1st">1st</option>
+                                                       <option value="3rd year">3rd year</option>
+                                                       <option value="2nd year">2nd year</option>
+                                                       <option value="1st year">1st year</option>
                                                   </select>
                                              </div>
                                         </div>
@@ -179,10 +179,9 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-3">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Cell No.</label>
-                                                  <input onkeydown="ContactFormatEdit()" name="contact_person_number"
+                                                  <input onkeydown="phoneFormatNumbers()" name="contact_person_number"
                                                        value="<?=$user['contact_person_no'];?>"
-                                                       class="form-control contact_person_number" autocomplete="off"
-                                                       required>
+                                                       class="form-control format_numbers" autocomplete="off" required>
                                              </div>
                                         </div>
 

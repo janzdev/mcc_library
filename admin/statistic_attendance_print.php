@@ -47,14 +47,21 @@ class MYPDF extends TCPDF {
 								
 								
 	// 						return $query;
+    // if(isset($_GET['from_date']) && isset($_GET['to_date']))
+    
+    //      $from_date = $_GET['from_date'];
+    //      $to_date = $_GET['to_date'];
 
+         
+         $query = mysqli_query($con, "SELECT * FROM user_log");
 
+        return $query;
 
-                                   $query= mysqli_query($con,"select * from time 
-							") or die (mysqli_error());
-                                   return $query;
+                            //        $query= mysqli_query($con,"select * from user_log 
+							// ") or die (mysqli_error());
+                            //        return $query;
+    
     }
-
     // Colored table
     public function ColoredTable($header,$data) {
         // Colors, line width and bold font
@@ -65,13 +72,13 @@ class MYPDF extends TCPDF {
         $this->SetFont('', 'B');
         $this->SetFont('times', 'BI', 12);
         $this->Ln(0);
-        $this->Cell(180, 15, 'Date : '.date("j / n / Y"), 0, 1, 'R', 0, '', 0, false, 'M', 'M');
+        $this->Cell(180, 15, 'Date : '.date("M d, Y"), 0, 1, 'R', 0, '', 0, false, 'M', 'M');
         $this->Ln(3);
         
         $this->SetFont('helvetica', '', 14);
         $this->Cell(0, 15, 'STUDENTS ATTENDANCE', 0,1, 'C', 0, '', false, 'M', 'M');
         // Header
-        $w = array(50, 50, 50, 50);
+        $w = array(40, 60, 40, 40);
         $num_headers = count($header);
         for($i = 0; $i < $num_headers; ++$i) {
             $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C', 1);
@@ -87,10 +94,10 @@ class MYPDF extends TCPDF {
         $fill = 0;
         foreach($data as $row) {
            
-            $this->Cell($w[0], 6, $row['student_id_no'], 'LR', 0, 'L');
-            $this->Cell($w[1], 6, $row['student_name'], 'LR', 0, 'L');
-            $this->Cell($w[2], 6, $row['time'], 'LR', 0, 'L');
-            $this->Cell($w[3], 6, $row['date'], 'LR', 0, 'L');
+            $this->Cell($w[0], 6, $row['student_id'], 'LR', 0, 'L');
+            $this->Cell($w[1], 6, $row['firstname'].' '. $row['middlename'].' '.$row['lastname'], 'LR', 0, 'L');
+            $this->Cell($w[2], 6, date("h:i:s a", strtotime($row['time_log'])), 'LR', 0, 'L');
+            $this->Cell($w[3], 6, date("M d, Y", strtotime($row['date_log'])), 'LR', 0, 'L');
             $this->Ln();
            
         }
