@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <nav class="navbar navbar-expand-lg" style="background: #0096FF;">
+     <?php  $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], "/")+ 1); ?>
      <div class="container-fluid mx-5">
           <img src="assets/img/mcc-logo.png" alt="logo" class=" mx-2" height="40px" width="40px" />
           <a class="navbar-brand text-white fw-bold fs-5" href="#">MCC</a>
@@ -9,16 +10,29 @@
                <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav nav-pills nav-justified">
+                    <?php if(isset($_SESSION['auth_stud'])) :?>
                     <li class="nav-item">
-                         <a class="nav-link active text-white fw-semibold" aria-current="page" href="#">Home</a>
+                         <a class="nav-link text-white <?=$page == 'index.php' ? 'active': '' ?> fw-semibold"
+                              href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                         <a class="nav-link active text-white fw-semibold" aria-current="page" href="#">About</a>
+                         <a class="nav-link text-white <?=$page == 'ebook.php' ? 'active': '' ?> fw-semibold"
+                              href="ebook.php">Ebooks</a>
                     </li>
+                    <?php else :?>
+                    <li class="nav-item">
+                         <a class="nav-link  text-white <?=$page == 'home.php' ? 'active': '' ?> fw-semibold"
+                              href="home.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link  text-white <?=$page == 'about.php' ? 'active': '' ?> fw-semibold"
+                              href="about.php">About</a>
+                    </li>
+                    <?php endif; ?>
                     <?php if(isset($_SESSION['auth_stud'])) :?>
                     <li class="nav-item dropdown">
-                         <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" role="button"
+                         <a class="nav-link  dropdown-toggle text-white fw-semibold" href="#" role="button"
                               data-bs-toggle="dropdown" aria-expanded="false">
                               <span><?= $_SESSION['auth_stud']['stud_name']; ?></span>
                          </a>

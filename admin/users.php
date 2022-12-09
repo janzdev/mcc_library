@@ -45,46 +45,264 @@ include('./includes/sidebar.php');
                                         </a>
                                    </div>
 
-                                   <!-- <div class="col-12 col-md-4 mt-3 ">
-                                        <a href="#">
-                                             <div
-                                                  class="card bg-info fw-bolder h-100 text-white d-flex align-items-center justify-content-center">
-                                                  <h2>BSIT</h2>
+                                   <!-- Student Dashboard -->
+                                   <div class="col-12 col-md-6 mt-2">
+
+                                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                                             <div class="col">
+                                                  <div class="card h-100  border-top border-4 border-primary">
+
+                                                       <div class="card-body pb-0">
+                                                            <h5 class="card-title  my-0 pb-0">BSIT</h5>
+                                                            <?php
+                                                                 $query = "SELECT * FROM user WHERE course='BSIT'";
+                                                                 $query_run = mysqli_query($con, $query); 
+                                                                 
+                                                                 if($total_bsit = mysqli_num_rows($query_run))
+                                                                 {
+                                                                      
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">'.$total_bsit.'</p>';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">0</p>';
+                                                                 }
+                                                            ?>
+                                                            <p class="card-text text-center"><small>Total
+                                                                      Students</small></p>
+                                                       </div>
+                                                  </div>
                                              </div>
-                                        </a>
+                                             <div class="col">
+                                                  <div class="card h-100 border-top border-4 border-primary">
+
+                                                       <div class="card-body">
+                                                            <h5 class="card-title my-0 pb-0">BSBA</h5>
+                                                            <?php
+                                                                 $query = "SELECT * FROM user WHERE course='BSBA'";
+                                                                 $query_run = mysqli_query($con, $query); 
+                                                                 
+                                                                 if($total_bsba = mysqli_num_rows($query_run))
+                                                                 {
+                                                                      
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">'.$total_bsba.'</p>';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">0</p>';
+                                                                 }
+                                                            ?>
+                                                            <p class="card-text text-center"><small>Total
+                                                                      Students</small></p>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="col">
+                                                  <div class="card h-100 border-top border-4 border-primary">
+
+                                                       <div class="card-body">
+                                                            <h5 class="card-title my-0 pb-0">BSHM</h5>
+                                                            <?php
+                                                                 $query = "SELECT * FROM user WHERE course='BSHM'";
+                                                                 $query_run = mysqli_query($con, $query); 
+                                                                 
+                                                                 if($total_bshm = mysqli_num_rows($query_run))
+                                                                 {
+                                                                      
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">'.$total_bshm.'</p>';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">0</p>';
+                                                                 }
+                                                            ?>
+                                                            <p class="card-text text-center"><small>Total
+                                                                      Students</small></p>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                  <div class="card h-100 border-top border-4 border-primary">
+
+                                                       <div class="card-body">
+                                                            <h5 class="card-title my-0 pb-0">BSED</h5>
+                                                            <?php
+                                                                 $query = "SELECT * FROM user WHERE course='BSED'";
+                                                                 $query_run = mysqli_query($con, $query); 
+                                                                 
+                                                                 if($total_bsed = mysqli_num_rows($query_run))
+                                                                 {
+                                                                      
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">'.$total_bsed.'</p>';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">0</p>';
+                                                                 }
+                                                            ?>
+                                                            <p class="card-text text-center"><small>Total
+                                                                      Students</small></p>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                  <div class="card h-100 border-top border-4 border-primary">
+
+                                                       <div class="card-body">
+                                                            <h5 class="card-title my-0 pb-0">BEED</h5>
+                                                            <?php
+                                                                 $query = "SELECT * FROM user WHERE course='BEED'";
+                                                                 $query_run = mysqli_query($con, $query); 
+                                                                 
+                                                                 if($total_beed = mysqli_num_rows($query_run))
+                                                                 {
+                                                                      
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">'.$total_beed.'</p>';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">0</p>';
+                                                                 }
+                                                            ?>
+                                                            <p class="card-text text-center"><small>Total
+                                                                      Students</small></p>
+                                                       </div>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+
                                    </div>
-                                   <div class="col-12 col-md-4 mt-3 ">
-                                        <a href="#">
-                                             <div
-                                                  class="card bg-info fw-bolder h-100 text-white d-flex align-items-center justify-content-center ">
-                                                  <h2>BSBA</h2>
+                                   <!-- Faculty Dashboard -->
+                                   <div class="col-12 col-md-6 mt-2">
+
+                                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                                             <div class="col">
+                                                  <div class="card h-100 border-top border-4 border-primary">
+
+                                                       <div class="card-body">
+                                                            <h5 class="card-title my-0 pb-0">BSIT</h5>
+                                                            <?php
+                                                                 $query = "SELECT * FROM faculty WHERE department='BSIT'";
+                                                                 $query_run = mysqli_query($con, $query); 
+                                                                 
+                                                                 if($total_bsit = mysqli_num_rows($query_run))
+                                                                 {
+                                                                      
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">'.$total_bsit.'</p>';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">0</p>';
+                                                                 }
+                                                            ?>
+                                                            <p class="card-text text-center"><small>Total
+                                                                      Faculty</small></p>
+                                                       </div>
+                                                  </div>
                                              </div>
-                                        </a>
+                                             <div class="col">
+                                                  <div class="card h-100 border-top border-4 border-primary">
+
+                                                       <div class="card-body">
+                                                            <h5 class="card-title  my-0 pb-0">BSBA</h5>
+                                                            <?php
+                                                                 $query = "SELECT * FROM faculty WHERE department='BSBA'";
+                                                                 $query_run = mysqli_query($con, $query); 
+                                                                 
+                                                                 if($total_bsba = mysqli_num_rows($query_run))
+                                                                 {
+                                                                      
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">'.$total_bsba.'</p>';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">0</p>';
+                                                                 }
+                                                            ?>
+                                                            <p class="card-text text-center"><small>Total
+                                                                      Faculty</small></p>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="col">
+                                                  <div class="card h-100 border-top border-4 border-primary">
+
+                                                       <div class="card-body">
+                                                            <h5 class="card-title  my-0 pb-0">BSHM</h5>
+                                                            <?php
+                                                                 $query = "SELECT * FROM faculty WHERE department='BSHM'";
+                                                                 $query_run = mysqli_query($con, $query); 
+                                                                 
+                                                                 if($total_bshm = mysqli_num_rows($query_run))
+                                                                 {
+                                                                      
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">'.$total_bshm.'</p>';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">0</p>';
+                                                                 }
+                                                            ?>
+                                                            <p class="card-text text-center"><small>Total
+                                                                      Faculty</small></p>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                  <div class="card h-100 border-top border-4 border-primary">
+
+                                                       <div class="card-body">
+                                                            <h5 class="card-title  my-0 pb-0">BSED</h5>
+                                                            <?php
+                                                                 $query = "SELECT * FROM faculty WHERE department='BSED'";
+                                                                 $query_run = mysqli_query($con, $query); 
+                                                                 
+                                                                 if($total_bsed = mysqli_num_rows($query_run))
+                                                                 {
+                                                                      
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">'.$total_bsed.'</p>';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">0</p>';
+                                                                 }
+                                                            ?>
+                                                            <p class="card-text text-center"><small>Total
+                                                                      Faculty</small></p>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                  <div class="card h-100 border-top border-4 border-primary">
+
+                                                       <div class="card-body">
+                                                            <h5 class="card-title  my-0 pb-0">BEED</h5>
+                                                            <?php
+                                                                 $query = "SELECT * FROM faculty WHERE department='BEED'";
+                                                                 $query_run = mysqli_query($con, $query); 
+                                                                 
+                                                                 if($total_beed = mysqli_num_rows($query_run))
+                                                                 {
+                                                                      
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">'.$total_beed.'</p>';
+                                                                 }
+                                                                 else
+                                                                 {
+                                                                      echo '<p class="h4 card-text text-primary text-center pt-2">0</p>';
+                                                                 }
+                                                            ?>
+                                                            <p class="card-text text-center"><small>Total
+                                                                      Faculty</small></p>
+                                                       </div>
+                                                  </div>
+                                             </div>
+
+                                        </div>
+
                                    </div>
-                                   <div class="col-12 col-md-4 mt-3 ">
-                                        <a href="#">
-                                             <div
-                                                  class="card bg-info fw-bolder h-100 text-white d-flex align-items-center justify-content-center">
-                                                  <h2>BSHM</h2>
-                                             </div>
-                                        </a>
-                                   </div>
-                                   <div class="col-12 col-md-6 mt-3 ">
-                                        <a href="#">
-                                             <div
-                                                  class="card bg-info fw-bolder h-100 text-white d-flex align-items-center justify-content-center">
-                                                  <h2>BSED</h2>
-                                             </div>
-                                        </a>
-                                   </div>
-                                   <div class="col-12 col-md-6 mt-3 ">
-                                        <a href="#">
-                                             <div
-                                                  class="card bg-info fw-bolder h-100 text-white d-flex align-items-center justify-content-center">
-                                                  <h2>BEED</h2>
-                                             </div>
-                                        </a>
-                                   </div> -->
+
+
                               </div>
                          </div>
                          <div class="card-footer"></div>

@@ -34,7 +34,6 @@ if(isset($_SESSION['status']))
   ?>
 swal({
      title: "<?php echo $_SESSION['status']; ?>",
-     text: "<?php echo $_SESSION['status_text']; ?>",
      icon: "<?php echo $_SESSION['status_code']; ?>",
 });
 <?php

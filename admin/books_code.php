@@ -88,13 +88,13 @@ if(isset($_POST['update_book']))
           }
           move_uploaded_file($_FILES['book_image']['tmp_name'], '../uploads/books_img/'.$book_filename);
           
-          $_SESSION['message_success'] = 'Admin Updated successfully';
+          $_SESSION['message_success'] = 'Book Updated successfully';
           header("Location: books.php");
           exit(0);
      }
      else
      {
-          $_SESSION['message_error'] = 'Admin not Updated';
+          $_SESSION['message_error'] = 'Book not Updated';
           header("Location: books.php");
           exit(0);
      }

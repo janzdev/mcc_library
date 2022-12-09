@@ -5,7 +5,19 @@ include('./includes/sidebar.php');
 
 ?>
 
+<style>
+.data_table {
+     background: #fff;
+     padding: 15px;
+     /* box-shadow: 1px 3px 5px #aaa; */
+     border-radius: 5px;
+}
 
+.data_table .btn {
+     padding: 5px 10px;
+     margin: 10px 3px 10px 0;
+}
+</style>
 <main id="main" class="main">
      <div class="pagetitle">
           <h1>Report</h1>
@@ -30,9 +42,39 @@ include('./includes/sidebar.php');
                               </div>
                          </div>
                          <div class="card-body">
-                              <h4>Penalty Report</h4>
-                              <div class="table-responsive">
-                                   <?php
+                              <div class="row d-flex justify-content-around align-items-center mt-2">
+                                   <h5 class="card-title col-12 col-md-3 px-3 text-center">
+                                        Penalty Report
+                                   </h5>
+                                   <form action="" method="POST" class="col-12 col-md-6 d-flex ">
+
+
+                                        <div class="form-group form-group-sm">
+                                             <label for=""> <small>From Date</small></label>
+                                             <input type="date" name="from_date"
+                                                  class="form-control form-control-sm"></input>
+                                        </div>
+                                        <div class="form-group form-group-sm mx-2">
+                                             <label for=""> <small>To Date</small></label>
+                                             <input type="date" name="to_date"
+                                                  class="form-control form-control-sm"></input>
+                                        </div>
+                                        <div class="form-group form-group-sm">
+                                             <label for=""> <small>Click to Filter</small></label>
+                                             <button type="submit" name="filter_attendance"
+                                                  class="btn text-white fw-semibold btn-info btn-sm d-block">Filter</button>
+                                        </div>
+
+                                   </form>
+
+                              </div>
+                              <div class="container">
+                                   <div class="row">
+                                        <div class="col-12">
+
+                                             <div class="data_table">
+
+                                                  <?php
 
                                    $result= mysqli_query($con,"SELECT * FROM report 
                                    LEFT JOIN book ON report.book_id = book.book_id 
@@ -52,40 +94,40 @@ include('./includes/sidebar.php');
 							$count_penalty_row = mysqli_fetch_array($count_penalty);
 							
 							?>
-                                   <table id="myDataTable" cellpadding="0" cellspacing="0" border="0"
-                                        class="table table-striped table-bordered">
+                                                  <table id="example" cellpadding="0" cellspacing="0" border="0"
+                                                       class="table table-striped table-bordered">
 
-                                        <div class="pull-left">
-                                             <div class="span">
-                                                  <div class="alert alert-info mt-2 p-1"><i
-                                                            class="icon-credit-card icon-large"></i>&nbsp;Total
-                                                       Amount
-                                                       of
-                                                       Penalty:&nbsp;<?php echo "Php ".$count_penalty_row['sum(book_penalty)'].".00"; ?>
-                                                  </div>
-                                             </div>
-                                        </div>
+                                                       <div class="pull-left">
+                                                            <div class="span">
+                                                                 <div class="alert alert-info mt-2 p-1"><i
+                                                                           class="icon-credit-card icon-large"></i>&nbsp;Total
+                                                                      Amount
+                                                                      of
+                                                                      Penalty:&nbsp;<?php echo "Php ".$count_penalty_row['sum(book_penalty)'].".00"; ?>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
 
-                                        <thead>
-                                             <tr>
+                                                       <thead>
+                                                            <tr>
 
-                                                  <th>Penalty Amount</th>
-                                                  <th>Received from</th>
-                                                  <th>Person In Charge</th>
-                                                  <th>Due Date</th>
-                                                  <th>Date Returned</th>
+                                                                 <th>Penalty Amount</th>
+                                                                 <th>Received from</th>
+                                                                 <th>Person In Charge</th>
+                                                                 <th>Due Date</th>
+                                                                 <th>Date Returned</th>
 
-                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                             <?php
+                                                            </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                            <?php
 							while ($return_row= mysqli_fetch_array ($return_query) ){
 							$id=$return_row['return_book_id'];
 ?>
 
 
-                                             <tr>
-                                                  <?php
+                                                            <tr>
+                                                                 <?php
 								 if ($return_row['book_penalty'] != 'No Penalty'){
 									 echo "<td class='alert alert-warning' style='width:100px;'>Php ".$return_row['book_penalty'].".00</td>";
 								 }else {
@@ -93,14 +135,14 @@ include('./includes/sidebar.php');
 								 }
 								
 								?>
-                                                  <td style="text-transform: capitalize">
-                                                       <?php echo $return_row['firstname']." ".$return_row['middlename']." ".$return_row['lastname']; ?>
-                                                  </td>
-                                                  <td><?php echo $admin; ?></td>
-                                                  <!---	<td style="text-transform: capitalize"><?php // echo $return_row['author']; ?></td>
+                                                                 <td style="text-transform: capitalize">
+                                                                      <?php echo $return_row['firstname']." ".$return_row['lastname']; ?>
+                                                                 </td>
+                                                                 <td><?php echo $admin; ?></td>
+                                                                 <!---	<td style="text-transform: capitalize"><?php // echo $return_row['author']; ?></td>
 								<td><?php // echo $return_row['isbn']; ?></td>	-->
 
-                                                  <?php
+                                                                 <?php
 								 if ($return_row['book_penalty'] != 'No Penalty'){
 									 echo "<td class='' >".date("M d, Y h:m:s a",strtotime($return_row['due_date']))."</td>";
 								 }else {
@@ -108,7 +150,7 @@ include('./includes/sidebar.php');
 								 }
 								
 								?>
-                                                  <?php
+                                                                 <?php
 								 if ($return_row['book_penalty'] != 'No Penalty'){
 									 echo "<td class='' >".date("M d, Y h:m:s a",strtotime($return_row['date_returned']))."</td>";
 								 }else {
@@ -116,20 +158,21 @@ include('./includes/sidebar.php');
 								 }
 								
 								?>
-                                             </tr>
+                                                            </tr>
 
-                                             <?php 
+                                                            <?php 
 							}
 														
 							?>
-                                        </tbody>
-                                   </table>
+                                                       </tbody>
+                                                  </table>
+                                             </div>
+                                        </div>
+                                   </div>
                               </div>
                          </div>
-                         <div class="card-footer"></div>
                     </div>
                </div>
-          </div>
      </section>
 </main>
 <?php 

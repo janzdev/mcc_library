@@ -1,4 +1,5 @@
 <?php 
+
 include('includes/header.php');
 include('includes/navbar.php');
 include('admin/config/dbcon.php');
@@ -17,68 +18,139 @@ if($_SESSION['auth_role'] != "0")
 
 
 
-<div class="container">
-     <div class="col-12">
-          <div class="d-flex  align-items-center justify-content-around mt-4">
-               <div class="mx-2">
-                    <img src="assets/img/mcc-logo.png" class="" style="height: 100px; width: 100px;" alt="">
-               </div>
+<div class="container ">
+     <div class="row">
+          <div class="col-12">
+               <div class="card  mt-4 ">
+                    <div class="card-header ">
+                         <div class="d-flex  align-items-center justify-content-center mt-2 ">
+                              <div class="mx-2">
+                                   <img src="assets/img/mcc-logo.png" class="me-2" style="height: 100px; width: 100px;"
+                                        alt="">
+                              </div>
 
-               <div class="col-10  mt-2 ">
-                    <h3 class="fw-semibold">Madridejos Community College Library</h3>
-                    <!-- <form class="d-flex " method="POST"> -->
-                    <div class="d-flex">
-                         <input class="form-control " type="text" id="live_search" placeholder="Search Book">
-                         <button class="btn text-white btn-info mx-3 col-md-3 fw-semibold" type="submit"
-                              name="search">Search</button>
+                              <div class="col-8  mt-2  ">
+                                   <h3 class="fw-semibold">Madridejos Community College Library</h3>
+                                   <form class=" " method="GET">
+                                        <div class="d-flex">
+                                             <div class="input-group mb-3 me-5">
+                                                  <input type="text" name="search"
+                                                       value="<?php if(isset($_GET['search'])){ echo $_GET['search'];}?>"
+                                                       class="form-control" placeholder="Search Book" required>
+                                                  <button class="btn btn-primary px-5">Search</button>
+                                             </div>
+                                        </div>
+                                   </form>
+                              </div>
+
+                         </div>
                     </div>
-                    <!-- </form> -->
-               </div>
+                    <div class="card-body border border-0">
+                         <?php if(!isset($_GET['search'])) :?>
+                         <center>
+                              <a href="#new_books" class="btn btn-primary mt-2 ">
+                                   New Books Added
+                              </a>
+                         </center>
+                         <hr class="mt-2 mb-2 text-black">
+                         <?php endif;?>
+                         <div id="new_books" class="row row-cols-1 row-cols-md-4 g-4 ">
+                              <?php
+                         if(isset($_GET['search']))
+                         {
+                              $filtervalues = $_GET['search'];
 
-          </div>
-          <div id="searchresult" class="text-center"></div>
-          <div class="row row-cols-1 row-cols-md-3 g-2 mt-3">
-
-               <?php
-                                   $query = "SELECT * FROM web_opac";
-                                   $query_run = mysqli_query($con, $query);
-                                   
-                                   if(mysqli_num_rows($query_run) > 0)
+                              $query = "SELECT * FROM book WHERE CONCAT(title,author,publisher,accession_number) LIKE '%$filtervalues%'";
+                              $query_run = mysqli_query($con, $query);
+                              
+                              if(mysqli_num_rows($query_run) > 0)
+                              {
+                                   foreach($query_run as $book)
                                    {
-                                        foreach($query_run as $ebook)
-                                        {
-                                             ?>
+                                        ?>
+                              <div class="col-12 col-md-3 ">
+                                   <div class="card h-100">
+                                        <?php if($book['book_image'] != ""): ?>
+                                        <img src="uploads/books_img/<?php echo $book['book_image']; ?>" height="200px"
+                                             alt="">
+                                        <?php else: ?>
+                                        <img src="uploads/books_img/book_image.jpg" height="200px" alt="">
+                                        <?php endif; ?>
+                                        <div class="card-body">
+                                             <h5 class="card-title"><?=$book['title'];?></h5>
+                                             <p class="card-text"><?=$book['author'];?></p>
+                                        </div>
+                                        <div class="card-footer d-flex justify-content-center">
+                                             <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
+                                             <a href="book_details.php?id=<?=$book['book_id']?>"
+                                                  class="btn  btn-info text-white">View More
+                                                  Details</a>
+                                        </div>
+                                   </div>
+                              </div>
+                              <?php
+                                   }
+                              }
+                              else
+                              {
+                                 echo '<div class="col-md-12 alert alert-info h5 text-center">
+                                 No Book Found
+                               </div>';
+                              }
+                         }
+                         else
+                         {
+                              ?>
+                              <?php
+                              $query = "SELECT * FROM book ORDER BY book_id DESC LIMIT 8";
+                              $query_run = mysqli_query($con, $query);
+                              
+                              if(mysqli_num_rows($query_run) > 0)
+                              {
+                                   foreach($query_run as $book)
+                                   {
+                                        ?>
 
-               <div class="col-md-3">
-                    <div class="card h-100 text-center">
-                         <img src="uploads/ebook_img/<?=$ebook['opac_image'];?>" height="150px" width="150px"
-                              class="card-img-top" alt="...">
-                         <div class="card-body">
-                              <h5 class="card-title fw-semibold text-uppercase"><?=$ebook['title'];?></h5>
-                              <p class="card-text"><?=$ebook['author'];?></p>
+                              <div class="col-12 col-md-3">
+                                   <div class="card h-100">
+                                        <?php if($book['book_image'] != ""): ?>
+                                        <img src="uploads/books_img/<?php echo $book['book_image']; ?>" height="200px"
+                                             alt="">
+                                        <?php else: ?>
+                                        <img src="uploads/books_img/book_image.jpg" height="200px" alt="">
+                                        <?php endif; ?>
+                                        <div class="card-body">
+                                             <h5 class="card-title"><?=$book['title'];?></h5>
+                                             <p class="card-text"><?=$book['author'];?></p>
+                                        </div>
+                                        <div class="card-footer d-flex justify-content-center">
+                                             <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
+                                             <a href="book_details.php?id=<?=$book['book_id']?>"
+                                                  class="btn  btn-info text-white">View More
+                                                  Details</a>
+                                        </div>
+                                   </div>
+                              </div>
+                              <?php
+                                   }
+                         }
+                    }
+                         ?>
+
+
+
 
                          </div>
-                         <div class="card-footer">
-                              <form action="home_code.php" method="post">
-                                   <a href="web_opac_view_pdf.php?id=<?=$ebook['web_opac_id']; ?>" name="viewpdf"
-                                        class="btn text-white btn-info">Read
-                                        Book</a>
-                              </form>
-                         </div>
+
                     </div>
+
                </div>
 
-
-
-               <?php
-                                        }
-                                   }
-                                   ?>
-
+               <div id="searchresult" class="text-center"></div>
 
           </div>
-
      </div>
+</div>
 </div>
 </div>
 

@@ -38,10 +38,10 @@ $user_row = mysqli_fetch_array($user_query);
                                   $return_query= mysqli_query($con,"SELECT * from return_book 
                                   LEFT JOIN book ON return_book.book_id = book.book_id 
                                   LEFT JOIN user ON return_book.user_id = user.user_id 
-                                  where return_book.return_book_id order by return_book.return_book_id DESC") or die (mysqli_error());
+                                  where return_book.return_book_id order by return_book.return_book_id DESC");
                                        $return_count = mysqli_num_rows($return_query);
                                        
-                                  $count_penalty = mysqli_query($con,"SELECT sum(book_penalty) FROM return_book ")or die(mysqli_error());
+                                  $count_penalty = mysqli_query($con,"SELECT sum(book_penalty) FROM return_book ");
                                   $count_penalty_row = mysqli_fetch_array($count_penalty);
                                   
                                   $return_row= mysqli_fetch_array ($return_query);
@@ -136,6 +136,8 @@ $user_row = mysqli_fetch_array($user_query);
                          <form action="" method="POST" class="btn-group m-2">
                               <button type="submit" name="accept" class="btn btn-primary"
                                    value="<?php echo $student_id ?>">Accept</button>
+                              <!-- <button type="submit" name="cancel" class="btn btn-secondary"
+                                   value="<?php echo $student_id ?>">Cancel</button> -->
 
                               <a href="circulation_returning.php?student_id=<?php echo $student_id ?>"
                                    class="btn btn-secondary">Cancel</a>
@@ -150,6 +152,7 @@ $user_row = mysqli_fetch_array($user_query);
  {
      echo '<script> location.href="acknowledgement_receipt_print.php?student_id='.$student_id.'";</script>';  
  }
+ 
  
  
 
