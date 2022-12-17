@@ -39,7 +39,7 @@ include('./includes/sidebar.php');
                                         <a href="user_faculty.php">
                                              <div
                                                   class="card bg-primary text-white p-5 d-flex flex-row justify-content-between">
-                                                  <h2>Faculty & Staff</h2>
+                                                  <h2>Faculty Staff</h2>
                                                   <i class="bi bi-people fs-1"></i>
                                              </div>
                                         </a>
@@ -173,7 +173,7 @@ include('./includes/sidebar.php');
                                         </div>
 
                                    </div>
-                                   <!-- Faculty Dashboard -->
+                                   <!-- Faculty Staff Dashboard -->
                                    <div class="col-12 col-md-6 mt-2">
 
                                         <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -197,7 +197,7 @@ include('./includes/sidebar.php');
                                                                  }
                                                             ?>
                                                             <p class="card-text text-center"><small>Total
-                                                                      Faculty</small></p>
+                                                                      Faculty Staff</small></p>
                                                        </div>
                                                   </div>
                                              </div>
@@ -221,7 +221,7 @@ include('./includes/sidebar.php');
                                                                  }
                                                             ?>
                                                             <p class="card-text text-center"><small>Total
-                                                                      Faculty</small></p>
+                                                                      Faculty Staff</small></p>
                                                        </div>
                                                   </div>
                                              </div>
@@ -245,7 +245,7 @@ include('./includes/sidebar.php');
                                                                  }
                                                             ?>
                                                             <p class="card-text text-center"><small>Total
-                                                                      Faculty</small></p>
+                                                                      Faculty Staff</small></p>
                                                        </div>
                                                   </div>
                                              </div>
@@ -269,7 +269,7 @@ include('./includes/sidebar.php');
                                                                  }
                                                             ?>
                                                             <p class="card-text text-center"><small>Total
-                                                                      Faculty</small></p>
+                                                                      Faculty Staff</small></p>
                                                        </div>
                                                   </div>
                                              </div>
@@ -293,7 +293,7 @@ include('./includes/sidebar.php');
                                                                  }
                                                             ?>
                                                             <p class="card-text text-center"><small>Total
-                                                                      Faculty</small></p>
+                                                                      Faculty Staff</small></p>
                                                        </div>
                                                   </div>
                                              </div>

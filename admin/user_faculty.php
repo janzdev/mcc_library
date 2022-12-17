@@ -12,7 +12,7 @@ include('./includes/sidebar.php');
           <nav>
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="users.php">Users</a></li>
-                    <li class="breadcrumb-item active">Faculty & Staff</li>
+                    <li class="breadcrumb-item active">Faculty Staff</li>
                </ol>
           </nav>
      </div>
@@ -21,10 +21,10 @@ include('./includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="card">
                          <div class="card-header d-flex justify-content-between align-items-center">
-                              <h5 class="m-0 text-dark fw-semibold">Faculty & Staff</h5>
+                              <h5 class="m-0 text-dark fw-semibold">Faculty Staff</h5>
                               <a href="user_faculty_add.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i>
                                    Add
-                                   Faculties Staff</a>
+                                   Faculty Staff</a>
                          </div>
                          <div class="card-body">
                               <div class="table-responsive mt-3">
@@ -64,7 +64,7 @@ include('./includes/sidebar.php');
                                                                  name=""
                                                                  class="viewBookBtn btn btn-sm  border text-primary"
                                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                                 title="View Student">
+                                                                 title="View Faculty Staff">
                                                                  <i class="bi bi-eye-fill"></i>
                                                             </a>
                                                             <!-- Edit Student Action-->
@@ -72,7 +72,7 @@ include('./includes/sidebar.php');
                                                                  name="update_student"
                                                                  class="btn btn-sm  border text-success"
                                                                  data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                                 title="Edit Student">
+                                                                 title="Edit Faculty Staff">
                                                                  <i class="bi bi-pencil-fill"></i>
                                                             </a>
                                                             <!-- Delete Student Action-->
@@ -81,7 +81,7 @@ include('./includes/sidebar.php');
                                                                       value="<?=$user['faculty_id'];?>"
                                                                       class="btn btn-sm  border text-danger"
                                                                       data-bs-toggle="tooltip"
-                                                                      data-bs-placement="bottom" title="Delete Student">
+                                                                      data-bs-placement="bottom" title="Delete Faculty Staff">
                                                                       <i class="bi bi-trash-fill"></i>
                                                                  </button>
                                                             </form>

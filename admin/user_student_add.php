@@ -142,9 +142,9 @@ include('./includes/sidebar.php');
                                                   <select name="year_level" id="" class="form-control" required>
                                                        <option value="">--Select Year Level--</option>
                                                        <option value="4th year">4th year</option>
-                                                       <option value="3rd">3rd</option>
-                                                       <option value="2nd">2nd</option>
-                                                       <option value="1st">1st</option>
+                                                       <option value="3rd year">3rd year</option>
+                                                       <option value="2nd year">2nd year</option>
+                                                       <option value="1st year">1st year</option>
                                                   </select>
                                              </div>
                                         </div>

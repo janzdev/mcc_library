@@ -4,7 +4,6 @@ include('includes/header.php');
 include('./includes/sidebar.php'); 
 ?>
 
-
 <style>
 .data_table {
      background: #fff;
@@ -146,15 +145,16 @@ include('./includes/sidebar.php');
                                              </h5>
                                              <form action="" method="POST" class="col-12 col-md-6 d-flex ">
 
-
+                                                  <?php date_default_timezone_set('Asia/Manila'); ?>
                                                   <div class="form-group form-group-sm">
                                                        <label for=""> <small>From Date</small></label>
-                                                       <input type="date" name="from_date"
+                                                       <input type="date" name="from_date" id="disable_date"
                                                             class="form-control form-control-sm"></input>
                                                   </div>
+
                                                   <div class="form-group form-group-sm mx-2">
                                                        <label for=""> <small>To Date</small></label>
-                                                       <input type="date" name="to_date"
+                                                       <input type="date" name="to_date" id="disable_date2"
                                                             class="form-control form-control-sm"></input>
                                                   </div>
                                                   <div class="form-group form-group-sm">
@@ -216,7 +216,7 @@ include('./includes/sidebar.php');
                                              else
                                              {
                                              
-                                                  $result= mysqli_query($con,"SELECT * from user_log 
+                                                  $result= mysqli_query($con,"SELECT * from user_log ORDER BY user_log_id DESC 
                                              ");
                                                   while ($row= mysqli_fetch_array ($result) ){
                                                  
@@ -252,7 +252,9 @@ include('./includes/sidebar.php');
           </div>
      </section>
 </main>
+<script>
 
+</script>
 
 
 <?php 

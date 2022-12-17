@@ -65,9 +65,8 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Phone Number</label>
-                                                  <input onkeydown="adminPhoneNumberAdd()" name="phone_number"
-                                                       placeholder="639xxxxxxxxx"
-                                                       class="form-control adminadd_contact_number">
+                                                  <input onkeydown="phoneFormatNumber()" name="phone_number"
+                                                       placeholder="639xxxxxxxxx" class="form-control format_number">
                                              </div>
                                         </div>
 

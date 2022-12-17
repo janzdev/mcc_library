@@ -28,7 +28,7 @@ $user_row = mysqli_fetch_array($user_query);
                     <div class="card">
                          <div class="card-header d-flex justify-content-center
                          ">
-                              <img src="assets/img/mcc_header.png" alt="">
+                              <!-- <img src="assets/img/mcc_header.png" alt=""> -->
                          </div>
 
                          <div class="card-body">

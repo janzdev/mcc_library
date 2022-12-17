@@ -6,8 +6,10 @@
 <!-- Show and hide Password -->
 <script src="assets/js/show-hide-password.js"></script>
 
-<!-- Format_number -->
-<!-- <script src="assets/js/format_number.js"></script> -->
+<!-- Format Number  -->
+<script src="assets/js/format_number.js"></script>
+<!-- Dissable Future Date -->
+<!-- <script src="assets/js/disable_future_date.js"></script> -->
 
 <!-- Bootstrap Bundle js -->
 <script src="assets/js/bootstrap5.bundle.min.js"></script>

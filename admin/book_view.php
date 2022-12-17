@@ -30,7 +30,7 @@ include('./includes/sidebar.php');
                               {
                                    $book_id = mysqli_real_escape_string($con, $_GET['id']);
 
-                                   $query = "SELECT * FROM book WHERE book_id ='$book_id'"; 
+                                   $query = "SELECT * FROM book LEFT JOIN category on book.category_id = category.category_id WHERE book_id ='$book_id'"; 
                                    $query_run = mysqli_query($con, $query);
 
                                    if(mysqli_num_rows($query_run) > 0)
@@ -91,6 +91,14 @@ include('./includes/sidebar.php');
                                         <div class="mb-3">
                                              <span class="fw-semibold">Accession Number &ensp;</span>
                                              <p class="d-inline">:&nbsp;<?=$book['accession_number'];?></p>
+                                        </div>
+
+                                        <div class="mb-3">
+
+                                             <span class="fw-semibold">LRC Location &ensp;</span>
+                                             <p class="d-inline">:&nbsp;<?=$book['classname'];?></p>
+
+
                                         </div>
 
                                         <div class="mb-3">

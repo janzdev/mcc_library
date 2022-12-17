@@ -13,7 +13,7 @@ include('./includes/sidebar.php');
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item"><a href="circulation.php">Circulation</a></li>
-                    <li class="breadcrumb-item active">Borrow Book</li>
+                    <li class="breadcrumb-item active">Student Borrow Book</li>
                </ol>
           </nav>
      </div>
@@ -125,6 +125,10 @@ include('./includes/sidebar.php');
 									$book_id = $borrow_row ['book_id'];
 									$user_id = $borrow_row ['user_id'];
 							?>
+                                             <?php
+                                                       if(isset($user_id))
+                                                       {
+                                                       ?>
                                              <tr>
 
                                                   <td>
@@ -158,7 +162,7 @@ include('./includes/sidebar.php');
 									}
 								?>
                                              </tr>
-                                             <?php } 
+                                             <?php } } 
 							if ($borrow_count <= 0){
 								echo '
 									<table style="float:right;">

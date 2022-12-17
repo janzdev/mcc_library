@@ -35,10 +35,11 @@ if($_SESSION['auth_role'] != "0")
                               ?>
 
                               <div class="col-md-3">
-                                   <div class="card h-100 text-center">
-                                        <img src="uploads/ebook_img/<?=$ebook['opac_image'];?>" height="150px"
-                                             width="150px" class="card-img-top" alt="...">
-                                        <div class="card-body">
+                                   <div class="card h-100 shadow">
+                                        <a href="web_opac_view_pdf.php?id=<?=$ebook['web_opac_id']; ?>">
+                                             <img src="uploads/ebook_img/<?=$ebook['opac_image'];?>"
+                                                  class="card-img-top" alt="...">
+                                             <!-- <div class="card-body">
                                              <h5 class="card-title fw-semibold text-uppercase"><?=$ebook['title'];?>
                                              </h5>
                                              <p class="card-text"><?=$ebook['author'];?></p>
@@ -50,7 +51,8 @@ if($_SESSION['auth_role'] != "0")
                                                        name="viewpdf" class="btn text-white btn-info">Read
                                                        Book</a>
                                              </form>
-                                        </div>
+                                        </div> -->
+                                        </a>
                                    </div>
                               </div>
 

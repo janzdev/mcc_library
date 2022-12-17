@@ -111,7 +111,7 @@ $query_run = mysqli_query($con, $query);
                                                   <label for="">Call Number</label>
                                                   <input onkeydown="studentFormatEdit()" name="call_number"
                                                        id="book_call_number" class="form-control student_number"
-                                                       placeholder="639xxxxxxxxx" required>
+                                                       placeholder="" required>
                                              </div>
                                         </div>
 
@@ -135,7 +135,40 @@ $query_run = mysqli_query($con, $query);
                                                        required>
                                              </div>
                                         </div>
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">LRC Location</label>
+                                                  <?php
+                                                  $category = "SELECT * FROM category";
+                                                  $category_run = mysqli_query($con, $category);
 
+                                                  if(mysqli_num_rows($category_run) > 0)
+                                                  {
+                                                       ?>
+                                                  <select name="" id="" class="form-control">
+                                                       <option value=""></option>
+                                                       <?php
+                                                            foreach($category_run as $category_item)
+                                                            {
+                                                                 ?>
+                                                       <option value="<?= $category_item['category_id'] ?>">
+                                                            <?=$category_item['classname'] ?></option>
+                                                       <?php
+                                                            }
+                                                            ?>
+                                                  </select>
+                                                  <?php
+                                                 
+                                                  }
+                                                  ?>
+
+                                             </div>
+                                        </div>
+
+
+                                   </div>
+                                   <div class="row">
+                                        <div class="col-12 col-md-1"></div>
                                         <div class="col-12 col-md-5">
                                              <div class="mb-2 input-group-sm">
                                                   <div class="d-flex justify-content-between">
@@ -145,8 +178,6 @@ $query_run = mysqli_query($con, $query);
                                                   <input type="file" name="book_image" class="form-control">
                                              </div>
                                         </div>
-
-
 
                                    </div>
 

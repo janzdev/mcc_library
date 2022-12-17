@@ -27,11 +27,11 @@ if (isset($_SESSION['auth_admin']['admin_id']))
      </div> -->
      <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center">
-               <li class="nav-item d-block d-lg-none">
+               <!-- <li class="nav-item d-block d-lg-none">
                     <a class="nav-link nav-icon search-bar-toggle" href="#">
                          <i class="bi bi-search"></i>
                     </a>
-               </li>
+               </li> -->
                <?php
                $query = "SELECT * FROM admin WHERE admin_id = '$id_session'";
                $query_run = mysqli_query($con, $query);

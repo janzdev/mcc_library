@@ -78,10 +78,10 @@ include('./includes/sidebar.php');
                                         <div class="col-12 col-md-4">
                                              <div class="mb-3 mt-2">
                                                   <label for="">Phone Number</label>
-                                                  <input onkeydown="adminPhoneNumberEdit()"
+                                                  <input onkeydown="phoneFormatNumber()"
                                                        value="<?=$admin['phone_number'];?>" name="phone_number"
-                                                       placeholder="639xxxxxxxxx" id="admin_format_edit_number"
-                                                       class="form-control" autocomplete="off">
+                                                       placeholder="639xxxxxxxxx" id=""
+                                                       class="form-control format_number" autocomplete="off">
                                              </div>
                                         </div>
 

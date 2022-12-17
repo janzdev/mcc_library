@@ -237,7 +237,10 @@ $user_row = mysqli_fetch_array($user_query);
                                                   }
                                                   else
                                                   {
-                                                       echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script>';      
+                                                  
+                                                       echo '<script> location.href="acknowledgement_receipt_print.php?student_id='.$student_id.'";</script>'; 
+
+                                                       // echo '<script> location.href="acknowledgement_receipt.php?student_id='.$student_id.'";</script>';      
                                                   }
 
                                              $report_history1 = mysqli_query($con,"SELECT * FROM admin WHERE admin_id = '$id_session' ");

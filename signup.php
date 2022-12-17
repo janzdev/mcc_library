@@ -240,6 +240,7 @@ include('./admin/config/dbcon.php');
 
      <!-- Format Number  -->
      <script src="assets/js/format_number.js"></script>
+
      <!-- Font Awesome Link -->
      <script src="assets/js/kit.fontawesome.js"></script>
 

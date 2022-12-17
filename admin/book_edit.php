@@ -28,18 +28,20 @@ include('./includes/sidebar.php');
                               {
                                    $book_id = mysqli_real_escape_string($con, $_GET['id']);
 
-                                   $query = "SELECT * FROM book WHERE book_id ='$book_id'"; 
+                                   $query = "SELECT * FROM book LEFT JOIN category ON book.category_id = category.category_id WHERE book_id ='$book_id'"; 
                                    $query_run = mysqli_query($con, $query);
 
                                    if(mysqli_num_rows($query_run) > 0)
                                    {
                                        $book = mysqli_fetch_array($query_run);
+
+                                       
                                         ?>
                               <form action="books_code.php" method="POST" enctype="multipart/form-data">
 
 
 
-                                   <div class="row d-flex justify-content-center mt-5">
+                                   <div class="row d-flex justify-content-center mt-2">
 
                                         <div class="col-12 col-md-5">
                                              <div class="mb-2 input-group-sm">
@@ -120,7 +122,7 @@ include('./includes/sidebar.php');
                                    </div>
 
                                    <div class="row d-flex justify-content-center">
-                                        <div class="col-12 col-md-2">
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Copy</label>
                                                   <input type="text" name="copy" value="<?=$book['copy'];?>" class="
@@ -128,7 +130,43 @@ include('./includes/sidebar.php');
                                              </div>
                                         </div>
 
-                                        <div class="col-12 col-md-3">
+
+                                        <div class="col-12 col-md-5">
+                                             <div class="mb-2 input-group-sm">
+                                                  <label for="">LRC Location</label>
+                                                  <select name="category" id="" class="form-control">
+                                                       <option value="<?=$book['category_id']; ?>">
+                                                            <?=$book['classname'];?></option>
+                                                       <?php
+                                       
+                                                            $category = "SELECT * FROM category";
+                                                            $category_run = mysqli_query($con, $category);
+
+                                                            if(mysqli_num_rows($category_run) > 0)
+                                                            {
+                                                                      foreach($category_run as $row)
+                                                                      {
+                                                                           
+                                                                           ?>
+                                                       <option value="<?= $row['category_id']; ?>">
+                                                            <?=$row['classname']; ?></option>
+                                                       <?php
+                                                                      }
+                                                                      ?>
+
+                                                       <?php
+                                                            }   
+                                                  
+                                                  ?>
+                                                  </select>
+                                             </div>
+                                        </div>
+
+
+                                   </div>
+                                   <div class="row d-flex justify-content-center">
+
+                                        <div class="col-12 col-md-5">
                                              <div class="mb-2 input-group-sm">
                                                   <label for="">Barcode</label>
                                                   <input type="text" value="<?=$book['barcode'];?>" name="barcode"
@@ -145,19 +183,26 @@ include('./includes/sidebar.php');
                                                        autocomplete="off">
                                              </div>
                                         </div>
+
                                    </div>
+                         </div>
 
 
-                         </div>
-                         <div class="card-footer d-flex justify-content-end">
-                              <div>
-                                   <a href="books.php" class="btn btn-secondary">Cancel</a>
-                                   <button type="submit" name="update_book" class="btn btn-primary">Update Book</button>
-                              </div>
-                         </div>
-                         </form>
-                         <div class="card-footer"></div>
-                         <?php
+                    </div>
+
+
+
+
+               </div>
+               <div class="card-footer d-flex justify-content-end">
+                    <div>
+                         <a href="books.php" class="btn btn-secondary">Cancel</a>
+                         <button type="submit" name="update_book" class="btn btn-primary">Update Book</button>
+                    </div>
+               </div>
+               </form>
+               <div class="card-footer"></div>
+               <?php 
                               }
                               else
                               {
@@ -166,8 +211,8 @@ include('./includes/sidebar.php');
 
                          }  
                          ?>
-                    </div>
-               </div>
+          </div>
+          </div>
           </div>
      </section>
 </main>

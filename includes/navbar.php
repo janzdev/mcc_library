@@ -13,7 +13,7 @@
                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav nav-pills nav-justified">
                     <?php if(isset($_SESSION['auth_stud'])) :?>
                     <li class="nav-item">
-                         <a class="nav-link text-white <?=$page == 'index.php' ? 'active': '' ?> fw-semibold"
+                         <a class="nav-link text-white <?=$page == 'index.php' || $page == 'book_details.php' ? 'active': '' ?> fw-semibold"
                               href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
@@ -37,9 +37,9 @@
                               <span><?= $_SESSION['auth_stud']['stud_name']; ?></span>
                          </a>
                          <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">
+                              <li><a class="dropdown-item" href="myprofile.php">
                                         <i class="bi bi-person"></i> My Profile</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li>
+                              <!-- <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li> -->
                               <li>
                                    <hr class="dropdown-divider">
                               </li>

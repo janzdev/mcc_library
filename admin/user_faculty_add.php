@@ -194,7 +194,7 @@ include('includes/sidebar.php');
                          <div class="card-footer d-flex justify-content-end">
                               <div>
                                    <a href="user_faculty.php" class="btn btn-secondary">Cancel</a>
-                                   <button type="submit" name="add_faculty" class="btn btn-primary">Add Student</button>
+                                   <button type="submit" name="add_faculty" class="btn btn-primary">Add Faculty Staff</button>
                               </div>
                          </div>
                          </form>

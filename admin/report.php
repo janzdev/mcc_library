@@ -20,24 +20,36 @@ include('./includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="card">
                          <div class="card-header">
-                              <div class="btn-group gap-1">
-                                   <a class=" btn btn-primary" href="report.php" aria-current="page">
-                                        All Transaction
-                                   </a>
-                                   <a class=" btn btn-primary" href="report_penalty.php">Penalty
-                                        Report</a>
-
-                              </div>
+                              <ul class="nav nav-pills">
+                                   <li class="nav-item">
+                                        <a class="nav-link <?=$page == 'report.php' || $page == 'report_faculty.php' ? 'active': '' ?>"
+                                             href="report.php">All Transaction</a>
+                                   </li>
+                                   <li class="nav-item  border border-info border-start-0 rounded-end">
+                                        <a class="nav-link <?=$page == 'report_penalty.php' ? 'active': '' ?>"
+                                             href="report_penalty.php">Penalty Report</a>
+                                   </li>
+                              </ul>
                          </div>
                          <div class="card-body">
-                              <h4 class="m-3">All Transaction</h4>
+                              <!-- <h4 class="m-3">All Transaction</h4> -->
                               <div class="table-responsive mt-3">
+                                   <ul class="nav nav-tabs mb-3">
+                                        <li class="nav-item">
+                                             <a class="nav-link <?=$page == 'report.php'  ? 'active': '' ?> "
+                                                  href="report.php">Students </a>
+                                        </li>
+                                        <li class="nav-item">
+                                             <a class="nav-link <?=$page == 'report_faculty.php' ? 'active': '' ?> "
+                                                  href="report_faculty.php">Faculty Staff</a>
+                                        </li>
+                                   </ul>
                                    <table id="myDataTable" cellpadding="0" cellspacing="0" border="0"
                                         class="table table-striped table-bordered">
 
                                         <thead>
                                              <tr>
-                                                  <th>Student Name</th>
+                                                  <th>Name</th>
                                                   <th>Book Title</th>
                                                   <th>Task</th>
                                                   <th>Person In Charge</th>
@@ -46,19 +58,23 @@ include('./includes/sidebar.php');
                                         </thead>
                                         <tbody>
 
+
                                              <?php
-							$result= mysqli_query($con,"select * from report 
+							$result= mysqli_query($con,"SELECT * from report 
 							LEFT JOIN book ON report.book_id = book.book_id 
-							LEFT JOIN user ON report.user_id = user.user_id 
-							order by report.report_id DESC ") or die (mysqli_error());
+							LEFT JOIN user ON report.user_id = user.user_id
+							order by report.report_id DESC ");
 							while ($row= mysqli_fetch_array ($result) ){
 							$id=$row['report_id'];
 							$book_id=$row['book_id'];
-							$user_name=$row['firstname']." ".$row['middlename']." ".$row['lastname'];
+							$user_name=$row['firstname']." ".$row['lastname'];
+							$faculty_name=$row['firstname']." ".$row['lastname'];
                                    $admin =$row['admin_name'];
 							
 							?>
+                                             <?php if(isset($row['user_id'])) :?>
                                              <tr>
+
                                                   <td><?php echo $user_name; ?></td>
                                                   <td><?php echo $row['title']; ?></td>
                                                   <td><?php echo $row['detail_action']; ?></td>
@@ -66,10 +82,14 @@ include('./includes/sidebar.php');
                                                   <td><?php echo date("M d, Y h:m:s a",strtotime($row['date_transaction'])); ?>
                                                   </td>
                                              </tr>
+                                             <?php endif; ?>
                                              <?php } ?>
                                         </tbody>
                                    </table>
+
                               </div>
+
+
                          </div>
                          <div class="card-footer"></div>
                     </div>

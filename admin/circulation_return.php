@@ -13,7 +13,7 @@ include('./includes/sidebar.php');
                <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                     <li class="breadcrumb-item"><a href="circulation.php">Circulation</a></li>
-                    <li class="breadcrumb-item active">Return Book</li>
+                    <li class="breadcrumb-item active">Student Return Book</li>
                </ol>
           </nav>
      </div>
@@ -98,7 +98,7 @@ include('./includes/sidebar.php');
                          <div class="card-body">
                               <div class="table-responsive">
                                    <?php
-							$return_query= mysqli_query($con,"select * from return_book 
+							$return_query= mysqli_query($con,"SELECT * from return_book 
 							LEFT JOIN book ON return_book.book_id = book.book_id 
 							LEFT JOIN user ON return_book.user_id = user.user_id 
 							where return_book.return_book_id order by return_book.return_book_id DESC");
@@ -108,6 +108,7 @@ include('./includes/sidebar.php');
 							$count_penalty_row = mysqli_fetch_array($count_penalty);
 							
 							?>
+
                                    <table id="myDataTable" cellpadding="0" cellspacing="0" border="0"
                                         class="table table-striped table-bordered">
 
@@ -142,8 +143,9 @@ include('./includes/sidebar.php');
                                              <?php
 							while ($return_row= mysqli_fetch_array ($return_query) ){
 							$id=$return_row['return_book_id'];
-?>
+?> <?php if(isset( $return_row['user_id'])) : ?>
                                              <tr>
+
                                                   <td>
                                                        <center>
                                                             <?php if($return_row['book_image'] != ""): ?>
@@ -189,8 +191,9 @@ include('./includes/sidebar.php');
 								 }
 								
 								?>
-                                             </tr>
 
+                                             </tr>
+                                             <?php endif; ?>
                                              <?php 
 							}
 							if ($return_count <= 0){
@@ -205,6 +208,7 @@ include('./includes/sidebar.php');
 							?>
                                         </tbody>
                                    </table>
+
                               </div>
                          </div>
                          <div class="card-footer"></div>

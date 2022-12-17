@@ -32,11 +32,11 @@ $pdf->Image('images/image_demo.jpg', 15, 140, 75, 113, 'JPG', 'http://www.tcpdf.
 
 $pdf->Ln(15);
 $pdf->setFont('Helvetica', '', '12');
-$pdf->Cell(180, 15, 'Date : '.date("n / j / Y"), 0, 1, 'R', 0, '', 0, false, 'M', 'M');
+$pdf->Cell(180, 15, 'Date : '.date("M d, Y"), 0, 1, 'R', 0, '', 0, false, 'M', 'M');
 $pdf->Ln(15);
 
 $pdf->setFont('Helvetica', 'B', '13');
-$pdf->Cell(0, 10, 'PENALTY RECEIPT', 0, 1, 'C', 0, '', false, 'M', 'M' );
+$pdf->Cell(0, 10, 'RETURN SLIP', 0, 1, 'C', 0, '', false, 'M', 'M' );
 $pdf->Ln(15);
 
 if (isset($_SESSION['auth_admin']['admin_id']))
@@ -74,34 +74,28 @@ $user_row = mysqli_fetch_array($user_query);
 
         $pdf->setFont('Helvetica', '', '12');
         $pdf->Cell(0, 10, 'This to acknowledge that '.$borrower, 0, 1, 'C', 0, '', false, 'M', 'M' );
-        $pdf->Cell(0, 10, 'has paid the amount of '.$penalty.' for the penalty.', 0, 1, 'C', 0, '', false, 'M', 'M');
+        $pdf->Cell(0, 10, 'has return the following books bellow: ', 0, 1, 'C', 0, '', false, 'M', 'M');
 
 
-$pdf->Ln(15);
+$pdf->Ln(10);
 $tbl = <<<EOD
         <table border="1" cellpading="2">
         <tr>
-            <th colspan="4" align="center" style="font-size:10px; font-weight:bold;" >BORROWED BOOK DETAILS</th>
+            <th colspan="5"  align="center" style="font-size:10px; font-weight:bold;" >BORROWED BOOK DETAILS</th>
         </tr>
         <tr>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">Title</td>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">Author</td>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">Date Borrowed</td>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">Due Date</td>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">Date Returned</td>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">Penalty</td>
-
-            
+            <td width="40%" style="font-size:10px; text-align:center; vertical-align:middle; ">Title</td>
+            <td width="15%" style="font-size:10px; text-align:center; vertical-align:middle; ">Author</td>
+            <td width="15%" style="font-size:10px; text-align:center; vertical-align:middle; ">Date Borrowed</td>
+            <td width="15%" style="font-size:10px; text-align:center; vertical-align:middle; ">Due Date</td>
+            <td width="15%" style="font-size:10px; text-align:center; vertical-align:middle; ">Date Returned</td>
         </tr>
         <tr>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">$title</td>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">$author</td>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">$date_borrowed</td>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">$due_date</td>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">$date_returned</td>
-            <td width="16.66%" style="font-size:10px; text-align:center; vertical-align:middle; ">$penalty</td>
-
-            
+            <td width="40%" style="font-size:10px; text-align:center; vertical-align:middle; ">$title</td>
+            <td width="15%" style="font-size:10px; text-align:center; vertical-align:middle; ">$author</td>
+            <td width="15%" style="font-size:10px; text-align:center; vertical-align:middle; ">$date_borrowed</td>
+            <td width="15%" style="font-size:10px; text-align:center; vertical-align:middle; ">$due_date</td>
+            <td width="15%" style="font-size:10px; text-align:center; vertical-align:middle; ">$date_returned</td>        
         </tr>
         
         </table>

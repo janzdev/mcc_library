@@ -23,9 +23,14 @@ if($_SESSION['auth_role'] != "0")
           <div class="col-12">
                <div class="card mt-4 ">
                     <div class="card-header">
-                         <h5>Book Details</h5>
-                    </div>
 
+                         <a href="index.php" class="btn btn-primary">
+                              Back
+                         </a>
+
+
+
+                    </div>
                     <div class="card-body">
                          <section class="section profile">
                               <div class="row">
@@ -34,7 +39,7 @@ if($_SESSION['auth_role'] != "0")
                {
                     $book_id = mysqli_real_escape_string($con, $_GET['id']);
 
-               $query = "SELECT * FROM book WHERE book_id = '$book_id'";
+               $query = "SELECT * FROM book LEFT JOIN category on book.category_id = category.category_id WHERE book_id = '$book_id'";
                $query_run = mysqli_query($con, $query);
                 
                if(mysqli_num_rows($query_run) > 0)
@@ -77,23 +82,26 @@ if($_SESSION['auth_role'] != "0")
                                                        <div class="tab-pane fade show active profile-overview"
                                                             id="profile-overview">
 
-                                                            <!-- <h5 class="card-title">Profile Details</h5> -->
+
                                                             <div class="row mt-3">
-                                                                 <div class="col-lg-3 col-md-4 label ">Title</div>
+                                                                 <div class="col-lg-3 col-md-4 label fw-semibold">Title
+                                                                 </div>
                                                                  <div class="col-lg-9 col-md-8">
                                                                       <?=$book['title']?>
                                                                  </div>
                                                             </div>
 
                                                             <div class="row mt-2">
-                                                                 <div class="col-lg-3 col-md-4 label">Author</div>
+                                                                 <div class="col-lg-3 col-md-4 label fw-semibold">Author
+                                                                 </div>
                                                                  <div class="col-lg-9 col-md-8"><?=$book['author'];?>
                                                                  </div>
                                                             </div>
 
 
                                                             <div class="row mt-2">
-                                                                 <div class="col-lg-3 col-md-4 label">Copyright Date
+                                                                 <div class="col-lg-3 col-md-4 label fw-semibold">
+                                                                      Copyright Date
                                                                  </div>
                                                                  <div class="col-lg-9 col-md-8">
                                                                       <?=$book['copyright_date'];?>
@@ -101,13 +109,15 @@ if($_SESSION['auth_role'] != "0")
                                                             </div>
 
                                                             <div class="row mt-2">
-                                                                 <div class="col-lg-3 col-md-4 label">Publisher</div>
+                                                                 <div class="col-lg-3 col-md-4 label fw-semibold">
+                                                                      Publisher</div>
                                                                  <div class="col-lg-9 col-md-8">
                                                                       <?=$book['publisher']; ?>
                                                                  </div>
                                                             </div>
                                                             <div class="row mt-2">
-                                                                 <div class="col-lg-3 col-md-4 label">Place of
+                                                                 <div class="col-lg-3 col-md-4 label fw-semibold">Place
+                                                                      of
                                                                       Publication</div>
                                                                  <div class="col-lg-9 col-md-8">
                                                                       <?=$book['place_publication'];?>
@@ -116,29 +126,34 @@ if($_SESSION['auth_role'] != "0")
 
 
                                                             <div class="row mt-2">
-                                                                 <div class="col-lg-3 col-md-4 label">ISBN</div>
+                                                                 <div class="col-lg-3 col-md-4 label fw-semibold">ISBN
+                                                                 </div>
                                                                  <div class="col-lg-9 col-md-8"><?=$book['isbn'];?>
                                                                  </div>
                                                             </div>
-                                                            <!-- <div class="row">
-                                             <div class="col-lg-3 col-md-4 label">Year Level</div>
-                                             <div class="col-lg-9 col-md-8"><?=$book['year_level'];?></div>
-                                        </div> -->
-
-
-
-
                                                        </div>
                                                   </div>
 
                                              </div>
+                                        </div>
+                                        <div class="card mt-2">
+                                             <div class="card-body">
+                                                  <div class="row mt-2">
+                                                       <div class="col-lg-3 col-md-4 label fw-semibold">LRC Location
+                                                       </div>
+                                                       <div class="col-lg-9 col-md-8">
+                                                            <?=$book['classname'];?>
+                                                       </div>
+                                                  </div>
+                                             </div>
+
                                         </div>
                                    </div>
                                    <?php
                               }
                               else
                               {
-                                   echo "No such ID found";
+                                   echo "No Book details found";
                               }
 
                          }  

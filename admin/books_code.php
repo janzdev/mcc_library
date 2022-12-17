@@ -51,6 +51,7 @@ if(isset($_POST['update_book']))
      $call_number = mysqli_real_escape_string($con, $_POST['call_number']);
      $accession_number = mysqli_real_escape_string($con, $_POST['accession_number']);
      $copy = mysqli_real_escape_string($con, $_POST['copy']);
+     $category = mysqli_real_escape_string($con, $_POST['category']);
      $gen = mysqli_real_escape_string($con, $_POST['barcode']);
      
      $old_book_filename = $_POST['old_book_image'];
@@ -72,7 +73,7 @@ if(isset($_POST['update_book']))
           $update_book_filename = $old_book_filename;
      }
      
-     $query = "UPDATE book SET title='$title', author='$author', copyright_date='$copyright_date', publisher='$publisher', isbn='$isbn', place_publication='$place_publication', call_number='$call_number', accession_number='$accession_number', copy='$copy', barcode='$gen', book_image='$update_book_filename' WHERE book_id = '$book_id'";
+     $query = "UPDATE book SET title='$title', author='$author', copyright_date='$copyright_date', publisher='$publisher', isbn='$isbn', place_publication='$place_publication', call_number='$call_number', accession_number='$accession_number', copy='$copy', category_id='$category', barcode='$gen', book_image='$update_book_filename' WHERE book_id = '$book_id'";
      $query_run = mysqli_query($con, $query);
      
      
@@ -114,6 +115,7 @@ if(isset($_POST['add_book']))
      $call_number = mysqli_real_escape_string($con, $_POST['call_number']);
      $accession_number = mysqli_real_escape_string($con, $_POST['accession_number']);
      $copy = mysqli_real_escape_string($con, $_POST['copy']);
+     $category = mysqli_real_escape_string($con, $_POST['category']);
      $book_image = $_FILES['book_image']['name'];
     
      if($book_image != "")
@@ -126,7 +128,7 @@ if(isset($_POST['add_book']))
           $suf = "LRC";
           $gen = $pre.$mid.$suf;
 
-          $query = "INSERT INTO book (title, author, copyright_date, publisher, isbn, place_publication, call_number, accession_number, copy, barcode, book_image, date_added) VALUES ('$title', '$author', '$copyright_date', '$publisher', '$isbn', '$place_publication', '$call_number', '$accession_number',  '$copy', '$gen', '$book_filename', NOW())";
+          $query = "INSERT INTO book (title, author, copyright_date, publisher, isbn, place_publication, call_number, accession_number, copy, category_id, barcode, book_image, date_added) VALUES ('$title', '$author', '$copyright_date', '$publisher', '$isbn', '$place_publication', '$call_number', '$accession_number',  '$copy', '$category', '$gen', '$book_filename', NOW())";
           $query_run = mysqli_query($con, $query);
 
           mysqli_query($con,"insert into barcode (pre_barcode,mid_barcode,suf_barcode) values ('$pre', '$mid', '$suf') ");
@@ -152,7 +154,7 @@ if(isset($_POST['add_book']))
           $suf = "LRC";
           $gen = $pre.$mid.$suf;
 
-          $query = "INSERT INTO book (title, author, copyright_date, publisher, isbn, place_publication, call_number, accession_number, copy, barcode, book_image, date_added) VALUES ('$title', '$author', '$copyright_date', '$publisher', '$isbn', '$place_publication', '$call_number', '$accession_number', '$copy', '$gen', '$book_image', NOW())";
+          $query = "INSERT INTO book (title, author, copyright_date, publisher, isbn, place_publication, call_number, accession_number, copy, category_id, barcode, book_image, date_added) VALUES ('$title', '$author', '$copyright_date', '$publisher', '$isbn', '$place_publication', '$call_number', '$accession_number', '$copy', '$category' '$gen', '$book_image', NOW())";
           $query_run = mysqli_query($con, $query);
 
           mysqli_query($con,"insert into barcode (pre_barcode,mid_barcode,suf_barcode) values ('$pre', '$mid', '$suf') ");
