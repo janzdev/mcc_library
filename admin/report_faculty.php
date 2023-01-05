@@ -5,7 +5,7 @@ include('./includes/sidebar.php');
 
 ?>
 <main id="main" class="main">
-
+     <?php  $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], "/")+ 1); ?>
      <div class="pagetitle">
           <h1>Report</h1>
           <nav>
@@ -36,11 +36,11 @@ include('./includes/sidebar.php');
                               <div class="table-responsive mt-3">
                                    <ul class="nav nav-tabs mb-3">
                                         <li class="nav-item">
-                                             <a class="nav-link <?=$page == 'report.php' ? 'active': '' ?>"
+                                             <a class="nav-link <?=$page == 'report.php' ? 'active': '' ?> text-dark"
                                                   href="report.php">Students </a>
                                         </li>
                                         <li class="nav-item">
-                                             <a class="nav-link <?=$page == 'report_faculty.php' ? 'active': '' ?> "
+                                             <a class="nav-link <?=$page == 'report_faculty.php' ? 'active': '' ?> text-dark"
                                                   href="report_faculty.php">Faculty Staff</a>
                                         </li>
                                    </ul>

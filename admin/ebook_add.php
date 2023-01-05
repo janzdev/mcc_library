@@ -110,7 +110,7 @@ $query_run = mysqli_query($con, $query);
                          </div>
                          <div class="card-footer d-flex justify-content-end">
                               <div>
-                                   <a href="web_opac.php" class="btn btn-secondary">Cancel</a>
+                                   <a href="books.php" class="btn btn-secondary">Cancel</a>
                                    <button type="submit" name="upload_book" class="btn btn-primary">Upload Book</button>
                               </div>
                          </div>

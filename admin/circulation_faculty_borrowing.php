@@ -57,7 +57,7 @@ $faculty_row = mysqli_fetch_array($faculty_query);
                               <div class="text-muted mt-3">Employee Name&nbsp;: &nbsp;<span
                                         class="h5 text-primary p-0 m-0 text-uppercase fw-semibold"><?php echo $row['firstname'].' '.$row['middlename'].' '.$row['lastname'];?></span>
                               </div>
-                              
+
                               <div class="text-muted mb-5">Department&emsp;&emsp;&nbsp;:&ensp;<span
                                         class="text-dark"><?=$row['department'];?></span></div>
                               <?php
@@ -90,7 +90,7 @@ $faculty_row = mysqli_fetch_array($faculty_query);
                                         {
 									$barcode = $_POST['barcode'];
 									
-									$book_query = mysqli_query($con,"SELECT * FROM book WHERE barcode = '$barcode' ") or die (mysqli_error());
+									$book_query = mysqli_query($con,"SELECT * FROM book WHERE barcode = '$barcode' ");
 									$book_count = mysqli_num_rows($book_query);
 									$book_row = mysqli_fetch_array($book_query);
 									
@@ -147,7 +147,7 @@ $faculty_row = mysqli_fetch_array($faculty_query);
 
                                              <?php
 							
-							$allowable_days_query= mysqli_query($con,"select * from allowed_days order by allowed_days_id DESC ") or die (mysqli_error());
+							$allowable_days_query= mysqli_query($con,"select * from allowed_days order by allowed_days_id DESC ");
 							$allowable_days_row = mysqli_fetch_assoc($allowable_days_query);
 							
 							$timezone = "Asia/Manila";
@@ -171,15 +171,15 @@ $faculty_row = mysqli_fetch_array($faculty_query);
 									$date_borrowed =$_POST['date_borrowed'];
 									$due_date =$_POST['due_date'];
 									
-									$trapBookCount= mysqli_query($con,"SELECT count(*) as books_allowed from borrow_book where faculty_id = '$faculty_id' and borrowed_status = 'borrowed'") or die (mysqli_error());
+									$trapBookCount= mysqli_query($con,"SELECT count(*) as books_allowed from borrow_book where faculty_id = '$faculty_id' and borrowed_status = 'borrowed'");
 									
 									$countBorrowed = mysqli_fetch_assoc($trapBookCount);
 									
-									$bookCountQuery= mysqli_query($con,"SELECT count(*) as book_count from borrow_book where faculty_id = '$faculty_id' and borrowed_status = 'borrowed' and book_id = $book_id") or die (mysqli_error());
+									$bookCountQuery= mysqli_query($con,"SELECT count(*) as book_count from borrow_book where faculty_id = '$faculty_id' and borrowed_status = 'borrowed' and book_id = $book_id");
 									
 									$bookCount = mysqli_fetch_assoc($bookCountQuery);
 									
-									$allowed_book_query= mysqli_query($con,"select * from allowed_book order by allowed_book_id DESC ") or die (mysqli_error());
+									$allowed_book_query= mysqli_query($con,"select * from allowed_book order by allowed_book_id DESC ");
 									$allowed = mysqli_fetch_assoc($allowed_book_query);
 									
 									if ($countBorrowed['books_allowed'] == $allowed['qntty_books']){
@@ -188,7 +188,7 @@ $faculty_row = mysqli_fetch_array($faculty_query);
 										echo "<script>alert('Book Already Borrowed!'); window.location='circulation_faculty_borrowing.php?employee_id=".$employee_id."'</script>";
 									}else{
 										
-									$update_copies = mysqli_query($con,"SELECT * from book where book_id = '$book_id' ") or die (mysqli_error());
+									$update_copies = mysqli_query($con,"SELECT * from book where book_id = '$book_id' ");
 									$copies_row= mysqli_fetch_assoc($update_copies);
 									
 									$book_copies = $copies_row['copy'];
@@ -202,19 +202,19 @@ $faculty_row = mysqli_fetch_array($faculty_query);
 										
 									
 									
-									mysqli_query($con,"UPDATE book SET copy = '$new_book_copies' where book_id = '$book_id' ") or die (mysqli_error());
+									mysqli_query($con,"UPDATE book SET copy = '$new_book_copies' where book_id = '$book_id' ");
 									
 									
 									mysqli_query($con,"INSERT INTO borrow_book(faculty_id,book_id,date_borrowed,due_date,borrowed_status)
-									VALUES('$faculty_id','$book_id','$date_borrowed','$due_date','borrowed')") or die (mysqli_error());
+									VALUES('$faculty_id','$book_id','$date_borrowed','$due_date','borrowed')");
 									
-									$report_history=mysqli_query($con,"select * from admin where admin_id = $id_session ") or die (mysqli_error());
+									$report_history=mysqli_query($con,"select * from admin where admin_id = $id_session ");
 									$report_history_row=mysqli_fetch_array($report_history);
 									$admin_row=$report_history_row['firstname']." ".$report_history_row['middlename']." ".$report_history_row['lastname'];	
 									
 									mysqli_query($con,"INSERT INTO report 
 									(book_id, faculty_id, admin_name, detail_action, date_transaction)
-									VALUES ('$book_id','$faculty_id','$admin_row','Borrowed Book',NOW())") or die(mysqli_error());
+									VALUES ('$book_id','$faculty_id','$admin_row','Borrowed Book',NOW())");
 									
                                              // $_SESSION['message_success'] = 'Book Borrowed Successfully';
                                              // echo "<script>location='circulation_borrowing.php?faculty_id=".$faculty_id."'</script>";

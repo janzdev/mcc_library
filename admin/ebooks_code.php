@@ -28,13 +28,13 @@ if(isset($_POST['delete_book']))
           }
 
           $_SESSION['message_success'] = 'Book Deleted successfully';
-          header("Location: web_opac.php");
+          header("Location: books.php");
           exit(0);
      }
      else
      {
           $_SESSION['message_error'] = 'Book not Deleted';
-          header("Location: web_opac.php");
+          header("Location: books.php");
           exit(0);
      }
 }
@@ -93,13 +93,13 @@ if(isset($_POST['update_book']))
           move_uploaded_file($_FILES['ebook']['tmp_name'], '../uploads/ebook/'.$ebook_filename);
 
           $_SESSION['message_success'] = 'Book Updated successfully';
-          header("Location: web_opac.php");
+          header("Location: books.php");
           exit(0);
      }
      else
      {
           $_SESSION['message_error'] = 'Book not Updated';
-          header("Location: web_opac.php");
+          header("Location: books.php");
           exit(0);
      }
      
@@ -139,13 +139,13 @@ if(isset($_POST['upload_book']))
                move_uploaded_file($_FILES['ebook']['tmp_name'], '../uploads/ebook/'.$ebook_filename);
      
                $_SESSION['message_success'] = 'Book Added successfully';
-               header("Location: web_opac.php");
+               header("Location: books.php");
                exit(0);
           }
           else
           {
                $_SESSION['message_error'] = 'Book not Added';
-               header("Location: web_opac.php");
+               header("Location: books.php");
                exit(0);
           }
      }
@@ -161,13 +161,13 @@ if(isset($_POST['upload_book']))
                move_uploaded_file($_FILES['ebook']['tmp_name'], '../uploads/ebook/'.$_FILES['ebook']['name']);
      
                $_SESSION['message_success'] = 'Book Added successfully';
-               header("Location: web_opac.php");
+               header("Location: books.php");
                exit(0);
           }
           else
           {
                $_SESSION['message_error'] = 'Book not Added';
-               header("Location: web_opac.php");
+               header("Location: books.php");
                exit(0);
           }
      }

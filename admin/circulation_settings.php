@@ -21,14 +21,31 @@ include('./includes/sidebar.php');
                <div class="col-lg-12">
                     <div class="card  border-3 border-top border-info">
                          <div class="card-header">
-
+                              <div class="fs-4">Student</div>
                          </div>
                          <div class="card-body">
                               <div class="clearfix"></div>
+
                               <div class="row">
-                                   <?php include('circulation_settings_allowed_days.php');?>
-                                   <?php include('circulation_settings_allowed_qntty.php');?>
-                                   <?php include('circulation_settings_book_penalty.php');?>
+                                   <?php include('circulation_settings_allowed_days_student.php');?>
+                                   <?php include('circulation_settings_allowed_qntty_student.php');?>
+                                   <?php include('circulation_settings_book_penalty_student.php');?>
+                                   <div class="clearfix"></div>
+                              </div>
+
+                         </div>
+                    </div>
+                    <div class="card  border-3 border-top border-info">
+                         <div class="card-header">
+                              <div class="fs-4">Faculty Staff</div>
+                         </div>
+                         <div class="card-body">
+                              <div class="clearfix"></div>
+
+                              <div class="row">
+                                   <?php include('circulation_settings_allowed_days_faculty.php');?>
+                                   <?php include('circulation_settings_allowed_qntty_faculty.php');?>
+                                   <?php include('circulation_settings_book_penalty_faculty.php');?>
                                    <div class="clearfix"></div>
                               </div>
 

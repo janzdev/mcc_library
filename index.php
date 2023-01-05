@@ -92,6 +92,99 @@ if($_SESSION['auth_role'] != "0")
 
 
                                                        </div>
+                                                       <div class="card mt-2">
+                                                            <div class="accordion accordion-flush"
+                                                                 id="accordionFlushExample">
+                                                                 <div class="accordion-item">
+                                                                      <h2 class="accordion-header"
+                                                                           id="flush-headingOne">
+                                                                           <button class="accordion-button collapsed"
+                                                                                type="button" data-bs-toggle="collapse"
+                                                                                data-bs-target="#flush-collapseOne"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="flush-collapseOne">
+                                                                                Authors
+                                                                           </button>
+                                                                      </h2>
+                                                                      <div id="flush-collapseOne"
+                                                                           class="accordion-collapse collapse"
+                                                                           aria-labelledby="flush-headingOne"
+                                                                           data-bs-parent="#accordionFlushExample">
+
+                                                                           <ul class="list-group text-center">
+                                                                                <li class="list-group-item">Pomperada,
+                                                                                     Jake</li>
+                                                                                <li class="list-group-item">Lavina,
+                                                                                     Charlemagne</li>
+                                                                                <li class="list-group-item">Abante,
+                                                                                     Marmelo</li>
+                                                                                <li class="list-group-item">Juanez,
+                                                                                     jennifer</li>
+                                                                                <li class="list-group-item">Besuena,
+                                                                                     Jerelyn</li>
+                                                                           </ul>
+
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="accordion-item">
+                                                                      <h2 class="accordion-header"
+                                                                           id="flush-headingTwo">
+                                                                           <button class="accordion-button collapsed"
+                                                                                type="button" data-bs-toggle="collapse"
+                                                                                data-bs-target="#flush-collapseTwo"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="flush-collapseTwo">
+                                                                                Copyright Date
+                                                                           </button>
+                                                                      </h2>
+                                                                      <div id="flush-collapseTwo"
+                                                                           class="accordion-collapse collapse"
+                                                                           aria-labelledby="flush-headingTwo"
+                                                                           data-bs-parent="#accordionFlushExample">
+                                                                           <ul class="list-group text-center">
+                                                                                <li class="list-group-item">2022</li>
+                                                                                <li class="list-group-item">2021</li>
+                                                                                <li class="list-group-item">2020</li>
+                                                                                <li class="list-group-item">2019</li>
+                                                                                <li class="list-group-item">2018</li>
+                                                                           </ul>
+                                                                      </div>
+                                                                 </div>
+                                                                 <div class="accordion-item">
+                                                                      <h2 class="accordion-header"
+                                                                           id="flush-headingThree">
+                                                                           <button class="accordion-button collapsed"
+                                                                                type="button" data-bs-toggle="collapse"
+                                                                                data-bs-target="#flush-collapseThree"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="flush-collapseThree">
+                                                                                LRC Location
+                                                                           </button>
+                                                                      </h2>
+                                                                      <div id="flush-collapseThree"
+                                                                           class="accordion-collapse collapse"
+                                                                           aria-labelledby="flush-headingThree"
+                                                                           data-bs-parent="#accordionFlushExample">
+                                                                           <ul class="list-group">
+                                                                                <li class="list-group-item">Foreign
+                                                                                     Section</li>
+                                                                                <li class="list-group-item">Reserved
+                                                                                     Section</li>
+                                                                                <li class="list-group-item">Fiction
+                                                                                     Section</li>
+                                                                                <li class="list-group-item">Filipiniana
+                                                                                     Section</li>
+                                                                                <li class="list-group-item">And a fifth
+                                                                                     one</li>
+                                                                           </ul>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+
+
+
+                                                       </div>
+
 
                                                   </div>
                                                   <div class=" col-xl-9">

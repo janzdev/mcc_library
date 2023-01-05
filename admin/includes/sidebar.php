@@ -27,16 +27,16 @@
                </a>
           </li>
           <li class="nav-item">
-               <a class="nav-link collapsed<?=$page == 'report.php' || $page == 'report_penalty.php' ? 'active': '' ?>"
+               <a class="nav-link collapsed<?=$page == 'report.php' || $page == 'report_penalty.php' || $page == 'report_faculty.php' ? 'active': '' ?>"
                     href="report.php">
                     <i class="bi bi-file-earmark"></i><span>Report</span>
                </a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
                <a class="nav-link collapsed<?=$page == 'web_opac.php' || $page == 'web_opac_add.php' || $page == 'web_opac_view.php' || $page == 'web_opac_edit.php' ? 'active': '' ?>"
                     href="web_opac.php">
                     <i class="bi bi-book"></i><span>Web OPAC</span>
                </a>
-          </li>
+          </li> -->
      </ul>
 </aside>

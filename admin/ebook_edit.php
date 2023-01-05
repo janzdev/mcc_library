@@ -35,7 +35,7 @@ include('./includes/sidebar.php');
                                    {
                                        $book = mysqli_fetch_array($query_run);
                                         ?>
-                              <form action="web_opac_code.php" method="POST" enctype="multipart/form-data" class="">
+                              <form action="ebooks_code.php" method="POST" enctype="multipart/form-data" class="">
 
                                    <div class="row d-flex justify-content-center mt-5">
                                         <input type="hidden" name="web_opac_id" value="<?=$book['web_opac_id'];?>">
@@ -106,7 +106,7 @@ include('./includes/sidebar.php');
                          </div>
                          <div class="card-footer d-flex justify-content-end">
                               <div>
-                                   <a href="web_opac.php" class="btn btn-secondary">Cancel</a>
+                                   <a href="books.php" class="btn btn-secondary">Cancel</a>
                                    <button type="submit" name="update_book" class="btn btn-primary">Update Book</button>
                               </div>
                          </div>

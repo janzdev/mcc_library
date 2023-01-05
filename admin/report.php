@@ -5,7 +5,7 @@ include('./includes/sidebar.php');
 
 ?>
 <main id="main" class="main">
-
+    
      <div class="pagetitle">
           <h1>Report</h1>
           <nav>
@@ -34,64 +34,115 @@ include('./includes/sidebar.php');
                          <div class="card-body">
                               <!-- <h4 class="m-3">All Transaction</h4> -->
                               <div class="table-responsive mt-3">
-                                   <ul class="nav nav-tabs mb-3">
+                                   
+                                   <ul class="nav nav-tabs" id="myTab">
                                         <li class="nav-item">
-                                             <a class="nav-link <?=$page == 'report.php'  ? 'active': '' ?> "
-                                                  href="report.php">Students </a>
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#student-tab-pane">Students</button>
                                         </li>
                                         <li class="nav-item">
-                                             <a class="nav-link <?=$page == 'report_faculty.php' ? 'active': '' ?> "
-                                                  href="report_faculty.php">Faculty Staff</a>
+                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#faculty-tab-pane">Faculty Staff</button>
                                         </li>
                                    </ul>
-                                   <table id="myDataTable" cellpadding="0" cellspacing="0" border="0"
-                                        class="table table-striped table-bordered">
+                                   <div class="tab-content mt-3" id="myTabContent">
 
-                                        <thead>
-                                             <tr>
-                                                  <th>Name</th>
-                                                  <th>Book Title</th>
-                                                  <th>Task</th>
-                                                  <th>Person In Charge</th>
-                                                  <th>Date Transaction</th>
-                                             </tr>
-                                        </thead>
-                                        <tbody>
+                                        <div class="tab-pane fade show active" id="student-tab-pane">
+                                                  <table id="myDataTable" cellpadding="0" cellspacing="0" border="0"
+                                                  class="table table-striped table-bordered">
+
+                                                  <thead>
+                                                       <tr>
+                                                            <th>Name</th>
+                                                            <th>Book Title</th>
+                                                            <th>Task</th>
+                                                            <th>Person In Charge</th>
+                                                            <th>Date Transaction</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
 
 
-                                             <?php
-							$result= mysqli_query($con,"SELECT * from report 
-							LEFT JOIN book ON report.book_id = book.book_id 
-							LEFT JOIN user ON report.user_id = user.user_id
-							order by report.report_id DESC ");
-							while ($row= mysqli_fetch_array ($result) ){
-							$id=$row['report_id'];
-							$book_id=$row['book_id'];
-							$user_name=$row['firstname']." ".$row['lastname'];
-							$faculty_name=$row['firstname']." ".$row['lastname'];
-                                   $admin =$row['admin_name'];
-							
-							?>
-                                             <?php if(isset($row['user_id'])) :?>
-                                             <tr>
+                                                       <?php
+                                             $result= mysqli_query($con,"SELECT * from report 
+                                             LEFT JOIN book ON report.book_id = book.book_id 
+                                             LEFT JOIN user ON report.user_id = user.user_id
+                                             order by report.report_id DESC ");
+                                             while ($row= mysqli_fetch_array ($result) ){
+                                             $id=$row['report_id'];
+                                             $book_id=$row['book_id'];
+                                             $user_name=$row['firstname']." ".$row['lastname'];
+                                             $faculty_name=$row['firstname']." ".$row['lastname'];
+                                             $admin =$row['admin_name'];
+                                             
+                                             ?>
+                                                       <?php if(isset($row['user_id'])) :?>
+                                                       <tr>
 
-                                                  <td><?php echo $user_name; ?></td>
-                                                  <td><?php echo $row['title']; ?></td>
-                                                  <td><?php echo $row['detail_action']; ?></td>
-                                                  <td><?php echo $row['admin_name']; ?></td>
-                                                  <td><?php echo date("M d, Y h:m:s a",strtotime($row['date_transaction'])); ?>
-                                                  </td>
-                                             </tr>
-                                             <?php endif; ?>
-                                             <?php } ?>
-                                        </tbody>
-                                   </table>
+                                                            <td><?php echo $user_name; ?></td>
+                                                            <td><?php echo $row['title']; ?></td>
+                                                            <td><?php echo $row['detail_action']; ?></td>
+                                                            <td><?php echo $row['admin_name']; ?></td>
+                                                            <td><?php echo date("M d, Y h:m:s a",strtotime($row['date_transaction'])); ?>
+                                                            </td>
+                                                       </tr>
+                                                       <?php endif; ?>
+                                                       <?php } ?>
+                                                  </tbody>
+                                             </table>
+
+                                        </div>
+                                        <div class="tab-pane fade" id="faculty-tab-pane">
+
+                                                  <table id="myDataTable2" cellpadding="0" cellspacing="0" border="0"
+                                                  class="table table-striped table-bordered">
+
+                                                  <thead>
+                                                       <tr>
+                                                            <th>Name</th>
+                                                            <th>Book Title</th>
+                                                            <th>Task</th>
+                                                            <th>Person In Charge</th>
+                                                            <th>Date Transaction</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+
+
+                                                       <?php
+                                             $result= mysqli_query($con,"SELECT * from report 
+                                             LEFT JOIN book ON report.book_id = book.book_id 
+                                             LEFT JOIN faculty ON report.faculty_id = faculty.faculty_id
+                                             order by report.report_id DESC ");
+                                             while ($row= mysqli_fetch_array ($result) ){
+                                             $id=$row['report_id'];
+                                             $book_id=$row['book_id'];
+                                             $faculty_name=$row['firstname']." ".$row['lastname'];
+                                             $faculty_name=$row['firstname']." ".$row['lastname'];
+                                             $admin =$row['admin_name'];
+                                             
+                                             ?>
+                                                       <?php if(isset($row['faculty_id'])) :?>
+                                                       <tr>
+
+                                                            <td><?php echo $faculty_name; ?></td>
+                                                            <td><?php echo $row['title']; ?></td>
+                                                            <td><?php echo $row['detail_action']; ?></td>
+                                                            <td><?php echo $row['admin_name']; ?></td>
+                                                            <td><?php echo date("M d, Y h:m:s a",strtotime($row['date_transaction'])); ?>
+                                                            </td>
+                                                       </tr>
+                                                       <?php endif; ?>
+                                                       <?php } ?>
+                                                  </tbody>
+                                             </table>
+
+                                        </div>
+                               </div>
+                                   
 
                               </div>
 
 
                          </div>
-                         <div class="card-footer"></div>
                     </div>
                </div>
           </div>

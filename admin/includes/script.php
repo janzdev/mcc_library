@@ -41,6 +41,11 @@ $(document).ready(function() {
 
      });
 });
+$(document).ready(function() {
+     $('#myDataTable2').DataTable({
+
+     });
+});
 // $(document).ready(function() {
 //      $('#example').DataTable({
 
